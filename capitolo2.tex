@@ -2,11 +2,11 @@
 
 %L'apparato sperimentale attualmente in uso ai LNS-INFN nell'ambito della Fase~2 del progetto NUMEN, costituito principalmente dallo spettrometro MAGNEX e dal Ciclotrone Superconduttore K800, viene brevemente illustrato nella prima parte di questo capitolo.
 L'apparato sperimentale attualmente in uso ai LNS-INFN nell'ambito della Fase~2 del progetto NUMEN è costituito principalmente dallo spettrometro MAGNEX e dal CS.
-Poiché la descrizione di tale apparato non costituisce l'argomento primario del presente lavoro di tesi, nella prima parte del capitolo  vengono discusse soltanto le sue caratteristiche principali, rimandando alla vasta letteratura sul tema per informazioni più dettagliate (ad esempio~\cite{cavallaro:epja12, carbone:epja12, cappuzzello:epja16, cunsolo:epjst07}).
+Poiché la descrizione di tale apparato non costituisce l'argomento primario del presente lavoro di tesi, nella prima parte del capitolo ne vengono discusse soltanto le caratteristiche principali, rimandando alla vasta letteratura sul tema per informazioni più dettagliate (ad esempio~\cite{cavallaro:epja12, carbone:epja12, cappuzzello:epja16, cunsolo:epjst07}).
 
 %Nella prima parte di questo capitolo vengono illustrate le principali caratteristiche dell'apparato sperimentale attualmente in uso ai LNS-INFN nell'ambito della Fase~2 del progetto NUMEN.
 %Nella seconda parte viene descritta la configurazione dell'apparato adottata in occasione del test sui telescopi SiC-CsI svolto ad Aprile 2018, sottolineando le differenze rispetto a quella consueta.
-Nella seconda parte \textcolor{red}{si parla} del test sui telescopi SiC-CsI svolto ad Aprile~2018, esponendone le motivazioni, descrivendo la configurazione dell'apparato adottata e sottolineandone le differenze rispetto a quella consueta.
+(\textcolor{red}{Sistemare questa parte})Nella seconda parte \textcolor{red}{si parla} del test sui telescopi SiC-CsI svolto ad Aprile~2018, esponendone le motivazioni, descrivendo la configurazione dell'apparato adottata e sottolineandone le differenze rispetto a quella consueta.
 
 
 \section{\iflanguage{italian}{Lo spettrometro magnetico MAGNEX}{MAGNEX magnetic spectrometer}}
@@ -33,7 +33,7 @@ In Figura~\ref{fig:magnex} è mostrata una foto di MAGNEX, in cui è possibile n
 
 %\clearpage 
 
-\subsection{\iflanguage{italian}{Il rivelatore di piano focale}{The Focal Plane Detector}}
+\subsection{\iflanguage{italian}{Il rivelatore di piano focale}{The Focal Plane Detector}} \label{sez:fpd}
 
 \begin{figure} [!p]
 	\centering
@@ -112,24 +112,36 @@ Lo scopo principale del test era, dunque, valutare la capacità di PID di questo
 Il test è stato svolto utilizzando un fascio di~\ce{^{20}Ne} a 20~MeV/u, incidente su \ce{^{197}Au} o \ce{^{12}C}, laddove i due bersagli avevano funzioni differenti: il primo serviva per la localizzazione dello scattering elastico, il secondo per favorire la formazione dei prodotti di reazione di interesse per NUMEN, ovvero O, F~e~Ne.
 
 
+
+
+
+
 %\subsection{\iflanguage{italian}{I telescopi SiC-CsI}{SiC-CsI telescope detectors}}
 
 \subsection{\iflanguage{italian}{I rivelatori al carburo di silicio}{Silicon carbide detectors}}
 
-%I due prototipi di rivelatori al SiC utilizzati nel test avevano caratteristiche differenti: uno, chiamato \emph{SiC~A}, aveva un'area attiva non segmentata di $10 \times 10$~mm\ap{2}, con uno spessore di 10~$\mu$m ed uno strato morto di ???~$\mu$m; l'altro, indicato con \emph{SiC~B}, aveva un'area attiva segmentata in quattro pad, ciascuna di $5 \times 5$~mm\ap{2}, con uno spessore di 100~$\mu$m ed un strato morto di ???~$\mu$m.
 
 %I dispositivi al SiC costituiscono oggi una promettente realtà nel campo dei rivelatori per la fisica, 
 Grazie alle sue interessanti proprietà, il SiC costituisce oggi una promettente realtà nel campo della realizzazione di rivelatori per la fisica, configurandosi come una potenziale alternativa al silicio nelle applicazioni che richiedono una grande resistenza alle radiazioni.
 La larghezza della sua gap, quasi doppia rispetto a quella del silicio, se da un lato aumenta l'energia media per la produzione di una coppia elettrone-lacuna, dall'altro riduce il numero di portatori di carica generati per agitazione termica, mantenendo, dunque, un ottimo rapporto segnale-rumore. 
 Recenti test\cite{tudisco:sensors18} hanno dimostrato che con un rivelatore da 100~$\mu$m è possibile ottenere una risoluzione energetica dello 0.8\%~FWHM per le particelle $\alpha$ dell'\ce{^{241}Am} a 5486~keV.
-Come la maggior parte dei rivelatori a semiconduttore, i rivelatori al SiC sono costituiti da una giunzione p-n polarizzata inversamente per aumentare l'estensione della regione svuotata e per migliorare l'efficienza di raccolta dei portatori di carica.
 
+Come la maggior parte dei rivelatori a semiconduttore, i rivelatori al SiC sono costituiti da una giunzione p-n, polarizzata inversamente per aumentare l'estensione della regione svuotata e per migliorare l'efficienza di raccolta dei portatori di carica.
+Quando una particella carica attraversa il rivelatore, perde energia generando coppie elettrone-lacuna, le quali, in presenza di un campo elettrico, si muovono verso gli elettrodi, producendo il segnale.
+
+
+
+%I due prototipi di rivelatori al SiC utilizzati nel test sono mostrati in Figura~\ref{fig:sic}; essi avevano caratteristiche differenti: uno, chiamato \emph{SiC~A}, aveva un'area attiva non segmentata di $10 \times 10$~mm\ap{2}, con uno spessore di 10~$\mu$m ed uno strato morto di 100~$\mu$m; l'altro, indicato con \emph{SiC~B}, aveva un'area attiva segmentata in quattro pad, ciascuna di $5 \times 5$~mm\ap{2}, con uno spessore di 100~$\mu$m ed un strato morto di 350~$\mu$m.
 
 I due prototipi di rivelatori al SiC utilizzati nel test sono mostrati in Figura~\ref{fig:sic} (\textcolor{red}{modificare figura}): come è possibile notare, essi differivano innanzitutto per la segmentazione dell'area attiva, in quanto uno, chiamato \emph{SiC~A}, era costituito da un'unica pad, mentre l'altro, indicato con \emph{SiC~B}, era suddiviso in quattro regioni. 
 %Inoltre, mentre il SiC~A aveva un'area attiva di $10 \times 10$~mm\ap{2}, il SiC~B presentava 
 %I due telescopi SiC-CsI utilizzati nel test
 Entrambi i rivelatori avevano un'area attiva complessiva di $10 \times 10$~mm\ap{2}, laddove ogni pad del SiC~B aveva un'estensione di $5 \times 5$~mm\ap{2}.
-Un'ulteriore differenza riguardava lo spessore dei due rivelatori: mentre il SiC~A era spesso 10~$\mu$m, il SiC~B aveva uno spessore di 100~$\mu$m.
+%Un'ulteriore differenza riguardava gli spessori dei due rivelatori: mentre il SiC~A era spesso 10~$\mu$m con 100~$\mu$m di strato morto, il SiC~B aveva uno spessore di 100~$\mu$m con 350~$\mu$m di .
+Un'ulteriore differenza riguardava lo spessore della regione attiva dei due rivelatori: per il SiC~A era di 10~$\mu$m, mentre per il SiC~B misurava 100~$\mu$m.
+Infine, entrami i rivelatori avevano uno strato morto che, mentre per il SiC~A era spesso 100~$\mu$m, per il SiC~B aveva uno spessore di~350~$\mu$m.
+
+
 
 
 \begin{figure} [!t]
