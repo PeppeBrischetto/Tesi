@@ -106,13 +106,19 @@ Esso consisterà di un sistema di tracciamento tridimensionale a gas e di un mur
 
 
 Il nuovo tracciatore, al momento in fase di sviluppo, dovrà garantire la misura ad alta risoluzione dei quattro parametri $ \left(  x_{foc}, y_{foc}, \theta_{foc}, \phi_{foc}  \right)$ necessari per la ricostruzione della traiettoria in condizioni di alti rate di particelle incidenti. 
-Esso sarà fondamentalmente costituito da tre parti: una regione di deriva per gli elettroni prodotti dalla ionizzazione, un elemento per la moltiplicazione degli elettroni e una scheda segmentata di readout.
+%Esso sarà fondamentalmente costituito da tre parti: una regione di deriva per gli elettroni prodotti dalla ionizzazione, un elemento per la moltiplicazione degli elettroni e una scheda segmentata di readout.
+Esso sarà fondamentalmente costituito da tre parti:
+\begin{itemize}
+	\item[--] una regione di deriva per gli elettroni prodotti dalla ionizzazione;
+	\item[--] un elemento per la moltiplicazione degli elettroni, ovvero un Micro-Pattern Gas Detector (MPGD);
+	\item[--] una scheda segmentata di readout.
+\end{itemize}
 Il principio di funzionamento è il seguente: una particella carica incidente, dopo aver attraversato la finestra di mylar per il contenimento del gas, produce lungo la sua traiettoria una traccia di coppie elettrone-ione positivo. 
 %Il campo elettrico uniforme fra il catodo e l'elemento per la moltiplicazione guida gli elettroni
 %Il campo elettrico uniforme fra catodo e anodo guida gli elettroni primari verso l'elemento di moltiplicazione
-Sotto l'azione del campo elettrico uniforme presente fra catodo e anodo, gli elettroni primari si muovono con velocità costante nella regione di deriva fino a raggiungere l'elemento per la moltiplicazione.
+Sotto l'azione del campo elettrico uniforme presente fra catodo e anodo, gli elettroni primari si muovono con velocità costante nella regione di deriva fino a raggiungere il MPGD.
 Analogamente a quanto visto nel Paragrafo~\ref{sez:fpd}, dalla misura del tempo di deriva degli elettroni primari è possibile estrarre l'informazione sulla posizione e sull'angolo verticali.
-Giunti all'elemento moltiplicativo, gli elettroni primari danno origine ad una moltiplicazione a valanga, che risulta nella formazione di un jet elettronico. 
+Giunti al MPGD, gli elettroni primari danno origine ad una moltiplicazione a valanga, che risulta nella formazione di un jet elettronico. 
 Tale jet viene guidato dal campo elettrico verso la scheda segmentata di readout, dove induce su delle strip un impulso di carica. 
 Di conseguenza, note le strip coinvolte, è possibile misurare la posizione e l'angolo orizzontali. 
 
@@ -123,6 +129,13 @@ Di conseguenza, note le strip coinvolte, è possibile misurare la posizione e l'
 Dopo aver attraversato il tracciatore a gas, la particella carica raggiunge il muro per la PID, che, come anticipato nel Paragrafo~\ref{sez:sistema_identif_part}, sarà costituito da una matrice di telescopi $\Delta E - E$ basati sulla tecnologia SiC-CsI.
 %Poiché la simulazione svolta per questo lavoro di tesi verte principalmente su tale argomento,
 Poiché l'argomento principale del presente lavoro di tesi consiste nella simulazione di tale sistema di identificazione, per maggiore chiarezza si è preferito discutere dei telescopi nel paragrafo successivo.
+
+La scelta della tecnologia da utilizzare per il MPGD è oggi orientata verso le Thick-GEM, che, grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, sono molto appetibili per gli scopi di NUMEN.
+Tuttavia, diverse delle condizioni in cui questo tipo di rivelatori sono abitualmente utilizzati non sono attuabili per NUMEN. 
+In primo luogo, le Thick-GEM sono tipicamente utilizzate con gas a pressione atmosferica, mentre il FPD opera solitamente a pressioni di alcune decine di mbar.
+Inoltre, esse spesso sono utilizzate per particelle in condizioni di Minimum Ionizing Particle, mentre gli ioni di interesse per NUMEN saranno ben lontani da tali energie.
+%In aggiunta, dal momento che diversi tipi di ioni raggiungono il rivelatore, il tracciatore deve avere ...
+Dunque, sebbene incoraggianti risultati siano stati recentemente ottenuti, questa soluzione richiede un'intensa attività di sviluppo.
 
 
 Una rappresentazione schematica del futuro FPD è mostrata in Figura~\ref{fig:nuovo_fpd}, dove sono raffigurate anche le superfici equipotenziali calcolate con il codice Poisson-Superfish: le linee quasi parallele indicano che nella regione di deriva il campo elettrico è piuttosto uniforme.
@@ -147,16 +160,27 @@ Una rappresentazione schematica del futuro FPD è mostrata in Figura~\ref{fig:nu
 %Ad Aprile 2018 è stato svolto un test sui primi due prototipi di telescopi SiC-CsI, allo scopo di confrontarne la risposta con il sistema attualmente utilizzato.
 %Ad Aprile 2018 è stato svolto un test sui primi due prototipi di telescopi SiC-CsI, allo scopo di valutarne la risposta, confrontandola con quella del sistema attualmente utilizzato.
 
-Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla \textcolor{red}{ST-Microelectronics} (\textcolor{red}{giusto?}).
+
 %Dopo aver realizzato 
 %Per verificare se la risposta di un telescopio formato da uno stadio $\Delta E$ al SiC seguito da un cristallo di CsI poteva garantire prestazioni di identificazione degli ioni confrontabili con quelle accessibili con l'attuale apparato, è stato svolto un test per una durata complessiva di cinque giorni.
 %Dal momento che tali rivelatori non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia nuova, è stato svolto un test per verificare se le loro prestazioni possono soddisfare le esigenze di NUMEN.
-Dal momento che tali rivelatori non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2 di NUMEN.
+
 %Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto per assolvere al ruolo di sistema di PID
 %Sono stati, dunque, assemblati due telescopi SiC-CsI, di cui si è studiata la risposta in termini di PID.
-Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto come stadio~$\Delta E$ di un telescopio SiC-CsI per l'identificazione in numero atomico dei prodotti di reazione.
+
 %Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto per identificare i prodotti di reazione
-Lo scopo principale del test era, dunque, valutare la capacità di PID di questo sistema nella regione di interesse per NUMEN, confrontandola con quella accessibile con l'attuale apparato.
+
+Quando si studiano le reazioni fra ioni pesanti, l'identificazione in numero atomico, massa e carica dei prodotti di reazione è una componente indispensabile, che, a seconda delle esigenze, viene eseguita adoperando vari metodi.
+%Una delle tecniche più diffuse prevede l'utilizzo di telescopi $\Delta E - E$.
+Come anticipato nel Paragrafo~\ref{sez:sistema_identif_part}, il progetto NUMEN ha individuato come possibile soluzione per la PID in condizioni di alti rate di particelle incidenti l'utilizzo di telescopi $\Delta E - E$ in cui il primo stadio è un rivelatore al SiC, mentre il secondo è uno scintillatore allo CsI.
+Vediamo più in dettaglio queste due tipologie di rivelatori.
+
+
+
+% ******** QUESTA ERA LA PARTE CHE SECONDO ME VA BENE PER INTRODURRE IL TEST
+%Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla \textcolor{red}{ST-Microelectronics} (\textcolor{red}{giusto?}). Dal momento che tali rivelatori non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2 di NUMEN. Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto come stadio~$\Delta E$ di un telescopio SiC-CsI per l'identificazione in numero atomico dei prodotti di reazione. Lo scopo principale del test era, dunque, valutare la capacità di PID di questo sistema nella regione di interesse per NUMEN, confrontandola con quella accessibile con l'attuale apparato.
+
+
 
 %Il fascio utilizzato nel test era costituito da \ce{^{20}Ne}, mentre i bersagli erano \ce{^{197}Au} e \ce{^{12}C}
 
@@ -173,12 +197,20 @@ Lo scopo principale del test era, dunque, valutare la capacità di PID di questo
 
 %I dispositivi al SiC costituiscono oggi una promettente realtà nel campo dei rivelatori per la fisica, 
 Grazie alle sue interessanti proprietà, il SiC costituisce oggi una promettente realtà nel campo della realizzazione di rivelatori per la fisica, configurandosi come una potenziale alternativa al silicio nelle applicazioni che richiedono una grande resistenza alle radiazioni.
-La larghezza della sua gap, quasi doppia rispetto a quella del silicio, se da un lato aumenta l'energia media per la produzione di una coppia elettrone-lacuna, dall'altro riduce il numero di portatori di carica generati per agitazione termica, mantenendo, dunque, un ottimo rapporto segnale-rumore. 
+%La larghezza della sua gap, quasi tripla rispetto a quella del silicio, se da un lato aumenta l'energia media per la produzione di una coppia elettrone-lacuna, dall'altro riduce il numero di portatori di carica generati per agitazione termica, mantenendo, dunque, un ottimo rapporto segnale-rumore.
+La larghezza della sua gap, quasi tripla rispetto a quella del silicio, se da un lato riduce il numero di portatori di carica generati per agitazione termica, dall'altro aumenta l'energia media per la produzione di una coppia elettrone-lacuna. 
+Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio, generando, dunque, un segnale di ampiezza inferiore.
+%Dunque, i rivelatori al SiC generano segnali di ampiezza inferiore rispetto a quelli dei rivelatori al silicio.
+Tuttavia, gli ioni pesanti di interesse per NUMEN dovrebbero generare un numero elevato di coppie elettrone-lacune, così che l'ampiezza del segnale dovrebbe essere sufficientemente grande.
+Inoltre, i rivelatori al SiC hanno un ottimo rapporto segnale-rumore anche a temperature piuttosto alte, mentre i rivelatori al silicio hanno, in alcuni casi, bisogno di un sistema di raffreddamento.
 Recenti test\cite{tudisco:sensors18} hanno dimostrato che con un rivelatore da 100~$\mu$m di spessore è possibile ottenere una risoluzione energetica dello 0.8\%~FWHM per le particelle $\alpha$ dell'\ce{^{241}Am} a 5486~keV.
 
 
 Come la maggior parte dei rivelatori a semiconduttore, i rivelatori al SiC sono costituiti da una giunzione p-n, polarizzata inversamente per aumentare l'estensione della regione svuotata e per migliorare l'efficienza di raccolta dei portatori di carica.
-Quando una particella carica attraversa il rivelatore, perde energia generando coppie elettrone-lacuna, le quali, in presenza di un campo elettrico, si muovono verso gli elettrodi, producendo il segnale.
+Quando una particella carica attraversa il rivelatore, perde energia generando coppie elettrone-lacuna, le quali, in presenza di un campo elettrico, si muovono verso gli elettrodi, producendo un segnale elettrico proporzionale all'energia depositata.
+
+
+
 
 
 
@@ -270,4 +302,4 @@ Il test è stato svolto utilizzando un fascio di~\ce{^{20}Ne} a 20~MeV/u, incide
 
 
 
-
+ciao
