@@ -141,6 +141,11 @@ Dunque, sebbene incoraggianti risultati siano stati recentemente ottenuti, quest
 Una rappresentazione schematica del futuro FPD è mostrata in Figura~\ref{fig:nuovo_fpd}, dove sono raffigurate anche le superfici equipotenziali calcolate con il codice Poisson-Superfish: le linee quasi parallele indicano che nella regione di deriva il campo elettrico è piuttosto uniforme.
 
 
+Un prototipo di dimensioni ridotte, mostrato in Figura, è stato realizzato per individuare le migliori soluzioni in termini di geometria, tensioni applicate, MPGD ed elettronica.  
+
+\textcolor{red}{Aggiungere parte sul castelletto e la sua foto}
+
+
 
 
 \begin{figure} [!t]
@@ -177,8 +182,6 @@ Vediamo più in dettaglio queste due tipologie di rivelatori.
 
 
 
-% ******** QUESTA ERA LA PARTE CHE SECONDO ME VA BENE PER INTRODURRE IL TEST
-%Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla \textcolor{red}{ST-Microelectronics} (\textcolor{red}{giusto?}). Dal momento che tali rivelatori non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2 di NUMEN. Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto come stadio~$\Delta E$ di un telescopio SiC-CsI per l'identificazione in numero atomico dei prodotti di reazione. Lo scopo principale del test era, dunque, valutare la capacità di PID di questo sistema nella regione di interesse per NUMEN, confrontandola con quella accessibile con l'attuale apparato.
 
 
 
@@ -209,8 +212,20 @@ Recenti test\cite{tudisco:sensors18} hanno dimostrato che con un rivelatore da 1
 Come la maggior parte dei rivelatori a semiconduttore, i rivelatori al SiC sono costituiti da una giunzione p-n, polarizzata inversamente per aumentare l'estensione della regione svuotata e per migliorare l'efficienza di raccolta dei portatori di carica.
 Quando una particella carica attraversa il rivelatore, perde energia generando coppie elettrone-lacuna, le quali, in presenza di un campo elettrico, si muovono verso gli elettrodi, producendo un segnale elettrico proporzionale all'energia depositata.
 
+%La resistenza alle radiazioni dei rivelatori al SiC è stata indagata sia attraverso simulazioni Monte Carlo sia per mezzo di test sperimentali. 
+Poiché la resistenza alle radiazioni è l'aspetto di maggiore importanza per la scelta dei rivelatori da utilizzare per NUMEN, alcune simulazioni Monte Carlo sono state implementate allo scopo di valutarla nel caso dei rivelatori al SiC. 
+In Figura~\ref{fig:sic_simul_resist_radiaz} (a sinistra) sono riportati i risultati della produzione di vacanze generata da protoni e \ce{^{18}O} in un rivelatore da 100~$\mu$m.
+Come si può notare, i difetti causati dagli ioni di ossigeno sono due ordini di grandezza maggiori di quelli indotti dai protoni.
+Un comportamento simile si osserva anche sulla corrente inversa, mostrata in Figura~\ref{fig:sic_simul_resist_radiaz} (a destra). Sebbene aumenti di diversi ordini di grandezza dopo alte dosi di irradiazione, essa può essere ancora tollerabile, essendo cinque ordini di grandezza inferiore a quella del silicio.
 
+La resistenza alle radiazioni di rivelatori al SiC di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) è stata analizzata in un test in cui i dispositivi erano irraggiati con ioni pesanti\cite{raciti:npa10}. 
+I risultati hanno dimostrato che tali rivelatori sono in grado di sostenere fluenze dell'ordine di $10^{14}$  $\mbox{ioni}/\mbox{cm}^2$, soddisfacendo il principale requisito di NUMEN.
 
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/sic_simul_resist_radiaz.png}
+	\caption{ Simulazioni Monte Carlo del numero di dislocamenti (a sinistra) e della corrente inversa (a destra) generati in un rivelatore al SiC da 100~$\mu$m in funzione della fluenza di protoni e \ce{^{18}O}. Figura tratta da~\cite{cappuzzello:epja18}.} \label{fig:sic_simul_resist_radiaz}
+\end{figure}
 
 
 
@@ -223,24 +238,11 @@ La simulazione svolta per questo lavoro di tesi ha tenuto in considerazione tali
 
 
 
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/sic.jpg}
-	\caption{I rivelatori al carburo di silicio (SiC) utilizzati nel test: a sinistra il \emph{SiC~B}, a destra il \emph{SiC~A}.} \label{fig:sic}
-\end{figure}
+
 
 
 %I due prototipi di rivelatori al SiC utilizzati nel test sono mostrati in Figura~\ref{fig:sic}; essi avevano caratteristiche differenti: uno, chiamato \emph{SiC~A}, aveva un'area attiva non segmentata di $10 \times 10$~mm\ap{2}, con uno spessore di 10~$\mu$m ed uno strato morto di 100~$\mu$m; l'altro, indicato con \emph{SiC~B}, aveva un'area attiva segmentata in quattro pad, ciascuna di $5 \times 5$~mm\ap{2}, con uno spessore di 100~$\mu$m ed un strato morto di 350~$\mu$m.
 
-I due prototipi di rivelatori al SiC utilizzati nel test sono mostrati in Figura~\ref{fig:sic}: come è possibile notare, essi differivano innanzitutto per la segmentazione dell'area attiva, in quanto uno, chiamato \emph{SiC~A}, era costituito da un'unica pad, mentre l'altro, indicato con \emph{SiC~B}, era suddiviso in quattro regioni. 
-%Inoltre, mentre il SiC~A aveva un'area attiva di $10 \times 10$~mm\ap{2}, il SiC~B presentava 
-%I due telescopi SiC-CsI utilizzati nel test
-Entrambi i rivelatori avevano un'area attiva complessiva di $10 \times 10$~mm\ap{2}, laddove ogni pad del SiC~B aveva un'estensione di $5 \times 5$~mm\ap{2}.
-%Un'ulteriore differenza riguardava gli spessori dei due rivelatori: mentre il SiC~A era spesso 10~$\mu$m con 100~$\mu$m di strato morto, il SiC~B aveva uno spessore di 100~$\mu$m con 350~$\mu$m di .
-Un'ulteriore differenza riguardava lo spessore della regione attiva dei due rivelatori: per il SiC~A era di 10~$\mu$m, mentre per il SiC~B misurava 100~$\mu$m.
-Infine, entrami i rivelatori avevano uno strato morto che, mentre per il SiC~A era spesso 100~$\mu$m, per il SiC~B aveva uno spessore di~350~$\mu$m.
-
-In occasione del test si è scelto di utilizzare soltanto due delle quattro pad del SiC~B, le quali sono state cortocircuitate tra loro in modo tale che il rivelatore avesse una superficie sensibile di $10 \times 5$~mm\ap{2}.
 
 
 
@@ -253,11 +255,6 @@ In occasione del test si è scelto di utilizzare soltanto due delle quattro pad 
 
 
 
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/csi.jpg}
-	\caption{Gli scintillatori allo ioduro di cesio (CsI) utilizzati nel test: a sinistra il \emph{CsI~B}, a destra il \emph{CsI~A}.} \label{fig:csi}
-\end{figure}
 
 
 %\subsection{\iflanguage{italian}{I telescopi SiC-CsI}{SiC-CsI telescope detectors}}
@@ -272,12 +269,6 @@ Dal momento che l'energia media necessaria per la creazione di un fotone è circ
 %Fra le tipologie più diffuse di scintillatori, lo ioduro di cesio occupa uno dei posti più importanti.
 Uno dei materiali più diffusi per la realizzazioni di rivelatori a scintillazione è lo CsI, poiché possiede una fra le maggiori rese in luce per MeV di energia depositata e una notevole malleabilità.
 
-In occasione del test sono stati utilizzati due scintillatori allo CsI, i quali sono mostrati in Figura~\ref{fig:csi}
-Questi avevano dimensioni differenti: uno (\emph{CsI~A}) era grande $1 \times 1$~cm\ap{2}, l'altro (\emph{CsI~B}) era suddiviso in quattro regioni da $1.5 \times 1.5$~cm\ap{2}. 
-%La luce di scintillazione veniva letta in entrambi i casi con un fotodiodo da $1 \times 1$~cm\ap{2}, che 
-%Ognuno dei due scintillatori era accoppiato ad un fotodiodo $1 \times 1$~cm\ap{2}
-A causa delle dimensioni dei rivelatori al SiC, soltanto una delle quattro aree sensibili del CsI~B è stata utilizzata.
-Ciascuno dei due cristalli era accoppiato ad un fotodiodo $1 \times 1$~cm\ap{2} per la lettura della luce di scintillazione. 
 
 
 
@@ -291,7 +282,60 @@ Ciascuno dei due cristalli era accoppiato ad un fotodiodo $1 \times 1$~cm\ap{2} 
 \section{\iflanguage{italian}{La configurazione dell'apparato sperimentale nel test}{Experimetal apparatus setting}}
 
 
+% ******** QUESTA ERA LA PARTE CHE SECONDO ME VA BENE PER INTRODURRE IL TEST
+Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla \textcolor{red}{ST-Microelectronics} (\textcolor{red}{giusto?}). Dal momento che tali rivelatori non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2 di NUMEN. Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto come stadio~$\Delta E$ di un telescopio SiC-CsI per l'identificazione in numero atomico dei prodotti di reazione. Lo scopo principale del test era, dunque, valutare la capacità di PID di questo sistema nella regione di interesse per NUMEN, confrontandola con quella accessibile con l'attuale apparato.
+
+
 Il test è stato svolto utilizzando un fascio di~\ce{^{20}Ne} a 20~MeV/u, incidente su \ce{^{197}Au} o \ce{^{12}C}, laddove i due bersagli avevano funzioni differenti: il primo serviva per la localizzazione dello scattering elastico, il secondo per favorire la formazione dei prodotti di reazione di interesse per NUMEN, ovvero quella dell'O, del F e del Ne.
+
+
+
+
+
+
+
+
+
+
+
+I due prototipi di rivelatori al SiC utilizzati nel test sono mostrati in Figura~\ref{fig:sic}: come è possibile notare, essi differivano innanzitutto per la segmentazione dell'area attiva, in quanto uno, chiamato \emph{SiC~A}, era costituito da un'unica pad, mentre l'altro, indicato con \emph{SiC~B}, era suddiviso in quattro regioni. 
+%Inoltre, mentre il SiC~A aveva un'area attiva di $10 \times 10$~mm\ap{2}, il SiC~B presentava 
+%I due telescopi SiC-CsI utilizzati nel test
+Entrambi i rivelatori avevano un'area attiva complessiva di $10 \times 10$~mm\ap{2}, laddove ogni pad del SiC~B aveva un'estensione di $5 \times 5$~mm\ap{2}.
+%Un'ulteriore differenza riguardava gli spessori dei due rivelatori: mentre il SiC~A era spesso 10~$\mu$m con 100~$\mu$m di strato morto, il SiC~B aveva uno spessore di 100~$\mu$m con 350~$\mu$m di .
+Un'ulteriore differenza riguardava lo spessore della regione attiva dei due rivelatori: per il SiC~A era di 10~$\mu$m, mentre per il SiC~B misurava 100~$\mu$m.
+Infine, entrami i rivelatori avevano uno strato morto che, mentre per il SiC~A era spesso 100~$\mu$m, per il SiC~B aveva uno spessore di~350~$\mu$m.
+
+In occasione del test si è scelto di utilizzare soltanto due delle quattro pad del SiC~B, le quali sono state cortocircuitate tra loro in modo tale che il rivelatore avesse una superficie sensibile di $10 \times 5$~mm\ap{2}.
+
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/sic.jpg}
+	\caption{I rivelatori al carburo di silicio (SiC) utilizzati nel test: a sinistra il \emph{SiC~B}, a destra il \emph{SiC~A}.} \label{fig:sic}
+\end{figure}
+
+
+
+
+
+In occasione del test sono stati utilizzati due scintillatori allo CsI, i quali sono mostrati in Figura~\ref{fig:csi}
+Questi avevano dimensioni differenti: uno (\emph{CsI~A}) era grande $1 \times 1$~cm\ap{2}, l'altro (\emph{CsI~B}) era suddiviso in quattro regioni da $1.5 \times 1.5$~cm\ap{2}. 
+%La luce di scintillazione veniva letta in entrambi i casi con un fotodiodo da $1 \times 1$~cm\ap{2}, che 
+%Ognuno dei due scintillatori era accoppiato ad un fotodiodo $1 \times 1$~cm\ap{2}
+A causa delle dimensioni dei rivelatori al SiC, soltanto una delle quattro aree sensibili del CsI~B è stata utilizzata.
+Ciascuno dei due cristalli era accoppiato ad un fotodiodo $1 \times 1$~cm\ap{2} per la lettura della luce di scintillazione. 
+
+
+
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/csi.jpg}
+	\caption{Gli scintillatori allo ioduro di cesio (CsI) utilizzati nel test: a sinistra il \emph{CsI~B}, a destra il \emph{CsI~A}.} \label{fig:csi}
+\end{figure}
+
+
 
 
 \begin{figure} [!t]
@@ -302,4 +346,3 @@ Il test è stato svolto utilizzando un fascio di~\ce{^{20}Ne} a 20~MeV/u, incide
 
 
 
-ciao
