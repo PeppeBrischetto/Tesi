@@ -42,7 +42,7 @@ In Figura~\ref{fig:magnex} è mostrata una foto di MAGNEX, in cui è possibile n
 \end{figure}
 
 L'attuale FPD di MAGNEX, la cui rappresentazione schematica è riportata in Figura~\ref{fig:fpd}, è un sistema di rivelazione ibrido, costituito da un tracciatore a gas a bassa pressione e da un muro di rivelatori al silicio.
-Esso è posizionato a 1.91~m dall'uscita del dipolo e, al fine di minimizzare gli effetti dovuti alle aberrazioni cromatiche\cite{cunsolo:nima01}, è inclinato di 59.2\textdegree{} rispetto ad un piano perpendicolare all'asse ottico.
+Esso è posizionato a 1.91~m dall'uscita del dipolo e, al fine di minimizzare gli effetti dovuti alle aberrazioni cromatiche~\cite{cunsolo:nima01}, è inclinato di 59.2\textdegree{} rispetto ad un piano perpendicolare all'asse ottico.
 %Una finestra di mylar spessa 1.5~$\mu$m è utilizzata per contenere il gas, solitamente costituito da N35 isobutano, segnando l'ingresso nel volume attivo.
 L'ingresso nel volume attivo è segnato da una finestra di mylar spessa 1.5~$\mu$m, la quale è utilizzata per contenere il gas, solitamente costituito da N35 isobutano.
 
@@ -113,7 +113,8 @@ Esso sarà fondamentalmente costituito da tre parti:
 	\item[--] un elemento per la moltiplicazione degli elettroni, ovvero un Micro-Pattern Gas Detector (MPGD);
 	\item[--] una scheda segmentata di readout.
 \end{itemize}
-Il principio di funzionamento è il seguente: una particella carica incidente, dopo aver attraversato la finestra di mylar per il contenimento del gas, produce lungo la sua traiettoria una traccia di coppie elettrone-ione positivo. 
+
+Una particella carica incidente, dopo aver attraversato la finestra di mylar per il contenimento del gas, produce lungo la sua traiettoria una traccia di coppie elettrone-ione positivo. 
 %Il campo elettrico uniforme fra il catodo e l'elemento per la moltiplicazione guida gli elettroni
 %Il campo elettrico uniforme fra catodo e anodo guida gli elettroni primari verso l'elemento di moltiplicazione
 Sotto l'azione del campo elettrico uniforme presente fra catodo e anodo, gli elettroni primari si muovono con velocità costante nella regione di deriva fino a raggiungere il MPGD.
@@ -206,19 +207,19 @@ Ciò significa che, a parità di energia, una particella incidente su un rivelat
 %Dunque, i rivelatori al SiC generano segnali di ampiezza inferiore rispetto a quelli dei rivelatori al silicio.
 Tuttavia, gli ioni pesanti di interesse per NUMEN dovrebbero generare un numero elevato di coppie elettrone-lacune, così che l'ampiezza del segnale dovrebbe essere sufficientemente grande.
 Inoltre, i rivelatori al SiC hanno un ottimo rapporto segnale-rumore anche a temperature piuttosto alte, mentre i rivelatori al silicio hanno, in alcuni casi, bisogno di un sistema di raffreddamento.
-Recenti test\cite{tudisco:sensors18} hanno dimostrato che con un rivelatore da 100~$\mu$m di spessore è possibile ottenere una risoluzione energetica dello 0.8\%~FWHM per le particelle $\alpha$ dell'\ce{^{241}Am} a 5486~keV.
+Recenti test~\cite{tudisco:sensors18} hanno dimostrato che con un rivelatore da 100~$\mu$m di spessore è possibile ottenere una risoluzione energetica dello 0.8\%~FWHM per le particelle $\alpha$ dell'\ce{^{241}Am} a 5486~keV.
 
 
 Come la maggior parte dei rivelatori a semiconduttore, i rivelatori al SiC sono costituiti da una giunzione p-n, polarizzata inversamente per aumentare l'estensione della regione svuotata e per migliorare l'efficienza di raccolta dei portatori di carica.
 Quando una particella carica attraversa il rivelatore, perde energia generando coppie elettrone-lacuna, le quali, in presenza di un campo elettrico, si muovono verso gli elettrodi, producendo un segnale elettrico proporzionale all'energia depositata.
 
 %La resistenza alle radiazioni dei rivelatori al SiC è stata indagata sia attraverso simulazioni Monte Carlo sia per mezzo di test sperimentali. 
-Poiché la resistenza alle radiazioni è l'aspetto di maggiore importanza per la scelta dei rivelatori da utilizzare per NUMEN, alcune simulazioni Monte Carlo sono state implementate allo scopo di valutarla nel caso dei rivelatori al SiC. 
+Poiché la resistenza alle radiazioni è l'aspetto di maggiore importanza per la scelta dei dispositivi da utilizzare per NUMEN, alcune simulazioni Monte Carlo sono state implementate allo scopo di darne una stima nel caso dei rivelatori al SiC. 
 In Figura~\ref{fig:sic_simul_resist_radiaz} (a sinistra) sono riportati i risultati della produzione di vacanze generata da protoni e \ce{^{18}O} in un rivelatore da 100~$\mu$m.
 Come si può notare, i difetti causati dagli ioni di ossigeno sono due ordini di grandezza maggiori di quelli indotti dai protoni.
 Un comportamento simile si osserva anche sulla corrente inversa, mostrata in Figura~\ref{fig:sic_simul_resist_radiaz} (a destra). Sebbene aumenti di diversi ordini di grandezza dopo alte dosi di irradiazione, essa può essere ancora tollerabile, essendo cinque ordini di grandezza inferiore a quella del silicio.
 
-La resistenza alle radiazioni di rivelatori al SiC di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) è stata analizzata in un test in cui i dispositivi erano irraggiati con ioni pesanti\cite{raciti:npa10}. 
+La resistenza alle radiazioni di rivelatori al SiC di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) è stata analizzata in un test in cui i dispositivi erano irraggiati con ioni pesanti~\cite{raciti:npa10}. 
 I risultati hanno dimostrato che tali rivelatori sono in grado di sostenere fluenze dell'ordine di $10^{14}$  $\mbox{ioni}/\mbox{cm}^2$, soddisfacendo il principale requisito di NUMEN.
 
 \begin{figure} [!t]
@@ -262,15 +263,30 @@ I rivelatori a scintillazione, detti anche \emph{scintillatori}, sono tra i più
 %Il loro principio di funzionamento è basato sul fatto che quando una particella carica attraversa uno scintillatore vengono emessi fotoni. 
 %Il loro principio di funzionamento è basato sull'emissione di luce di scintillazione da parte di certi materiali quando attraversati da una particella carica
 Il loro principio di funzionamento è il seguente: quando una particella carica attraversa uno scintillatore, eccita gli atomi o le molecole del materiale, i quali si diseccitano emettendo fotoni. 
-La luce prodotta viene raccolta e trasformata in segnale elettrico da appositi sensori, come i fotomoltiplicatori o i fotodiodi.
+La luce prodotta, proporzionale all'energia depositata nel cristallo, viene raccolta e trasformata in segnale elettrico da appositi sensori, come i fotomoltiplicatori o i fotodiodi.
 Dal momento che l'energia media necessaria per la creazione di un fotone è circa trenta volte superiore a quella richiesta per la produzione di una coppia elettrone-lacuna in un semiconduttore, la risoluzione energetica tipica degli scintillatori è peggiore di quella dei rivelatori a semiconduttore.
 %, con valori tipicamente compresi tra $1 \div 3 \%$.
 %I due rivelatori al SiC sono stati assemblati insieme ai due scintillatori allo CsI mostrati in Figura~\ref{fig:csi}. 
 %Fra le tipologie più diffuse di scintillatori, lo ioduro di cesio occupa uno dei posti più importanti.
-Uno dei materiali più diffusi per la realizzazioni di rivelatori a scintillazione è lo CsI, poiché possiede una fra le maggiori rese in luce per MeV di energia depositata e una notevole malleabilità.
+
+Molti materiali possono produrre luce di scintillazione, differenziandosi per resa in luce, linearità e tempi di decadimento, laddove la resa in luce esprime il numero di fotoni prodotti per unità di energia depositata, la linearità descrive il rapporto di proporzionalità fra la resa in luce e l'energia depositata, il tempo di decadimento indica il tempo necessario per l'emissione di luce dopo il deposito di energia.
+Uno dei materiali più diffusi per la realizzazione di rivelatori a scintillazione è lo CsI attivato al Tl, indicato solitamente come CsI(Tl). 
+%Dal momento che possiede una fra le maggiori rese in luce e una notevole malleabilità, viene spesso impiegato nella rivelazione sia di particelle cariche sia di raggi gamma.
+Dal momento che possiede una fra le maggiori rese in luce e una notevole malleabilità, negli ultimi cinquant'anni ha trovato un largo utilizzo negli esperimenti sia di fisica nucleare sia di fisica particellare, venendo impiegato nella rivelazione di particelle cariche o di raggi gamma.
 
 
-
+%La resistenza alle radiazioni dei cristalli di CsI è stata largamente studiata
+%Innumerevoli test sono stati condotti per valutare la resistenza alle radiazioni dei cristalli di CsI(Tl), 
+%Uno degli aspetti che hanno contribuito alla diffusione dello CsI(Tl) (nel seguito indicato come CsI) è la sua resistenza alle radiazioni, che è stata oggetto di innumerevoli test~\cite{beylin:nima04}. I risultati sono concordi nell'affermare che, sebbene ci siano fluttuazioni legate alla purezza e alle dimensioni dei cristalli, la resa in luce non dovrebbe subire variazioni significative alle intensità di fascio che verranno utilizzate per NUMEN.
+%
+%Innumerevoli studi sono stati condotti per valutare la resistenza alle radiazioni dello CsI(Tl) (nel seguito indicato come CsI) utilizzando  
+%La resistenza alle radiazioni dello CsI(Tl) (nel seguito indicato come CsI) è stata oggetto di innumerevoli test in cui i cristalli venivano irraggiati con raggi gamma o con elettroni.
+Uno degli aspetti che ha contribuito alla diffusione dello CsI(Tl) (nel seguito indicato come CsI) è la sua resistenza alle radiazioni, che è stata oggetto di innumerevoli test in cui i cristalli venivano irraggiati con raggi gamma o con elettroni~\cite{beylin:nima04, zhu:nima98}.
+%I risultati sperimentali danno incoraggianti prospettive di sopravvivenza per i cristalli alle intensità di fascio che verranno utilizzate per NUMEN.
+%I risultati sono concordi nell'affermare che, sebbene ci siano fluttuazioni legate alla purezza e alle dimensioni dei cristalli, la resa in luce non dovrebbe subire variazioni significative alle intensità di fascio che verranno utilizzate per NUMEN.
+Tuttavia, dal momento che in letteratura non sono stati trovati dati sperimentali riguardo la sua resistenza agli ioni pesanti, la collaborazione NUMEN ha svolto un test sottoponendo un cristallo di CsI di $ 1 \times 1$~cm\ap{2} ad un fascio di \ce{^{14}N} a 65~MeV/u, per una fluenza totale di circa $10^{12}$~particelle/cm\ap{2}, equivalente a circa un anno di esperimento (\textcolor{red}{giusto?}).
+Alla fine dell'irraggiamento, il cristallo non presentava danni visibili e la sua resa in luce non mostrava variazioni.
+Supportati da questi incoraggianti risultati, la scelta di utilizzare lo CsI sembra promettere le capacità di resistenza alle radiazioni necessarie per NUMEN.
 
 
 
@@ -279,8 +295,8 @@ Uno dei materiali più diffusi per la realizzazioni di rivelatori a scintillazio
 
 \clearpage
 
-\section{\iflanguage{italian}{La configurazione dell'apparato sperimentale nel test}{Experimetal apparatus setting}}
-
+%\section{\iflanguage{italian}{La configurazione dell'apparato sperimentale nel test}{Experimetal apparatus setting}}
+\section{\iflanguage{italian}{Il test sperimentale sui telescopi}{Telescope detectors experimental test}}
 
 % ******** QUESTA ERA LA PARTE CHE SECONDO ME VA BENE PER INTRODURRE IL TEST
 Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla \textcolor{red}{ST-Microelectronics} (\textcolor{red}{giusto?}). Dal momento che tali rivelatori non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2 di NUMEN. Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto come stadio~$\Delta E$ di un telescopio SiC-CsI per l'identificazione in numero atomico dei prodotti di reazione. Lo scopo principale del test era, dunque, valutare la capacità di PID di questo sistema nella regione di interesse per NUMEN, confrontandola con quella accessibile con l'attuale apparato.
