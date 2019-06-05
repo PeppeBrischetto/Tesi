@@ -25,7 +25,7 @@ In Figura~\ref{fig:magnex} è mostrata una foto di MAGNEX, in cui è possibile n
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/magnex.jpg}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/magnex_etichette.png}
 	\caption{Lo spettrometro magnetico MAGNEX.} \label{fig:magnex}
 \end{figure}
 
@@ -131,7 +131,7 @@ Dopo aver attraversato il tracciatore a gas, la particella carica raggiunge il m
 %Poiché la simulazione svolta per questo lavoro di tesi verte principalmente su tale argomento,
 Poiché l'argomento principale del presente lavoro di tesi consiste nella simulazione di tale sistema di identificazione, per maggiore chiarezza si è preferito discutere dei telescopi nel paragrafo successivo.
 
-La scelta della tecnologia da utilizzare per il MPGD è oggi orientata verso le Thick-GEM, che, grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, sono molto appetibili per gli scopi di NUMEN.
+La scelta della tecnologia da utilizzare per il MPGD è oggi orientata verso le Thick-GEM, che, grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, sono adatte agli scopi di NUMEN.
 Tuttavia, diverse delle condizioni in cui questo tipo di rivelatori sono abitualmente utilizzati non sono attuabili per NUMEN. 
 In primo luogo, le Thick-GEM sono tipicamente utilizzate con gas a pressione atmosferica, mentre il FPD opera solitamente a pressioni di alcune decine di mbar.
 Inoltre, esse spesso sono utilizzate per particelle in condizioni di Minimum Ionizing Particle, mentre gli ioni di interesse per NUMEN saranno ben lontani da tali energie.
@@ -139,12 +139,10 @@ Inoltre, esse spesso sono utilizzate per particelle in condizioni di Minimum Ion
 Dunque, sebbene incoraggianti risultati siano stati recentemente ottenuti, questa soluzione richiede un'intensa attività di sviluppo.
 
 
-Una rappresentazione schematica del futuro FPD è mostrata in Figura~\ref{fig:nuovo_fpd}, dove sono raffigurate anche le superfici equipotenziali calcolate con il codice Poisson-Superfish: le linee quasi parallele indicano che nella regione di deriva il campo elettrico è piuttosto uniforme.
+Una rappresentazione schematica del futuro FPD è mostrata in Figura~\ref{fig:nuovo_fpd}, dove sono raffigurate anche le superfici equipotenziali calcolate con il codice Poisson-Superfish~\cite{superfish:87}: le linee quasi parallele indicano che nella regione di deriva il campo elettrico è piuttosto uniforme.
 
 
-Un prototipo di dimensioni ridotte, mostrato in Figura, è stato realizzato per individuare le migliori soluzioni in termini di geometria, tensioni applicate, MPGD ed elettronica.  
-
-\textcolor{red}{Aggiungere parte sul castelletto e la sua foto}
+Un prototipo di dimensioni ridotte, mostrato in Figura~\ref{fig:castelletto}, è stato realizzato per individuare le migliori soluzioni in termini di geometria, tensioni applicate, MPGD ed elettronica.
 
 
 
@@ -155,7 +153,11 @@ Un prototipo di dimensioni ridotte, mostrato in Figura, è stato realizzato per 
 	\caption{Rappresentazione schematica del previsto FPD. Le linee magenta indicano le superfici equipotenziali, mentre le frecce mostrano il corrispondente campo elettrico. Figura tratta da~\cite{cappuzzello:epja18}.} \label{fig:nuovo_fpd}
 \end{figure}
 
-
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/castelletto3.jpg}
+	\caption{Rappresentazione schematica del previsto FPD. Le linee magenta indicano le superfici equipotenziali, mentre le frecce mostrano il corrispondente campo elettrico. Figura tratta da~\cite{cappuzzello:epja18}.} \label{fig:castelletto}
+\end{figure}
 
 
 
@@ -293,16 +295,18 @@ Supportati da questi incoraggianti risultati, la scelta di utilizzare lo CsI sem
 
 
 
-\clearpage
+%\clearpage
 
 %\section{\iflanguage{italian}{La configurazione dell'apparato sperimentale nel test}{Experimetal apparatus setting}}
 \section{\iflanguage{italian}{Il test sperimentale sui telescopi}{Telescope detectors experimental test}}
 
 % ******** QUESTA ERA LA PARTE CHE SECONDO ME VA BENE PER INTRODURRE IL TEST
-Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla \textcolor{red}{ST-Microelectronics} (\textcolor{red}{giusto?}). Dal momento che tali rivelatori non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2 di NUMEN. Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto come stadio~$\Delta E$ di un telescopio SiC-CsI per l'identificazione in numero atomico dei prodotti di reazione. Lo scopo principale del test era, dunque, valutare la capacità di PID di questo sistema nella regione di interesse per NUMEN, confrontandola con quella accessibile con l'attuale apparato.
+Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla \textcolor{red}{ST-Microelectronics} (\textcolor{red}{giusto?}). Dal momento che tali rivelatori non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2 di NUMEN, valutandone la capacità di PID nella regione di interesse per NUMEN e confrontandola con quella accessibile con l'attuale apparato. 
+%Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto come stadio~$\Delta E$ di un telescopio SiC-CsI per l'identificazione in numero atomico dei prodotti di reazione. Lo scopo principale del test era, dunque, valutare la capacità di PID di questo sistema nella regione di interesse per NUMEN, confrontandola con quella accessibile con l'attuale apparato.
 
 
-Il test è stato svolto utilizzando un fascio di~\ce{^{20}Ne} a 20~MeV/u, incidente su \ce{^{197}Au} o \ce{^{12}C}, laddove i due bersagli avevano funzioni differenti: il primo serviva per la localizzazione dello scattering elastico, il secondo per favorire la formazione dei prodotti di reazione di interesse per NUMEN, ovvero quella dell'O, del F e del Ne.
+Il test è stato svolto utilizzando un fascio di~\ce{^{20}Ne} a 20~MeV/u, incidente su \ce{^{197}Au} o \ce{^{12}C}, laddove i due bersagli avevano funzioni differenti: il primo serviva per la localizzazione dello scattering elastico, il secondo per favorire la formazione dei prodotti di reazione di interesse.
+%, ovvero quella dell'O, del F e del Ne.
 
 
 
@@ -327,7 +331,7 @@ In occasione del test si è scelto di utilizzare soltanto due delle quattro pad 
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/sic.jpg}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/sic_etichette.png}
 	\caption{I rivelatori al carburo di silicio (SiC) utilizzati nel test: a sinistra il \emph{SiC~B}, a destra il \emph{SiC~A}.} \label{fig:sic}
 \end{figure}
 
@@ -347,7 +351,7 @@ Ciascuno dei due cristalli era accoppiato ad un fotodiodo $1 \times 1$~cm\ap{2} 
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/csi.jpg}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/csi_etichette.png}
 	\caption{Gli scintillatori allo ioduro di cesio (CsI) utilizzati nel test: a sinistra il \emph{CsI~B}, a destra il \emph{CsI~A}.} \label{fig:csi}
 \end{figure}
 
@@ -356,7 +360,7 @@ Ciascuno dei due cristalli era accoppiato ad un fotodiodo $1 \times 1$~cm\ap{2} 
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/telescopi.jpg}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/telescopi_etichette.png}
 	\caption{I due telescopi SiC-CsI utilizzati nel test: a sinistra il \emph{Tel~A}, a destra il \emph{Tel~B}.} \label{fig:telescopi}
 \end{figure}
 
