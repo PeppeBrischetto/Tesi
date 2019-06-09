@@ -165,7 +165,7 @@ Un prototipo di dimensioni ridotte, mostrato in Figura~\ref{fig:castelletto}, è
 	\caption{Rappresentazione schematica del previsto FPD. Le linee magenta indicano le superfici equipotenziali, mentre le frecce mostrano il corrispondente campo elettrico. Figura tratta da~\cite{cappuzzello:epja18}.} \label{fig:nuovo_fpd}
 \end{figure}
 
-\begin{figure} [!t]
+\begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/castelletto3.jpg}
 	\caption{Il prototipo del sistema di tracciamento previsto per NUMEN.} \label{fig:castelletto}
@@ -175,6 +175,7 @@ Un prototipo di dimensioni ridotte, mostrato in Figura~\ref{fig:castelletto}, è
 
 %\clearpage
 %\section{\iflanguage{italian}{Il test sui telescopi SiC-CsI}{Experimental setting for the test}}
+
 \section{\iflanguage{italian}{I telescopi SiC-CsI}{SiC-CsI telescope detectors}}
 
 %Ad Aprile 2018 è stato svolto un test sui primi due prototipi di telescopi SiC-CsI, allo scopo di confrontarne la risposta con il sistema attualmente utilizzato.
@@ -193,10 +194,18 @@ Un prototipo di dimensioni ridotte, mostrato in Figura~\ref{fig:castelletto}, è
 Quando si studiano le reazioni fra ioni pesanti, l'identificazione in numero atomico, massa e carica dei prodotti di reazione è una componente indispensabile, che, a seconda delle esigenze, viene eseguita adoperando vari metodi.
 %Una delle tecniche più diffuse prevede l'utilizzo di telescopi $\Delta E - E$.
 Come anticipato nel Paragrafo~\ref{sez:sistema_identif_part}, il progetto NUMEN ha individuato come possibile soluzione per la PID in condizioni di alti rate di particelle incidenti l'utilizzo di telescopi $\Delta E - E$, in cui il primo stadio è un rivelatore al SiC, mentre il secondo è uno scintillatore allo CsI.
-Vediamo più in dettaglio queste due tipologie di rivelatori.
+Il progetto al momento prevede la realizzazione di un muro composto da circa 1200 telescopi, arrangiati in 40 colonne.
+Ogni colonna è, a sua volta, costituita da 3 moduli contenenti una matrice di $2 \times 5$ telescopi ciascuno.
+In Figura~\ref{fig:muro_telescopi} è riportato uno schema di come dovrebbe apparire il futuro muro per la PID.
+
+Prima di proseguire, vediamo più in dettaglio le principali caratteristiche dei rivelatori al SiC e degli scintillatori allo CsI, sottolineando gli aspetti che  hanno guidato verso la loro scelta nell'ambito di NUMEN.
 
 
-
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/muro_telescopi.png}
+	\caption{Schema del muro di telescopi previsto per NUMEN.} \label{fig:muro_telescopi}
+\end{figure}
 
 
 
@@ -264,7 +273,7 @@ La simulazione svolta per questo lavoro di tesi ha tenuto in considerazione tali
 
 %I due prototipi di rivelatori al SiC utilizzati nel test presentavano caratteristiche differenti: in primo luogo avevano spessore diversi, poiché uno era spesso 10~$\mu$m, mentre l'altro 100~$\mu$m.
 
-
+%\vspace{0.4 cm}
 
 \subsection{\iflanguage{italian}{Gli scintillatori allo ioduro di cesio}{Caesium iodide scintillation detector}}
 
@@ -309,8 +318,10 @@ Supportati da questi incoraggianti risultati, la scelta di utilizzare lo CsI sem
 
 %\clearpage
 
+%\vspace{0.3 cm}
+
 %\section{\iflanguage{italian}{La configurazione dell'apparato sperimentale nel test}{Experimetal apparatus setting}}
-\section{\iflanguage{italian}{Il test sperimentale sui telescopi}{Telescope detectors experimental test}}
+\section{\iflanguage{italian}{Il test beam sui telescopi}{Telescope detectors experimental test}}
 
 % ******** QUESTA ERA LA PARTE CHE SECONDO ME VA BENE PER INTRODURRE IL TEST
 Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla \textcolor{red}{ST-Microelectronics} (\textcolor{red}{giusto?}). Dal momento che tali dispositivi non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2.
@@ -328,7 +339,7 @@ Il test è stato svolto ai LNS utilizzando un fascio di~\ce{^{20}Ne} a 20~AMeV, 
 
 
 
-%\vspace{1 cm}
+%\vspace{0.5 cm}
 
 
 \subsection{\iflanguage{italian}{I telescopi utilizzati nel test}{Telescope detectors used in the test}}
@@ -342,7 +353,7 @@ Entrambi i rivelatori avevano un'area attiva complessiva di $10 \times 10$~mm\ap
 %Un'ulteriore differenza riguardava gli spessori dei due rivelatori: mentre il SiC~A era spesso 10~$\mu$m con 100~$\mu$m di strato morto, il SiC~B aveva uno spessore di 100~$\mu$m con 350~$\mu$m di .
 Un'ulteriore differenza riguardava lo spessore della regione attiva dei due rivelatori: per il SiC~A era di 10~$\mu$m, mentre per il SiC~B misurava 100~$\mu$m.
 Infine, entrami i rivelatori avevano un substrato morto, che per il SiC~A era spesso 100~$\mu$m, invece per il SiC~B aveva uno spessore di~350~$\mu$m.
-In occasione del test si è scelto di utilizzare soltanto due delle quattro pad del SiC~B, le quali sono state cortocircuitate tra loro in modo tale che questo rivelatore avesse una superficie sensibile di $10 \times 5$~mm\ap{2}.
+In occasione del test si è scelto di utilizzare soltanto due delle quattro pad del SiC~B, le quali sono state cortocircuitate tra loro in modo che questo rivelatore avesse una superficie sensibile di $10 \times 5$~mm\ap{2}.
 
 
 
@@ -408,7 +419,8 @@ Questi avevano lo scopo di fornire un riferimento durante l'acquisizione dei dat
 
 
 
-\subsection{\iflanguage{italian}{Configurazione dell'apparato sperimentale}{Setting of the experimental apparatus}}
+%\subsection{\iflanguage{italian}{Configurazione dell'apparato sperimentale}{Setting of the experimental apparatus}}
+\subsection{\iflanguage{italian}{Le catene elettroniche del test}{The electronic chains used in the test}}
 
 
 %La catena elettronica 
@@ -432,7 +444,7 @@ Dunque, nel seguito verranno descritte soltanto le due catene elettroniche relat
 %Nella catena elettronica standard, di cui in Figura si riporta uno schema, i segnali provenienti dai due stadi del telescopio erano rispettivamente inviati a due preamplificatori (PA) di carica~\cite{boiano:ieee08} con sensibilità di 45~mV/MeV.
 
 \paragraph{Elettronica standard} 
-Nella catena elettronica standard, di cui in Figura si riporta uno schema, il segnale proveniente dal SiC~A era inviato ad un preamplificatore (PA) di carica~\cite{boiano:ieee08} con sensibilità di 45~mV/MeV.
+Nella catena elettronica standard, di cui in Figura~\ref{fig:elettronica_standard} si riporta uno schema, il segnale proveniente dal SiC~A era inviato ad un preamplificatore (PA) di carica~\cite{boiano:ieee08} con sensibilità di 45~mV/MeV.
 Questo, oltre a raccogliere ed integrare il segnale, era utilizzato anche per fornire la tensione di alimentazione al rivelatore, pari a $-50$~V.
 %L'output del PA era collegata ad un amplificatore MEGAMP.
 %L'uscita del MEGAMP era inviata all'ADC per l'acquisizione.
@@ -454,21 +466,54 @@ Per quanto riguarda il CsI~A, il segnale di output del fotodiodo era raccolto da
 La tensione di alimentazione del fotodiodo, pari a $-70$~V, era fornita, anche in questo caso, tramite il PA.
 L'uscita del PA era inviata al MEGAMP, da cui venivano estratti due segnali: quello analogico era inviato direttamente all'ADC per l'acquisizione dell'energia residua $E_{resid}$, quello del CFD veniva utilizzato per dare il trigger all'acquisizione.
 
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/elettronica_standard.png}
+	\caption{L'elettronica \emph{standard} associata al Tel~A.} \label{fig:elettronica_standard}
+\end{figure}
 
+%\clearpage
 
 
 \paragraph{Elettronica VMM3} 
-Nella catena elettronica VMM3, il cui schema è illustrato in Figura~\ref{fig:elettronica_vmm}, il segnale del SiC~A era inviato direttamente al chip VMM3, il quale racchiude in sé un PA da $3 \div 6$~mV/fC e un amplificatore formatore con shaping time da 200~ns.
-Tale chip possiede 64 canali e, per ogni canale, è capace di fornire informazioni sull'ampiezza del picco e sul timing del segnale. 
+%Nella catena elettronica VMM3, il cui schema è illustrato in Figura~\ref{fig:elettronica_vmm}, il segnale del SiC~A era inviato direttamente al chip VMM3, il quale racchiudeva in sé un PA da $3 \div 6$~mV/fC e un amplificatore formatore con shaping time da 200~ns.
+%
+Nella catena elettronica VMM3, il cui schema è illustrato in Figura~\ref{fig:elettronica_vmm}, il segnale del SiC~A era inviato direttamente al chip VMM3, il quale, sviluppato in origine per l'esperimento ATLAS del CERN, è stato adattato per gli scopi di NUMEN.
+Possedendo un'architettura a 64~canali, esso consente una più semplice gestione di apparati con un grande numero di canali.
+%
+%
+%Tale chip possiede 64 canali e, per ogni canale, è capace di fornire informazioni sull'ampiezza del picco e sul timing del segnale. 
 %La sensibilità del PA poteva essere selezionata nel range $3 \div 6$~mV/fC. 
-Esso 
+%Tale chip possedeva un'architettura a 64~canali, consentendo, dunque, una più semplice gestione di apparati con un grande numero di canali.
+Dal momento che il futuro muro per la PID prevede l'utilizzo di circa 1200 telescopi, la scelta di un'elettronica di front-end con questo tipo di caratteristiche è essenziale in termini di facilità di controllo dei dispositivi, di economia degli spazi e di minore surriscaldamento delle apparecchiature.
+%Per ogni canale, il chip poteva restituire l'informazione sul canale di provenienza, sull'ampiezza del picco e sul timing del segnale.
+Per ogni canale, il chip racchiude in sè un PA da $3 \div 6$~mV/fC e un amplificatore formatore con shaping time da 200~ns.
+La scheda è, inoltre, dotata di un'uscita monitor, attraverso la quale è possibile osservare il segnale analogico formato dal circuito amplificatore.
 
+Il VMM3 era collegato alla scheda di read-out System On Module (SOM) della National Instruments~\cite{national_instruments}.
+%, che univa un efficace Field Programmable Gate Array (FPGA) ad un potente processore.
+%Il compito principale della SOM era la lettura veloce dei segnali provenienti dal VMM3
+Nella prospettiva della Fase~4, la SOM deve assicurare la lettura veloce dei segnali provenienti dal VMM3 e il trasferimento rapido dei dati al sistema di acquisizione tramite una connessione Gb~Ethernet.
+Tali obiettivi saranno possibili grazie alla struttura della SOM, che unisce un efficace Field Programmable Gate Array (FPGA) ad un potente processore.
+In Figura~\ref{fig:vmm+som} è riportata una foto del chip VMM3 e della scheda SOM utilizzati nel test.
 
+Dal momento che all'oscilloscopio si era notato che il segnale di output della SOM era in anticipo rispetto al gate, il primo era inviato ad una linea di ritardo passivo da 140~ns. Infine, il segnale giungeva all'ADC per l'acquisizione.
+
+%Il segnale di output della SOM, opportunamente ritardato di 140~ns, era inviato all'ADC, dove veniva acquisito.
+
+Per quanto concerne il CsI~A, il segnale del fotodiodo era inviato al VMM3, da cui, in questo caso, venivano estratti due segnali: uno, analogico, era dato in input alla SOM, l'altro, logico, veniva utilizzato per la formazione del gate. 
+Poiché l'ADC utilizzata richiedeva in ingresso un gate negativo mentre il segnale logico prodotto dalla SOM era positivo, quest'ultimo era prima inviato ad un modulo Fan~in/Fan~out, da cui si prelevava l'uscita invertente (INV).
+Dal momento che l'inversione del segnale richiedeva del tempo di elaborazione, il segnale analogico risultava in anticipo rispetto al gate. Anche in questo caso è stato, dunque, necessario ritardare opportunamente il segnale di output della SOM prima di inviarlo all'ADC.
 
 
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/elettronica_vmm.png}
-	\caption{L'\emph{elettronica~VMM3} associata al Tel~A.} \label{fig:elettronica_vmm}
+	\caption{L'elettronica \emph{VMM3} associata al Tel~A.} \label{fig:elettronica_vmm}
 \end{figure}
 
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/vmm_som_etichette.png}
+	\caption{Il chip VMM3 e la scheda SOM utilizzati nel test.} \label{fig:vmm+som}
+\end{figure}
