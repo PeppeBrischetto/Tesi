@@ -7,7 +7,7 @@ Poiché la descrizione di tale apparato non costituisce l'argomento primario di 
 %Nella prima parte di questo capitolo vengono illustrate le principali caratteristiche dell'apparato sperimentale attualmente in uso ai LNS-INFN nell'ambito della Fase~2 del progetto NUMEN.
 %Nella seconda parte viene descritta la configurazione dell'apparato adottata in occasione del test sui telescopi SiC-CsI svolto ad Aprile 2018, sottolineando le differenze rispetto a quella consueta.
 Nell'ottica della Fase~4, l'intero apparato sperimentale subirà un importante upgrade, che, in particolare, modificherà radicalmente l'attuale sistema di rivelazione.
-Nella seconda parte del capitolo viene, dunque, illustrato il progetto del nuovo FPD, soffermandosi sulla descrizione dei rivelatori che costituiranno i telescopi SiC-CsI del futuro muro dedicato alla PID.
+Nella seconda parte del capitolo viene, dunque, illustrato il progetto del nuovo Focal Plane Detector (FPD), soffermandosi sulla descrizione dei rivelatori che costituiranno i telescopi SiC-CsI del futuro muro dedicato alla~PID.
 
 %Infine, nella terza parte vengono descritti i due prototipi di telescopio SiC-CsI, su cui ad Aprile~2018 è stato svolto un importante test al fine di verificare
 
@@ -24,7 +24,7 @@ Ciò lo rende uno strumento ideale per l'analisi di eventi caratterizzati da sez
 Inoltre, esso consente di effettuare misure fino a zero gradi, comprendendo, dunque, la regione angolare di massimo interesse per lo studio del DCE.
 
 La caratteristica che rende MAGNEX uno strumento unico è l'implementazione di una innovativa tecnica di ricostruzione delle traiettorie degli ioni, che consente di correggere le inevitabili aberrazioni originate dalla grande accettanza del dispositivo.
-Dunque, a differenza di altri spettrometri magnetici, per MAGNEX è importante determinare non soltanto il punto di impatto sul piano focale ma anche la traiettoria completa. Ciò significa che è necessario misurare quattro parametri: una coppia, chiamata $(x_{foc}, y_{foc})$, individua il punto di impatto, l'altra, indicata con $(\theta_{foc}, \phi_{foc})$, si riferisce rispettivamente all'angolo orizzontale e a quello verticale.
+Dunque, a differenza di altri spettrometri magnetici, per MAGNEX è importante determinare non soltanto il punto di impatto sul piano focale ma anche la traiettoria completa. Ciò significa che è necessario misurare quattro parametri: una coppia, chiamata $(x_{foc}, y_{foc})$, individua il punto di impatto sul piano focale, l'altra, indicata con $(\theta_{foc}, \phi_{foc})$, si riferisce rispettivamente all'angolo orizzontale e a quello verticale della traccia al piano focale.
 %Nel paragrafo successivo verrà esplicato in che modo vengono misurati tali parametri.
 Il modo in cui tali parametri vengono misurati sarà esplicato nel paragrafo successivo.
 
@@ -52,7 +52,7 @@ In Figura~\ref{fig:magnex} è mostrata una foto di MAGNEX, in cui è possibile n
 L'attuale FPD di MAGNEX, la cui rappresentazione schematica è riportata in Figura~\ref{fig:fpd}, è un sistema di rivelazione ibrido, costituito da un tracciatore a gas a bassa pressione e da un muro di rivelatori al silicio.
 Esso è posizionato a 1.91~m dall'uscita del dipolo e, al fine di minimizzare gli effetti dovuti alle aberrazioni cromatiche~\cite{cunsolo:nima01}, è inclinato di 59.2\textdegree{} rispetto ad un piano perpendicolare all'asse ottico.
 %Una finestra di mylar spessa 1.5~$\mu$m è utilizzata per contenere il gas, solitamente costituito da N35 isobutano, segnando l'ingresso nel volume attivo.
-L'ingresso nel volume attivo è segnato da una finestra di mylar spessa 1.5~$\mu$m, la quale è utilizzata per contenere il gas, solitamente costituito da N35 isobutano.
+L'ingresso nel volume attivo è una finestra di mylar spessa 1.5~$\mu$m, la quale è utilizzata per contenere il gas, solitamente costituito da N35 isobutano a pressioni di poche decine di~mbar.
 
 
 
@@ -66,16 +66,17 @@ L'ingresso nel volume attivo è segnato da una finestra di mylar spessa 1.5~$\mu
 Il tracciatore a gas, che consente la ricostruzione tridimensionale della traiettoria degli ioni, è formato da sei fili proporzionali (DC\ped{\textit{i}}) e da un anodo segmentato in sei file di pad, disposte in modo che sopra ogni filo ci sia una fila di pad.
 Come descritto più avanti, i fili, sfruttando il principio di lavoro delle camere a deriva, danno una misura di sei posizioni verticali ($Y_i$), mentre le pad permettono di determinare sei posizioni orizzontali ($X_i$).
 %Una griglia di Frisch è posta al di sotto dei fili, in quanto questi vengono anche utilizzati per misurare l'energia persa dagli ioni nel gas.
-Dal momento che i fili vengono anche utilizzati per misurare l'energia persa dagli ioni nel gas, una griglia di Frisch è posta al di sotto di essi. (\textcolor{red}{Spiego a che serve la griglia?})
+Dal momento che i fili vengono anche utilizzati per misurare l'energia persa dagli ioni nel gas, una griglia di Frisch è posta al di sotto di essi, in modo da rendere la misura dell'energia indipendente dalla posizione della traccia.
 
 
 
 
-Il muro di rivelatori al silicio è formato da 60 pad, organizzate in 20 colonne da 3 rivelatori ciascuna. (\textcolor{red}{Aggiungo qualche dettaglio in più?})
+Il muro di rivelatori al silicio è formato da 60 rivelatori, organizzate in 20 colonne da 3 elementi ciascuna. 
+Ogni rivelatore ha un'area attiva di $70 \times 50$~mm\ap{2} ed uno spessore di 500~$\mu$m.
 %Ogni pad ha un'area attiva di $70 \times 50$~mm\ap{2} ed è spessa 500~$\mu$m, sufficienti per fermare i prodotti di reazioni nel range energetico di interesse. 
 Essi vengono utilizzati per fermare gli ioni, misurandone l'energia residua e producendo il segnale di trigger per l'acquisizione. 
 
-Quando una particella carica, attraversando la finestra di mylar, entra nel volume attivo, perde energia nel gas producendo coppie elettrone-ione positivo, le quali, sotto l'effetto di un campo elettrico uniforme, migrano rispettivamente verso la griglia di Frisch e il catodo. 
+Quando una particella carica, attraversando la finestra di mylar, entra nel volume attivo, perde energia nel gas producendo coppie elettrone-ione, le quali, sotto l'effetto di un campo elettrico uniforme, migrano rispettivamente verso la griglia di Frisch e il catodo. 
 %mentre gli elettroni diffondono verso la griglia di Frisch, con una velocità che per questi ultimi è di circa $3 - 5 $~cm/$\mu$s. 
 %La presenza di un campo elettrico costante provoca 
 %La velocità di deriva tipica degli elettroni è di $3 - 5 $~cm/$\mu$s
@@ -88,7 +89,7 @@ Poiché ciò avviene per ciascuno dei sei fili, si hanno sei segnali di perdita 
 
 
 
-La stessa valanga induce sulle pad una distribuzione di carica, di cui si calcola, tramite un apposito software, il centro di gravità. Anche in questo caso l'operazione si ripete per le sei file di pad, così che vengono estratte sei misure di posizioni orizzontali~$X_i$.
+La stessa valanga induce sulle pad una distribuzione di carica, di cui si calcola il centro di gravità. Anche in questo caso l'operazione si ripete per le sei file di pad, così che vengono estratte sei misure di posizioni orizzontali~$X_i$.
 A questo punto, effettuando un fit lineare sulle sei posizioni~$X_i$, si ottengono $x_{foc}$ e $\theta_{foc}$ rispettivamente dall'intercetta e dal coefficiente angolare della retta.
 
 Superata la regione del tracciatore, la particella carica arriva al muro dei rivelatori al silicio, dove si ferma producendo un segnale proporzionale alla sua energia residua~$E_{resid}$. 
@@ -131,7 +132,16 @@ Il suo principio di lavoro è il seguente: una particella carica incidente, dopo
 %Il campo elettrico uniforme fra catodo e anodo guida gli elettroni primari verso l'elemento di moltiplicazione
 Sotto l'azione del campo elettrico uniforme presente fra catodo e anodo, gli elettroni primari si muovono con velocità costante nella regione di deriva fino a raggiungere il MPGD.
 Analogamente a quanto visto nel Paragrafo~\ref{sez:fpd}, dalla misura del tempo di deriva degli elettroni primari è possibile estrarre l'informazione sulla posizione e sull'angolo verticali.
-Giunti al MPGD, gli elettroni primari danno origine ad una moltiplicazione a valanga, che risulta nella formazione di un jet elettronico. 
+%Giunti al MPGD, gli elettroni primari danno origine ad una moltiplicazione a valanga, che risulta nella formazione di un jet elettronico. 
+In seguito gli elettroni primari giungono al MPGD, che, come anticipato nella Sezione~\ref{sez:upgrade_apparato}, dovrebbe essere basato sulla tecnologia delle Thick-GEM.
+Questi rivelatori sono costituiti da una pila di fogli di materiale isolante (solitamente kapton) rivestiti su entrambe le facce con uno strato di metallo.
+I fogli, tra loro distanti pochi~mm, sono immersi nel gas.
+Ogni foglio presenta una trama di fori, il cui diametro è tipicamente compreso fra $ 0.3 \div 1$~mm.
+%Una differenza di potenziale è applicata tra le due superfici metalliche, in modo che gli elettroni vengano guidati verso i fori, dove, incontrando un campo elettrico molto intenso, viene prodotta una moltiplicazione a valanga.
+Quando gli elettroni arrivano al primo foglio, la differenza di potenziale applicata tra le due superfici metalliche li guida verso i fori, dove il campo elettrico molto intenso produce una moltiplicazione a cascata.
+A questo punto, la valanga viene indirizzata da un'ulteriore differenza di potenziale verso il foglio successivo, dando luogo ad una seconda moltiplicazione.
+Il processo si ripete per i diversi stadi della Thick-GEM, così che dagli elettroni primari si origina un jet elettronico. 
+
 Tale jet viene guidato dal campo elettrico verso la scheda segmentata di readout, dove induce su delle strip un impulso di carica. 
 Di conseguenza, note le strip coinvolte, è possibile misurare la posizione e l'angolo orizzontali. 
 
@@ -144,7 +154,8 @@ Dopo aver attraversato il tracciatore a gas, la particella carica raggiunge il m
 %Poiché la simulazione svolta per questo lavoro di tesi verte principalmente su tale argomento,
 Poiché l'argomento principale del presente lavoro di tesi consiste nella simulazione di tale sistema di identificazione, per maggiore chiarezza si è preferito discuterne le caratteristiche nella sezione successiva.
 
-La scelta della tecnologia da utilizzare per il MPGD è oggi orientata verso le Thick-GEM, che, grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, sono adatte agli scopi di NUMEN.
+%La scelta della tecnologia da utilizzare per il MPGD è oggi orientata verso le Thick-GEM, che, grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, sono adatte agli scopi di NUMEN.
+Grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, le Thick-GEM sono adatte agli scopi di NUMEN.
 Tuttavia, diverse delle condizioni in cui questo tipo di rivelatori è abitualmente impiegato non sono attuabili per NUMEN. 
 In primo luogo, le Thick-GEM sono tipicamente utilizzate con gas a pressione atmosferica, mentre il FPD opera solitamente a pressioni di alcune decine di mbar.
 Inoltre, esse spesso sono utilizzate per rivelare particelle in condizioni di Minimum Ionizing Particle, mentre gli ioni di interesse per NUMEN saranno ben lontani da tali energie.
@@ -226,32 +237,52 @@ Prima di proseguire, vediamo più in dettaglio le principali caratteristiche dei
 %I dispositivi al SiC costituiscono oggi una promettente realtà nel campo dei rivelatori per la fisica, 
 Grazie alle sue interessanti proprietà, il SiC costituisce oggi una promettente realtà nel campo della realizzazione di rivelatori per la fisica, configurandosi come una potenziale alternativa al silicio nelle applicazioni che richiedono una grande resistenza alle radiazioni.
 %La larghezza della sua gap, quasi tripla rispetto a quella del silicio, se da un lato aumenta l'energia media per la produzione di una coppia elettrone-lacuna, dall'altro riduce il numero di portatori di carica generati per agitazione termica, mantenendo, dunque, un ottimo rapporto segnale-rumore.
+%
 La larghezza della sua gap, quasi tripla rispetto a quella del silicio, se da un lato riduce il numero di portatori di carica generati per agitazione termica, dall'altro aumenta l'energia media per la produzione di una coppia elettrone-lacuna. 
-Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio, generando, dunque, un segnale di ampiezza inferiore.
+%
+%% MODIFICHIAMO QUESTA PARTE
+%Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio, generando, dunque, un segnale di ampiezza inferiore.
+%Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio.
+Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio.
+Questo ha due diverse conseguenze: in primis, il segnale generato presenta un'ampiezza inferiore; in secondo luogo, peggiora la risoluzione, in quanto la sua componente statistica è inversamente proporzionale alla radice quadrata del numero dei portatori~\cite{knoll:10}.
+Se il primo problema può essere risolto aumentando l'amplificazione del segnale, il secondo è intrinseco del rivelatore.
+%, dando origine a due diversi problemi: in primo luogo, il segnale generato presenta un'ampiezza inferiore, 
+%di conseguenza, 
+%di conseguenza, non soltanto il segnale generato presenta un'ampiezza inferiore, ma la risoluzione energetica 
+%Di conseguenza, dal momento che la componente statistica della risoluzione è inversamente proporzionale alla radice quadrata del numero dei portatori~\cite{knoll:10}, i rivelatori al SiC hanno una risoluzione  
+%
 %Dunque, i rivelatori al SiC generano segnali di ampiezza inferiore rispetto a quelli dei rivelatori al silicio.
-Tuttavia, gli ioni pesanti di interesse per NUMEN dovrebbero generare un numero elevato di coppie elettrone-lacuna, così che l'ampiezza del segnale dovrebbe essere sufficientemente grande.
+%
+%% CASSIAMO QUESTA PARTE
+%Tuttavia, gli ioni pesanti di interesse per NUMEN dovrebbero generare un numero elevato di coppie elettrone-lacuna, così che l'ampiezza del segnale dovrebbe essere sufficientemente grande.
+%
+%
 %Inoltre, i rivelatori al SiC hanno un ottimo rapporto segnale-rumore anche a temperature piuttosto alte, mentre i rivelatori al silicio hanno, in alcuni casi, bisogno di un sistema di raffreddamento.
-Un ulteriore vantaggio rispetto ai rivelatori al silicio riguarda il comportamento a temperature piuttosto alte: mentre i rivelatori al SiC continuano ad avere un ottimo rapporto segnale-rumore, i rivelatori al silicio mostrano un aumento della corrente inversa, rendendo a volte necessario l'utilizzo di sistemi di raffreddamento.
-In aggiunta, i rivelatori al SiC esibiscono risoluzioni energetiche confrontabili con quelle dei dispositivi al silicio; recenti test hanno, infatti, dimostrato che con un rivelatore da 100~$\mu$m di spessore è possibile ottenere una risoluzione energetica dello 0.8\%~FWHM per le particelle $\alpha$ dell'\ce{^{241}Am} a 5486~keV~\cite{tudisco:sensors18}.
+
+Oltre alla resistenza alle radiazioni, un ulteriore vantaggio rispetto ai rivelatori al silicio riguarda il comportamento a temperature piuttosto alte: mentre i rivelatori al SiC continuano ad avere un ottimo rapporto segnale-rumore, i rivelatori al silicio mostrano un aumento della corrente inversa, rendendo a volte necessario l'utilizzo di sistemi di raffreddamento.
+In aggiunta, i rivelatori al SiC esibiscono risoluzioni energetiche confrontabili con quelle dei dispositivi al silicio; recenti test hanno, infatti, dimostrato che con un rivelatore da 100~$\mu$m di spessore è possibile ottenere una risoluzione energetica dello 0.8\%~FWHM per le particelle $\alpha$ dell'\ce{^{241}Am} a 5486~keV~\cite{tudisco:sensors18}, mentre con i rivelatori al silicio per le stesse particelle si possono raggiungere valori dello 0.2\% FWHM~\cite{steinbauer:nimb94}.
 
 
 Come la maggior parte dei rivelatori a semiconduttore, i rivelatori al SiC sono costituiti da una giunzione p-n, polarizzata inversamente per aumentare l'estensione della regione svuotata e per migliorare l'efficienza di raccolta dei portatori di carica.
 Quando una particella carica attraversa il rivelatore, perde energia generando coppie elettrone-lacuna, le quali, in presenza di un campo elettrico, si muovono verso gli elettrodi, producendo un segnale elettrico proporzionale all'energia depositata.
 
 %La resistenza alle radiazioni dei rivelatori al SiC è stata indagata sia attraverso simulazioni Monte Carlo sia per mezzo di test sperimentali. 
-Poiché la resistenza alle radiazioni è l'aspetto di maggiore importanza per la scelta dei dispositivi da utilizzare per NUMEN, alcune simulazioni Monte Carlo sono state implementate allo scopo di darne una stima nel caso dei rivelatori al SiC. 
-In Figura~\ref{fig:sic_simul_resist_radiaz} (a sinistra) sono riportati i risultati della produzione di vacanze generata da protoni e \ce{^{18}O} in un rivelatore da 100~$\mu$m.
-Come si può notare, i difetti causati dagli ioni di ossigeno sono due ordini di grandezza maggiori di quelli indotti dai protoni.
-Un andamento simile si osserva anche per la corrente inversa, mostrata in Figura~\ref{fig:sic_simul_resist_radiaz} (a destra). Sebbene questa aumenti di diversi ordini di grandezza dopo alte dosi di irradiazione, può essere ancora tollerabile, essendo cinque ordini di grandezza inferiore a quella del silicio.
+%Poiché la resistenza alle radiazioni è l'aspetto di maggiore importanza per la scelta dei dispositivi da utilizzare per NUMEN, alcune simulazioni Monte Carlo sono state implementate allo scopo di darne una stima nel caso dei rivelatori al SiC. 
+%In Figura~\ref{fig:sic_simul_resist_radiaz} (a sinistra) sono riportati i risultati della produzione di vacanze generata da protoni e \ce{^{18}O} in un rivelatore da 100~$\mu$m.
+%Come si può notare, i difetti causati dagli ioni di ossigeno sono due ordini di grandezza maggiori di quelli indotti dai protoni.
+%Un andamento simile si osserva anche per la corrente inversa, mostrata in Figura~\ref{fig:sic_simul_resist_radiaz} (a destra). Sebbene questa aumenti di diversi ordini di grandezza dopo alte dosi di irradiazione, può essere ancora tollerabile, essendo cinque ordini di grandezza inferiore a quella del silicio.
 
-La resistenza alle radiazioni di rivelatori al SiC di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) è stata analizzata in un test in cui i dispositivi erano irraggiati con ioni pesanti~\cite{raciti:npa10}. 
+%La resistenza alle radiazioni di rivelatori al SiC di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) è stata analizzata in un test in cui i dispositivi erano irraggiati con ioni pesanti~\cite{raciti:npa10}. 
+Dal momento che la resistenza alle radiazioni è l'aspetto di maggiore importanza per la scelta dei dispositivi da utilizzare per NUMEN, è stata svolta un'attenta ricerca bibliografica per cercare dati sperimentali sul comportamento del SiC quando viene sottoposto ad elevate dosi di radiazioni.
+%Da tale ricerca è emerso che su rivelatori di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) è stato condotto un test in cui i dispositivi erano irraggiati con ioni pesanti~\cite{raciti:npa10}.
+Dalla ricerca è emerso che diversi studi sono stati condotti su tale argomento, i quali affermano concordemente che la robustezza del SiC è, a parità di condizioni, molto maggiore di quella del silicio~\cite{garcialopez:nimb16, nava:nima03}; in particolare, è stato realizzato un test su rivelatori di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) in cui i dispositivi erano irraggiati con ioni pesanti~\cite{raciti:npa10}.
 I risultati hanno dimostrato che tali rivelatori sono in grado di sostenere fluenze dell'ordine di $10^{14}$  $\mbox{ioni}/\mbox{cm}^2$, soddisfacendo il principale requisito di NUMEN.
 
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/sic_simul_resist_radiaz.png}
-	\caption{ Simulazioni Monte Carlo del numero di dislocamenti (a sinistra) e della corrente inversa (a destra) generati in un rivelatore al SiC da 100~$\mu$m in funzione della fluenza di protoni e \ce{^{18}O}. Figura tratta da~\cite{cappuzzello:epja18}.} \label{fig:sic_simul_resist_radiaz}
-\end{figure}
+%\begin{figure} [!t]
+%	\centering
+%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/sic_simul_resist_radiaz.png}
+%	\caption{ Simulazioni Monte Carlo del numero di dislocamenti (a sinistra) e della corrente inversa (a destra) generati in un rivelatore al SiC da 100~$\mu$m in funzione della fluenza di protoni e \ce{^{18}O}. Figura tratta da~\cite{cappuzzello:epja18}.} \label{fig:sic_simul_resist_radiaz}
+%\end{figure}
 
 
 
@@ -326,7 +357,7 @@ Supportati da questi incoraggianti risultati, la scelta di utilizzare lo CsI sem
 \section{\iflanguage{italian}{Il test beam sui telescopi}{Telescope detectors experimental test}}
 
 % ******** QUESTA ERA LA PARTE CHE SECONDO ME VA BENE PER INTRODURRE IL TEST
-Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla \textcolor{red}{ST-Microelectronics} (\textcolor{red}{giusto?}). Dal momento che tali dispositivi non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2.
+Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN sono stati completati e resi disponibili dalla ST-Microelectronics. Dal momento che tali dispositivi non sono ancora uno standard nel mondo della fisica ma rappresentano una tecnologia di frontiera, è stato condotto un test per analizzarne la risposta nelle condizioni sperimentali tipiche della Fase~2.
 %; una buona risoluzione energetica dello stadio $\Delta E$ di un telescopio è, infatti, essenziale per avere delle buone capacità di PID.
 
 Lo scopo principale del test era valutare la capacità di PID dei telescopi SiC-CsI per gli ioni di interesse, confrontandola con quella dell'attuale sistema basato sulla combinazione di fili proporzionali e rivelatori al silicio.
@@ -354,7 +385,7 @@ I due prototipi di rivelatori al SiC utilizzati nel test sono mostrati in Figura
 Entrambi i rivelatori avevano un'area attiva complessiva di $10 \times 10$~mm\ap{2}, laddove ogni pad del SiC~B aveva un'estensione di $5 \times 5$~mm\ap{2}.
 %Un'ulteriore differenza riguardava gli spessori dei due rivelatori: mentre il SiC~A era spesso 10~$\mu$m con 100~$\mu$m di strato morto, il SiC~B aveva uno spessore di 100~$\mu$m con 350~$\mu$m di .
 Un'ulteriore differenza riguardava lo spessore della regione attiva dei due rivelatori: per il SiC~A era di 10~$\mu$m, mentre per il SiC~B misurava 100~$\mu$m.
-Infine, entrami i rivelatori avevano un substrato morto, che per il SiC~A era spesso 100~$\mu$m, invece per il SiC~B aveva uno spessore di~350~$\mu$m.
+Infine, entrambi i rivelatori avevano un substrato morto, che per il SiC~A era spesso 100~$\mu$m, invece per il SiC~B aveva uno spessore di~350~$\mu$m.
 In occasione del test si è scelto di utilizzare soltanto due delle quattro pad del SiC~B, le quali sono state cortocircuitate tra loro in modo che questo rivelatore avesse una superficie sensibile di $10 \times 5$~mm\ap{2}.
 
 
@@ -402,7 +433,8 @@ Ciascuno scintillatore era accoppiato tramite grasso ottico ad un fotodiodo di a
 
 Il SiC~A e il SiC~B sono stati assemblati, rispettivamente, con il CsI~A e il CsI~B, così da formare i due telescopi (\emph{Tel~A} e \emph{Tel~B}) mostrati in Figura~\ref{fig:telescopi}.
 %; in particolare, mentre nel Tel~A il SiC~A era \emph{reverse mounted}, nel Tel~B il SiC~B era \emph{direct mounted} (\textcolor{red}{va bene detto così?}).
-Al fine di ottenere una migliore correlazione $\Delta E - E$, il SiC~A è stato montato in configurazione \emph{reverse}, mentre ciò non è stato possibile per il SiC~B a causa del maggiore substrato morto che avrebbe fermato gli ioni.
+Al fine di ottenere una migliore correlazione $\Delta E - E$, il SiC~A è stato montato in configurazione \emph{reverse}, ovvero rivolgendo alle particelle incidenti prima il substrato morto e poi la regione sensibile.
+Ciò non è stato possibile per il SiC~B a causa del maggiore substrato morto che avrebbe fermato gli ioni.
 %I due telescopi, fissati su due delle strutture che solitamente ospitano i rivelatori al silicio, sono stati posti nel FPD secondo lo schema riportato in Figura.
 %Come si può notare, quattro rivelatori al silicio sono stati montati in modo simmetrico rispetto al SiC~A, in modo da avere un utile riferimento sia per la fase di acquisizione sia per l'analisi offline.
 %Come si può notare, a sinistra e a destra del Tel~A sono stati montati due rivelatori al silicio, in modo da avere un utile riferimento sia per la fase di acquisizione sia per l'analisi offline.
