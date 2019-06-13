@@ -15,6 +15,7 @@ Infine, nella terza parte vengono presentate le condizioni sperimentali in cui �
 
 %del test sui telescopi SiC-CsI svolto ad Aprile~2018, esponendone le motivazioni, descrivendo la configurazione dell'apparato adottata e sottolineandone le differenze rispetto a quella consueta.
 
+%\vspace{0.5 cm}
 
 \section{\iflanguage{italian}{Lo spettrometro magnetico MAGNEX}{MAGNEX magnetic spectrometer}}
 
@@ -22,13 +23,8 @@ Lo spettrometro magnetico MAGNEX è un dispositivo ottico a grande accettanza, c
 Grazie alle sue peculiarità,  MAGNEX riesce ad offrire, in un angolo solido molto grande e in un ampio range energetico, un'ottima risoluzione in energia, angolo e massa.
 Ciò lo rende uno strumento ideale per l'analisi di eventi caratterizzati da sezioni d'urto molto basse, come è già stato dimostrato in~\cite{cappuzzello:epja16,pereira:plb12,oliveira:jpg13}.
 Inoltre, esso consente di effettuare misure fino a zero gradi, comprendendo, dunque, la regione angolare di massimo interesse per lo studio del DCE.
+In Figura~\ref{fig:magnex} è mostrata una foto dello spettrometro, in cui è possibile notare, andando da sinistra verso destra, la camera di scattering, il quadrupolo, il dipolo e il~FPD.
 
-La caratteristica che rende MAGNEX uno strumento unico è l'implementazione di una innovativa tecnica di ricostruzione delle traiettorie degli ioni, che consente di correggere le inevitabili aberrazioni originate dalla grande accettanza del dispositivo.
-Dunque, a differenza di altri spettrometri magnetici, per MAGNEX è importante determinare non soltanto il punto di impatto sul piano focale ma anche la traiettoria completa. Ciò significa che è necessario misurare quattro parametri: una coppia, chiamata $(x_{foc}, y_{foc})$, individua il punto di impatto sul piano focale, l'altra, indicata con $(\theta_{foc}, \phi_{foc})$, si riferisce rispettivamente all'angolo orizzontale e a quello verticale della traccia al piano focale.
-%Nel paragrafo successivo verrà esplicato in che modo vengono misurati tali parametri.
-Il modo in cui tali parametri vengono misurati sarà esplicato nel paragrafo successivo.
-
-In Figura~\ref{fig:magnex} è mostrata una foto di MAGNEX, in cui è possibile notare, andando da sinistra verso destra, la camera di scattering, il quadrupolo, il dipolo e il~FPD.
 
 \begin{figure} [!t]
 	\centering
@@ -37,8 +33,24 @@ In Figura~\ref{fig:magnex} è mostrata una foto di MAGNEX, in cui è possibile n
 \end{figure}
 
 
+La caratteristica che rende MAGNEX uno strumento unico è l'implementazione di una innovativa tecnica di ricostruzione delle traiettorie degli ioni, che consente di correggere le inevitabili aberrazioni originate dalla grande accettanza del dispositivo.
+Dunque, a differenza di altri spettrometri magnetici, per MAGNEX è importante determinare non soltanto il punto di impatto sul piano focale ma anche la traiettoria completa. Ciò significa che è necessario misurare quattro parametri: una coppia, chiamata $(x_{foc}, y_{foc})$, individua il punto di impatto sul piano focale, l'altra, indicata con $(\theta_{foc}, \phi_{foc})$, si riferisce rispettivamente all'angolo orizzontale e a quello verticale della traccia al piano focale.
+%Nel paragrafo successivo verrà esplicato in che modo vengono misurati tali parametri.
+Il modo in cui tali parametri vengono misurati sarà esplicato nel paragrafo successivo.
+%Fra i quattro parametri al piano focale e i 
+%
+%
+%Noti i quattro parametri al piano focale, si procede all'inversione dell'operatore $G$ che esprime il legame fra questi e i quattro parametri sul target.
+%Se l'operatore $G^{-1}$ esiste, 
+%
+Noti i quattro parametri al piano focale, essi vengono propagati all'indietro per ricostruire i quattro parametri iniziali, dai quali è possibile ottenere i valori delle sezioni d'urto. 
+
+
+
 
 %\clearpage 
+
+%\vspace{0.5 cm}
 
 \subsection{\iflanguage{italian}{L'attuale rivelatore di piano focale}{The present Focal Plane Detector}} \label{sez:fpd}
 
@@ -63,15 +75,16 @@ L'ingresso nel volume attivo è una finestra di mylar spessa 1.5~$\mu$m, la qual
 %Al di sopra di ciascun filo si trova una fila di 224 pad
 %Il tracciatore a gas è essenzialmente una camera a deriva, in cui un sistema costituito da sei fili (DC\ped{\textit{i}}) e da un anodo segmentato in pad consente la misura dei quattro parametri necessari per la ricostruzione tridimensionale della traccia.
 %In particolare, al di sopra di ciascun filo è presente una fila di pad, le quali sono orientate parallelamente all'asse ottico.
-Il tracciatore a gas, che consente la ricostruzione tridimensionale della traiettoria degli ioni, è formato da sei fili proporzionali (DC\ped{\textit{i}}) e da un anodo segmentato in sei file di pad, disposte in modo che sopra ogni filo ci sia una fila di pad.
+Il tracciatore a gas, che consente la ricostruzione tridimensionale della traiettoria degli ioni, è formato da sei fili proporzionali (DC\ped{\textit{i}}) e da un anodo segmentato in sei file di pad, disposte in maniera che sopra ogni filo ci sia una fila di pad.
 Come descritto più avanti, i fili, sfruttando il principio di lavoro delle camere a deriva, danno una misura di sei posizioni verticali ($Y_i$), mentre le pad permettono di determinare sei posizioni orizzontali ($X_i$).
 %Una griglia di Frisch è posta al di sotto dei fili, in quanto questi vengono anche utilizzati per misurare l'energia persa dagli ioni nel gas.
-Dal momento che i fili vengono anche utilizzati per misurare l'energia persa dagli ioni nel gas, una griglia di Frisch è posta al di sotto di essi, in modo da rendere la misura dell'energia indipendente dalla posizione della traccia.
+Dal momento che i fili vengono anche utilizzati per misurare l'energia persa dagli ioni nel gas, una griglia di Frisch è posta al di sotto di essi, in modo da rendere il segnale indipendente dalla posizione dell'evento di ionizzazione.
 
 
 
 
-Il muro di rivelatori al silicio è formato da 60 rivelatori, organizzate in 20 colonne da 3 elementi ciascuna. 
+Il muro di rivelatori al silicio, posto all'uscita del tracciatore, è formato da 60 rivelatori, organizzati in 20 colonne da 3 elementi ciascuna. 
+%Ogni rivelatore, che ha un'area attiva di $70 \times 50$~mm\ap{2} ed uno spessore di 500~$\mu$m, è montato perpendicolarmente all'asse ottico.
 Ogni rivelatore ha un'area attiva di $70 \times 50$~mm\ap{2} ed uno spessore di 500~$\mu$m.
 %Ogni pad ha un'area attiva di $70 \times 50$~mm\ap{2} ed è spessa 500~$\mu$m, sufficienti per fermare i prodotti di reazioni nel range energetico di interesse. 
 Essi vengono utilizzati per fermare gli ioni, misurandone l'energia residua e producendo il segnale di trigger per l'acquisizione. 
@@ -105,7 +118,7 @@ Questo aspetto, che costituisce una delle principali limitazioni all'intensità 
 Esso costituisce, dunque, uno dei principali motivi alla base del cambiamento del sistema di rivelazione degli eiettili con uno in grado di lavorare con un rate elevato di ioni pesanti. 
 %Da qui trae origine la grande opera di cambiamento del sistema di rivelazione degli eiettili con uno in grado di lavorare con un rate elevato di ioni pesanti.
 
-\vspace{0.5 cm}
+%\vspace{0.5 cm}
 
 \section{\iflanguage{italian}{Il futuro rivelatore di piano focale}{Future Focal Plane Detector}}
 
@@ -127,22 +140,21 @@ Esso sarà fondamentalmente costituito da tre parti:
 	\item[--] una scheda segmentata di readout.
 \end{itemize}
 
-Il suo principio di lavoro è il seguente: una particella carica incidente, dopo aver attraversato la finestra di mylar per il contenimento del gas, produce lungo la sua traiettoria una traccia di coppie elettrone-ione positivo. 
+Il suo principio di lavoro è il seguente: una particella carica incidente, dopo aver attraversato la finestra di mylar per il contenimento del gas, produce lungo la sua traiettoria una traccia di coppie elettrone-ione. 
 %Il campo elettrico uniforme fra il catodo e l'elemento per la moltiplicazione guida gli elettroni
 %Il campo elettrico uniforme fra catodo e anodo guida gli elettroni primari verso l'elemento di moltiplicazione
 Sotto l'azione del campo elettrico uniforme presente fra catodo e anodo, gli elettroni primari si muovono con velocità costante nella regione di deriva fino a raggiungere il MPGD.
 Analogamente a quanto visto nel Paragrafo~\ref{sez:fpd}, dalla misura del tempo di deriva degli elettroni primari è possibile estrarre l'informazione sulla posizione e sull'angolo verticali.
 %Giunti al MPGD, gli elettroni primari danno origine ad una moltiplicazione a valanga, che risulta nella formazione di un jet elettronico. 
-In seguito gli elettroni primari giungono al MPGD, che, come anticipato nella Sezione~\ref{sez:upgrade_apparato}, dovrebbe essere basato sulla tecnologia delle Thick-GEM.
-Questi rivelatori sono costituiti da una pila di fogli di materiale isolante (solitamente kapton) rivestiti su entrambe le facce con uno strato di metallo.
-I fogli, tra loro distanti pochi~mm, sono immersi nel gas.
-Ogni foglio presenta una trama di fori, il cui diametro è tipicamente compreso fra $ 0.3 \div 1$~mm.
+In seguito, gli elettroni primari giungono al MPGD, che dovrebbe essere basato sulla tecnologia delle Thick-GEM.
+Questi rivelatori sono costituiti da una pila di fogli di materiale isolante (solitamente kapton) rivestiti su entrambe le facce con uno strato metallico.
+I fogli, che possono avere superfici molto grandi, sono tra loro distanti pochi~mm e si trovano immersi nel gas.
+Ogni foglio presenta una trama regolare di fori, i quali hanno un diametro tipicamente compreso fra $ 0.3 \div 1$~mm.
 %Una differenza di potenziale è applicata tra le due superfici metalliche, in modo che gli elettroni vengano guidati verso i fori, dove, incontrando un campo elettrico molto intenso, viene prodotta una moltiplicazione a valanga.
-Quando gli elettroni arrivano al primo foglio, la differenza di potenziale applicata tra le due superfici metalliche li guida verso i fori, dove il campo elettrico molto intenso produce una moltiplicazione a cascata.
+Quando gli elettroni arrivano al primo foglio, la differenza di potenziale applicata tra le due superfici metalliche li guida verso i fori, dove, sotto l'effetto di un campo elettrico molto intenso, producono una moltiplicazione a cascata.
 A questo punto, la valanga viene indirizzata da un'ulteriore differenza di potenziale verso il foglio successivo, dando luogo ad una seconda moltiplicazione.
-Il processo si ripete per i diversi stadi della Thick-GEM, così che dagli elettroni primari si origina un jet elettronico. 
-
-Tale jet viene guidato dal campo elettrico verso la scheda segmentata di readout, dove induce su delle strip un impulso di carica. 
+Il processo si ripete per i diversi stadi della Thick-GEM, fino a raggiungere fattori di guadagno dell'ordine di $10^6$. 
+Superato l'ultimo foglio, la valanga viene guidata dal campo elettrico verso la scheda segmentata di readout, dove induce su delle strip un impulso di carica. 
 Di conseguenza, note le strip coinvolte, è possibile misurare la posizione e l'angolo orizzontali. 
 
 
@@ -155,12 +167,27 @@ Dopo aver attraversato il tracciatore a gas, la particella carica raggiunge il m
 Poiché l'argomento principale del presente lavoro di tesi consiste nella simulazione di tale sistema di identificazione, per maggiore chiarezza si è preferito discuterne le caratteristiche nella sezione successiva.
 
 %La scelta della tecnologia da utilizzare per il MPGD è oggi orientata verso le Thick-GEM, che, grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, sono adatte agli scopi di NUMEN.
-Grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, le Thick-GEM sono adatte agli scopi di NUMEN.
+Grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, le Thick-GEM costituiscono un'ottima soluzione alle esigenze di NUMEN.
 Tuttavia, diverse delle condizioni in cui questo tipo di rivelatori è abitualmente impiegato non sono attuabili per NUMEN. 
 In primo luogo, le Thick-GEM sono tipicamente utilizzate con gas a pressione atmosferica, mentre il FPD opera solitamente a pressioni di alcune decine di mbar.
 Inoltre, esse spesso sono utilizzate per rivelare particelle in condizioni di Minimum Ionizing Particle, mentre gli ioni di interesse per NUMEN saranno ben lontani da tali energie.
 %In aggiunta, dal momento che diversi tipi di ioni raggiungono il rivelatore, il tracciatore deve avere ...
 Dunque, sebbene incoraggianti risultati siano stati recentemente ottenuti~\cite{cortesi:rsi17}, questa soluzione richiede un'intensa attività di sviluppo.
+
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[scale=0.3]{Grafici/nuovo_fpd.png}
+	\caption{Rappresentazione schematica del previsto FPD. Le linee magenta indicano le superfici equipotenziali, mentre le frecce mostrano il corrispondente campo elettrico. Figura tratta da~\cite{cappuzzello:epja18}.} \label{fig:nuovo_fpd}
+\end{figure}
+
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/castelletto3.jpg}
+	\caption{Il prototipo del sistema di tracciamento previsto per NUMEN.} \label{fig:castelletto}
+\end{figure}
+
 
 
 Una rappresentazione schematica del futuro FPD è mostrata in Figura~\ref{fig:nuovo_fpd}, dove sono raffigurate anche le superfici equipotenziali calcolate con il codice Poisson-Superfish~\cite{superfish:87}: le linee quasi parallele indicano che nella regione di deriva il campo elettrico è piuttosto uniforme.
@@ -171,19 +198,11 @@ Un prototipo di dimensioni ridotte, mostrato in Figura~\ref{fig:castelletto}, è
 
 
 
-\begin{figure} [!t]
-	\centering
-	\includegraphics[scale=0.3]{Grafici/nuovo_fpd.png}
-	\caption{Rappresentazione schematica del previsto FPD. Le linee magenta indicano le superfici equipotenziali, mentre le frecce mostrano il corrispondente campo elettrico. Figura tratta da~\cite{cappuzzello:epja18}.} \label{fig:nuovo_fpd}
-\end{figure}
-
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/castelletto3.jpg}
-	\caption{Il prototipo del sistema di tracciamento previsto per NUMEN.} \label{fig:castelletto}
-\end{figure}
 
 
+
+
+\vspace{0.5 cm}
 
 %\clearpage
 %\section{\iflanguage{italian}{Il test sui telescopi SiC-CsI}{Experimental setting for the test}}
@@ -243,8 +262,9 @@ La larghezza della sua gap, quasi tripla rispetto a quella del silicio, se da un
 %% MODIFICHIAMO QUESTA PARTE
 %Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio, generando, dunque, un segnale di ampiezza inferiore.
 %Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio.
-Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio.
-Questo ha due diverse conseguenze: in primis, il segnale generato presenta un'ampiezza inferiore; in secondo luogo, peggiora la risoluzione, in quanto la sua componente statistica è inversamente proporzionale alla radice quadrata del numero dei portatori~\cite{knoll:10}.
+Dunque, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio.
+Ciò ha due diverse conseguenze: innanzitutto, il segnale generato presenta un'ampiezza inferiore; in secondo luogo, peggiora la risoluzione, in quanto la componente statistica di tale grandezza è inversamente proporzionale alla radice quadrata del numero di portatori~\cite{knoll:10}.
+%Questo ha due diverse conseguenze sul segnale generato: in primis, ne diminuisce l'ampiezza; in secondo luogo, ne aumenta le fluttuazioni relative, in quanto la componente statistica della risoluzione è inversamente proporzionale alla radice quadrata del numero dei portatori~\cite{knoll:10}.
 Se il primo problema può essere risolto aumentando l'amplificazione del segnale, il secondo è intrinseco del rivelatore.
 %, dando origine a due diversi problemi: in primo luogo, il segnale generato presenta un'ampiezza inferiore, 
 %di conseguenza, 
@@ -291,7 +311,7 @@ Gli attuali limiti tecnologici alla produzione di rivelatori al SiC sono legati 
 %Ciò comporta anche la presenza di una regione in cui la ... ZONA PARZIALMENTE VIVA .... NON SO BENE COME INTRODURLA
 Inoltre, la presenza di tale substrato può rappresentare un problema ai fini della rivelazione, in quanto costituisce uno strato morto in cui le particelle perdono energia senza che questa possa essere misurata o possono perfino fermarsi.
 %Tali problematiche sono state tenute in considerazione nella simulazione svolta per questo lavoro di tesi, la quale ne ha valutato l'impatto sulle performance del previsto sistema di rivelazione. 
-La simulazione svolta per questo lavoro di tesi ha tenuto in considerazione tali limiti e problematiche, valutandone l'impatto sulle performance del previsto sistema di rivelazione e suggerendo le migliori specifiche tecniche ai fini del progetto. 
+La simulazione svolta per questo lavoro di tesi ha tenuto in considerazione tali limiti e problematiche, valutandone l'impatto sulle performance del sistema di rivelazione e suggerendo le migliori specifiche tecniche ai fini del progetto. 
 
 
 
@@ -306,7 +326,7 @@ La simulazione svolta per questo lavoro di tesi ha tenuto in considerazione tali
 
 %I due prototipi di rivelatori al SiC utilizzati nel test presentavano caratteristiche differenti: in primo luogo avevano spessore diversi, poiché uno era spesso 10~$\mu$m, mentre l'altro 100~$\mu$m.
 
-%\vspace{0.4 cm}
+\vspace{0.5 cm}
 
 \subsection{\iflanguage{italian}{Gli scintillatori allo ioduro di cesio}{Caesium iodide scintillation detector}}
 
@@ -351,7 +371,7 @@ Supportati da questi incoraggianti risultati, la scelta di utilizzare lo CsI sem
 
 %\clearpage
 
-%\vspace{0.3 cm}
+\vspace{0.5 cm}
 
 %\section{\iflanguage{italian}{La configurazione dell'apparato sperimentale nel test}{Experimetal apparatus setting}}
 \section{\iflanguage{italian}{Il test beam sui telescopi}{Telescope detectors experimental test}}
@@ -363,7 +383,7 @@ Ad Aprile 2018 i primi due prototipi di rivelatori al SiC per il progetto NUMEN 
 Lo scopo principale del test era valutare la capacità di PID dei telescopi SiC-CsI per gli ioni di interesse, confrontandola con quella dell'attuale sistema basato sulla combinazione di fili proporzionali e rivelatori al silicio.
 %valutandone la capacità di PID nella regione di interesse per NUMEN e confrontandola con quella accessibile con l'attuale apparato. 
 %Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto come stadio~$\Delta E$ di un telescopio SiC-CsI per l'identificazione in numero atomico dei prodotti di reazione. Lo scopo principale del test era, dunque, valutare la capacità di PID di questo sistema nella regione di interesse per NUMEN, confrontandola con quella accessibile con l'attuale apparato.
-In aggiunta, poiché l'upgrade del FPD prevede anche la sostituzione dell'elettronica attualmente utilizzata con una basata su chip VMM3a~\cite{degeronimo:ieee13}, il test aveva anche l'obiettivo di valutare le prestazioni del primo prototipo di elettronica di front-end prevista per NUMEN.
+In aggiunta, poiché l'upgrade del FPD prevede anche la sostituzione dell'elettronica attualmente utilizzata con una basata su chip VMM3~\cite{degeronimo:ieee13}, il test aveva anche l'obiettivo di valutare le prestazioni del primo prototipo di elettronica di front-end prevista per NUMEN.
 Ciò ha, inoltre, permesso di effettuare un confronto delle performance dei telescopi in funzione dell'elettronica adoperata.
 
 Il test è stato svolto ai LNS utilizzando un fascio di~\ce{^{20}Ne} a 20~AMeV, incidente su \ce{^{197}Au} o \ce{^{12}C}, laddove i due bersagli avevano funzioni differenti: il primo serviva per la localizzazione dello scattering elastico, il secondo per favorire la formazione dei prodotti di reazione di interesse.
@@ -372,12 +392,16 @@ Il test è stato svolto ai LNS utilizzando un fascio di~\ce{^{20}Ne} a 20~AMeV, 
 
 
 
-%\vspace{0.5 cm}
+\vspace{0.5 cm}
 
 
 \subsection{\iflanguage{italian}{I telescopi utilizzati nel test}{Telescope detectors used in the test}}
 
-
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/sic_etichette.png}
+	\caption{I rivelatori al carburo di silicio (SiC) utilizzati nel test: a sinistra il \emph{SiC~B}, a destra il \emph{SiC~A}.} \label{fig:sic}
+\end{figure}
 
 I due prototipi di rivelatori al SiC utilizzati nel test sono mostrati in Figura~\ref{fig:sic}: come è possibile notare, essi differivano innanzitutto per la segmentazione dell'area attiva, in quanto uno (\emph{SiC~A}) era costituito da un'unica pad, mentre l'altro (\emph{SiC~B}) era suddiviso in quattro regioni. 
 %Inoltre, mentre il SiC~A aveva un'area attiva di $10 \times 10$~mm\ap{2}, il SiC~B presentava 
@@ -390,20 +414,16 @@ In occasione del test si è scelto di utilizzare soltanto due delle quattro pad 
 
 
 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[scale=0.42]{Grafici/sic_etichette.png}
-	\caption{I rivelatori al carburo di silicio (SiC) utilizzati nel test: a sinistra il \emph{SiC~B}, a destra il \emph{SiC~A}.} \label{fig:sic}
-\end{figure}
+
 
 %\vspace{3 cm}
 
-\begin{figure} [!p]
+
+\begin{figure} [!t]
 	\centering
-	\includegraphics[scale=0.42]{Grafici/csi_etichette.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/csi_etichette.png}
 	\caption{Gli scintillatori allo ioduro di cesio (CsI) utilizzati nel test: a sinistra il \emph{CsI~B}, a destra il \emph{CsI~A}.} \label{fig:csi}
 \end{figure}
-
 
 
 
@@ -422,7 +442,7 @@ Ciascuno scintillatore era accoppiato tramite grasso ottico ad un fotodiodo di a
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[scale=0.5]{Grafici/telescopi_etichette.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/telescopi_etichette.png}
 	\caption{I due telescopi SiC-CsI utilizzati nel test: a sinistra il \emph{Tel~A}, a destra il \emph{Tel~B}.} \label{fig:telescopi}
 \end{figure}
 
