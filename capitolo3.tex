@@ -51,7 +51,7 @@ Affinché il metodo si dimostri efficace, è essenziale che la sequenza di numer
 Dunque, proprio la casualità con cui vengono prodotti tali numeri rappresenta il punto più delicato del metodo e, forse, il suo limite più grande; infatti, per ragioni di velocità ed efficienza i numeri vengono generati via software, invece di basarsi su processi fisici realmente casuali.
 %Tuttavia, dal momento che tali algoritmi sono inevitabilmente deterministici, le sequenze di numeri sono, in realtà, \emph{pseudo-casuali}, ovvero presentano delle proprietà statistiche simili a quelle dei numeri casuali. 
 Tuttavia, dal momento che tali algoritmi sono inevitabilmente deterministici, ogni numero della sequenza è univocamente calcolato a partire dal suo predecessore. 
-Quindi, le sequenze di numeri sono, in realtà, \emph{pseudo-casuali}, ovvero, pur essendo deterministiche, presentano delle proprietà statistiche analoghe a quelle delle sequenze di numeri casuali. 
+Quindi, le sequenze di numeri sono, in realtà, \emph{pseudo-casuali}, ovvero presentano delle proprietà statistiche analoghe a quelle delle sequenze di numeri casuali, ma sono prodotte in modo deterministico. 
 Per questo motivo, una successione di numeri pseudo-casuali non può avere elementi infinitamente diversi, in quanto, prima o poi, cominceranno a ripetersi.
 
 Negli ultimi trent'anni l'importanza delle simulazioni basate su metodi Monte Carlo è cresciuta senza soluzione di continuità. 
@@ -66,7 +66,7 @@ ad esempio, è possibile dimostrare che, al crescere della complessità del prob
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[scale=0.75]{Grafici/monte_carlo_vs_analytic2.png}
+	\includegraphics[scale=0.7]{Grafici/monte_carlo_vs_analytic2.png}
 	\caption{Confronto fra il tempo necessario per la risoluzione di un problema con un metodo analitico-deterministico e con un metodo Monte Carlo, al variare della complessità del problema.} \label{fig:monte_carlo}
 \end{figure}
 
@@ -111,7 +111,7 @@ Essa è interamente basata sul linguaggio C++, traendo vantaggio, dunque, da tut
 Oggi \geant{} consente di simulare l'interazione con la materia di tutte le particelle note, in un range energetico che va da pochi~eV fino ai~TeV.
 %
 %La sua notevole duttilità lo ha reso uno strumento 
-Grazie alla sua notevole duttilità, sono innumerevoli gli esperimenti che si avvalgono di questo strumento e la sua area d'azione va dalla fisica delle alte energie, agli studi nucleari, alle applicazioni in campo medico, fino all'astrofisica.
+Grazie alla sua notevole duttilità, sono innumerevoli gli esperimenti che si avvalgono di questo strumento e la sua area d'applicazione va dalla fisica delle alte energie, agli studi nucleari, alle applicazioni in campo medico, all'astrofisica.
 Il codice è, inoltre, open-source e viene periodicamente aggiornato dalla collaborazione. 
 Dal momento che la documentazione su \geant{} è ampia e dettagliata\footnote{Si veda, ad esempio, \url{www.geant4.cern.ch}}, nel prosieguo vengono presentati soltanto gli aspetti utili alla comprensione della simulazione svolta per questo lavoro di tesi.  
 
@@ -124,37 +124,119 @@ Il modo più corretto di definire \geant{} è \emph{toolkit}, ovvero ``cassetta 
 L'utente deve, quindi, scrivere la sua applicazione, definendo tutti i parametri rilevanti: alcuni devono essere inseriti in modo obbligatorio, altri possono essere aggiunti facoltativamente.
 %\geant{} offre numerose funzionalità:
 
-Ogni simulazione si compone dei seguenti aspetti: 
+%Ogni simulazione si compone dei seguenti aspetti: 
+Nella progettazione e nella realizzazione del software, tutti gli aspetti fondamentali di un processo di simulazione sono stati inclusi:
 \begin{itemize}
-	\item la geometria del sistema e i materiali utilizzati, specificando forma, dimensione e posizione dei vari oggetti;
+	\item la geometria del sistema, specificando forma, dimensione e posizione dei vari oggetti;
+	\item i materiali utilizzati;
 	\item la sorgente delle particelle, di cui si definisce la posizione, l'energia, la distribuzione angolare e tutte le altre caratteristiche rilevanti;
 	\item i processi fisici di interazione per la modellizzazione  del comportamento delle particelle;
-	\item il tracciamento delle particelle, che può essere calcolato anche passo dopo passo, consentendo di estrarre ad ogni step informazioni legate alla particella, come ad esempio energia e posizione;
+	%\item il tracciamento delle particelle, che può essere calcolato anche passo dopo passo, consentendo di estrarre ad ogni step informazioni legate alla particella, come ad esempio energia e posizione;
+	\item il tracciamento delle particelle attraverso materiali ed, eventualmente, campi elettromagnetici esterni;
 	%\item la sensitività di un rivelatore e la sua risposta;
 	\item la definizione di elementi sensibili, che simulano la risposta del rivelatore;
-	\item la visualizzazione tridimensionale degli oggetti simulati e delle tracce delle particelle.
+	\item la visualizzazione tridimensionale degli oggetti simulati e delle tracce delle particelle;
+	\item la generazione di dati, i quali possono essere memorizzati per una successiva analisi.
 \end{itemize}
 
 
 %Ciascuno degli aspetti elencati corrisponde ad una determinata \emph{classe} o \emph{categoria}, che, agendo in modo indipendente l'una dall'altra, danno al software una struttura modulare.
 
-Gli aspetti elencati corrispondono nel toolkit a determinate \emph{classi} o \emph{categorie}, che, agendo in modo indipendente l'una dall'altra, danno al software una struttura modulare.
-Esse sono state concepite per essere facilmente estendibili o modificabili dall'utente, seguendo la logica tipica dei linguaggi orientati agli oggetti.
+Gli aspetti elencati corrispondono in \geant{} a determinate \emph{classi} o \emph{categorie}, che, agendo in modo indipendente l'una dall'altra, danno al software una struttura modulare.
+%Esse sono state concepite per essere facilmente estendibili o modificabili dall'utente, seguendo la logica tipica dei linguaggi orientati agli oggetti;
+Esse sono state concepite per essere facilmente estendibili o modificabili, seguendo la logica tipica dei linguaggi orientati agli oggetti; infatti, grazie alla proprietà del \emph{polimorfismo}, l'utente può fornire un'implementazione alternativa delle funzioni presenti in una categoria (\textcolor{red}{provo a spiegarlo meglio introducendo le classi di base e le classi derivate?}).
 %Di tutte le classi messe a disposizione, \geant{} richiede obbligatoriamente l'implementazione e l'istanziazione di tre, ovvero 
 %\geant mette a disposizione un grande numero di classi, le quali sono state  concepite per essere facilmente estendibili o modificabili dall'utente, seguendo la logica tipica dei linguaggi orientati agli oggetti.
 %L'implementazione e l'istanziazione di queste classi sono obbligatorie in tre casi, ovvero
 %\geant{} mette a disposizione un grande numero di classi, ma per tre di loro l'implementazione e l'istanziazione sono obbligatorie.
-\geant{} mette a disposizione un grande numero di classi, richiedendo obbligatoriamente l'implementazione e l'istanziazione per tre di loro: quella dedicata alla definizione della geometria e dei materiali; quella prevista per la definizione delle particelle, dei processi fisici e dei parametri di cut-off; quella rivolta alla generazione delle particelle primarie.
+\geant{} mette a disposizione un grande numero di classi, richiedendo obbligatoriamente l'implementazione e l'istanziazione per tre di loro: 
+\begin{itemize}
+	\item la classe dedicata alla definizione della geometria e dei materiali;
+	\item la classe prevista per la definizione delle particelle, dei processi fisici e dei parametri di cut-off;
+	\item la classe rivolta alla generazione delle particelle primarie.
+\end{itemize}
+
+Le altre classi sono, invece, opzionali e, a seconda delle esigenze, l'utente può modificarne il comportamento di default definendo la propria implementazione; ad esempio, ai fini di questo lavoro è stato necessario personalizzare la classe che rappresenta ogni ``passo'' della traccia della particella, facendo in modo che ad ogni step venisse estratta l'informazione sulla perdita di energia e sulla posizione.
 
 
-
-
-
-\clearpage
 
 
 \section{\iflanguage{italian}{Gli aspetti principali della simulazione}{Simulation main aspects}}
 
+%La simulazione implementata per questo lavoro di tesi considera una matrice di telescopi SiC-CsI.
+%Allo scopo di valutare le prestazioni di PID
+Nell'ambito del presente lavoro di tesi è stata realizzata un'applicazione in \geant{} per simulare la risposta di un sistema di telescopi SiC-CsI agli ioni di interesse per il progetto NUMEN.
+Nel seguito di questa sezione vengono illustrate nel dettaglio le caratteristiche di tale simulazione.
+
+
+
+
+\subsection{\iflanguage{italian}{La geometria e i materiali}{Geometry and materials}}
+
+Considerando un sistema di riferimento in cui l'asse $z$ è individuato dalla direzione di propagazione delle particelle, i telescopi sono fra loro separati di 2~mm lungo la direzione $x$ e di 1~mm lungo la direzione $y$.
+
+%Ciascun telescopio è formato da tre parti: il volume attivo del rivelatore al SiC, il substrato morto dello stesso rivelatore e il cristallo allo CsI.
+Ciascun telescopio è formato da due componenti, il rivelatore al SiC e il cristallo allo CsI, le quali sono poste a contatto.
+Per tenere in considerazione il substrato morto del rivelatore al SiC, tale componente è, a sua volta, costituita da due parti: il volume attivo e il substrato morto.
+%In accordo con le 
+%
+%Un importante aspetto della simulazione riguarda lo spessore dei rivelatori.
+
+
+%Dal momento che nuovi sviluppi tecnologici hanno reso possibile la rimozione quasi totale del substrato, sono state svolte anche delle simulazioni in cui il suo spessore era ridotto a 10~$\mu$m. 
+%Per quanto riguarda il cristallo di CsI, lo spessore è stato posto uguale a 1~cm.
+
+
+%Poiché uno degli obiettivi di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità,  sono stati considerati diversi valori per le dimensioni trasversali; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
+%Poiché uno degli obiettivi di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità,  per le dimensioni trasversali dei telescopi sono stati presi in esame diversi valori; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
+Poiché uno degli obiettivi di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità, sono state condotte diverse simulazioni al variare delle dimensioni trasversali dei telescopi; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
+
+
+
+
+%Lo spessore del primo è di 100~$\mu$m, mentre quello del secondo è di 350~$\mu$m.
+%Un altro aspetto importante della simulazione riguarda lo spessore del rivelatore al SiC; infatti, sebbene la collaborazione abbia suggerito 
+%Per quanto riguarda lo spessore dei due stadi del telescopio, la collaborazione aveva individuato come probabile soluzione l'utilizzo di rivelatori al SiC da 100~$\mu$m e di cristalli allo CsI di 1~cm. 
+
+%Lo standard tecnologico attuale prevede che un rivelatore al SiC di tale spessore abbia un substrato morto spesso 350~$\mu$m.
+Per quanto riguarda lo spessore dei due stadi del telescopio, in accordo con la soluzione individuata dalla collaborazione, sono stati simulati rivelatori al~SiC da 100~$\mu$m e cristalli allo CsI da 1~cm, mentre per il substrato morto si è considerato un valore di 350~$\mu$m.
+%Gli spessori tenuti in considerazione erano di 100~$\mu$m per il rivelatore al SiC, di 350~$\mu$m per il substrato morto e di 1~cm per il cristallo allo CsI.
+Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rimozione quasi totale degli strati morti, si è esaminato anche il caso in cui lo spessore del substrato era ridotto a 10~$\mu$m. 
+È stato, dunque, effettuato un confronto tra le due diverse condizioni, allo scopo di valutare le conseguenze sulle capacità di~PID.
+
+
+
+
+
+%Sebbene il muro di telescopi comprenderà oltre 1000 
+%La simulazione ha considerato un unico modulo di $2 \times 5$ rivelatore.
+Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di oltre 1000 telescopi, tutte le simulazioni svolte hanno preso in esame una matrice $3 \times 3$ di elementi.
+In Figura~ è mostrato l'aspetto assunto da tale matrice nella simulazione \geant.
+%In Figura~ è possibile vedere la realizzazione grafica di \geant{} di un modulo $2 \times 5$ del sistema di rivelazione.
+
+
+
+
+\subsection{\iflanguage{italian}{Generazione delle particelle primarie}{Primary particles generation}}
+
+Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}. 
+In alcune simulazioni sono stati coinvolti anche altri isotopi di tali specie nucleari, 
+
+
+
+
+
+
+
+
+\subsection{\iflanguage{italian}{I processi fisici}{Physics process}}
+
+
+
+
+\subsection{\iflanguage{italian}{Elaborazione post simulazione}{Post-simulation processing}}
+
+\clearpage
 
 
 \section{\iflanguage{italian}{I risultati}{Results}}
