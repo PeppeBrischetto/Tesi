@@ -4,7 +4,7 @@
 
 Al fine di valutare se la scelta della tecnologia SiC-CsI può soddisfare le esigenze di NUMEN è stata implementata una simulazione Monte Carlo sulla piattaforma GEANT4.
 In questo capitolo vengono esposte le principali assunzioni e vengono presentati i risultati.
-
+(\textcolor{red}{chiedere se geant4 va scritto in maiuscoletto})
 
 
 %Le simulazioni giocano un ruolo fondamentale nella fisica.
@@ -156,9 +156,17 @@ Esse sono state concepite per essere facilmente estendibili o modificabili, segu
 	\item la classe rivolta alla generazione delle particelle primarie.
 \end{itemize}
 
-Le altre classi sono, invece, opzionali e, a seconda delle esigenze, l'utente può modificarne il comportamento di default definendo la propria implementazione; ad esempio, ai fini di questo lavoro è stato necessario personalizzare la classe che rappresenta ogni ``passo'' della traccia della particella, facendo in modo che ad ogni step venisse estratta l'informazione sulla perdita di energia e sulla posizione.
 
+%Altre classi
 
+Le altre classi sono, invece, opzionali e, a seconda delle esigenze, l'utente può modificarne il comportamento di default definendo la propria implementazione; 
+%ad esempio, ai fini di questo lavoro è stato necessario personalizzare la classe che rappresenta ogni ``passo'' della traccia della particella, facendo in modo che ad ogni step venisse estratta l'informazione sulla perdita di energia e sulla posizione.
+%
+ad esempio, in \geant{} esiste una classe che rappresenta ogni ``passo'' (più propriamente chiamato \emph{step}) della traccia della particella.
+%, laddove per passo possiamo immaginare un segmento che compone la traiettoria.
+L'utente può personalizzare tale classe, facendo in modo che ad ogni step vengano estratte alcune informazioni, come la posizione e l'energia della particella.
+%In \geant{} la traccia della particella è divisa in \emph{step}, che, per comodità, possiamo immaginare come dei segmenti.
+%Grazie ad un'apposita classe, è possibile accedere a diverse informazioni legate a tale step, come estremi 
 
 
 \section{\iflanguage{italian}{Gli aspetti principali della simulazione}{Simulation main aspects}}
@@ -176,7 +184,7 @@ Nel seguito di questa sezione vengono illustrate nel dettaglio le caratteristich
 Considerando un sistema di riferimento in cui l'asse $z$ è individuato dalla direzione di propagazione delle particelle, i telescopi sono fra loro separati di 2~mm lungo la direzione $x$ e di 1~mm lungo la direzione $y$.
 
 %Ciascun telescopio è formato da tre parti: il volume attivo del rivelatore al SiC, il substrato morto dello stesso rivelatore e il cristallo allo CsI.
-Ciascun telescopio è formato da due componenti, il rivelatore al SiC e il cristallo allo CsI, le quali sono poste a contatto.
+Ciascun telescopio è formato da due componenti, il rivelatore al carburo di silicio (SiC) e il cristallo allo ioduro di cesio (CsI), le quali sono poste a contatto.
 Per tenere in considerazione il substrato morto del rivelatore al SiC, tale componente è, a sua volta, costituita da due parti: il volume attivo e il substrato morto.
 %In accordo con le 
 %
@@ -211,30 +219,145 @@ Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rim
 %Sebbene il muro di telescopi comprenderà oltre 1000 
 %La simulazione ha considerato un unico modulo di $2 \times 5$ rivelatore.
 Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di oltre 1000 telescopi, tutte le simulazioni svolte hanno preso in esame una matrice $3 \times 3$ di elementi.
-In Figura~ è mostrato l'aspetto assunto da tale matrice nella simulazione \geant.
+In Figura~ è mostrato l'aspetto assunto da tale matrice nella simulazione \geant. (\textcolor{red}{sarebbe meglio dire che ho preso in considerazione un modulo $2 \times 5$?})
 %In Figura~ è possibile vedere la realizzazione grafica di \geant{} di un modulo $2 \times 5$ del sistema di rivelazione.
 
 
 
 
-\subsection{\iflanguage{italian}{Generazione delle particelle primarie}{Primary particles generation}}
+\subsection{\iflanguage{italian}{La generazione delle particelle primarie}{Primary particles generation}}
 
-Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}. 
-In alcune simulazioni sono stati coinvolti anche altri isotopi di tali specie nucleari, 
-
-
-
+%Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}. 
+%In alcune simulazioni sono stati coinvolti anche altri isotopi di tali specie nucleari, 
+Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}, coinvolgendo in alcune simulazioni anche altri isotopi di tali specie nucleari (\textcolor{red}{dico esplicitamente quali?}).
 
 
+In ciascun evento, la particella primaria è generata in modo casuale sulla faccia frontale di un rivelatore al SiC, con una direzione estratta casualmente all'interno di un angolo corrispondente ad un cono con un'apertura di 20\textdegree{}. 
+
+
+%Allo scopo di coprire un ampio range energetico, realisticamente significativo per NUMEN, le particelle primarie hanno un'energia scelta casualmente fra 500 e 1000~MeV.
+Allo scopo di valutare la capacità di PID in un ampio range energetico, realisticamente significativo per NUMEN, sono state simulate particelle primarie con un'energia scelta casualmente fra 500 e 1000~MeV.
+%Dal momento che l'apparato sperimentale si incardina sulle proprietà dello spettrometro magnetico MAGNEX, 
+
+Inoltre, dal momento che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia, in accordo con la nota relazione
+\begin{equation} \label{eq:legge_spettrometri}
+B  \rho \, = \,  \frac{p}{q}
+\end{equation}
+laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, alcune simulazioni sono state svolte tenendo fissato il $B \rho$ degli ioni primari.
+(\textcolor{red}{secondo lei è meglio inserire la relazione del $B \rho $ nel cap 1?})
+
+
+\subsection{\iflanguage{italian}{I processi fisici}{Physics processes}}
+
+
+Affinché la simulazione possa riprodurre con la maggiore accuratezza possibile i risultati sperimentali reali, è di cruciale importanza la scelta dei processi fisici da considerare allo scopo di definire il comportamento delle particelle.
+Per gli scopi di questo lavoro, in una prima fase sono state prese in esame soltanto le interazioni elettromagnetiche, oltre ai processi di decadimento e di decadimento radioattivo, in quanto sufficienti a separare i luoghi degli ioni nelle matrici $\Delta E - E$.
+Successivamente, sono state aggiunte anche le interazioni adroniche, incorporando, dunque, processi di scattering elastico e inelastico e meccanismi di reazioni nucleari.
+
+%Non sono state modificate le impostazioni di default di
+Una delle componenti fondamentali di \geant{} riguarda la scelta dei parametri di cut-off; infatti, è possibile stabilire una soglia, in range o in energia, al di sotto delle quale non viene generata la particella secondaria.
+Dal momento che ai fini di questo lavoro una modifica dei parametri di cut-off non avrebbe portato a significativi cambiamenti dei risultati, si è scelto di mantenerne le impostazioni di default.
 
 
 
-\subsection{\iflanguage{italian}{I processi fisici}{Physics process}}
+\subsection{\iflanguage{italian}{Step della particella}{Particle step}}
+
+%In \geant{} la traccia della particella è divisa in \emph{step}, che, per comodità, possiamo immaginare come dei segmenti.
+%Grazie ad un'apposita classe, è possibile accedere a diverse informazioni legate a tale step.
+Come anticipato nella sezione precedente, in \geant{} è possibile dare la propria implementazione della classe che rappresenta gli step della particella.
+Dal momento che, ai fini di questo lavoro, si volevano valutare le conseguenze sulla PID causate dagli effetti di bordo dei rivelatori, era necessario sapere punto per punto la posizione dello ione. 
+Dunque, è stato modificato il comportamento di default di questa classe, affinché ad ogni step si conoscessero gli estremi di tale step e il deposito di energia.
+(\textcolor{red}{Spiego anche che veniva estratto un punto casuale fra gli estremi dello step?})
 
 
 
 
-\subsection{\iflanguage{italian}{Elaborazione post simulazione}{Post-simulation processing}}
+
+
+
+
+\subsection{\iflanguage{italian}{Elaborazione post-simulazione}{Post-simulation processing}}
+
+I dati prodotti dalla simulazione, scritti in un tree, sono stati elaborati in una macro di ROOT~\cite{brun:nima97}, in cui vengono aggiunte alcune caratteristiche tipiche dei rivelatori reali.
+%In primo luogo, ciascun deposito di energia viene pesato con una funzione di r
+%In primo luogo, dal momento che 
+%
+In primo luogo, a causa del processo di produzione, i rivelatori al SiC presentano nel volume sensibile un bordo esterno completamente inattivo, in cui la carica generata per ionizzazione non viene raccolta, ed una regione di transizione, dove la carica prodotta viene raccolta soltanto in parte.
+Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di circa 10~$\mu$m, mentre la regione di transizione ha un'estensione di 2~$\mu$m. 
+%Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} lineare, che nel caso unidimensionale sarebbe così definita: 
+%\begin{equation}
+%f(x) =
+%\begin{cases}
+%1        & \quad  x<a \\
+%\alpha x & \quad  b<x<a\\
+%0        & \quad  x>b
+%\end{cases}
+%\end{equation}
+%
+Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} così definita: nella zona interamente attiva era pari ad uno, nella regione di transizione decresceva linearmente e nella zona del tutto inattiva aveva valore nullo (\textcolor{red}{Secondo lei è più chiaro se metto la formula del caso unidimensionale?}).
+
+%Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale nel rivelatore al SiC e nel cristallo allo CsI.
+Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale, sia per il rivelatore al SiC sia per il cristallo allo CsI.
+Mettendo insieme i depositi di energia di tutti gli eventi, si riproduceva lo spettro energetico degli ioni nei due stadi del telescopio.
+A questo livello, soltanto le fluttuazioni statistiche legate alla ionizzazione erano tenute in considerazione.
+Dunque, al fine di riprodurre le risoluzione energetiche tipiche dei rivelatori in esame, lo spettro energetico è stato ``allargato'' campionando ciascun deposito di energia con una distribuzione gaussiana, la cui espressione è
+%\begin{equation}
+%	f(E) = A \, \mbox{e}^{- \frac{E - E_0}{2 {\sigma}^2}}
+%\end{equation}
+\begin{equation}
+	f(E) = A \, \exp \left( \frac{E - E_0}{2 {\sigma}^2} \right)
+\end{equation}
+dove $A$ è una costante di normalizzazione, $E_0$ è il valore originario del deposito di energia, $E$ è il valore dopo il campionamento e $\sigma$ è la deviazione standard.
+Ricordando che la FWHM è legata alla $\sigma$ dalla relazione
+\begin{equation}
+\mbox{FWHM} = 2.35 \, \sigma
+\end{equation}
+la deviazione standard risulta 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \clearpage
 
