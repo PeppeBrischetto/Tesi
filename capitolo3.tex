@@ -298,21 +298,39 @@ Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun d
 
 %Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale nel rivelatore al SiC e nel cristallo allo CsI.
 Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale, sia per il rivelatore al SiC sia per il cristallo allo CsI.
-Mettendo insieme i depositi di energia di tutti gli eventi, si riproduceva lo spettro energetico degli ioni nei due stadi del telescopio.
+Mettendo insieme i depositi di energia di tutti gli eventi, si riproducevano gli spettri energetici degli ioni nei due stadi del telescopio.
 A questo livello, soltanto le fluttuazioni statistiche legate alla ionizzazione erano tenute in considerazione.
-Dunque, al fine di riprodurre le risoluzione energetiche tipiche dei rivelatori in esame, lo spettro energetico è stato ``allargato'' campionando ciascun deposito di energia con una distribuzione gaussiana, la cui espressione è
+Dunque, al fine di riprodurre le risoluzioni energetiche tipiche dei rivelatori in esame, lo spettro energetico è stato ``allargato'' campionando ciascun deposito di energia con una distribuzione gaussiana, la cui espressione è
 %\begin{equation}
 %	f(E) = A \, \mbox{e}^{- \frac{E - E_0}{2 {\sigma}^2}}
 %\end{equation}
 \begin{equation}
-	f(E) = A \, \exp \left( \frac{E - E_0}{2 {\sigma}^2} \right)
+	f(E, E_0, \sigma) = A \, \exp \left( \frac{E - E_0}{2 {\sigma}^2} \right)
 \end{equation}
 dove $A$ è una costante di normalizzazione, $E_0$ è il valore originario del deposito di energia, $E$ è il valore dopo il campionamento e $\sigma$ è la deviazione standard.
-Ricordando che la FWHM è legata alla $\sigma$ dalla relazione
+Di tale distribuzione, noto il valore medio $E_0$, bisognava scegliere la $\sigma$ in modo tale che la risoluzione energetica ricavata dalla simulazione fosse confrontabile con quella sperimentale.
+%Dal momento che la risoluzione energetica è generalmente espressa come la somma in quadratura di un termine legato alle fluttuazioni statistiche del numero dei portatori e di uno dovuto al rumore elettronico, nella macro si è parametrizzata la $\sigma$ nel modo seguente
+La risoluzione energetica è generalmente espressa come la somma in quadratura di un termine legato alle fluttuazioni statistiche del numero dei portatori, proporzionale a $E^{-1/2}$, e di uno dovuto al rumore elettronico, proporzionale a $E^{-1}$~\cite{knoll:10}.
+Dunque, dal momento che la $\sigma$ può essere posta in relazione alla risoluzione energetica $R$ dalla seguente relazione
 \begin{equation}
-\mbox{FWHM} = 2.35 \, \sigma
+	R \,  = \, \frac{\mbox{FWHM}}{E} \, = \, \frac{2.35 \, \sigma}{E}
 \end{equation}
-la deviazione standard risulta 
+nella macro si è parametrizzata la deviazione standard nel modo seguente
+\begin{equation}
+\sigma = \sqrt{a + b \, E}
+\end{equation}
+laddove $a$ e $b$ sono due costanti.
+%che assumono valori diversi a seconda che si consideri il rivelatore al SiC o il cristallo allo CsI. 
+Nella somma al secondo membro, il primo addendo corrisponde al termine legato al rumore elettronico, mentre il secondo rappresenta quello causato dalle fluttuazioni del numero di portatori.
+%
+%
+%Ricordando che la FWHM è legata alla $\sigma$ dalla relazione
+%\begin{equation}
+%\mbox{FWHM} = 2.35 \, \sigma
+%\end{equation}
+%la deviazione standard risulta collegata alla risoluzione energetica.
+%Dal momento che quest'ultima è generalmente determinata dalla somma in quadratura di un termine legato all
+Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI dell'1.8\% FWHM a 850~MeV (\textcolor{red}{Devo specificare i valori di a e b scelti nei due casi?}).
 
 
 
@@ -320,46 +338,7 @@ la deviazione standard risulta
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\clearpage
+%\clearpage
 
 
 \section{\iflanguage{italian}{I risultati}{Results}}
