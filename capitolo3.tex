@@ -219,10 +219,14 @@ Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rim
 %Sebbene il muro di telescopi comprenderà oltre 1000 
 %La simulazione ha considerato un unico modulo di $2 \times 5$ rivelatore.
 Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di oltre 1000 telescopi, tutte le simulazioni svolte hanno preso in esame una matrice $3 \times 3$ di elementi.
-In Figura~ è mostrato l'aspetto assunto da tale matrice nella simulazione \geant. (\textcolor{red}{sarebbe meglio dire che ho preso in considerazione un modulo $2 \times 5$?})
+In Figura~\ref{fig:simulazione_muro} è mostrato l'aspetto assunto da tale matrice nella simulazione \geant. (\textcolor{red}{sarebbe meglio dire che ho preso in considerazione un modulo $2 \times 5$?})
 %In Figura~ è possibile vedere la realizzazione grafica di \geant{} di un modulo $2 \times 5$ del sistema di rivelazione.
 
-
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/wall11_ritagliato_schiarito.png}
+	\caption{Una matrice di $3 \times 3$ telescopi: in rosso il rivelatore al SiC, in verde il substrato morto di tale rivelatore e in blu il cristallo allo CsI.} \label{fig:simulazione_muro}
+\end{figure}
 
 
 \subsection{\iflanguage{italian}{La generazione delle particelle primarie}{Primary particles generation}}
@@ -253,6 +257,19 @@ laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivament
 Affinché la simulazione possa riprodurre con la maggiore accuratezza possibile i risultati sperimentali reali, è di cruciale importanza la scelta dei processi fisici da considerare allo scopo di definire il comportamento delle particelle.
 Per gli scopi di questo lavoro, in una prima fase sono state prese in esame soltanto le interazioni elettromagnetiche, oltre ai processi di decadimento e di decadimento radioattivo, in quanto sufficienti a separare i luoghi degli ioni nelle matrici $\Delta E - E$.
 Successivamente, sono state aggiunte anche le interazioni adroniche, incorporando, dunque, processi di scattering elastico e inelastico e meccanismi di reazioni nucleari.
+
+In Figura~\ref{fig:simulazione_evento} è riportata la visualizzazione grafica della simulazione di 20~eventi nel caso in cui il modello dei processi fisici comprenda sia le interazioni elettromagnetiche sia quelle adroniche; infatti, in nero sono raffigurate le tracce degli ioni primari, mentre in altri colori sono mostrate le tracce delle particelle secondarie originate da reazioni nucleari. 
+
+
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/evento5_ritagliato.png}
+	\caption{Rappresentazione grafica della simulazione di 20~eventi: in nero le tracce degli ioni primari (\ce{^{18}O}), in altri colori le tracce delle particelle secondarie prodotte da reazioni nucleari con i nuclei del mezzo: dal momento che riescono ad uscire fuori dal rivelatore, si tratta, probabilmente, di particelle leggere, come protoni, neutroni e particelle $\alpha$.} \label{fig:simulazione_evento}
+\end{figure}
+
+
+
 
 %Non sono state modificate le impostazioni di default di
 Una delle componenti fondamentali di \geant{} riguarda la scelta dei parametri di cut-off; infatti, è possibile stabilire una soglia, in range o in energia, al di sotto delle quale non viene generata la particella secondaria.
@@ -294,7 +311,7 @@ Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di 
 %\end{cases}
 %\end{equation}
 %
-Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} così definita: nella zona interamente attiva era pari ad uno, nella regione di transizione decresceva linearmente e nella zona del tutto inattiva aveva valore nullo (\textcolor{red}{Secondo lei è più chiaro se metto la formula del caso unidimensionale?}).
+Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} così definita: nella zona interamente attiva era pari ad uno, nella regione di transizione decresceva linearmente e nella zona del tutto inattiva aveva valore nullo (\textcolor{red}{Secondo lei è più chiaro se esplicito la formula del caso unidimensionale?}).
 
 %Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale nel rivelatore al SiC e nel cristallo allo CsI.
 Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale, sia per il rivelatore al SiC sia per il cristallo allo CsI.
