@@ -249,7 +249,7 @@ Dunque, al fine di raggiungere gli obiettivi preposti da NUMEN è necessaria una
 %È importante sottolineare un aspetto dei cambiamenti precedentemente elencati: la sostituzione dell'attuale tracciatore a gas con un sistema 
 Dei cambiamenti precedentemente elencati è importante sottolineare un aspetto: il sistema di tracciamento attuale, oltre a fornire accurate informazioni sulla posizione, è sensibile alla perdita di energia degli ioni nel gas. Esso viene, quindi, utilizzato anche come stadio $\Delta E$ per l'identificazione in numero atomico ($Z$) dei prodotti di reazione.
 La tecnologia delle Thick-GEM, scelta perché promette buone proprietà di misura della posizione anche in presenza di alti rate, non è invece in grado di dare informazioni sull'energia persa dagli ioni.
-Inoltre, gli attuali rivelatori a larga area al silicio, usati per misurare l'energia residua ($ E_r $), non soltanto verrebbero danneggiati da rate così alti, ma sarebbero anche soggetti ad un significativo pile-up a causa delle loro grandi dimensioni.
+Inoltre, gli attuali rivelatori a larga area al silicio, usati per misurare l'energia residua ($ E_{resid} $), non soltanto verrebbero danneggiati da rate così alti, ma sarebbero anche soggetti ad un significativo pile-up a causa delle loro grandi dimensioni.
 Di conseguenza, per non diminuire le attuali capacità complessive di identificazione delle particelle (Particle IDentification, PID) è necessario introdurre nel FPD un sistema dedicato a questo scopo.
 
 
@@ -270,9 +270,10 @@ Oltre a questo, esso deve possedere le seguenti caratteristiche:
 
 
 Dopo aver valutato diverse opzioni, si è scelto di utilizzare un muro di telescopi $ \Delta E - E $ a stato solido.
-Negli esperimenti di fisica nucleare questo tipo di sistema è tipicamente composto da uno stadio $\Delta E$ sottile al silicio, seguito da un rivelatore spesso al silicio o da uno scintillatore per fermare lo ione.
+Negli esperimenti di fisica nucleare questo genere di sistema è tipicamente composto da uno stadio $\Delta E$ sottile al silicio, seguito da un rivelatore spesso al silicio o da uno scintillatore per fermare lo ione.
 %La correlazione tra l'energia persa nel primo stadio e l'energia residua depositata nel secondo è legata al numero atomico dello ione rivelato, in accordo con la nota formula di Bethe-Block\cite{knoll:10}.
-Tale tecnica permette l'identificazione degli ioni poiché la correlazione tra l'energia persa nel primo stadio e l'energia residua depositata nel secondo è legata al numero atomico dello ione rivelato, in accordo con la nota formula di Bethe-Block~\cite{knoll:10}.
+%Tale tecnica permette l'identificazione degli ioni poiché la correlazione tra l'energia persa nel primo stadio e l'energia residua depositata nel secondo è legata al numero atomico dello ione rivelato, in accordo con la nota formula di Bethe-Block~\cite{knoll:10}.
+Tale tecnica permette l'identificazione degli ioni poiché la correlazione tra l'energia persa nel primo stadio e l'energia cinetica totale è legata al numero atomico dello ione rivelato, in accordo con la nota formula di Bethe-Block~\cite{knoll:10}.
 
 Dal momento che, come già detto in precedenza, i rivelatori al silicio non possiedono le proprietà di resistenza alle radiazioni necessarie per il progetto, la scelta è oggi indirizzata verso un telescopio in cui il primo stadio è costituito da un rivelatore sottile (100~$\mu $m) al carburo di silicio~\cite{tudisco:sensors18} (SiC), mentre il rivelatore di stop è uno scintillatore allo ioduro di cesio (CsI) spesso 1~cm.
 

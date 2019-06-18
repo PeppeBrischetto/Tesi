@@ -162,7 +162,7 @@ Esse sono state concepite per essere facilmente estendibili o modificabili, segu
 Le altre classi sono, invece, opzionali e, a seconda delle esigenze, l'utente può modificarne il comportamento di default definendo la propria implementazione; 
 %ad esempio, ai fini di questo lavoro è stato necessario personalizzare la classe che rappresenta ogni ``passo'' della traccia della particella, facendo in modo che ad ogni step venisse estratta l'informazione sulla perdita di energia e sulla posizione.
 %
-ad esempio, in \geant{} esiste una classe che rappresenta ogni ``passo'' (più propriamente chiamato \emph{step}) della traccia della particella.
+ad esempio, in \geant{} esiste una classe che rappresenta ogni ``passo'' (più propriamente chiamato \emph{step}) della traccia di una particella, sia essa primaria o secondaria.
 %, laddove per passo possiamo immaginare un segmento che compone la traiettoria.
 L'utente può personalizzare tale classe, facendo in modo che ad ogni step vengano estratte alcune informazioni, come la posizione e l'energia della particella.
 %In \geant{} la traccia della particella è divisa in \emph{step}, che, per comodità, possiamo immaginare come dei segmenti.
@@ -197,7 +197,7 @@ Per tenere in considerazione il substrato morto del rivelatore al SiC, tale comp
 
 %Poiché uno degli obiettivi di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità,  sono stati considerati diversi valori per le dimensioni trasversali; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
 %Poiché uno degli obiettivi di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità,  per le dimensioni trasversali dei telescopi sono stati presi in esame diversi valori; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
-Poiché uno degli obiettivi di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità, sono state condotte diverse simulazioni al variare delle dimensioni trasversali dei telescopi; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
+Poiché uno degli obiettivi principali di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità, sono state condotte diverse simulazioni al variare delle dimensioni trasversali dei telescopi; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
 
 
 
@@ -255,7 +255,7 @@ laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivament
 
 
 Affinché la simulazione possa riprodurre con la maggiore accuratezza possibile i risultati sperimentali reali, è di cruciale importanza la scelta dei processi fisici da considerare allo scopo di definire il comportamento delle particelle.
-Per gli scopi di questo lavoro, in una prima fase sono state prese in esame soltanto le interazioni elettromagnetiche, oltre ai processi di decadimento e di decadimento radioattivo, in quanto sufficienti a separare i luoghi degli ioni nelle matrici $\Delta E - E$.
+Per gli scopi di questo lavoro, in una prima fase sono state prese in esame soltanto le interazioni elettromagnetiche, oltre ai processi di decadimento e di decadimento radioattivo, in quanto sufficienti a separare i luoghi di specie atomiche diverse nelle matrici $\Delta E - E$.
 Successivamente, sono state aggiunte anche le interazioni adroniche, incorporando, dunque, processi di scattering elastico e inelastico e meccanismi di reazioni nucleari.
 
 In Figura~\ref{fig:simulazione_evento} è riportata la visualizzazione grafica della simulazione di 20~eventi nel caso in cui il modello dei processi fisici comprenda sia le interazioni elettromagnetiche sia quelle adroniche; infatti, in nero sono raffigurate le tracce degli ioni primari, mentre in altri colori sono mostrate le tracce delle particelle secondarie originate da reazioni nucleari. 
@@ -277,14 +277,14 @@ Dal momento che ai fini di questo lavoro una modifica dei parametri di cut-off n
 
 
 
-\subsection{\iflanguage{italian}{Step della particella}{Particle step}}
+\subsection{\iflanguage{italian}{Step delle particelle}{Particles step}}
 
 %In \geant{} la traccia della particella è divisa in \emph{step}, che, per comodità, possiamo immaginare come dei segmenti.
 %Grazie ad un'apposita classe, è possibile accedere a diverse informazioni legate a tale step.
-Come anticipato nella sezione precedente, in \geant{} è possibile dare la propria implementazione della classe che rappresenta gli step della particella.
+Come anticipato nella sezione precedente, in \geant{} è possibile dare la propria implementazione della classe che rappresenta gli step di una particella.
 Dal momento che, ai fini di questo lavoro, si volevano valutare le conseguenze sulla PID causate dagli effetti di bordo dei rivelatori, era necessario sapere punto per punto la posizione dello ione. 
-Dunque, è stato modificato il comportamento di default di questa classe, affinché ad ogni step si conoscessero gli estremi di tale step e il deposito di energia.
-(\textcolor{red}{Spiego anche che veniva estratto un punto casuale fra gli estremi dello step?})
+Dunque, è stato modificato il comportamento di default di questa classe, affinché ad ogni step si conoscessero la posizione e il deposito di energia.
+(\textcolor{red}{Spiego più in dettaglio che in realtà venivano estratti gli estremi dello step e poi veniva estratto un punto casuale fra tali estremi?})
 
 
 
@@ -347,7 +347,7 @@ Nella somma al secondo membro, il primo addendo corrisponde al termine legato al
 %\end{equation}
 %la deviazione standard risulta collegata alla risoluzione energetica.
 %Dal momento che quest'ultima è generalmente determinata dalla somma in quadratura di un termine legato all
-Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI dell'1.8\% FWHM a 850~MeV (\textcolor{red}{Devo specificare i valori di a e b scelti nei due casi?}).
+Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI dell'1.8\% FWHM a 850~MeV, in affinità con i valori tipici di questi dispositivi. (\textcolor{red}{Devo specificare i valori di a e b scelti nei due casi?})
 
 
 
@@ -359,5 +359,37 @@ Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al Si
 
 
 \section{\iflanguage{italian}{I risultati}{Results}}
+
+In questa sezione vengono presentati i risultati ottenuti dalle simulazioni \geant{} del sistema di telescopi SiC-CsI.
+Poiché l'obiettivo principale di questo lavoro di tesi consiste nella valutazione delle prestazioni di PID di tale sistema, la maggior parte delle simulazioni ha lo scopo di stimare la percentuale di errore che si commetterebbe nell'identificazione degli ioni di interesse per NUMEN utilizzando la tecnica $\Delta E - E$.
+
+È bene ricordare che tale tecnica prevede la correlazione fra la perdita di energia $\Delta E$ e l'energia cinetica totale $E_{tot}$. In riferimento al caso in esame, $\Delta E$ corrisponde all'energia persa dalla particella primaria nel rivelatore al~SiC, mentre $E_{tot}$ equivale alla sua energia cinetica iniziale. Nelle simulazioni svolte, quest'ultima quantità è data da
+\begin{equation}
+	E_{tot} \, = \, \Delta E + E_{sub} + E_{resid}
+\end{equation}
+laddove $E_{sub}$ è l'energia persa nel substrato morto ed $E_{resid}$ è l'energia residua persa nel cristallo allo CsI.
+%Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare la differenza fra la correlazione $\Delta E - E_{tot}$ e quella $\Delta E - E_{resid}$, per maggiore chiarezza nel prosieguo verrà specificato se  
+Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare se la correlazione $\Delta E - E_{resid}$ può garantire prestazioni analoghe a quella $\Delta E - E_{tot}$, per maggiore chiarezza nel prosieguo verrà specificato quale tipo di correlazione si sta considerando.
+%Dunque, dal momento che nel prosieguo verrà valutata la differenza fra le matrici 
+
+%Per semplicità della trattazione si è preferito suddividere la sezione in paragrafi specifici, evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
+%Tenendo in mente questo obiettivo, per semplicità della trattazione si è preferito esporre i risultati evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
+Per semplicità della trattazione si è preferito esporre i risultati evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
+
+
+
+
+
+\subsection{\iflanguage{italian}{Processi fisici senza interazioni adroniche}{Physics process without adronic interactions}}
+
+Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
+Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E - E_{tot}$.
+
+
+
+
+In Figura~ è riportato il plot 
+
+
 
 
