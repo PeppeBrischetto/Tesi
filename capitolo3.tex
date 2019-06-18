@@ -2,9 +2,18 @@
 
 
 
-Al fine di valutare se la scelta della tecnologia SiC-CsI può soddisfare le esigenze di NUMEN è stata implementata una simulazione Monte Carlo sulla piattaforma GEANT4.
-In questo capitolo vengono esposte le principali assunzioni e vengono presentati i risultati.
-(\textcolor{red}{chiedere se geant4 va scritto in maiuscoletto})
+%Al fine di valutare se la scelta della tecnologia SiC-CsI può soddisfare le esigenze di NUMEN è stata implementata una simulazione Monte Carlo sulla piattaforma GEANT4.
+%In questo capitolo vengono esposte le principali assunzioni e vengono presentati i risultati.
+
+
+
+Nei moderni esperimenti di fisica l'importanza delle simulazioni computerizzate è andata via via crescendo grazie all'eccezionale sviluppo dei computer e dei software volti a tale scopo; in particolare, l'introduzione delle tecniche Monte Carlo si è rivelata un potente strumento per trattare problemi complessi altrimenti difficilmente risolubili.
+In questo capitolo, dopo aver descritto le principali caratteristiche dei metodi Monte Carlo, si discute brevemente della piattaforma \geant, con cui sono state implementate le simulazioni svolte per questo lavoro di tesi (\textcolor{red}{geant4 va scritto in maiuscoletto?}).
+
+%Successivamente, vengono presentati gli aspetti più importanti di tali simulazioni, le quali avevano lo scopo di valutare se la scelta di utilizzare dei telescopi basati sulla tecnologia SiC-CsI può soddisfare le esigenze di NUMEN.
+Successivamente, dopo aver presentato gli aspetti più importanti di tali simulazioni, vengono discussi i risultati ottenuti, illustrando nei diversi casi le matrici $\Delta E - E$ e calcolando la percentuale di errore nell'identificazione degli ioni simulati.
+
+
 
 
 %Le simulazioni giocano un ruolo fondamentale nella fisica.
@@ -66,7 +75,7 @@ ad esempio, è possibile dimostrare che, al crescere della complessità del prob
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[scale=0.7]{Grafici/monte_carlo_vs_analytic2.png}
+	\includegraphics[scale=0.75]{Grafici/monte_carlo_vs_analytic2.png}
 	\caption{Confronto fra il tempo necessario per la risoluzione di un problema con un metodo analitico-deterministico e con un metodo Monte Carlo, al variare della complessità del problema.} \label{fig:monte_carlo}
 \end{figure}
 
@@ -295,7 +304,7 @@ Dunque, è stato modificato il comportamento di default di questa classe, affinc
 
 \subsection{\iflanguage{italian}{Elaborazione post-simulazione}{Post-simulation processing}}
 
-I dati prodotti dalla simulazione, scritti in un tree, sono stati elaborati in una macro di ROOT~\cite{brun:nima97}, in cui vengono aggiunte alcune caratteristiche tipiche dei rivelatori reali e vengono ricostruiti gli spettri energetici.
+I dati prodotti dalla simulazione, scritti in un tree, sono stati elaborati da una macro di ROOT~\cite{brun:nima97} in cui vengono aggiunte alcune caratteristiche tipiche dei rivelatori reali e vengono ricostruiti gli spettri energetici.
 %In primo luogo, ciascun deposito di energia viene pesato con una funzione di r
 %In primo luogo, dal momento che 
 %
@@ -329,7 +338,7 @@ dove $A$ è una costante di normalizzazione, $E_0$ è il valore originario del d
 Di tale distribuzione, noto il valore medio $E_0$, bisognava scegliere la $\sigma$ in modo tale che la risoluzione energetica ricavata dalla simulazione fosse confrontabile con quella sperimentale.
 %Dal momento che la risoluzione energetica è generalmente espressa come la somma in quadratura di un termine legato alle fluttuazioni statistiche del numero dei portatori e di uno dovuto al rumore elettronico, nella macro si è parametrizzata la $\sigma$ nel modo seguente
 La risoluzione energetica è generalmente espressa come la somma in quadratura di un termine legato alle fluttuazioni statistiche del numero dei portatori, proporzionale a $E^{-1/2}$, e di uno dovuto al rumore elettronico, proporzionale a $E^{-1}$~\cite{knoll:10}.
-Dunque, dal momento che la $\sigma$ può essere posta in relazione alla risoluzione energetica $R$ dalla seguente relazione
+Dunque, dal momento che la $\sigma$ può essere messa in relazione alla risoluzione energetica $R$ attraverso la~formula
 \begin{equation}
 	R \,  = \, \frac{\mbox{FWHM}}{E} \, = \, \frac{2.35 \, \sigma}{E}
 \end{equation}
@@ -370,25 +379,29 @@ Poiché l'obiettivo principale di questo lavoro di tesi consiste nella valutazio
 \end{equation}
 laddove $E_{sub}$ è l'energia persa nel substrato morto ed $E_{CsI}$ è l'energia residua rilasciata nel cristallo allo CsI.
 %Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare la differenza fra la correlazione $\Delta E - E_{tot}$ e quella $\Delta E - E_{resid}$, per maggiore chiarezza nel prosieguo verrà specificato se  
-Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ può garantire prestazioni analoghe a quella $\Delta E_{SiC} - E_{tot}$, per maggiore chiarezza nel prosieguo verrà specificato quale tipo di correlazione si sta considerando.
+Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ può garantire prestazioni analoghe a quella $\Delta E_{SiC} - E_{tot}$, nel prosieguo verrà specificato quale tipo di correlazione si sta considerando.
 %Dunque, dal momento che nel prosieguo verrà valutata la differenza fra le matrici 
 
 %Per semplicità della trattazione si è preferito suddividere la sezione in paragrafi specifici, evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
 %Tenendo in mente questo obiettivo, per semplicità della trattazione si è preferito esporre i risultati evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
-Per semplicità della trattazione si è preferito esporre i risultati evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
+Per semplicità della trattazione si è preferito esporre i risultati in modo schematico, evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
 
 \subsection{\iflanguage{italian}{Caso ideale}{Ideal case}}
 
 Come primo esempio, si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono monoenergetiche ed incidono ortogonalmente e centralmente al telescopio.
-In Figura~ 
-
-
-\subsection{\iflanguage{italian}{Processi fisici senza interazioni adroniche}{Physics process without adronic interactions}}
-
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
-Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E - E_{tot}$.
+Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{tot}$.
 Questa affermazione viene confermata dalla Figura~, in cui è possibile notare che i luoghi di \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne} sono chiaramente distinti.
-Al di sotto di ciascuna delle tre matrici sono presenti degli eventi 
+Al di sotto di ciascuna delle tre matrici sono presenti degli eventi in cui l'energia residua è stata misurata correttamente, mentre la perdita di energia risulta inferiore al valore corretto: si tratta di eventi in cui la carica prodotta nel rivelatore al SiC è stata raccolta parzialmente. 
+
+In Figura~ e in Figura~ sono riportate, rispettivamente, le proiezioni sull'asse $E_{tot}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{tot}$: esse rappresentano, dunque, gli spettri energetici misurati dal rivelatore al SiC e dal rivelatore allo CsI.
+
+
+%\subsection{\iflanguage{italian}{Processi fisici senza interazioni adroniche}{Physics process without adronic interactions}}
+\subsection{\iflanguage{italian}{Energia }{Physics process without adronic interactions}}
+
+
+
 
 
 
