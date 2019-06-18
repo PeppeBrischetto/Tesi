@@ -295,11 +295,12 @@ Dunque, è stato modificato il comportamento di default di questa classe, affinc
 
 \subsection{\iflanguage{italian}{Elaborazione post-simulazione}{Post-simulation processing}}
 
-I dati prodotti dalla simulazione, scritti in un tree, sono stati elaborati in una macro di ROOT~\cite{brun:nima97}, in cui vengono aggiunte alcune caratteristiche tipiche dei rivelatori reali.
+I dati prodotti dalla simulazione, scritti in un tree, sono stati elaborati in una macro di ROOT~\cite{brun:nima97}, in cui vengono aggiunte alcune caratteristiche tipiche dei rivelatori reali e vengono ricostruiti gli spettri energetici.
 %In primo luogo, ciascun deposito di energia viene pesato con una funzione di r
 %In primo luogo, dal momento che 
 %
-In primo luogo, a causa del processo di produzione, i rivelatori al SiC presentano nel volume sensibile un bordo esterno completamente inattivo, in cui la carica generata per ionizzazione non viene raccolta, ed una regione di transizione, dove la carica prodotta viene raccolta soltanto in parte.
+%In primo luogo, a causa del processo di produzione, i rivelatori al SiC presentano nel volume sensibile un bordo esterno completamente inattivo, dove la carica generata per ionizzazione non viene raccolta, ed una regione di transizione, in cui la carica prodotta viene raccolta soltanto in parte.
+In primo luogo, a causa del processo di produzione, i rivelatori al SiC presentano nel volume sensibile un bordo esterno completamente inattivo ed una regione di transizione: nel primo la carica generata per ionizzazione non viene raccolta, nella seconda viene raccolta soltanto in parte.
 Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di circa 10~$\mu$m, mentre la regione di transizione ha un'estensione di 2~$\mu$m. 
 %Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} lineare, che nel caso unidimensionale sarebbe così definita: 
 %\begin{equation}
@@ -314,9 +315,9 @@ Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di 
 Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} così definita: nella zona interamente attiva era pari ad uno, nella regione di transizione decresceva linearmente e nella zona del tutto inattiva aveva valore nullo (\textcolor{red}{Secondo lei è più chiaro se esplicito la formula del caso unidimensionale?}).
 
 %Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale nel rivelatore al SiC e nel cristallo allo CsI.
-Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale, sia per il rivelatore al SiC sia per il cristallo allo CsI.
-Mettendo insieme i depositi di energia di tutti gli eventi, si riproducevano gli spettri energetici degli ioni nei due stadi del telescopio.
-A questo livello, soltanto le fluttuazioni statistiche legate alla ionizzazione erano tenute in considerazione.
+Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento viene ricostruito il deposito energetico totale, sia per il rivelatore al SiC sia per il cristallo allo CsI.
+Mettendo insieme i depositi di energia di tutti gli eventi, si riproducono gli spettri energetici degli ioni nei due stadi del telescopio.
+A questo livello, soltanto le fluttuazioni statistiche legate alla ionizzazione sono tenute in considerazione.
 Dunque, al fine di riprodurre le risoluzioni energetiche tipiche dei rivelatori in esame, lo spettro energetico è stato ``allargato'' campionando ciascun deposito di energia con una distribuzione gaussiana, la cui espressione è
 %\begin{equation}
 %	f(E) = A \, \mbox{e}^{- \frac{E - E_0}{2 {\sigma}^2}}
@@ -363,33 +364,31 @@ Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al Si
 In questa sezione vengono presentati i risultati ottenuti dalle simulazioni \geant{} del sistema di telescopi SiC-CsI.
 Poiché l'obiettivo principale di questo lavoro di tesi consiste nella valutazione delle prestazioni di PID di tale sistema, la maggior parte delle simulazioni ha lo scopo di stimare la percentuale di errore che si commetterebbe nell'identificazione degli ioni di interesse per NUMEN utilizzando la tecnica $\Delta E - E$.
 
-È bene ricordare che tale tecnica prevede la correlazione fra la perdita di energia $\Delta E$ e l'energia cinetica totale $E_{tot}$. In riferimento al caso in esame, $\Delta E$ corrisponde all'energia persa dalla particella primaria nel rivelatore al~SiC, mentre $E_{tot}$ equivale alla sua energia cinetica iniziale. Nelle simulazioni svolte, quest'ultima quantità è data da
+È bene ricordare che tale tecnica prevede la correlazione fra la perdita di energia $\Delta E$ e l'energia cinetica totale $E_{tot}$. In riferimento al caso in esame, $\Delta E$ corrisponde all'energia persa dalla particella primaria nel rivelatore al~SiC (che da ora in poi indicheremo con $ \Delta E_{SiC}$), mentre $E_{tot}$ equivale alla sua energia cinetica iniziale. Nelle simulazioni svolte, quest'ultima quantità è data da
 \begin{equation}
-	E_{tot} \, = \, \Delta E + E_{sub} + E_{resid}
+	E_{tot} \, = \, \Delta E_{SiC} + E_{sub} + E_{CsI}
 \end{equation}
-laddove $E_{sub}$ è l'energia persa nel substrato morto ed $E_{resid}$ è l'energia residua persa nel cristallo allo CsI.
+laddove $E_{sub}$ è l'energia persa nel substrato morto ed $E_{CsI}$ è l'energia residua rilasciata nel cristallo allo CsI.
 %Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare la differenza fra la correlazione $\Delta E - E_{tot}$ e quella $\Delta E - E_{resid}$, per maggiore chiarezza nel prosieguo verrà specificato se  
-Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare se la correlazione $\Delta E - E_{resid}$ può garantire prestazioni analoghe a quella $\Delta E - E_{tot}$, per maggiore chiarezza nel prosieguo verrà specificato quale tipo di correlazione si sta considerando.
+Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ può garantire prestazioni analoghe a quella $\Delta E_{SiC} - E_{tot}$, per maggiore chiarezza nel prosieguo verrà specificato quale tipo di correlazione si sta considerando.
 %Dunque, dal momento che nel prosieguo verrà valutata la differenza fra le matrici 
 
 %Per semplicità della trattazione si è preferito suddividere la sezione in paragrafi specifici, evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
 %Tenendo in mente questo obiettivo, per semplicità della trattazione si è preferito esporre i risultati evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
 Per semplicità della trattazione si è preferito esporre i risultati evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
 
+\subsection{\iflanguage{italian}{Caso ideale}{Ideal case}}
 
-
+Come primo esempio, si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono monoenergetiche ed incidono ortogonalmente e centralmente al telescopio.
+In Figura~ 
 
 
 \subsection{\iflanguage{italian}{Processi fisici senza interazioni adroniche}{Physics process without adronic interactions}}
 
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
 Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E - E_{tot}$.
-
-
-
-
-In Figura~ è riportato il plot 
-
+Questa affermazione viene confermata dalla Figura~, in cui è possibile notare che i luoghi di \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne} sono chiaramente distinti.
+Al di sotto di ciascuna delle tre matrici sono presenti degli eventi 
 
 
 
