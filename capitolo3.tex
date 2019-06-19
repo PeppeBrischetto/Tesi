@@ -8,7 +8,7 @@
 
 
 Nei moderni esperimenti di fisica l'importanza delle simulazioni computerizzate è andata via via crescendo grazie all'eccezionale sviluppo dei computer e dei software volti a tale scopo; in particolare, l'introduzione delle tecniche Monte Carlo si è rivelata un potente strumento per trattare problemi complessi altrimenti difficilmente risolubili.
-In questo capitolo, dopo aver descritto le principali caratteristiche dei metodi Monte Carlo, si discute brevemente della piattaforma \geant, con cui sono state implementate le simulazioni svolte per questo lavoro di tesi (\textcolor{red}{geant4 va scritto in maiuscoletto?}).
+In questo capitolo, dopo aver descritto le principali caratteristiche dei metodi Monte Carlo, si discute brevemente della piattaforma \geant, con cui sono state implementate le simulazioni svolte per questo lavoro di tesi (\textcolor{red}{Geant4 va scritto in maiuscoletto?}).
 
 %Successivamente, vengono presentati gli aspetti più importanti di tali simulazioni, le quali avevano lo scopo di valutare se la scelta di utilizzare dei telescopi basati sulla tecnologia SiC-CsI può soddisfare le esigenze di NUMEN.
 Successivamente, dopo aver presentato gli aspetti più importanti di tali simulazioni, vengono discussi i risultati ottenuti, illustrando nei diversi casi le matrici $\Delta E - E$ e calcolando la percentuale di errore nell'identificazione degli ioni simulati.
@@ -218,7 +218,7 @@ Poiché uno degli obiettivi principali di questo lavoro consisteva nella ricerca
 %Lo standard tecnologico attuale prevede che un rivelatore al SiC di tale spessore abbia un substrato morto spesso 350~$\mu$m.
 Per quanto riguarda lo spessore dei due stadi del telescopio, in accordo con la soluzione individuata dalla collaborazione, sono stati simulati rivelatori al~SiC da 100~$\mu$m e cristalli allo CsI da 1~cm, mentre per il substrato morto si è considerato un valore di 350~$\mu$m.
 %Gli spessori tenuti in considerazione erano di 100~$\mu$m per il rivelatore al SiC, di 350~$\mu$m per il substrato morto e di 1~cm per il cristallo allo CsI.
-Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rimozione quasi totale degli strati morti, si è esaminato anche il caso in cui lo spessore del substrato era ridotto a 10~$\mu$m. 
+Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rimozione quasi totale degli strati morti, si è esaminato anche il caso in cui lo spessore del substrato fosse ridotto a 10~$\mu$m. 
 È stato, dunque, effettuato un confronto tra le due diverse condizioni, allo scopo di valutare le conseguenze sulle capacità di~PID.
 
 
@@ -357,7 +357,7 @@ Nella somma al secondo membro, il primo addendo corrisponde al termine legato al
 %\end{equation}
 %la deviazione standard risulta collegata alla risoluzione energetica.
 %Dal momento che quest'ultima è generalmente determinata dalla somma in quadratura di un termine legato all
-Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI dell'1.8\% FWHM a 850~MeV, in affinità con i valori tipici di questi dispositivi. (\textcolor{red}{Devo specificare i valori di a e b scelti nei due casi?})
+Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica intrinseca dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI dell'1.8\% FWHM a 850~MeV, in affinità con i valori tipici di questi dispositivi. (\textcolor{red}{Devo specificare i valori di a e b scelti nei due casi?})
 
 
 
@@ -373,35 +373,90 @@ Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al Si
 In questa sezione vengono presentati i risultati ottenuti dalle simulazioni \geant{} del sistema di telescopi SiC-CsI.
 Poiché l'obiettivo principale di questo lavoro di tesi consiste nella valutazione delle prestazioni di PID di tale sistema, la maggior parte delle simulazioni ha lo scopo di stimare la percentuale di errore che si commetterebbe nell'identificazione degli ioni di interesse per NUMEN utilizzando la tecnica $\Delta E - E$.
 
-È bene ricordare che tale tecnica prevede la correlazione fra la perdita di energia $\Delta E$ e l'energia cinetica totale $E_{tot}$. In riferimento al caso in esame, $\Delta E$ corrisponde all'energia persa dalla particella primaria nel rivelatore al~SiC (che da ora in poi indicheremo con $ \Delta E_{SiC}$), mentre $E_{tot}$ equivale alla sua energia cinetica iniziale. Nelle simulazioni svolte, quest'ultima quantità è data da
+È bene ricordare che tale tecnica prevede la correlazione fra la perdita di energia $\Delta E$ e l'energia cinetica totale $E$. In riferimento al caso in esame, $\Delta E$ corrisponde all'energia persa dalla particella primaria nel rivelatore al~SiC (che da ora in poi indicheremo con $ \Delta E_{SiC}$), mentre $E$ equivale alla sua energia cinetica iniziale. Nelle simulazioni svolte, quest'ultima quantità è data da
 \begin{equation}
-	E_{tot} \, = \, \Delta E_{SiC} + E_{sub} + E_{CsI}
+	E \, = \, \Delta E_{SiC} + E_{sub} + E_{CsI}
 \end{equation}
 laddove $E_{sub}$ è l'energia persa nel substrato morto ed $E_{CsI}$ è l'energia residua rilasciata nel cristallo allo CsI.
+In realtà, $E_{sub}$ non sarebbe sperimentalmente accessibile; di conseguenza, per tenere conto delle energie realmente misurabili, bisogna introdurre la quantità $E_{tot}$, definita nel modo seguente
+\begin{equation}
+	E_{tot} \, = \, \Delta E_{SiC} + E_{CsI}
+\end{equation}
+
 %Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare la differenza fra la correlazione $\Delta E - E_{tot}$ e quella $\Delta E - E_{resid}$, per maggiore chiarezza nel prosieguo verrà specificato se  
-Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ può garantire prestazioni analoghe a quella $\Delta E_{SiC} - E_{tot}$, nel prosieguo verrà specificato quale tipo di correlazione si sta considerando.
+Inoltre, dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ può garantire prestazioni analoghe a quella $\Delta E_{SiC} - E_{tot}$, nel prosieguo verrà specificato quale tipo di correlazione si sta considerando.
 %Dunque, dal momento che nel prosieguo verrà valutata la differenza fra le matrici 
 
 %Per semplicità della trattazione si è preferito suddividere la sezione in paragrafi specifici, evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
 %Tenendo in mente questo obiettivo, per semplicità della trattazione si è preferito esporre i risultati evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
 Per semplicità della trattazione si è preferito esporre i risultati in modo schematico, evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
 
-\subsection{\iflanguage{italian}{Caso ideale}{Ideal case}}
+%\subsection{\iflanguage{italian}{Caso ideale}{Ideal case}}
+\subsection{\iflanguage{italian}{Particelle monocromatiche, ortogonali e centrali }{Monochromatic, orthogonal and central particles}}
 
-Come primo esempio, si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono monoenergetiche ed incidono ortogonalmente e centralmente al telescopio.
+
+Come primo esempio, si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie hanno un'energia di 1000~MeV ed incidono ortogonalmente e centralmente al telescopio.
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
 Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{tot}$.
-Questa affermazione viene confermata dalla Figura~, in cui è possibile notare che i luoghi di \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne} sono chiaramente distinti.
-Al di sotto di ciascuna delle tre matrici sono presenti degli eventi in cui l'energia residua è stata misurata correttamente, mentre la perdita di energia risulta inferiore al valore corretto: si tratta di eventi in cui la carica prodotta nel rivelatore al SiC è stata raccolta parzialmente. 
+Questa affermazione viene confermata dalla Figura~\ref{fig:deltaE_ETot}, in cui è possibile notare che i luoghi di \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne} sono chiaramente distinti.
+Innanzitutto, si sottolinea che le matrici si dispongono ad $E_{tot}$ diversi perché la parte di energia persa nel substrato morto dipende dal numero atomico ($Z$) dello ione.
+In secondo luogo, si fa notare che al di sotto di ciascuna delle tre matrici sono presenti degli eventi in cui l'energia residua è stata misurata correttamente, mentre la perdita di energia risulta inferiore al valore ``corretto'' (\textcolor{red}{Non so se va bene definirlo ``corretto''}): si tratta di eventi in cui la carica prodotta nel rivelatore al SiC è stata raccolta parzialmente. 
+Tali eventi costituiscono la principale componente di errore nella PID, in quanto, potendo andare a posizionarsi sul luogo di uno ione diverso, in una procedura di identificazione effettuata mediante tagli grafici verrebbe riconosciuto erroneamente il loro~$Z$.
+Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che la frazione di questi eventi rispetto al loro totale sia piccola.
 
-In Figura~ e in Figura~ sono riportate, rispettivamente, le proiezioni sull'asse $E_{tot}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{tot}$: esse rappresentano, dunque, gli spettri energetici misurati dal rivelatore al SiC e dal rivelatore allo CsI.
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/deltaE_ETot_punti_grandi.eps}
+	\caption{Matrice.} \label{fig:deltaE_ETot}
+\end{figure}
+
+
+
+
+In Figura~\ref{fig:ETot} e in Figura~\ref{fig:deltaE_Tot} sono riportate, rispettivamente, le proiezioni sull'asse $E_{tot}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{tot}$: esse rappresentano, dunque, gli spettri energetici misurati dal rivelatore al SiC e dal rivelatore allo CsI.
+Effettuando un fit gaussiano sul picco dell'\ce{^{18}O} nello spettro $\Delta E_{SiC}$, si trova una FWHM di 1.1~MeV, corrispondente ad una risoluzione di 5.8\%.
+Poiché questo valore è ben più grande della risoluzione intrinseca assunta per tale rivelatore, si deduce che in questo caso la componente più significativa della risoluzione compete alle fluttuazioni nel processo di ionizzazione.
+
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[scale=0.6]{Grafici_Tesi/ETot.eps}
+	\caption{Spettro.} \label{fig:ETot}
+\end{figure}
+
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[scale=0.6]{Grafici_Tesi/deltaE_Tot.eps}
+	\caption{Spettro .} \label{fig:deltaE_Tot}
+\end{figure}
+
+
+
+
+
+
+
 
 
 %\subsection{\iflanguage{italian}{Processi fisici senza interazioni adroniche}{Physics process without adronic interactions}}
-\subsection{\iflanguage{italian}{Energia }{Physics process without adronic interactions}}
+\subsection{\iflanguage{italian}{Particelle non monocromatiche, non ortogonali e non centrali }{Not monochromatic, not orthogonal and not central particles}}
+
+In questo secondo esempio, le particelle primarie hanno un'energia scelta in modo casuale fra 500 e 1000~MeV, la loro posizione iniziale è estratta casualmente sulla faccia frontale del rivelatore al SiC e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
+Inoltre, anche in questo caso viene utilizzato il modello dei processi fisici dell'esempio precedente.
+Le corrispondenti matrici $\Delta E_{SiC} - E_{tot}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}: in primo luogo, si vede la formazione delle bande previste dalla formula di Bethe-Block.
+Inoltre, a differenza del caso precedente si nota la comparsa di eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''. Ciò dipende da quegli eventi in cui le particelle escono fuori dal rivelatore al CsI, non rilasciando totalmente la loro energia residua.
+A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID.
+Per meglio visualizzare la frazione di eventi spuri (\textcolor{red}{si possono definire così?}), si è riportata in Figura~ la proiezione sull'asse verticale della ``fetta'' di energia compresa fra 600 e 700~MeV: come si può notare, tali eventi costituiscono un continuo che si estende fino ad energie prossime a zero. 
+%Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
+Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, si è proceduto nel modo seguente: per ogni fetta di energia in $E_{tot}$, si è effettuata una proiezione sull'asse $\Delta E_{SiC}$; dopo di che, per ogni coppia di specie atomiche, si è calcolato il punto mediano fra i centroidi delle due distribuzioni; infine, si è determinata la frazione di eventi al di sotto (o al di sopra) del punto mediano.
+Il risultato di tale procedura è illustrato in Figura~, 
 
 
-
-
-
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/deltaE_ETot_full_energy.eps}
+	\caption{Matrice.} \label{fig:deltaE_ETot_full_energy}
+\end{figure}
 
