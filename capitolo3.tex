@@ -407,7 +407,7 @@ Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che 
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/deltaE_ETot_punti_grandi.eps}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_monocromatiche/deltaE_ETot_punti_grandi.png}
 	\caption{Matrice.} \label{fig:deltaE_ETot}
 \end{figure}
 
@@ -421,14 +421,14 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[scale=0.6]{Grafici_Tesi/ETot.eps}
+	\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_monocromatiche/ETot.png}
 	\caption{Spettro.} \label{fig:ETot}
 \end{figure}
 
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[scale=0.6]{Grafici_Tesi/deltaE_Tot.eps}
+	\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_monocromatiche/deltaE_Tot.png}
 	\caption{Spettro .} \label{fig:deltaE_Tot}
 \end{figure}
 
@@ -443,20 +443,50 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 %\subsection{\iflanguage{italian}{Processi fisici senza interazioni adroniche}{Physics process without adronic interactions}}
 \subsection{\iflanguage{italian}{Particelle non monocromatiche, non ortogonali e non centrali }{Not monochromatic, not orthogonal and not central particles}}
 
-In questo secondo esempio, le particelle primarie hanno un'energia scelta in modo casuale fra 500 e 1000~MeV, la loro posizione iniziale è estratta casualmente sulla faccia frontale del rivelatore al SiC e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
-Inoltre, anche in questo caso viene utilizzato il modello dei processi fisici dell'esempio precedente.
-Le corrispondenti matrici $\Delta E_{SiC} - E_{tot}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}: in primo luogo, si vede la formazione delle bande previste dalla formula di Bethe-Block.
-Inoltre, a differenza del caso precedente si nota la comparsa di eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''. Ciò dipende da quegli eventi in cui le particelle escono fuori dal rivelatore al CsI, non rilasciando totalmente la loro energia residua.
-A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID.
-Per meglio visualizzare la frazione di eventi spuri (\textcolor{red}{si possono definire così?}), si è riportata in Figura~ la proiezione sull'asse verticale della ``fetta'' di energia compresa fra 600 e 700~MeV: come si può notare, tali eventi costituiscono un continuo che si estende fino ad energie prossime a zero. 
-%Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
-Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, si è proceduto nel modo seguente: per ogni fetta di energia in $E_{tot}$, si è effettuata una proiezione sull'asse $\Delta E_{SiC}$; dopo di che, per ogni coppia di specie atomiche, si è calcolato il punto mediano fra i centroidi delle due distribuzioni; infine, si è determinata la frazione di eventi al di sotto (o al di sopra) del punto mediano.
-Il risultato di tale procedura è illustrato in Figura~, 
 
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/deltaE_ETot_full_energy.eps}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche/deltaE_ETot_full_energy.png}
 	\caption{Matrice.} \label{fig:deltaE_ETot_full_energy}
 \end{figure}
 
+
+
+In questo secondo esempio, le particelle primarie hanno un'energia scelta in modo casuale fra 500 e 1000~MeV, la loro posizione iniziale è estratta casualmente sulla faccia frontale del rivelatore al SiC e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
+Inoltre, anche in questo caso viene utilizzato il modello dei processi fisici dell'esempio precedente.
+Le corrispondenti matrici $\Delta E_{SiC} - E_{tot}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}: in primo luogo, si vede la formazione delle bande previste dalla formula di Bethe-Block.
+Inoltre, a differenza del caso precedente si nota la comparsa di eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''. 
+Ciò dipende da quegli eventi in cui le particelle escono fuori dal rivelatore al CsI, non rilasciando totalmente la loro energia residua.
+A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID.
+Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}{si possono definire così?}), si è riportata in Figura~\ref{fig:fetta} la proiezione sull'asse verticale della ``fetta'' di energia compresa fra 600 e 700~MeV: come si può notare, tali eventi costituiscono un continuo che si estende fino ad energie prossime a zero e rendono asimmetriche le distribuzioni. 
+%Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
+
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche/fetta_quadrata.png}
+	\caption{Matrice.} \label{fig:fetta}
+\end{figure}
+
+
+
+Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, si è proceduto nel modo seguente: per ogni fetta di energia in $E_{tot}$, si è effettuata una proiezione sull'asse $\Delta E_{SiC}$; dopo di che, per ogni coppia di specie atomiche, si è calcolato il punto mediano fra i valori medi delle due distribuzioni; infine, si è determinata la frazione di eventi al di sotto (o al di sopra) del punto mediano.
+Il risultato di tale procedura è illustrato in Figura~\ref{fig:leakage}, dove si può notare che la \textcolor{red}{contaminazione} (\textcolor{red}{posso usare questo termine?}) da una specie atomica con $Z$ più grande verso una con $Z$ più piccolo è nettamente maggiore; infatti, le percentuali che si trovano in Figura~\ref{fig:leakage}.a sono comprese fra l'8\% e il 15\%, mentre quelle in Figura~\ref{fig:leakage}.b sono inferiori all'1\%.
+In entrambi i casi si può osservare che la frazione di nuclei erroneamente identificati ha un andamento decrescente al crescere dell'energia.
+Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della carica sono maggiormente significativi, la capacità di separare gli ioni peggiora.
+
+
+
+\begin{figure}[!p] 
+	\centering
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_alto.png}}
+	\hspace{10mm}
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_basso.png}}
+	\caption{Le trasformazioni dei neutrini: in figura (a) se il neutrino è una particella di Dirac, in figura (b) se il neutrino è una particella di Majorana.} \label{fig:leakage}
+\end{figure}
+
+
+Un aspetto interessante da valutare riguarda
