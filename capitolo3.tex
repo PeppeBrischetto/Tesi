@@ -310,7 +310,7 @@ I dati prodotti dalla simulazione, scritti in un tree, sono stati elaborati da u
 %
 %In primo luogo, a causa del processo di produzione, i rivelatori al SiC presentano nel volume sensibile un bordo esterno completamente inattivo, dove la carica generata per ionizzazione non viene raccolta, ed una regione di transizione, in cui la carica prodotta viene raccolta soltanto in parte.
 In primo luogo, a causa del processo di produzione, i rivelatori al SiC presentano nel volume sensibile un bordo esterno completamente inattivo ed una regione di transizione: nel primo la carica generata per ionizzazione non viene raccolta, nella seconda viene raccolta soltanto in parte.
-Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di circa 10~$\mu$m, mentre la regione di transizione ha un'estensione di 2~$\mu$m. 
+Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di circa 200~$\mu$m, mentre la regione di transizione ha un'estensione di 50~$\mu$m. 
 %Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} lineare, che nel caso unidimensionale sarebbe così definita: 
 %\begin{equation}
 %f(x) =
@@ -441,7 +441,7 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 
 
 %\subsection{\iflanguage{italian}{Processi fisici senza interazioni adroniche}{Physics process without adronic interactions}}
-\subsection{\iflanguage{italian}{Particelle non monocromatiche, non ortogonali e non centrali }{Not monochromatic, not orthogonal and not central particles}}
+\subsection{\iflanguage{italian}{Particelle non monocromatiche, non ortogonali e non centrali }{Not monochromatic, not orthogonal and not central particles}} \label{par:particelle_non_monocromatiche}
 
 
 
@@ -538,13 +538,13 @@ Poiché anche in altri casi si è riscontrato che la correlazione di $\Delta E_{
 
 %\clearpage
 
-\subsection{\iflanguage{italian}{Modello con interazioni adroniche}{Model with adronic interactions}}
+\subsection{\iflanguage{italian}{Modello con interazioni adroniche}{Model with adronic interactions}} \label{par:interazioni_adroniche}
 
 Rispetto all'esempio precedente, la geometria e le caratteristiche delle particelle primarie restano invariate, mentre il modello dei processi fisici adesso include le interazioni adroniche. 
 Le corrispondenti matrici $\Delta E_{SiC} - E{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_adron}: come si può notare, a differenza del caso in cui erano considerate soltanto le interazioni elettromagnetiche, adesso si osserva per tutte e tre le specie nucleari la comparsa di eventi ad un'energia più alta di quella delle rispettive bande.
 Ciò è dovuto a meccanismi di reazioni nucleari, nei quali vengono prodotti nuclei più pesanti dei proiettili (\textcolor{red}{non sono molto sicuro di questa cosa}).
 La presenza di questi eventi non sembra provocare significativi cambiamenti nelle capacità di PID, in quanto, come si può evincere dalla Figura~\ref{fig:leakage_res_adron}, le percentuali di nuclei potenzialmente male identificati aumenta di meno dell'1\%. 
-Dunque, è evidente che la maggior parte degli eventi spuri è originata da processi di raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la bassa probabilità che avvenga un'interazione adronica.
+Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la bassa probabilità che avvenga un'interazione adronica.
 
 
 
@@ -568,12 +568,29 @@ Dunque, è evidente che la maggior parte degli eventi spuri è originata da proc
 
 
 
-\subsection{\iflanguage{italian}{Studio delle dimensioni trasversali}{Study of transversal dimensions}}
+\subsection{\iflanguage{italian}{Studio della granularità}{Study of granularity}}
 
-Uno degli obiettivi fondamentali di questo lavoro di tesi consisteva nell'ottimizzazione delle dimensioni trasversali dei telescopi, al fine di minimizzare la percentuale di eventi in cui la carica è stata raccolta parzialmente. 
+Uno degli obiettivi fondamentali di questo lavoro di tesi consiste nell'ottimizzazione delle dimensioni trasversali dei telescopi, al fine di minimizzare la percentuale di eventi in cui la carica è stata raccolta parzialmente. 
 Dal momento che l'estensione della cornice completamente inattiva e della regione di transizione dovrebbero essere circa costanti pur variando la superficie del rivelatore al~SiC, ci si aspetta che all'aumentare delle dimensioni trasversali del telescopio la frazione degli eventi con raccolta di carica incompleta diminuisca.
 Considerando gli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono stati esaminati tre casi: $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}. 
-Per quanto riguarda il primo, i plot di riferimento sono quelli mostrati nel paragrafo precedente.
+In ognuna delle tre possibilità le particelle primarie sono state generate mantenendo i parametri elencati nel Paragrafo~\ref{par:interazioni_adroniche}.
+Per quanto riguarda il primo caso, i plot di riferimento sono quelli mostrati nel paragrafo precedente.
+Nel secondo, come si può notare dalla Figura~, le matrici $\Delta E_{SiC} - E_{CsI}$
+
+
+
+
+
+
+
+\clearpage
+\subsection{\iflanguage{italian}{Studio degli effetti di bordo}{Study of frame effects}}
+
+
+
+%\clearpage
+\subsection{\iflanguage{italian}{Studio del substrato morto}{Study of dead-substrate}}
+
 
 
 

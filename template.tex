@@ -61,11 +61,16 @@
 %\thispagestyle{empty}
 
 % Le prossime due righe servono per sistemare il collegamento ipertestuale nell'indice. Si è usato \cleardoublepage perché la classe è book, mentre per article si usa \clearpage. Comunque vedere ArteLateX.pdf per ogni evenienza
-%\cleardoublepage
-%\phantomsection
+\cleardoublepage
+\phantomsection
+\chapter*{\iflanguage{italian}{Introduzione}{Introduction}}
+\input{introduzione.tex}
+\addcontentsline{toc}{chapter}{\iflanguage{italian}{Introduzione}{Introduction}}
+
+% Queste due righe non mi sembra che servano
 %\chapter*{\iflanguage{italian}{Introduzione}{Introduction}}
 %\setcounter{page}{1}
-%\addcontentsline{toc}{chapter}{\iflanguage{italian}{Introduzione}{Introduction}}
+
 
 %\lipsum[20]
 
