@@ -395,7 +395,7 @@ Per semplicità della trattazione si è preferito esporre i risultati in modo sc
 \subsection{\iflanguage{italian}{Particelle monocromatiche, ortogonali e centrali }{Monochromatic, orthogonal and central particles}}
 
 
-Come primo esempio, si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie hanno un'energia di 1000~MeV ed incidono ortogonalmente e centralmente al telescopio.
+Come primo esempio, si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie hanno un'energia di 1000~MeV ed incidono ortogonalmente e centralmente al telescopio, che in questo caso ha dimensioni trasversali di $1 \times 1$~cm\ap{2}.
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
 Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{tot}$.
 Questa affermazione viene confermata dalla Figura~\ref{fig:deltaE_ETot}, in cui è possibile notare che i luoghi di \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne} sono chiaramente distinti.
@@ -408,7 +408,7 @@ Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che 
 \begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_monocromatiche/deltaE_ETot_punti_grandi.png}
-	\caption{Matrice.} \label{fig:deltaE_ETot}
+	\caption{Matrici $\Delta E_{SiC} - E_{tot}$ per \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}.} \label{fig:deltaE_ETot}
 \end{figure}
 
 
@@ -422,14 +422,14 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 \begin{figure} [!p]
 	\centering
 	\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_monocromatiche/ETot.png}
-	\caption{Spettro.} \label{fig:ETot}
+	\caption{Spettro in $E_{tot} = \Delta E_{SiC} + E_{CsI}$.} \label{fig:ETot}
 \end{figure}
 
 
 \begin{figure} [!p]
 	\centering
 	\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_monocromatiche/deltaE_Tot.png}
-	\caption{Spettro .} \label{fig:deltaE_Tot}
+	\caption{Spettro in $ \Delta E_{SiC} $.} \label{fig:deltaE_Tot}
 \end{figure}
 
 
@@ -448,15 +448,16 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 \begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche/deltaE_ETot_full_energy.png}
-	\caption{Matrice.} \label{fig:deltaE_ETot_full_energy}
+	\caption{Matrici $\Delta E_{SiC} - E_{tot}$.} \label{fig:deltaE_ETot_full_energy}
 \end{figure}
 
 
 
 In questo secondo esempio, le particelle primarie hanno un'energia scelta in modo casuale fra 500 e 1000~MeV, la loro posizione iniziale è estratta casualmente sulla faccia frontale del rivelatore al SiC e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
-Inoltre, anche in questo caso viene utilizzato il modello dei processi fisici dell'esempio precedente.
-Le corrispondenti matrici $\Delta E_{SiC} - E_{tot}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}: in primo luogo, si vede la formazione delle bande previste dalla formula di Bethe-Block.
-Inoltre, a differenza del caso precedente si nota la comparsa di eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''. 
+Inoltre, anche in questo caso viene utilizzato il modello dei processi fisici dell'esempio precedente; la geometria e le dimensioni dei telescopi restano, invece, uguali a quelle dell'esempio precedente.
+Le corrispondenti matrici $\Delta E_{SiC} - E_{tot}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}: in primo luogo, si vede la formazione delle bande previste dalla formula di Bethe-Block, che appaiono ben separate lungo tutto il range energetico esplorato.
+%Inoltre, a differenza del caso precedente si nota la comparsa di eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''.
+Inoltre, rispetto al caso precedente fanno la loro comparsa degli eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''. 
 Ciò dipende da quegli eventi in cui le particelle escono fuori dal rivelatore al CsI, non rilasciando totalmente la loro energia residua.
 A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID.
 Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}{si possono definire così?}), si è riportata in Figura~\ref{fig:fetta} la proiezione sull'asse verticale della ``fetta'' di energia compresa fra 600 e 700~MeV: come si può notare, tali eventi costituiscono un continuo che si estende fino ad energie prossime a zero e rendono asimmetriche le distribuzioni. 
@@ -466,15 +467,8 @@ Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}
 \begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche/fetta_quadrata.png}
-	\caption{Matrice.} \label{fig:fetta}
+	\caption{Proiezione sull'asse $\Delta E_{SiC}$ della fetta in $E_{tot}$ compresa tra 600 e 700~MeV.} \label{fig:fetta}
 \end{figure}
-
-
-
-Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, si è proceduto nel modo seguente: per ogni fetta di energia in $E_{tot}$, si è effettuata una proiezione sull'asse $\Delta E_{SiC}$; dopo di che, per ogni coppia di specie atomiche, si è calcolato il punto mediano fra i valori medi delle due distribuzioni; infine, si è determinata la frazione di eventi al di sotto (o al di sopra) del punto mediano.
-Il risultato di tale procedura è illustrato in Figura~\ref{fig:leakage}, dove si può notare che la \textcolor{red}{contaminazione} (\textcolor{red}{posso usare questo termine?}) da una specie atomica con $Z$ più grande verso una con $Z$ più piccolo è nettamente maggiore; infatti, le percentuali che si trovano in Figura~\ref{fig:leakage}.a sono comprese fra l'8\% e il 15\%, mentre quelle in Figura~\ref{fig:leakage}.b sono inferiori all'1\%.
-In entrambi i casi si può osservare che la frazione di nuclei erroneamente identificati ha un andamento decrescente al crescere dell'energia.
-Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della carica sono maggiormente significativi, la capacità di separare gli ioni peggiora.
 
 
 
@@ -485,8 +479,112 @@ Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della car
 	\hspace{10mm}
 	\subfigure[]
 	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_basso.png}}
-	\caption{Le trasformazioni dei neutrini: in figura (a) se il neutrino è una particella di Dirac, in figura (b) se il neutrino è una particella di Majorana.} \label{fig:leakage}
+	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{tot}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage}
 \end{figure}
 
 
-Un aspetto interessante da valutare riguarda
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/deltaE_ERes.png}
+	\caption{Matrici $\Delta E_{SiC} - E_{CsI}$.} \label{fig:deltaE_ERes}
+\end{figure}
+
+
+
+
+
+
+Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, si è proceduto nel modo seguente: per ogni fetta di energia in $E_{tot}$, si è effettuata una proiezione sull'asse $\Delta E_{SiC}$; dopo di che, per ogni coppia di specie atomiche, si è calcolato il punto mediano fra i valori medi delle due distribuzioni; infine, si è determinata la frazione di eventi al di sotto (o al di sopra) del punto mediano.
+Il risultato di tale procedura è illustrato in Figura~\ref{fig:leakage}, dove il range energetico è stato suddiviso in intervalli da 100~MeV e si è scelto di rappresentare i dati soltanto laddove erano presenti tutte e tre le bande.
+Si può notare che la \textcolor{red}{contaminazione} (\textcolor{red}{posso usare questo termine?}) da una specie atomica con $Z$ più grande verso una con $Z$ più piccolo è nettamente maggiore; infatti, le percentuali che si trovano in Figura~\ref{fig:leakage}.a sono comprese fra il 7\% e il 15\%, mentre quelle in Figura~\ref{fig:leakage}.b sono inferiori all'1\%.
+In entrambi i casi si può osservare che la frazione di nuclei erroneamente identificati ha un andamento decrescente al crescere dell'energia.
+Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della carica sono maggiormente significativi, la capacità di separare gli ioni peggiora.
+
+
+
+
+
+
+
+%Uno studio interessante riguarda il confronto fra la correlazione $\Delta E_{SiC} - E_{tot}$ e quella $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes}.
+A questo punto, è interessante studiare la correlazione $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes} sono riportate le matrici delle tre specie di interesse, le quali continuano ad essere ben separate per tutto il range energetico. 
+%Dal confronto con la Figura~\ref{fig:deltaE_ETot_full_energy} si nota che tali matrici si estendono ad energie inferiori, in quanto alla variabile sull'asse orizzontale viene a mancare il contributo di $\Delta E_{SiC}$. 
+Confrontando tali matrici con quelle in Figura~\ref{fig:deltaE_ETot_full_energy}, non si notano sostanziali differenze, in particolare per quanto riguarda la densità degli eventi spuri.
+Questa affermazione è supportata dalla Figura~\ref{fig:leakage_res}, nella quale si riscontrano percentuali simili a quelle viste in Figura~\ref{fig:leakage}.
+L'unica differenza sembra essere dovuta al punto in Figura~\ref{fig:leakage_res}.a ad 850~MeV, per il quale si osservano percentuali lievemente maggiori del suo corrispettivo in Figura~\ref{fig:leakage}.a. 
+Ciò sembra essere legato al modo in cui si dispongono gli eventi con raccolta di carica incompleta; infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ essi si posizionano in maniera perpendicolare all'asse $E_{CsI}$. 
+Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica del telescopio, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
+Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, la possibilità di evitarne la calibrazione potrebbe consentire un notevole risparmio di tempo.
+%Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli della correlazione $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate le matrici soltanto 
+
+Poiché anche in altri casi si è riscontrato che la correlazione di $\Delta E_{SiC}$ con $E_{CsI}$ offre risultati paragonabili a quelli della correlazione con $E_{tot}$, da questo momento in poi nell'esposizione dei risultati delle simulazioni verranno presentate soltanto le matrici $\Delta E_{SiC} - E_{CsI}$.
+
+
+
+
+
+
+
+\begin{figure}[!p] 
+	\centering
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_alto.png}}
+	\hspace{10mm}
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_basso.png}}
+	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{CsI}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res}
+\end{figure}
+
+%\clearpage
+
+\subsection{\iflanguage{italian}{Modello con interazioni adroniche}{Model with adronic interactions}}
+
+Rispetto all'esempio precedente, la geometria e le caratteristiche delle particelle primarie restano invariate, mentre il modello dei processi fisici adesso include le interazioni adroniche. 
+Le corrispondenti matrici $\Delta E_{SiC} - E{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_adron}: come si può notare, a differenza del caso in cui erano considerate soltanto le interazioni elettromagnetiche, adesso si osserva per tutte e tre le specie nucleari la comparsa di eventi ad un'energia più alta di quella delle rispettive bande.
+Ciò è dovuto a meccanismi di reazioni nucleari, nei quali vengono prodotti nuclei più pesanti dei proiettili (\textcolor{red}{non sono molto sicuro di questa cosa}).
+La presenza di questi eventi non sembra provocare significativi cambiamenti nelle capacità di PID, in quanto, come si può evincere dalla Figura~\ref{fig:leakage_res_adron}, le percentuali di nuclei potenzialmente male identificati aumenta di meno dell'1\%. 
+Dunque, è evidente che la maggior parte degli eventi spuri è originata da processi di raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la bassa probabilità che avvenga un'interazione adronica.
+
+
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Interazioni_adroniche/deltaE_ERes.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando anche le interazioni adroniche.} \label{fig:deltaE_ERes_adron}
+\end{figure}
+
+
+
+\begin{figure}[!p] 
+	\centering
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/Interazioni_adroniche/leakage_alto.png}}
+	\hspace{10mm}
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/Interazioni_adroniche/leakage_basso.png}}
+	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{CsI}$, considerando anche le interazioni adroniche: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_adron}
+\end{figure}
+
+
+
+\subsection{\iflanguage{italian}{Studio delle dimensioni trasversali}{Study of transversal dimensions}}
+
+Uno degli obiettivi fondamentali di questo lavoro di tesi consisteva nell'ottimizzazione delle dimensioni trasversali dei telescopi, al fine di minimizzare la percentuale di eventi in cui la carica è stata raccolta parzialmente. 
+Dal momento che l'estensione della cornice completamente inattiva e della regione di transizione dovrebbero essere circa costanti pur variando la superficie del rivelatore al~SiC, ci si aspetta che all'aumentare delle dimensioni trasversali del telescopio la frazione degli eventi con raccolta di carica incompleta diminuisca.
+Considerando gli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono stati esaminati tre casi: $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}. 
+Per quanto riguarda il primo, i plot di riferimento sono quelli mostrati nel paragrafo precedente.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
