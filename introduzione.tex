@@ -11,21 +11,45 @@ Nell'ultimo decennio, l'interesse suscitato dal doppio decadimento beta senza ne
 Il \doppiobeta{} permetterebbe non soltanto di accedere alla scala assoluta della massa del neutrino, ma anche di chiarire la sua natura fondamentale; fino ad oggi, infatti, non è noto se il neutrino è una particella di Dirac o di Majorana. 
 Inoltre, dal momento che tale fenomeno viola la conservazione del numero leptonico di famiglia, potrebbe costituire anche la prima evidenza sperimentale di fisica oltre il Modello Standard.
 
-Per estrarre dagli esperimenti sul \doppiobeta{} le informazioni di interesse, è necessario conoscere gli elementi di matrice nucleare (NMEs) del processo di transizione fra lo stato iniziale e quello finale. 
+Per estrarre dagli esperimenti sul \doppiobeta{} le informazioni di interesse è necessario conoscere gli elementi di matrice nucleare (NMEs) del processo di transizione fra lo stato iniziale e quello finale. 
 %Tali NMEs sono finora noti soltanto per via teorica, presentando un quadro non privo di ambiguità.
 %Tali NMEs sono finora noti soltanto per via teorica, 
 %Finora, le informazioni note su tali NMEs derivano soltanto da modelli teorici, i quali presentano tra loro sostanziali discrepanze.
 Tali NMEs sono finora noti soltanto per via teorica, presentando un quadro in cui i diversi modelli esibiscono tra loro sostanziali discrepanze.
 Allo scopo di risolvere queste ambiguità è nato il progetto NUMEN (\emph{NUclear Matrix Elements for Neutrinoless double beta decay}), il quale propone un nuovo metodo per accedere sperimentalmente ai NMEs.
-Il fulcro di tale metodo è la misura di sezioni d'urto di reazioni di doppio scambio di carica (DCE) indotte da ioni pesanti.
+Il fulcro di tale metodo è la misura di sezioni d'urto di reazioni di doppio scambio di carica (DCE), le quali mostrano diversi aspetti in comune con il \doppiobeta.
 %Questi processi sono caratterizzati da sezioni 
-Poiché il progetto intende studiare in modo sistematico tutti gli isotopi candidati al \doppiobeta{} ed essendo i processi di DCE caratterizzati da sezioni d'urto estremamente basse, è stato previsto un profondo upgrade delle due principali infrastrutture sperimentali: il Ciclotrone Superconduttore e lo spettrometro magnetico~MAGNEX. 
-Alla fine di tale upgrade i fasci di ioni pesanti avranno un'intensità almeno due ordini di grandezza maggiore di quella attuale.
-In quest'ottica è fondamentale lo sviluppo di tecnologie di frontiera, in grado di tollerare le intensità di corrente di fascio previste.
+%Poiché il progetto intende studiare in modo sistematico tutti gli isotopi candidati al \doppiobeta{} ed essendo i processi di DCE caratterizzati da sezioni d'urto estremamente basse, è stata prevista una grande opera di ristrutturazione delle due principali infrastrutture sperimentali: il Ciclotrone Superconduttore e lo spettrometro magnetico~MAGNEX. 
+Essendo i processi di DCE caratterizzati da sezioni d'urto estremamente basse (tipicamente di pochi~nb), nelle prime due fasi del progetto è stato possibile analizzare soltanto alcuni dei casi rilevanti, in quanto contraddistinti da particolari condizioni favorevoli.
+Tuttavia, al fine di raggiungere il suo massimo, e più ambizioso, obiettivo, il progetto intende studiare in modo sistematico tutti gli isotopi candidati al \doppiobeta{}.
+Ciò rende necessario l'utilizzo di fasci di intensità molto più elevate di quelle attualmente disponibili ai Laboratori Nazionali del Sud (LNS), siti a Catania.
+A tal fine è stata prevista una grande opera di ristrutturazione delle due principali infrastrutture sperimentali: il Ciclotrone Superconduttore e lo spettrometro magnetico~MAGNEX.
+Alla fine dell'upgrade i fasci di ioni pesanti avranno un'intensità almeno due ordini di grandezza superiore a quella attuale: in quest'ottica, per il progetto è fondamentale lo sviluppo di tecnologie di frontiera, in grado di tollerare le correnti previste.
+Parte integrante di NUMEN è, dunque, un'intensa attività di ricerca e sviluppo, che pertiene non soltanto al campo sperimentale ma anche a quello teorico.
 
-Dal momento che il futuro sistema di tracciamento di MAGNEX, a differenza di quello attuale, non potrà fornire informazioni utili all'identificazione dei prodotti di reazione, il progetto prevede la realizzazione di un muro di telescopi $\Delta E - E$ a stato solido, volto alla Particle IDentification (PID). 
-Lo scopo principale di questo lavoro di tesi consiste nel valutare se un sistema basato sulla tecnologia SiC-CsI 
 
+L'upgrade di MAGNEX prevede innanzitutto un importante cambiamento del rivelatore di piano focale (FPD), che coinvolgerà sia il sistema di tracciamento a gas sia il muro di rivelatori al silicio; in particolare, dal momento che il futuro tracciatore, a differenza di quello attuale, non potrà fornire informazioni utili all'identificazione dei prodotti di reazione, il progetto prevede la sostituzione del muro di rivelatori al silicio con uno di telescopi $\Delta E - E$ a stato solido, volto alla Particle IDentification (PID). 
+Le esigenze di resistenza alle radiazioni hanno guidato verso la scelta di un primo stadio costituito da un rivelatore sottile (100~$\mu$m) al carburo di silicio (SiC), seguito da un rivelatore di stop (1~cm) allo ioduro di cesio (CsI).
+
+Lo scopo principale di questo lavoro di tesi consiste nel valutare se tale sistema permette di distinguere in modo efficace gli ioni nella regione di interesse per NUMEN, costituita da ossigeno, fluoro e neon.
+A tal fine è stata implementata sulla piattaforma \geant{} una simulazione basata su metodi Monte Carlo, grazie alla quale è stato possibile analizzare diverse soluzioni in termini di granularità, di spessore del substrato morto e di estensione della cornice parzialmente attiva attorno alla superficie sensibile.
+Per ogni caso preso in esame si è calcolata la frazione di eventi affetti da fenomeni di raccolta di carica incompleta, i quali possono costituire una minaccia dal punto di vista della PID in quanto nelle matrici $\Delta E - E$ possono andare a collocarsi in regioni competenti ad altre specie atomiche.
+Un'attenta disamina di tali eventi è cruciale al fine di garantire una bassa percentuale di errore nella PID, la quale è condizione necessaria per lo studio di processi rari come quelli di~DCE.
+
+
+Nel Capitolo~1 viene illustrato il contesto scientifico che ha portato alla proposta del progetto NUMEN, descrivendo brevemente gli aspetti essenziali del \doppiobeta{} ed evidenziando le somiglianze tra questo e le reazioni di DCE.
+%Vengono, inoltre, discussi gli obiettivi e le fasi del progetto, mettendo in luce l'importanza di questo lavoro di tesi nella prospettiva dell'upgrade del 
+Vengono, inoltre, discusse le importanti sfide tecnologiche che il progetto si propone di affrontare al fine di raggiungere gli obiettivi fissati, mettendo in luce l'importanza di questo lavoro di tesi nella prospettiva dell'upgrade del FPD di MAGNEX.
+
+
+Nel Capitolo~2 vengono presentate le principali caratteristiche dell'attuale apparato sperimentale, descrivendone in breve il principio di funzionamento.
+Viene successivamente illustrato il progetto del futuro FPD, concentrandosi sul muro di telescopi SiC-CsI.
+Dal momento che i rivelatori al SiC rappresentano un'avanguardia nel campo dei rivelatori di particelle, ne vengono discussi gli aspetti più importanti, sottolineando quelli che li hanno resi adatti alle esigenze di NUMEN.
+
+
+Nel Capitolo~3, dopo aver esposto i tratti essenziali delle simulazioni Monte Carlo ed averne spiegato i vantaggi nello studio di problemi ad alta complessità, viene introdotta la piattaforma \geant{}, illustrandone sinteticamente la struttura.
+Vengono, dunque, descritti gli aspetti più importanti della simulazione implementata per questo lavoro ed i risultati ottenuti.
+ 
 
 
 
