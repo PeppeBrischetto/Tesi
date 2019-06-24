@@ -571,16 +571,16 @@ Dunque, è evidente che la maggior parte degli eventi spuri è originata da racc
 \subsection{\iflanguage{italian}{Studio della granularità}{Study of granularity}}
 
 Uno degli obiettivi fondamentali di questo lavoro di tesi consiste nell'ottimizzazione delle dimensioni trasversali dei telescopi, al fine di minimizzare la percentuale di eventi in cui la carica è stata raccolta parzialmente. 
-Dal momento che l'estensione della cornice completamente inattiva e della regione di transizione dovrebbero essere circa costanti pur variando la superficie del rivelatore al~SiC, ci si aspetta che all'aumentare delle dimensioni trasversali del telescopio la frazione degli eventi con raccolta di carica incompleta diminuisca.
+Dal momento che la lunghezza della cornice completamente inattiva e della regione di transizione dovrebbero essere circa costanti pur variando la superficie del rivelatore al~SiC, ci si aspetta che all'aumentare delle dimensioni trasversali del telescopio la frazione degli eventi con raccolta di carica incompleta diminuisca.
 Considerando gli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono stati esaminati tre casi: $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}. 
 In ognuna delle tre possibilità le particelle primarie sono state generate mantenendo i parametri elencati nel Paragrafo~\ref{par:interazioni_adroniche}.
 Per quanto riguarda il primo caso, i plot di riferimento sono quelli mostrati nel paragrafo precedente, mentre per gli altri due verranno adesso esposti.
 
-%\subsection*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm}
-\paragraph*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm.}
+\subsection*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm}
+%\paragraph*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm.}
 %Come si può notare dalla Figura~\ref{fig:deltaE_ERes_1.5}, le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in esame 
 
-Poiché nel caso in esame le matrici $\Delta E_{SiC} - E_{CsI}$ continuano ad essere ben separate e non mostrano variazioni percepibili rispetto a quelle in Figura~\ref{fig:deltaE_ERes_adron}, si è scelto di non riportarle.
+Poiché nel caso in esame le matrici $\Delta E_{SiC} - E_{CsI}$ continuano ad essere ben separate e non mostrano variazioni percettibili rispetto a quelle in Figura~\ref{fig:deltaE_ERes_adron}, si è scelto di non riportarle.
 Dalla Figura~\ref{fig:leakage_res_1.5} si può, invece, notare come la percentuale di eventi con raccolta di carica incompleta sia diminuita per tutte le coppie di specie atomiche; in particolare, confrontando la Figura~\ref{fig:leakage_res_1.5}.a con la Figura~\ref{fig:leakage_res_adron}.a, si evidenzia una diminuzione di circa il 2\% per ogni intervallo energetico.
 
 \begin{figure}[!p] 
@@ -590,7 +590,29 @@ Dalla Figura~\ref{fig:leakage_res_1.5} si può, invece, notare come la percentua
 	\hspace{10mm}
 	\subfigure[]
 	{\includegraphics[scale=0.5]{Grafici_Tesi/1.5per1.5/leakage_basso.png}}
-	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{CsI}$, considerando dimensioni trasversali pari a $1.5 \times 1.5$~cm\ap{2}: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_1.5}
+	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di $1.5 \times 1.5$~cm\ap{2}: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_1.5}
+\end{figure}
+
+
+
+
+
+
+\subsection*{Dimensioni trasversali: 2~cm $\times$ 2~cm}
+%\paragraph*{Dimensioni trasversali: 2~cm $\times$ 2~cm.}
+Anche in questo caso, per i motivi esposti precedentemente, si è preferito non mostrare le matrici $\Delta E_{SiC} - E_{CsI}$.
+In Figura~\ref{fig:leakage_res_2} si può osservare che, aumentando ulteriormente le dimensioni trasversali del telescopio, la percentuale di nuclei identificati erroneamente si riduce.
+In questo caso, tuttavia, l'entità della diminuzione è inferiore rispetto al precedente, in quanto per le coppie in Figura~\ref{fig:leakage_res_2}.a corrisponde a circa l'1\%, mentre per quelle in Figura~\ref{fig:leakage_res_2}.b si osservano soltanto piccolissimi cambiamenti.
+
+
+\begin{figure}[!p] 
+	\centering
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/2per2/leakage_alto.png}}
+	\hspace{10mm}
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/2per2/leakage_basso.png}}
+	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di $2 \times 2$~cm\ap{2}: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_2}
 \end{figure}
 
 
@@ -599,9 +621,18 @@ Dalla Figura~\ref{fig:leakage_res_1.5} si può, invece, notare come la percentua
 
 
 
-\paragraph*{Dimensioni trasversali: 2~cm $\times$ 2~cm.}
-Anche in questo caso, per i motivi esposti precedentemente, si è preferito non mostrare le matrici $\Delta E_{SiC} - E_{CsI}$.
 
+
+\subsection*{Conclusioni}
+%\paragraph*{Conclusioni.}
+
+In accordo con quanto trovato, si può affermare che, al fine di minimizzare gli eventi con raccolta di carica incompleta, è opportuno avere la maggiore superficie di rivelazione possibile, come si evince dalla Figura~.
+Ciò si spiega considerando che, a parità di lunghezza della cornice, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
+
+Tuttavia, avere maggiori superfici significa anche aumentare il verificarsi del pile-up, in quanto cresce la probabilità che due ioni vadano a finire nello stesso telescopio, producendo un segnale somma di due segnali.
+Dal momento che per gli obiettivi di NUMEN è necessario lavorare con fasci di alta intensità, è fondamentale che la probabilità di pile-up sia piccola.
+
+Quindi, due aspetti diversi spingono in direzioni opposte: di conseguenza, è necessario cercare una situazione di compromesso fra le due esigenze.
 
 
 
@@ -610,6 +641,34 @@ Anche in questo caso, per i motivi esposti precedentemente, si è preferito non 
 
 \clearpage
 \subsection{\iflanguage{italian}{Studio degli effetti di bordo}{Study of frame effects}}
+
+Da quanto finora detto, è emerso che l'estensione della regione di transizione fra la zona inattiva e quella sensibile del rivelatore al SiC gioca un ruolo estremamente importante nella PID.
+Di conseguenza, è opportuno valutare come cambia la frazione di eventi con raccolta di carica incompleta al variare della lunghezza di tale regione; 
+%ciò permette, infatti, di porre dei limiti di accettabilità, che, nel caso in cui venissero superati, renderebbero i rivelatori inadatti agli scopi del progetto.
+ciò permette, infatti, di porre dei limiti di accettabilità sui rivelatori, che devono essere tenuti in considerazione in fase di progettazione e rispettati durante la realizzazione.
+Qualora non fosse possibile soddisfare tali requisiti, i rivelatori diventerebbero inadatti agli scopi del progetto.
+
+
+Sulla base delle attuali specifiche di produzione dei rivelatori al SiC e di recenti misure, sono stati presi in esame tre valori: 20, 50 e 200~$\mu$m.
+Il primo rappresenta un traguardo concreto nelle 
+
+
+
+
+\subsection*{Lunghezza della regione di transizione: 20~$\mu$m}
+
+
+
+
+
+
+
+
+
+
+\subsection*{Lunghezza della regione di transizione: 200~$\mu$m}
+
+
 
 
 
