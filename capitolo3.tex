@@ -8,7 +8,7 @@
 
 
 Nei moderni esperimenti di fisica l'importanza delle simulazioni computerizzate è andata via via crescendo grazie all'eccezionale sviluppo dei computer e dei software volti a tale scopo; in particolare, l'introduzione delle tecniche Monte Carlo si è rivelata un potente strumento per trattare problemi complessi altrimenti difficilmente risolubili.
-In questo capitolo, dopo aver descritto le principali caratteristiche dei metodi Monte Carlo, si discute brevemente della piattaforma \geant, con cui sono state implementate le simulazioni svolte per questo lavoro di tesi (\textcolor{red}{Geant4 va scritto in maiuscoletto?}).
+In questo capitolo, dopo aver descritto le principali caratteristiche dei metodi Monte Carlo, si discute brevemente della piattaforma \geant, con cui sono state implementate le simulazioni svolte per questo lavoro di tesi (\textcolor{red}{Geant4 va scritto così?}).
 
 %Successivamente, vengono presentati gli aspetti più importanti di tali simulazioni, le quali avevano lo scopo di valutare se la scelta di utilizzare dei telescopi basati sulla tecnologia SiC-CsI può soddisfare le esigenze di NUMEN.
 Successivamente, dopo aver presentato gli aspetti più importanti di tali simulazioni, vengono discussi i risultati ottenuti, illustrando nei diversi casi le matrici $\Delta E - E$ e calcolando la percentuale di errore nell'identificazione degli ioni simulati.
@@ -96,7 +96,9 @@ In questo contesto nacque il codice \emph{GEANT}, di cui nella sezione successiv
 
 
 
-\section{\iflanguage{italian}{La piattaforma \textsc{Geant4}}{\textsc{Geant4} toolkit}}
+%\section{\iflanguage{italian}{La piattaforma \textsc{Geant4}}{\textsc{Geant4} toolkit}}
+
+\section{\iflanguage{italian}{La piattaforma Geant4}{Geant4 toolkit}}
 
 %\section{\textsc{Geant4}}
 
@@ -126,7 +128,9 @@ Dal momento che la documentazione su \geant{} è ampia e dettagliata\footnote{Si
 
 
 
-\subsection{\iflanguage{italian}{La struttura di \textsc{Geant4}}{\textsc{Geant4} structure}}
+%\subsection{\iflanguage{italian}{La struttura di \textsc{Geant4}}{\textsc{Geant4} structure}}
+
+\subsection{\iflanguage{italian}{La struttura di Geant4}{Geant4 structure}}
 
 %Il modo più corretto di definire \geant{} è \emph{toolkit}, ovvero ``cassetta per gli attrezzi'', in quanto comprende un insieme di librerie software che l'utente può selezionare a seconda delle proprie esigenze per creare un'applicazione specifica.
 Il modo più corretto di definire \geant{} è \emph{toolkit}, ovvero ``cassetta per gli attrezzi'', in quanto è costituito da un insieme di librerie software che, a seconda delle esigenze, possono essere selezionate per creare un'applicazione specifica.
@@ -286,7 +290,7 @@ Dal momento che ai fini di questo lavoro una modifica dei parametri di cut-off n
 
 
 
-\subsection{\iflanguage{italian}{Step delle particelle}{Particles step}}
+\subsection{\iflanguage{italian}{Tracciamento delle particelle}{Particles step}}
 
 %In \geant{} la traccia della particella è divisa in \emph{step}, che, per comodità, possiamo immaginare come dei segmenti.
 %Grazie ad un'apposita classe, è possibile accedere a diverse informazioni legate a tale step.
@@ -503,7 +507,7 @@ Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della car
 
 
 
-
+(\textcolor{red}{Scrivere la parte sull'efficienza di riconoscimento del segnale})
 
 
 
@@ -513,7 +517,9 @@ A questo punto, è interessante studiare la correlazione $\Delta E_{SiC} - E_{Cs
 Confrontando tali matrici con quelle in Figura~\ref{fig:deltaE_ETot_full_energy}, non si notano sostanziali differenze, in particolare per quanto riguarda la densità degli eventi spuri.
 Questa affermazione è supportata dalla Figura~\ref{fig:leakage_res}, nella quale si riscontrano percentuali simili a quelle viste in Figura~\ref{fig:leakage}.
 L'unica differenza sembra essere dovuta al punto in Figura~\ref{fig:leakage_res}.a ad 850~MeV, per il quale si osservano percentuali lievemente maggiori del suo corrispettivo in Figura~\ref{fig:leakage}.a. 
-Ciò sembra essere legato al modo in cui si dispongono gli eventi con raccolta di carica incompleta; infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ essi si posizionano in maniera perpendicolare all'asse $E_{CsI}$. 
+%Ciò sembra essere legato al modo in cui si dispongono gli eventi con raccolta di carica incompleta; 
+Ciò è legato alla correlazione delle due grandezze;
+infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ essi si posizionano in maniera perpendicolare all'asse $E_{CsI}$. 
 Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica del telescopio, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
 Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, la possibilità di evitarne la calibrazione potrebbe consentire un notevole risparmio di tempo.
 %Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli della correlazione $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate le matrici soltanto 
@@ -538,20 +544,20 @@ Poiché anche in altri casi si è riscontrato che la correlazione di $\Delta E_{
 
 %\clearpage
 
-\subsection{\iflanguage{italian}{Modello con interazioni adroniche}{Model with adronic interactions}} \label{par:interazioni_adroniche}
+\subsection{\iflanguage{italian}{Modello di interazioni adroniche}{Model with adronic interactions}} \label{par:interazioni_adroniche}
 
 Rispetto all'esempio precedente, la geometria e le caratteristiche delle particelle primarie restano invariate, mentre il modello dei processi fisici adesso include le interazioni adroniche. 
 Le corrispondenti matrici $\Delta E_{SiC} - E{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_adron}: come si può notare, a differenza del caso in cui erano considerate soltanto le interazioni elettromagnetiche, adesso si osserva per tutte e tre le specie nucleari la comparsa di eventi ad un'energia più alta di quella delle rispettive bande.
 Ciò è dovuto a meccanismi di reazioni nucleari, nei quali vengono prodotti nuclei più pesanti dei proiettili (\textcolor{red}{non sono molto sicuro di questa cosa}).
 La presenza di questi eventi non sembra provocare significativi cambiamenti nelle capacità di PID, in quanto, come si può evincere dalla Figura~\ref{fig:leakage_res_adron}, le percentuali di nuclei potenzialmente male identificati aumenta di meno dell'1\%. 
-Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la bassa probabilità che avvenga un'interazione adronica.
+Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la bassa probabilità che avvenga un'interazione adronica (\textcolor{red}{giusto?}).
 
 
 
 \begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Interazioni_adroniche/deltaE_ERes.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando anche le interazioni adroniche.} \label{fig:deltaE_ERes_adron}
+	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando un modello di processi fisici che comprenda anche le interazioni adroniche.} \label{fig:deltaE_ERes_adron}
 \end{figure}
 
 
@@ -563,7 +569,7 @@ Dunque, è evidente che la maggior parte degli eventi spuri è originata da racc
 	\hspace{10mm}
 	\subfigure[]
 	{\includegraphics[scale=0.5]{Grafici_Tesi/Interazioni_adroniche/leakage_basso.png}}
-	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{CsI}$, considerando anche le interazioni adroniche: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_adron}
+	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{CsI}$, utilizzando un modello che comprenda anche le interazioni adroniche: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_adron}
 \end{figure}
 
 
@@ -579,6 +585,9 @@ Per quanto riguarda il primo caso, i plot di riferimento sono quelli mostrati ne
 \subsection*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm}
 %\paragraph*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm.}
 %Come si può notare dalla Figura~\ref{fig:deltaE_ERes_1.5}, le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in esame 
+
+
+
 
 Poiché nel caso in esame le matrici $\Delta E_{SiC} - E_{CsI}$ continuano ad essere ben separate e non mostrano variazioni percettibili rispetto a quelle in Figura~\ref{fig:deltaE_ERes_adron}, si è scelto di non riportarle.
 Dalla Figura~\ref{fig:leakage_res_1.5} si può, invece, notare come la percentuale di eventi con raccolta di carica incompleta sia diminuita per tutte le coppie di specie atomiche; in particolare, confrontando la Figura~\ref{fig:leakage_res_1.5}.a con la Figura~\ref{fig:leakage_res_adron}.a, si evidenzia una diminuzione di circa il 2\% per ogni intervallo energetico.
@@ -626,20 +635,38 @@ In questo caso, tuttavia, l'entità della diminuzione è inferiore rispetto al p
 \subsection*{Conclusioni}
 %\paragraph*{Conclusioni.}
 
-In accordo con quanto trovato, si può affermare che, al fine di minimizzare gli eventi con raccolta di carica incompleta, è opportuno avere la maggiore superficie di rivelazione possibile, come si evince dalla Figura~.
+
+
+
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Granularita/misident_surface2.png}
+	\caption{L'andamento della probabilità di identificare nuclei \ce{^{18}Ne} come \ce{^{18}O} al variare della superficie del rivelatore e per energie pari a 450 e 850~MeV. I punti si riferiscono ai tre valori di superficie considerati nelle simulazioni.} \label{fig:misident_vs_surface}
+\end{figure}
+
+
+
+
+In accordo con quanto trovato, si può affermare che, al fine di minimizzare gli eventi con raccolta di carica incompleta, è opportuno avere la maggiore superficie di rivelazione possibile, come si evince dalla Figura~\ref{fig:misident_vs_surface}, dove è mostrato per un caso rappresentativo l'andamento della probabilità di errore nell'identificazione al variare della superficie e dell'energia.
 Ciò si spiega considerando che, a parità di lunghezza della cornice, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
 
-Tuttavia, avere maggiori superfici significa anche aumentare il verificarsi del pile-up, in quanto cresce la probabilità che due ioni vadano a finire nello stesso telescopio, producendo un segnale somma di due segnali.
-Dal momento che per gli obiettivi di NUMEN è necessario lavorare con fasci di alta intensità, è fondamentale che la probabilità di pile-up sia piccola.
+Tuttavia, avere maggiori superfici significa anche aumentare il verificarsi del pile-up, in quanto cresce la probabilità che due o più ioni vadano a finire nello stesso rivelatore nella stessa finestra temporale, producendo un segnale somma di due segnali.
+In Figura~\ref{fig:pile-up} è riportato il risultato di un calcolo analitico che mostra l'andamento della probabilità di avere pile-up rispetto alla probabilità di avere un solo evento al variare del flusso di particelle incidenti: come si può notare, tale quantità cresce rapidamente all'aumentare della superficie del rivelatore.
+Dal momento che per gli obiettivi di NUMEN è necessario lavorare con fasci di alta intensità, è fondamentale che la probabilità di pile-up sia piccola; di conseguenza, la superficie dei telescopi non può essere eccessivamente grande.
 
-Quindi, due aspetti diversi spingono in direzioni opposte: di conseguenza, è necessario cercare una situazione di compromesso fra le due esigenze.
-
-
-
-
+Due aspetti diversi spingono in direzioni opposte; è necessario, dunque, cercare una situazione di compromesso fra le due esigenze.
+Alla luce delle considerazione svolte, la migliore condizione di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto congiungono un'alta percentuale di riconoscimento del segnale con una bassa probabilità di pile-up.
 
 
-\clearpage
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Granularita/pile-up_label2.png}
+	\caption{La probabilità di avere eventi di pile-up rispetto alla probabilità di avere un singolo evento al variare del flusso di particelle incidenti e della superficie del rivelatore. La linea tratteggiata indica il flusso atteso per NUMEN.} \label{fig:pile-up}
+\end{figure}
+
+
+%\clearpage
 \subsection{\iflanguage{italian}{Studio degli effetti di bordo}{Study of frame effects}}
 
 Da quanto finora detto, è emerso che l'estensione della regione di transizione fra la zona inattiva e quella sensibile del rivelatore al SiC gioca un ruolo estremamente importante nella PID.
@@ -650,30 +677,52 @@ Qualora non fosse possibile soddisfare tali requisiti, i rivelatori diventerebbe
 
 
 Sulla base delle attuali specifiche di produzione dei rivelatori al SiC e di recenti misure, sono stati presi in esame tre valori: 20, 50 e 200~$\mu$m.
-Il primo rappresenta un traguardo concreto nelle 
-
+Il primo rappresenta un traguardo concreto delle tecniche di realizzazione, il secondo è il valore medio al momento raggiungibile, il terzo costituisce lo studio di una situazione estrema.
+In tutti e tre i casi, i telescopi avevano dimensioni trasversali pari a $1.5 \times 1.5$~cm\ap{2}, mentre lo spessore del substrato morto è di 350~$\mu$m.
+Inoltre, le condizioni di generazione delle particelle primarie continuano ad essere quelle del Paragrafo~\ref{par:interazioni_adroniche}.
+I grafici relativi alla lunghezza di 50~$\mu$m sono già stati mostrati in Figura~\ref{fig:leakage_res_1.5}.
 
 
 
 \subsection*{Lunghezza della regione di transizione: 20~$\mu$m}
 
+%Le matrici $\Delta E_{SiC} - E_{CsI}$ corrispondenti al caso in esame sono riportate in Figura~: come si può notare, 
 
 
 
 
-
-
-
+\begin{figure}[!p] 
+	\centering
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/20um/leakage_alto.png}}
+	\hspace{10mm}
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/20um/leakage_basso.png}}
+	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di 20um: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_20um}
+\end{figure}
 
 
 \subsection*{Lunghezza della regione di transizione: 200~$\mu$m}
 
 
+\begin{figure}[!p] 
+	\centering
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/200um/leakage_alto.png}}
+	\hspace{10mm}
+	\subfigure[]
+	{\includegraphics[scale=0.5]{Grafici_Tesi/200um/leakage_basso.png}}
+	\caption{La percentuale di nuclei potenzialmente identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di 200um: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_200um}
+\end{figure}
 
 
 
-%\clearpage
-\subsection{\iflanguage{italian}{Studio del substrato morto}{Study of dead-substrate}}
+\subsection*{Conclusioni}
+
+%\subsection*{{\large Conclusioni }}
+
+\clearpage
+\subsection{\iflanguage{italian}{Studio dello spessore del substrato morto}{Study of dead-substrate}}
 
 
 \subsection{\iflanguage{italian}{Studio a fissata rigidità magnetica}{Study of fixed magnetic rigidity}}
