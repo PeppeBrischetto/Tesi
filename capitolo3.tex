@@ -7,12 +7,13 @@
 
 
 
-Nei moderni esperimenti di fisica l'importanza delle simulazioni computerizzate è andata via via crescendo grazie all'eccezionale sviluppo dei computer e dei software volti a tale scopo; in particolare, l'introduzione delle tecniche Monte Carlo si è rivelata un potente strumento per trattare problemi complessi altrimenti difficilmente risolubili.
-In questo capitolo, dopo aver descritto le principali caratteristiche dei metodi Monte Carlo, si discute brevemente della piattaforma \geant, con cui sono state implementate le simulazioni svolte per questo lavoro di tesi (\textcolor{red}{Geant4 va scritto così?}).
+%Nei moderni esperimenti di fisica l'importanza delle simulazioni computerizzate è andata via via crescendo grazie all'eccezionale sviluppo dei computer e dei software volti a tale scopo; in particolare, l'introduzione delle tecniche Monte Carlo si è rivelata un potente strumento per trattare problemi complessi altrimenti difficilmente risolubili.
+Nei moderni esperimenti di fisica l'importanza delle simulazioni computerizzate è andata via via crescendo grazie all'eccezionale sviluppo dei computer e dei software di simulazione; in particolare, l'introduzione delle tecniche Monte Carlo si è rivelata un potente strumento per trattare problemi complessi altrimenti difficilmente risolubili.
+In questo capitolo, dopo aver descritto le principali caratteristiche di tali metodi, si discute brevemente della piattaforma \geant, con la quale sono state implementate le simulazioni svolte per questo lavoro di tesi (\textcolor{red}{Geant4 va scritto così?}).
 
 %Successivamente, vengono presentati gli aspetti più importanti di tali simulazioni, le quali avevano lo scopo di valutare se la scelta di utilizzare dei telescopi basati sulla tecnologia SiC-CsI può soddisfare le esigenze di NUMEN.
-Successivamente, dopo aver presentato gli aspetti più importanti di tali simulazioni, vengono discussi i risultati ottenuti, illustrando nei diversi casi le matrici $\Delta E - E$ e calcolando la percentuale di errore nell'identificazione degli ioni simulati.
-
+%Successivamente, dopo aver presentato gli aspetti più importanti di tali simulazioni, vengono discussi i risultati ottenuti, illustrando nei diversi casi le matrici $\Delta E - E$ e calcolando la percentuale di errore nell'identificazione degli ioni simulati.
+Successivamente, dopo aver spiegato gli aspetti più importanti di tali simulazioni, vengono discussi i risultati ottenuti, evidenziando nei diversi casi le conseguenze sulle performance di Particle IDentification (PID).
 
 
 
@@ -26,8 +27,8 @@ Successivamente, dopo aver presentato gli aspetti più importanti di tali simula
 In fisica, come in altre scienze, le simulazioni computerizzate giocano un ruolo fondamentale, in quanto permettono di affrontare lo studio di sistemi che sarebbero difficilmente trattabili utilizzando tecniche teoriche o sperimentali~``classiche'';
 spesso, infatti, tali approcci possono presentare problematicità legate alla complessità del sistema, al tempo necessario per lo sviluppo e l'analisi, ai costi per la realizzazione di prototipi.
 Introdotte negli anni Trenta grazie all'apporto di prestigiosi scienziati come von Neumann, Ulam e Fermi, il loro progresso è stato parallelo a quello dei computer, arrivando oggi ad essere uno strumento imprescindibile in molti esperimenti.
-Esse forniscono una diversa prospettiva con cui guardare alla realtà, diventando in alcuni casi una base teorica da cui partire per l'interpretazione dei risultati sperimentali, oppure in altre situazioni producendo dati ``sperimentali'' con cui mettere al vaglio le teorie.
-
+%Esse forniscono una diversa prospettiva con cui guardare alla realtà, diventando in alcuni casi una base teorica da cui partire per l'interpretazione dei risultati sperimentali, oppure in altre situazioni producendo dati ``sperimentali'' con cui mettere al vaglio le teorie.
+Esse forniscono una diversa prospettiva con cui guardare alla realtà, diventando in alcuni casi una base teorica da cui partire per l'interpretazione dei risultati sperimentali e in altri producendo dati ``sperimentali'' con cui mettere al vaglio le teorie.
 
 Tra i diversi metodi di simulazione computerizzata, particolare importanza hanno assunto i cosiddetti \emph{metodi Monte Carlo}~\cite{metropolis:jasa49}, il cui nome fu coniato da Metropolis ispirandosi al casinò omonimo.
 %Tali metodi utilizzano la generazione di sequenze di numeri \emph{pseudo-casuali} per simulare le fluttuazioni statistiche di un sistema con un numero elevato di gradi di libertà, 
@@ -40,7 +41,8 @@ Il numero di problemi che al giorno d'oggi vengono studiati utilizzando questa t
 %Sebbene darne una definizione comprensiva di tutte le aree di interesse sia un compito difficile, in generale è possibile dire che i metodi Monte Carlo utilizzano la generazione di numeri casuali per simulare le fluttuazioni statistiche di un sistema con un numero elevato di gradi di libertà accoppiati.
 %
 %
-Sebbene darne una definizione comprensiva di tutte le aree di interesse sia un compito difficile, in generale è possibile dire che i metodi Monte Carlo sono dei metodi numerici di risoluzione di equazioni o di calcolo di integrali basati sulla generazione di numeri casuali.
+%Sebbene darne una definizione comprensiva di tutte le aree di interesse sia un compito difficile, in generale è possibile dire che i metodi Monte Carlo sono dei metodi numerici di risoluzione di equazioni o di calcolo di integrali basati sulla generazione di numeri casuali.
+Sebbene darne una definizione comprensiva di tutte le aree di interesse sia un compito difficile, in generale è possibile dire che i metodi Monte Carlo sono dei metodi numerici, basati sulla generazione di numeri casuali, per la risoluzione di equazioni o per il calcolo di integrali .
 %I metodi Monte Carlo utilizzano la generazione di numeri casuali per simulare le fluttuazioni statistiche di un sistema con un numero elevato di gradi di libertà.
 Il generico metodo si compone principalmente di quattro fasi:
 \begin{itemize}
@@ -57,7 +59,7 @@ Il generico metodo si compone principalmente di quattro fasi:
 %In realtà, dal momento che, per ragioni di velocità ed efficienza, tali sequenze sono prodotte via software, i numeri sono \emph{pseudo-casuali}
 %Per risolvere un problema complesso è necessaria una sequenza molto grande di numeri casuali, i quali devono essere indipendenti fra loro.
 Affinché il metodo si dimostri efficace, è essenziale che la sequenza di numeri sia quanto più possibile casuale.
-Dunque, proprio la casualità con cui vengono prodotti tali numeri rappresenta il punto più delicato del metodo e, forse, il suo limite più grande; infatti, per ragioni di velocità ed efficienza i numeri vengono generati via software, invece di basarsi su processi fisici realmente casuali.
+Dunque, proprio la casualità con cui vengono prodotti tali numeri rappresenta il punto più delicato del metodo e, forse, il suo limite più grande; infatti, per ragioni di velocità ed efficienza, i numeri vengono generati via software invece di basarsi su processi fisici realmente casuali.
 %Tuttavia, dal momento che tali algoritmi sono inevitabilmente deterministici, le sequenze di numeri sono, in realtà, \emph{pseudo-casuali}, ovvero presentano delle proprietà statistiche simili a quelle dei numeri casuali. 
 Tuttavia, dal momento che tali algoritmi sono inevitabilmente deterministici, ogni numero della sequenza è univocamente calcolato a partire dal suo predecessore. 
 Quindi, le sequenze di numeri sono, in realtà, \emph{pseudo-casuali}, ovvero presentano delle proprietà statistiche analoghe a quelle delle sequenze di numeri casuali, ma sono prodotte in modo deterministico. 
@@ -69,8 +71,8 @@ Negli ultimi trent'anni l'importanza delle simulazioni basate su metodi Monte Ca
 %ad esempio, valutando l'efficacia di un metodo in termini del tempo necessario per risolvere un problema, al crescere della complessità risulta che tale tempo cresce più lentamente per i metodi Monte Carlo in confronto ai metodi analitici.
 %come illustrato in Figura~\ref{fig:monte_carlo}, il tempo necessario 
 %Uno dei motivi di tale successo deriva dalla grande efficacia di queste tecniche nella risoluzione di problemi altamente complessi;
-Una delle ragioni di tale successo deriva dalla grande efficacia di queste tecniche nell'affrontare lo studio di sistemi con un numero elevato di gradi di libertà accoppiati; 
-ad esempio, è possibile dimostrare che, al crescere della complessità del problema, i metodi Monte Carlo richiedono meno tempo per giungere alla soluzione rispetto alle tecniche analitiche o deterministiche, come mostrato in Figura~\ref{fig:monte_carlo}.
+Una delle ragioni di tale successo deriva dalla grande efficacia di queste tecniche nell'affrontare lo studio di sistemi con un numero elevato di gradi di libertà accoppiati. 
+È possibile dimostrare che, al crescere della complessità del problema, i metodi Monte Carlo richiedono meno tempo per giungere alla soluzione rispetto alle tecniche analitiche o deterministiche, come mostrato in Figura~\ref{fig:monte_carlo}.
 
 
 \begin{figure} [!t]
@@ -89,7 +91,7 @@ ad esempio, è possibile dimostrare che, al crescere della complessità del prob
 % ***** PRIMA AVEVO MESSO QUESTA
 %Un notevole impulso allo sviluppo dei metodi Monte Carlo è provenuto dalla fisica delle alte energie, in cui si comprese che tali metodi offrivano la possibilità di seguire la traccia delle particelle e simulare le loro interazioni con la materia.
 %
-Un notevole impulso allo sviluppo dei metodi Monte Carlo è provenuto dalla fisica delle alte energie, in cui si comprese che tali metodi, offrendo la possibilità di seguire la traccia delle particelle e simulare le loro interazioni con la materia, potevano essere impiegati sia per la progettazione dei rivelatori sia per lo studio della loro risposta nelle condizioni sperimentali di interesse.
+Un notevole impulso allo sviluppo delle tecniche di simulazione è provenuto dalla fisica delle alte energie, in cui si comprese che tali strumenti, offrendo la possibilità di seguire le tracce delle particelle ed ``imitare'' le loro interazioni con la materia, potevano essere impiegati sia per la progettazione dei rivelatori sia per lo studio della loro risposta nelle condizioni sperimentali di interesse.
 In questo contesto nacque il codice \emph{GEANT}, di cui nella sezione successiva si espongono le principali caratteristiche.
 
 
@@ -122,9 +124,9 @@ Essa è interamente basata sul linguaggio C++, traendo vantaggio, dunque, da tut
 Oggi \geant{} consente di simulare l'interazione con la materia di tutte le particelle note, in un range energetico che va da pochi~eV fino ai~TeV.
 %
 %La sua notevole duttilità lo ha reso uno strumento 
-Grazie alla sua notevole duttilità, sono innumerevoli gli esperimenti che si avvalgono di questo strumento e la sua area d'applicazione va dalla fisica delle alte energie, agli studi nucleari, alle applicazioni in campo medico, all'astrofisica.
+Grazie alla sua notevole duttilità, sono innumerevoli gli esperimenti che si avvalgono di questo strumento: la sua area d'applicazione comprende la fisica delle alte energie, la fisica nucleare, le applicazioni in campo medico e l'astrofisica.
 Il codice è, inoltre, open-source e viene periodicamente aggiornato dalla collaborazione. 
-Dal momento che la documentazione su \geant{} è ampia e dettagliata\footnote{Si veda, ad esempio, \url{www.geant4.cern.ch}}, nel prosieguo vengono presentati soltanto gli aspetti utili alla comprensione della simulazione svolta per questo lavoro di tesi.  
+Dal momento che la documentazione su \geant{} è ampia e dettagliata\footnote{Si veda, ad esempio, \url{www.geant4.cern.ch}}, nel prosieguo vengono presentati soltanto gli aspetti utili alla comprensione delle simulazioni svolte per questo lavoro di tesi.  
 
 
 
@@ -172,7 +174,7 @@ Esse sono state concepite per essere facilmente estendibili o modificabili, segu
 
 %Altre classi
 
-Le altre classi sono, invece, opzionali e, a seconda delle esigenze, l'utente può modificarne il comportamento di default definendo la propria implementazione; 
+Le altre classi sono, invece, opzionali e, a seconda delle esigenze, l'utente può modificarne il comportamento di default definendo la propria ``versione''; 
 %ad esempio, ai fini di questo lavoro è stato necessario personalizzare la classe che rappresenta ogni ``passo'' della traccia della particella, facendo in modo che ad ogni step venisse estratta l'informazione sulla perdita di energia e sulla posizione.
 %
 ad esempio, in \geant{} esiste una classe che rappresenta ogni ``passo'' (più propriamente chiamato \emph{step}) della traccia di una particella, sia essa primaria o secondaria.
@@ -187,7 +189,7 @@ L'utente può personalizzare tale classe, facendo in modo che ad ogni step venga
 %La simulazione implementata per questo lavoro di tesi considera una matrice di telescopi SiC-CsI.
 %Allo scopo di valutare le prestazioni di PID
 Nell'ambito del presente lavoro di tesi è stata realizzata un'applicazione in \geant{} per simulare la risposta di un sistema di telescopi SiC-CsI agli ioni di interesse per il progetto NUMEN.
-Nel seguito di questa sezione vengono illustrate nel dettaglio le caratteristiche di tale simulazione.
+Nel seguito di questa sezione vengono illustrate nel dettaglio le caratteristiche di tale applicazione.
 
 
 
@@ -223,7 +225,7 @@ Poiché uno degli obiettivi principali di questo lavoro consisteva nella ricerca
 Per quanto riguarda lo spessore dei due stadi del telescopio, in accordo con la soluzione individuata dalla collaborazione, sono stati simulati rivelatori al~SiC da 100~$\mu$m e cristalli allo CsI da 1~cm, mentre per il substrato morto si è considerato un valore di 350~$\mu$m.
 %Gli spessori tenuti in considerazione erano di 100~$\mu$m per il rivelatore al SiC, di 350~$\mu$m per il substrato morto e di 1~cm per il cristallo allo CsI.
 Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rimozione quasi totale degli strati morti, si è esaminato anche il caso in cui lo spessore del substrato fosse ridotto a 10~$\mu$m. 
-È stato, dunque, effettuato un confronto tra le due diverse condizioni, allo scopo di valutare le conseguenze sulle capacità di~PID.
+È stato, dunque, effettuato un confronto tra le diverse condizioni, allo scopo di valutare le conseguenze sulle capacità di~PID.
 
 
 
@@ -231,7 +233,7 @@ Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rim
 
 %Sebbene il muro di telescopi comprenderà oltre 1000 
 %La simulazione ha considerato un unico modulo di $2 \times 5$ rivelatore.
-Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di oltre 1000 telescopi, tutte le simulazioni svolte hanno preso in esame una matrice $3 \times 3$ di elementi.
+Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di oltre 1000 telescopi, tutte le simulazioni sono state svolte prendendo in esame una matrice di $3 \times 3$ elementi.
 In Figura~\ref{fig:simulazione_muro} è mostrato l'aspetto assunto da tale matrice nella simulazione \geant. (\textcolor{red}{sarebbe meglio dire che ho preso in considerazione un modulo $2 \times 5$?})
 %In Figura~ è possibile vedere la realizzazione grafica di \geant{} di un modulo $2 \times 5$ del sistema di rivelazione.
 
@@ -249,14 +251,14 @@ In Figura~\ref{fig:simulazione_muro} è mostrato l'aspetto assunto da tale matri
 Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}, coinvolgendo in alcune simulazioni anche altri isotopi di tali specie atomiche (\textcolor{red}{dico esplicitamente quali?}).
 
 
-In ciascun evento, la particella primaria è generata in modo casuale sulla faccia frontale di un rivelatore al SiC, con una direzione estratta casualmente all'interno di un angolo corrispondente ad un cono con un'apertura di 20\textdegree{}. 
+In ciascun evento, la particella primaria è stata generata in modo casuale sulla faccia anteriore del rivelatore al SiC centrale, con una direzione estratta casualmente all'interno di un angolo solido corrispondente ad un cono con un'apertura di~20\textdegree{}. 
 
 
 %Allo scopo di coprire un ampio range energetico, realisticamente significativo per NUMEN, le particelle primarie hanno un'energia scelta casualmente fra 500 e 1000~MeV.
 Allo scopo di valutare la capacità di PID in un ampio range energetico, realisticamente significativo per NUMEN, sono state simulate particelle primarie con un'energia scelta casualmente fra 500 e 1000~MeV.
 %Dal momento che l'apparato sperimentale si incardina sulle proprietà dello spettrometro magnetico MAGNEX, 
 
-È bene ricordare che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia; infatti, a partire dalla nota relazione
+È bene ricordare che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia; infatti, partendo dalla nota relazione
 \begin{equation} \label{eq:legge_spettrometri}
 B  \rho \, = \,  \frac{p}{q} \, 
 \end{equation}
@@ -270,17 +272,17 @@ Dunque, per tenere in considerazione questo aspetto, alcune simulazioni sono sta
 %B  \rho \, = \,  \frac{p}{q}
 %\end{equation}
 %laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, alcune simulazioni sono state svolte tenendo fissato la rigidità magnetica $B \rho$ degli ioni primari.
-(\textcolor{red}{secondo lei è meglio inserire la relazione del $B \rho $ nel cap 1?})
+(\textcolor{red}{secondo lei è meglio inserire la relazione del $B \rho $ nel cap 2?})
 
 
 \subsection{\iflanguage{italian}{I processi fisici}{Physics processes}}
 
 
 Affinché la simulazione possa riprodurre con la maggiore accuratezza possibile i risultati sperimentali reali, è di cruciale importanza la scelta dei processi fisici da considerare allo scopo di definire il comportamento delle particelle.
-Per gli scopi di questo lavoro, in una prima fase sono state prese in esame soltanto le interazioni elettromagnetiche, oltre ai processi di decadimento e di decadimento radioattivo, in quanto sufficienti a separare i luoghi di specie atomiche diverse nelle matrici $\Delta E - E$.
+Per gli scopi di questo lavoro, in una prima fase sono state prese in esame soltanto le interazioni elettromagnetiche (oltre ai processi di decadimento e di decadimento radioattivo) in quanto sufficienti a separare i luoghi di specie atomiche diverse nelle matrici $\Delta E - E$.
 Successivamente, sono state aggiunte anche le interazioni adroniche, incorporando, dunque, processi di scattering elastico e inelastico e meccanismi di reazioni nucleari.
 
-In Figura~\ref{fig:simulazione_evento} è riportata la visualizzazione grafica della simulazione di 20~eventi nel caso in cui il modello dei processi fisici comprenda sia le interazioni elettromagnetiche sia quelle adroniche; infatti, in nero sono raffigurate le tracce degli ioni primari, mentre in altri colori sono mostrate le tracce delle particelle secondarie originate da reazioni nucleari. 
+In Figura~\ref{fig:simulazione_evento} è riportata la visualizzazione grafica della simulazione di 20~eventi nel caso in cui il modello dei processi fisici comprendesse sia le interazioni elettromagnetiche sia quelle adroniche; infatti, in nero sono raffigurate le tracce degli ioni primari, mentre in altri colori sono mostrate le tracce delle particelle secondarie originate da reazioni nucleari. 
 
 
 
@@ -295,7 +297,7 @@ In Figura~\ref{fig:simulazione_evento} è riportata la visualizzazione grafica d
 
 %Non sono state modificate le impostazioni di default di
 Una delle componenti fondamentali di \geant{} riguarda la scelta dei parametri di cut-off; infatti, è possibile stabilire una soglia, in range o in energia, al di sotto delle quale non viene generata la particella secondaria.
-Dal momento che ai fini di questo lavoro una modifica dei parametri di cut-off non avrebbe portato a significativi cambiamenti dei risultati, si è scelto di mantenerne le impostazioni di default.
+Dal momento che, ai fini di questo lavoro, una modifica dei parametri di cut-off non avrebbe portato a significativi cambiamenti dei risultati, si è scelto di mantenere le impostazioni di default.
 
 
 
@@ -303,7 +305,7 @@ Dal momento che ai fini di questo lavoro una modifica dei parametri di cut-off n
 
 %In \geant{} la traccia della particella è divisa in \emph{step}, che, per comodità, possiamo immaginare come dei segmenti.
 %Grazie ad un'apposita classe, è possibile accedere a diverse informazioni legate a tale step.
-Come anticipato nella sezione precedente, in \geant{} è possibile dare la propria implementazione della classe che rappresenta gli step di una particella.
+Come anticipato nella sezione precedente, in \geant{} è possibile dare la propria implementazione della classe che rappresenta gli step delle particelle.
 Dal momento che, ai fini di questo lavoro, si volevano valutare le conseguenze sulla PID causate dagli effetti di bordo dei rivelatori, era necessario sapere punto per punto la posizione dello ione. 
 Dunque, è stato modificato il comportamento di default di questa classe, affinché ad ogni step si conoscessero la posizione e il deposito di energia.
 (\textcolor{red}{Spiego più in dettaglio che in realtà venivano estratti gli estremi dello step e poi veniva estratto un punto casuale fra tali estremi?})
@@ -317,13 +319,13 @@ Dunque, è stato modificato il comportamento di default di questa classe, affinc
 
 \subsection{\iflanguage{italian}{Elaborazione post-simulazione}{Post-simulation processing}}
 
-I dati prodotti dalla simulazione, scritti in un tree, sono stati elaborati da una macro di ROOT~\cite{brun:nima97} in cui vengono aggiunte alcune caratteristiche tipiche dei rivelatori reali e vengono ricostruiti gli spettri energetici.
+I dati prodotti dalla simulazione, scritti in un tree, sono stati elaborati da una macro di ROOT~\cite{brun:nima97} grazie alla quale sono state aggiunte alcune caratteristiche tipiche dei rivelatori reali e sono stati ricostruiti gli spettri energetici.
 %In primo luogo, ciascun deposito di energia viene pesato con una funzione di r
 %In primo luogo, dal momento che 
 %
 %In primo luogo, a causa del processo di produzione, i rivelatori al SiC presentano nel volume sensibile un bordo esterno completamente inattivo, dove la carica generata per ionizzazione non viene raccolta, ed una regione di transizione, in cui la carica prodotta viene raccolta soltanto in parte.
-In primo luogo, a causa del processo di produzione, i rivelatori al SiC presentano nel volume sensibile un bordo esterno completamente inattivo ed una regione di transizione: nel primo la carica generata per ionizzazione non viene raccolta, nella seconda viene raccolta soltanto in parte.
-Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di circa 200~$\mu$m, mentre la regione di transizione ha un'estensione di 50~$\mu$m. 
+In primo luogo, a causa del processo di produzione, i rivelatori al SiC presentano attorno al volume sensibile un bordo esterno completamente inattivo ed una regione di transizione: nel primo la carica generata per ionizzazione non viene raccolta, nella seconda viene raccolta soltanto in parte.
+Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di circa 200~$\mu$m, mentre la regione di transizione ha un'estensione di circa 50~$\mu$m. 
 %Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} lineare, che nel caso unidimensionale sarebbe così definita: 
 %\begin{equation}
 %f(x) =
@@ -337,8 +339,8 @@ Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di 
 Nella macro si è tenuto conto di tali \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} così definita: nella zona interamente attiva era pari ad uno, nella regione di transizione decresceva linearmente e nella zona del tutto inattiva aveva valore nullo (\textcolor{red}{Secondo lei è più chiaro se esplicito la formula del caso unidimensionale?}).
 
 %Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale nel rivelatore al SiC e nel cristallo allo CsI.
-Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento viene ricostruito il deposito energetico totale, sia per il rivelatore al SiC sia per il cristallo allo CsI.
-Mettendo insieme i depositi di energia di tutti gli eventi, si riproducono gli spettri energetici degli ioni nei due stadi del telescopio.
+Nella macro, inoltre, sommando step dopo step l'energia persa dallo ione, per ogni evento è stata ricostruita l'energia rilasciata nel rivelatore al SiC e quella depositata nel cristallo allo CsI.
+Registrando in un'istogramma, evento per evento, tutti i depositi di energia, si sono riprodotti gli spettri energetici degli ioni per entrambi gli stadi del telescopio.
 A questo livello, soltanto le fluttuazioni statistiche legate alla ionizzazione sono tenute in considerazione.
 Dunque, al fine di riprodurre le risoluzioni energetiche tipiche dei rivelatori in esame, lo spettro energetico è stato ``allargato'' campionando ciascun deposito di energia con una distribuzione gaussiana, la cui espressione è
 %\begin{equation}
@@ -384,7 +386,7 @@ Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al Si
 \section{\iflanguage{italian}{I risultati}{Results}}
 
 In questa sezione vengono presentati i risultati ottenuti dalle simulazioni \geant{} del sistema di telescopi SiC-CsI.
-Poiché l'obiettivo principale di questo lavoro di tesi consiste nella valutazione delle prestazioni di PID di tale sistema, la maggior parte delle simulazioni ha lo scopo di stimare la percentuale di errore che si commetterebbe nell'identificazione degli ioni di interesse per NUMEN utilizzando la tecnica $\Delta E - E$.
+Poiché l'obiettivo principale di questo lavoro di tesi consiste nella valutazione delle prestazioni di PID di tale sistema, la maggior parte delle simulazioni ha lo scopo di stimare la percentuale di errore che si avrebbe nell'identificazione degli ioni di interesse per NUMEN utilizzando la tecnica $\Delta E - E$.
 
 È bene ricordare che tale tecnica prevede la correlazione fra la perdita di energia $\Delta E$ e l'energia cinetica totale $E$. In riferimento al caso in esame, $\Delta E$ corrisponde all'energia persa dalla particella primaria nel rivelatore al~SiC (che da ora in poi indicheremo con $ \Delta E_{SiC}$), mentre $E$ equivale alla sua energia cinetica iniziale. Nelle simulazioni svolte, quest'ultima quantità è data da
 \begin{equation}
@@ -427,11 +429,6 @@ Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che 
 
 
 
-In Figura~\ref{fig:ETot} e in Figura~\ref{fig:deltaE_Tot} sono riportate, rispettivamente, le proiezioni sull'asse $E_{tot}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{tot}$: esse rappresentano, dunque, gli spettri energetici misurati dal rivelatore al SiC e dal rivelatore allo CsI.
-Effettuando un fit gaussiano sul picco dell'\ce{^{18}O} nello spettro $\Delta E_{SiC}$, si trova una FWHM di 1.1~MeV, corrispondente ad una risoluzione di 5.8\%.
-Poiché questo valore è ben più grande della risoluzione intrinseca assunta per tale rivelatore, si deduce che in questo caso la componente più significativa della risoluzione compete alle fluttuazioni nel processo di ionizzazione.
-
-
 \begin{figure} [!p]
 	\centering
 	\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_monocromatiche/ETot.png}
@@ -447,6 +444,14 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 
 
 
+In Figura~\ref{fig:ETot} e in Figura~\ref{fig:deltaE_Tot} sono riportate, rispettivamente, le proiezioni sull'asse $E_{tot}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{tot}$: esse rappresentano, dunque, gli spettri energetici misurati dal rivelatore al SiC e dal rivelatore allo CsI.
+Effettuando un fit gaussiano sul picco dell'\ce{^{18}O} nello spettro $\Delta E_{SiC}$, si trova una FWHM di 1.1~MeV, corrispondente ad una risoluzione di 5.8\%.
+Poiché questo valore è ben più grande della risoluzione intrinseca assunta per tale rivelatore, si deduce che in questo caso la componente più significativa della risoluzione compete alle fluttuazioni nel processo di ionizzazione.
+
+
+
+
+
 
 
 
@@ -458,26 +463,27 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 
 
 
-\begin{figure} [!t]
+
+
+
+
+In questo secondo esempio le particelle primarie hanno un'energia scelta in modo casuale fra 500 e 1000~MeV, la loro posizione iniziale è estratta casualmente sulla faccia anteriore del rivelatore al SiC centrale e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
+Inoltre, anche in questo caso viene utilizzato il modello dei processi fisici dell'esempio precedente, così come per la geometria e le dimensioni dei telescopi.
+%La geometria e le dimensioni dei telescopi restano, invece, uguali a quelle dell'esempio precedente.
+Le corrispondenti matrici $\Delta E_{SiC} - E_{tot}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}: innanzitutto, si vede la formazione delle bande previste dalla formula di Bethe-Block, le quali appaiono ben separate lungo tutto il range energetico esplorato.
+%Inoltre, a differenza del caso precedente si nota la comparsa di eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''.
+In secondo luogo, rispetto al caso precedente, fanno la loro comparsa degli eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello corretto. 
+Ciò dipende da quegli eventi in cui le particelle escono fuori dal cristallo allo CsI, non rilasciando totalmente la loro energia residua.
+A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID.
+Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}{si possono definire così?}), si è riportata in Figura~\ref{fig:fetta} la proiezione sull'asse verticale della ``fetta'' di energia compresa fra 600 e 700~MeV: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono asimmetriche le distribuzioni. 
+%Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
+\begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche/deltaE_ETot_full_energy.png}
 	\caption{Matrici $\Delta E_{SiC} - E_{tot}$.} \label{fig:deltaE_ETot_full_energy}
 \end{figure}
 
-
-
-In questo secondo esempio le particelle primarie hanno un'energia scelta in modo casuale fra 500 e 1000~MeV, la loro posizione iniziale è estratta casualmente sulla faccia frontale del rivelatore al SiC e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
-Inoltre, anche in questo caso viene utilizzato il modello dei processi fisici dell'esempio precedente; la geometria e le dimensioni dei telescopi restano, invece, uguali a quelle dell'esempio precedente.
-Le corrispondenti matrici $\Delta E_{SiC} - E_{tot}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}: in primo luogo, si vede la formazione delle bande previste dalla formula di Bethe-Block, che appaiono ben separate lungo tutto il range energetico esplorato.
-%Inoltre, a differenza del caso precedente si nota la comparsa di eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''.
-Inoltre, rispetto al caso precedente, fanno la loro comparsa degli eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''. 
-Ciò dipende da quegli eventi in cui le particelle escono fuori dal rivelatore al CsI, non rilasciando totalmente la loro energia residua.
-A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID.
-Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}{si possono definire così?}), si è riportata in Figura~\ref{fig:fetta} la proiezione sull'asse verticale della ``fetta'' di energia compresa fra 600 e 700~MeV: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono asimmetriche le distribuzioni. 
-%Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
-
-
-\begin{figure} [!t]
+\begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche/fetta_quadrata.png}
 	\caption{Proiezione sull'asse $\Delta E_{SiC}$ della fetta in $E_{tot}$ compresa tra 600 e 700~MeV.} \label{fig:fetta}
@@ -487,8 +493,8 @@ Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Contaminazione/contaminazione.png}
-	\caption{Proiezione sull'asse $\Delta E_{SiC}$ della fetta in $E_{tot}$ compresa tra 600 e 700~MeV.} \label{fig:fetta_con_contaminazione}
+	\includegraphics[scale=0.28]{Grafici_Tesi/Contaminazione/contaminazione.png}
+	\caption{Proiezione sull'asse $\Delta E_{SiC}$ della fetta in $E_{tot}$ compresa tra 600 e 700~MeV per l'\ce{^{18}O} e il \ce{^{18}F}. La linea tratteggiata indica il punto mediano tra i valori medi dei due spettri. In ombreggiatura blu si possono distinguere gli eventi di \ce{^{18}F} identificati come \ce{^{18}O}, in ombreggiatura rossa si notano gli eventi di \ce{^{18}O} identificati come \ce{^{18}F}.} \label{fig:fetta_con_contaminazione}
 \end{figure}
 
 
@@ -500,21 +506,11 @@ Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}
 
 
 
-Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, si è proceduto nel modo seguente: per ogni fetta di energia in $E_{tot}$, si è effettuata una proiezione sull'asse $\Delta E_{SiC}$; dopo di che, per ogni coppia di specie atomiche, si è calcolato il punto mediano fra i valori medi delle due distribuzioni; infine, si è determinata la frazione di eventi al di sotto (o al di sopra) del punto mediano.
-Il risultato di tale procedura è illustrato in Figura~\ref{fig:leakage}, dove il range energetico è stato suddiviso in intervalli da 100~MeV e si è scelto di rappresentare i dati soltanto laddove erano presenti tutte e tre le bande.
-Si può notare che la \textcolor{red}{contaminazione} (\textcolor{red}{posso usare questo termine?}) da una specie atomica con $Z$ più grande verso una con $Z$ più piccolo è nettamente maggiore; infatti, le percentuali che si trovano in Figura~\ref{fig:leakage}.a sono comprese fra il 7\% e il 15\%, mentre quelle in Figura~\ref{fig:leakage}.b sono inferiori all'1\%.
-In entrambi i casi si può osservare che la frazione di nuclei erroneamente identificati ha un andamento decrescente al crescere dell'energia.
-Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della carica sono maggiormente significativi, la capacità di separare gli ioni peggiora.
-
-I due grafici in Figura~\ref{fig:leakage} sono estremamente importanti nella valutazione dell'idoneità di questo sistema di rivelazione agli scopi di NUMEN, in quanto per riuscire a misurare processi rari come quelli di DCE è essenziale che il segnale venga riconosciuto e che il fondo non venga identificato come segnale: se, ad esempio, consideriamo che il segnale da ricercare sia \ce{^{18}Ne}, allora gli eventi di tale ione identificati come \ce{^{18}O} o \ce{^{18}F} costituiscono una perdita di segnali corretti. 
-Dunque, è necessario stabilire un limite inferiore alla probabilità di riconoscimento del segnale, che, ai fini di questo lavoro di tesi, può essere posto all'80\%.
-D'altra parte, sempre considerando che il segnale sia costituito da \ce{^{18}Ne}, gli eventi di \ce{^{18}O} e \ce{^{18}F} identificati come \ce{^{18}Ne} rappresentano, invece, una contaminazione, ovvero fondo scambiato per segnale.
-In questo caso bisogna fissare un limite superiore a tale contaminazione, che, per gli scopi di questo lavoro, è stato posto allo 0.5\%.
-
-%(\textcolor{red}{Scrivere la parte sull'efficienza di riconoscimento del segnale})
-
-
-
+Allo scopo di dare una stima quantitativa della frazione di nuclei male identificati, si è proceduto nel modo seguente: si è diviso l'intero intervallo energetico $E_{tot}$ in un certo numero di fette; per ogni fetta si è effettuata una proiezione sull'asse $\Delta E_{SiC}$; per ogni coppia di specie atomiche, si è calcolato il punto mediano fra i valori medi delle due distribuzioni; infine, si è determinato il numero di eventi al di sotto (o al di sopra) del punto mediano.
+Un'immagine esemplificativa dell'idea alla base della procedura seguita è riportata in Figura~\ref{fig:fetta_con_contaminazione}: la linea tratteggiata indica il punto mediano tra i valori medi degli spettri di \ce{^{18}O} e \ce{^{18}F}.
+A sinistra di tale punto sono evidenziati con ombreggiatura blu gli eventi di \ce{^{18}F} identificati come \ce{^{18}O}, mentre a destra sono contrassegnati con ombreggiatura rossa gli eventi di \ce{^{18}O} identificati come \ce{^{18}F}.
+La contaminazione di \ce{^{18}F} in \ce{^{18}O} può essere, dunque, calcolata integrando lo spettro del \ce{^{18}F} da zero fino al punto mediano; invece, la contaminazione di \ce{^{18}O} in \ce{^{18}F} viene determinata integrando lo spettro dell'\ce{^{18}O} dal punto mediano fino alla fine della distribuzione.
+%per quantificare la contaminazione di \ce{^{18}O} in \ce{^{18}F} si calcola 
 
 \begin{figure}[!p] 
 	\centering
@@ -527,6 +523,31 @@ In questo caso bisogna fissare un limite superiore a tale contaminazione, che, p
 \end{figure}
 
 
+Il risultato di tale procedura è illustrato in Figura~\ref{fig:leakage}, dove il range energetico è stato suddiviso in intervalli da 100~MeV e si è scelto di rappresentare i dati soltanto laddove fossero presenti tutte e tre le bande.
+Si può notare che la contaminazione da una specie atomica con $Z$ più grande verso una con $Z$ più piccolo è nettamente maggiore; infatti, le percentuali che si trovano in Figura~\ref{fig:leakage}.a sono comprese fra il 7\% e il 15\%, mentre quelle in Figura~\ref{fig:leakage}.b sono inferiori all'1\%.
+In entrambi i casi si può osservare che la frazione di nuclei erroneamente identificati ha un andamento decrescente al crescere dell'energia.
+Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della carica sono maggiormente significativi, la capacità di separare gli ioni peggiora.
+
+
+
+
+
+
+
+I due grafici in Figura~\ref{fig:leakage} sono estremamente importanti nella valutazione dell'idoneità di questo sistema di rivelazione agli scopi di NUMEN, in quanto per riuscire a misurare processi rari come quelli di DCE è essenziale che il segnale venga riconosciuto e che il fondo non venga identificato come segnale: se, ad esempio, consideriamo che il segnale da ricercare sia \ce{^{18}Ne}, allora gli eventi di tale ione identificati come \ce{^{18}O} o \ce{^{18}F} costituiscono una perdita di segnali corretti. 
+Dunque, è necessario stabilire un limite inferiore alla probabilità di riconoscimento del segnale.
+Ai fini di questo lavoro di tesi, tale limite può essere posto all'80\%.
+D'altra parte, sempre considerando che il segnale sia costituito da \ce{^{18}Ne}, gli eventi di \ce{^{18}O} e \ce{^{18}F} identificati come \ce{^{18}Ne} rappresentano, invece, una contaminazione, ovvero fondo scambiato per segnale.
+In questo caso bisogna fissare un limite superiore a tale contaminazione:
+per gli scopi di questo lavoro, esso è stato posto allo 0.5\%.
+
+%(\textcolor{red}{Scrivere la parte sull'efficienza di riconoscimento del segnale})
+
+
+
+
+
+
 %Uno studio interessante riguarda il confronto fra la correlazione $\Delta E_{SiC} - E_{tot}$ e quella $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes}.
 A questo punto, è interessante studiare la correlazione $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes} sono riportate le matrici delle tre specie di interesse, le quali continuano ad essere ben separate per tutto il range energetico. 
 %Dal confronto con la Figura~\ref{fig:deltaE_ETot_full_energy} si nota che tali matrici si estendono ad energie inferiori, in quanto alla variabile sull'asse orizzontale viene a mancare il contributo di $\Delta E_{SiC}$. 
@@ -536,12 +557,12 @@ L'unica differenza sembra essere dovuta al punto in Figura~\ref{fig:leakage_res}
 %Ciò sembra essere legato al modo in cui si dispongono gli eventi con raccolta di carica incompleta; 
 Ciò è legato alla correlazione delle due grandezze;
 infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ la loro discesa verso all'asse $E_{CsI}$ procede in direzione perpendicolare. 
-Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica del telescopio, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
+Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica dei telescopi, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
 Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, la possibilità di evitarne la calibrazione consentirebbe un notevole risparmio di tempo.
 %Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli della correlazione $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate le matrici soltanto 
 
 
-\begin{figure} [!t]
+\begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/deltaE_ERes.png}
 	\caption{Matrici $\Delta E_{SiC} - E_{CsI}$.} \label{fig:deltaE_ERes}
@@ -588,7 +609,7 @@ La presenza di questi eventi non sembra provocare significativi cambiamenti nell
 Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la bassa probabilità che avvenga un'interazione adronica (\textcolor{red}{giusto?}).
 
 
-\begin{figure} [!t]
+\begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Interazioni_adroniche/deltaE_ERes.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando un modello di processi fisici che comprenda anche le interazioni adroniche.} \label{fig:deltaE_ERes_adron}
@@ -608,7 +629,7 @@ Dunque, è evidente che la maggior parte degli eventi spuri è originata da racc
 \end{figure}
 
 
-\clearpage
+%\clearpage
 \subsection{\iflanguage{italian}{Studio della granularità}{Study of granularity}}
 
 Uno degli obiettivi fondamentali di questo lavoro di tesi consiste nell'ottimizzazione delle dimensioni trasversali dei telescopi, al fine di minimizzare la percentuale di eventi in cui la carica è stata raccolta parzialmente. 
@@ -823,11 +844,6 @@ Per il caso con substrato morto da 350~$\mu$m, le matrici $\Delta E_{SiC} - E_{C
 
 
 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Substrato/deltaE_ERes.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando uno spessore del substrato morto pari a 10~$\mu$m.} \label{fig:deltaE_ERes_substrate}
-\end{figure}
 
 
 
@@ -836,6 +852,16 @@ Come si può evincere dal confronto tra la Figura~\ref{fig:deltaE_ERes_substrate
 Inoltre, si può notare che le bande in Figura~\ref{fig:deltaE_ERes_1.5} sono più lunghe di quelle in Figura~\ref{fig:deltaE_ERes_substrate}, in quanto, aumentando lo spessore del substrato morto, vengono introdotte maggiori fluttuazioni sull'energia, così che alcune particelle possono perdere molta più energia di altre (\textcolor{red}{giusto?}).
 
 %Il grafico della percentuale di errore al variare di $E_{CsI}$ è, invece
+
+
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Substrato/deltaE_ERes.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando uno spessore del substrato morto pari a 10~$\mu$m.} \label{fig:deltaE_ERes_substrate}
+\end{figure}
+
+
 
 Confrontando la Figura~\ref{fig:leakage_res_substrate} con la Figura~\ref{fig:leakage_res_1.5} si può osservare che vi è un aumento della percentuale di errore nell'identificazione dei nuclei, che diventa più rilevante a più bassa energia.
 
@@ -889,6 +915,7 @@ In realtà, negli spettrometri magnetici la posizione di una particella al piano
 %Quindi, dal momento che ad ogni telescopio corrisponde una determinata $x_{foc}$, 
 Dunque, in ogni telescopio del muro possono arrivare soltanto ioni che abbiano la stessa rigidità magnetica (\textcolor{red}{È abbastanza chiaro il perché?}).
 Per questo motivo è stata svolta una simulazione fissando il $B \rho$ a 1.96~Tm e calcolando per ogni nuclide la corrispondente energia: i risultati di tale calcolo sono riportati in Tabella~\ref{tab:energia}, dove si può notare che in questo caso sono stati considerati nove nuclidi.
+Le matrici $\Delta E_{SiC} - E_{CsI}$, mostrate in Figura~\ref{fig:deltaE_ERes_rigidita}, appaiono come dei blob ben distinti l'uno dall'altro, assicurando, dunque, un'ottima capacità di identificazione anche dei diversi isotopi di una stessa specie atomica.
 
 \begin{table}[t!]
 	\begin{center}
@@ -907,7 +934,7 @@ Per questo motivo è stata svolta una simulazione fissando il $B \rho$ a 1.96~Tm
 			\ce{^{20}Ne}  & &  905.4
 		\end{tabular}
 	\end{center}
-	\caption{Principali picchi energetici con i relativi branching ratio dell'~\ce{^{241}Am}. Informazioni tratte da.
+	\caption{I valori di energia corrispondenti ad una rigidità magnetica di 1.96~Tm per i diversi nuclidi.
 		\label{tab:energia}}
 \end{table}
 
@@ -916,5 +943,5 @@ Per questo motivo è stata svolta una simulazione fissando il $B \rho$ a 1.96~Tm
 \begin{figure} [!b]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Rigidita/deltaE-Eres_3.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando uno spessore del substrato morto pari a 10~$\mu$m.} \label{fig:deltaE_ERes_rigidita}
+	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ per i nove nuclidi indicati, tenendo fissato il $B \rho$ a 1.96~Tm.} \label{fig:deltaE_ERes_rigidita}
 \end{figure}
