@@ -242,11 +242,11 @@ In Figura~\ref{fig:simulazione_muro} è mostrato l'aspetto assunto da tale matri
 \end{figure}
 
 
-\subsection{\iflanguage{italian}{La generazione delle particelle primarie}{Primary particles generation}}
+\subsection{\iflanguage{italian}{La generazione delle particelle primarie}{Primary particles generation}} \label{par:particelle_primarie}
 
 %Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}. 
 %In alcune simulazioni sono stati coinvolti anche altri isotopi di tali specie nucleari, 
-Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}, coinvolgendo in alcune simulazioni anche altri isotopi di tali specie nucleari (\textcolor{red}{dico esplicitamente quali?}).
+Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}, coinvolgendo in alcune simulazioni anche altri isotopi di tali specie atomiche (\textcolor{red}{dico esplicitamente quali?}).
 
 
 In ciascun evento, la particella primaria è generata in modo casuale sulla faccia frontale di un rivelatore al SiC, con una direzione estratta casualmente all'interno di un angolo corrispondente ad un cono con un'apertura di 20\textdegree{}. 
@@ -256,11 +256,20 @@ In ciascun evento, la particella primaria è generata in modo casuale sulla facc
 Allo scopo di valutare la capacità di PID in un ampio range energetico, realisticamente significativo per NUMEN, sono state simulate particelle primarie con un'energia scelta casualmente fra 500 e 1000~MeV.
 %Dal momento che l'apparato sperimentale si incardina sulle proprietà dello spettrometro magnetico MAGNEX, 
 
-Inoltre, dal momento che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia, in accordo con la nota relazione
+È bene ricordare che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia; infatti, a partire dalla nota relazione
 \begin{equation} \label{eq:legge_spettrometri}
-B  \rho \, = \,  \frac{p}{q}
+B  \rho \, = \,  \frac{p}{q} \, 
 \end{equation}
-laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, alcune simulazioni sono state svolte tenendo fissato il $B \rho$ degli ioni primari.
+laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, sotto opportune condizioni è possibile affermare che
+\begin{equation} \label{eq:legge_spettrometri_approx}
+B x_{foc} \, \approx \, B  \rho  \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E}
+\end{equation}
+Dunque, per tenere in considerazione questo aspetto, alcune simulazioni sono state svolte tenendo fissata la rigidità magnetica $B \rho$ degli ioni primari e variandone in corrispondenza l'energia.
+%Inoltre, dal momento che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia, in accordo con la nota relazione
+%\begin{equation} \label{eq:legge_spettrometri}
+%B  \rho \, = \,  \frac{p}{q}
+%\end{equation}
+%laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, alcune simulazioni sono state svolte tenendo fissato la rigidità magnetica $B \rho$ degli ioni primari.
 (\textcolor{red}{secondo lei è meglio inserire la relazione del $B \rho $ nel cap 1?})
 
 
@@ -399,7 +408,7 @@ Per semplicità della trattazione si è preferito esporre i risultati in modo sc
 \subsection{\iflanguage{italian}{Particelle monocromatiche, ortogonali e centrali }{Monochromatic, orthogonal and central particles}}
 
 
-Come primo esempio si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie hanno un'energia di 1000~MeV ed incidono ortogonalmente e centralmente al telescopio, il quale ha, in questo caso, dimensioni trasversali di 1~cm $\times$ 1~cm.
+Come primo esempio si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono generate con un'energia di 1000~MeV ed incidono ortogonalmente e centralmente al telescopio, il quale ha, in questo caso, dimensioni trasversali di 1~cm $\times$ 1~cm.
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
 Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{tot}$.
 Questa affermazione viene confermata dalla Figura~\ref{fig:deltaE_ETot}, in cui è possibile notare che i luoghi di \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne} sono chiaramente distinti.
@@ -464,7 +473,7 @@ Le corrispondenti matrici $\Delta E_{SiC} - E_{tot}$ sono rappresentate in Figur
 Inoltre, rispetto al caso precedente, fanno la loro comparsa degli eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''. 
 Ciò dipende da quegli eventi in cui le particelle escono fuori dal rivelatore al CsI, non rilasciando totalmente la loro energia residua.
 A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID.
-Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}{si possono definire così?}), si è riportata in Figura~\ref{fig:fetta} la proiezione sull'asse verticale della ``fetta'' di energia compresa fra 600 e 700~MeV: come si può notare, tali eventi costituiscono un continuo che si estende fino ad energie prossime a zero e rendono asimmetriche le distribuzioni. 
+Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}{si possono definire così?}), si è riportata in Figura~\ref{fig:fetta} la proiezione sull'asse verticale della ``fetta'' di energia compresa fra 600 e 700~MeV: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono asimmetriche le distribuzioni. 
 %Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
 
 
@@ -476,7 +485,11 @@ Per meglio comprendere l'entità della frazione di eventi spuri (\textcolor{red}
 
 
 
-
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Contaminazione/contaminazione.png}
+	\caption{Proiezione sull'asse $\Delta E_{SiC}$ della fetta in $E_{tot}$ compresa tra 600 e 700~MeV.} \label{fig:fetta_con_contaminazione}
+\end{figure}
 
 
 
@@ -522,9 +535,9 @@ Questa affermazione è supportata dalla Figura~\ref{fig:leakage_res}, nella qual
 L'unica differenza sembra essere dovuta al punto in Figura~\ref{fig:leakage_res}.a ad 850~MeV, per il quale si osservano percentuali lievemente maggiori del suo corrispettivo in Figura~\ref{fig:leakage}.a. 
 %Ciò sembra essere legato al modo in cui si dispongono gli eventi con raccolta di carica incompleta; 
 Ciò è legato alla correlazione delle due grandezze;
-infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ essi si posizionano in maniera perpendicolare all'asse $E_{CsI}$. 
+infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ la loro discesa verso all'asse $E_{CsI}$ procede in direzione perpendicolare. 
 Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica del telescopio, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
-Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, la possibilità di evitarne la calibrazione potrebbe consentire un notevole risparmio di tempo.
+Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, la possibilità di evitarne la calibrazione consentirebbe un notevole risparmio di tempo.
 %Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli della correlazione $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate le matrici soltanto 
 
 
@@ -549,7 +562,7 @@ Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, l
 	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res}
 \end{figure}
 
-Poiché anche in altri casi si è riscontrato che la correlazione di $\Delta E_{SiC}$ con $E_{CsI}$ offre risultati paragonabili a quelli della correlazione con $E_{tot}$, da questo momento in poi nell'esposizione dei risultati delle simulazioni verranno presentate soltanto le matrici $\Delta E_{SiC} - E_{CsI}$.
+Poiché anche in altri casi si è riscontrato che la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli di $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate soltanto le matrici $\Delta E_{SiC} - E_{CsI}$.
 
 
 
@@ -568,9 +581,9 @@ Poiché anche in altri casi si è riscontrato che la correlazione di $\Delta E_{
 
 
 
-Rispetto all'esempio precedente, la geometria e le caratteristiche delle particelle primarie restano invariate, mentre il modello dei processi fisici adesso include le interazioni adroniche. 
-Le corrispondenti matrici $\Delta E_{SiC} - E{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_adron}: come si può notare, a differenza del caso in cui erano considerate soltanto le interazioni elettromagnetiche, adesso si osserva per tutte e tre le specie nucleari la comparsa di eventi ad un'energia più alta di quella delle rispettive bande.
-Ciò è dovuto a meccanismi di reazioni nucleari, nei quali vengono prodotti nuclei più pesanti dei proiettili (\textcolor{red}{non sono molto sicuro di questa cosa}).
+Rispetto all'esempio precedente, in questa simulazione la geometria e le caratteristiche delle particelle primarie restano invariate, mentre il modello dei processi fisici adesso include le interazioni adroniche. 
+Le corrispondenti matrici $\Delta E_{SiC} - E_{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_adron}: come si può notare, a differenza del caso in cui erano considerate soltanto le interazioni elettromagnetiche, adesso si osserva per tutte e tre le specie nucleari la comparsa di eventi ad un'energia $\Delta E_{SiC}$ più alta di quella delle rispettive bande.
+Ciò è dovuto a meccanismi di reazioni nucleari e a processi di scattering inelastico, nei quali può essere rilasciata una notevole quantità di energia (\textcolor{red}{non sono molto sicuro di questa cosa}).
 La presenza di questi eventi non sembra provocare significativi cambiamenti nelle capacità di PID, in quanto, come si può evincere dalla Figura~\ref{fig:leakage_res_adron}, le percentuali di nuclei potenzialmente male identificati aumenta di meno dell'1\%. 
 Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la bassa probabilità che avvenga un'interazione adronica (\textcolor{red}{giusto?}).
 
@@ -600,9 +613,9 @@ Dunque, è evidente che la maggior parte degli eventi spuri è originata da racc
 
 Uno degli obiettivi fondamentali di questo lavoro di tesi consiste nell'ottimizzazione delle dimensioni trasversali dei telescopi, al fine di minimizzare la percentuale di eventi in cui la carica è stata raccolta parzialmente. 
 Dal momento che la lunghezza della cornice completamente inattiva e della regione di transizione dovrebbero essere circa costanti pur variando la superficie del rivelatore al~SiC, ci si aspetta che all'aumentare delle dimensioni trasversali del telescopio la frazione degli eventi con raccolta di carica incompleta diminuisca.
-Considerando gli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono stati esaminati tre casi: $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}. 
-In ognuna delle tre possibilità le particelle primarie sono state generate mantenendo i parametri elencati nel Paragrafo~\ref{par:interazioni_adroniche}.
-Per quanto riguarda il primo caso, i plot di riferimento sono quelli mostrati nel paragrafo precedente, mentre per gli altri due verranno adesso esposti.
+Tenendo presenti gli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono stati esaminati tre casi: $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}. 
+In ciascuna delle tre possibilità le particelle primarie sono state generate mantenendo i parametri elencati nel Paragrafo~\ref{par:interazioni_adroniche}.
+Per quanto riguarda il primo caso, i plot di riferimento sono quelli mostrati nel paragrafo precedente, mentre per gli altri due vengono adesso esposti.
 
 \subsection*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm}
 %\paragraph*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm.}
@@ -690,7 +703,7 @@ Dal momento che per gli obiettivi di NUMEN è necessario lavorare con fasci di a
 
 
 Due aspetti diversi spingono in direzioni opposte; è necessario, dunque, cercare una situazione di compromesso fra le due esigenze.
-Alla luce delle considerazione svolte, la migliore condizione di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto congiungono un'alta percentuale di riconoscimento del segnale con una bassa probabilità di pile-up.
+Alla luce delle considerazione svolte, la migliore condizione di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto congiunge un'alta percentuale di riconoscimento del segnale con una bassa probabilità di pile-up.
 
 
 
@@ -708,9 +721,10 @@ Qualora non fosse possibile soddisfare tali requisiti, i rivelatori diventerebbe
 
 Sulla base delle attuali specifiche di produzione dei rivelatori al SiC e di recenti misure, sono stati presi in esame tre valori: 20, 50 e 200~$\mu$m.
 Il primo rappresenta un traguardo concreto nelle tecniche di realizzazione, il secondo è il valore medio al momento raggiungibile, il terzo costituisce lo studio di una situazione estrema.
-In tutti e tre i casi, i telescopi avevano dimensioni trasversali pari a 1.5~cm $\times$ 1.5~cm, mentre lo spessore del substrato morto è di 350~$\mu$m.
-La lunghezza della zona inattiva attorno alla superficie sensibile è stata mantenuta fissa a 200~$\mu$m, in accordo con gli standard attuali.
-Inoltre, le condizioni di generazione delle particelle primarie continuano ad essere quelle del Paragrafo~\ref{par:interazioni_adroniche}.
+In tutti e tre i casi, i telescopi avevano dimensioni trasversali pari a 1.5~cm $\times$ 1.5~cm, mentre lo spessore del substrato morto era di 350~$\mu$m.
+La lunghezza della zona inattiva attorno alla superficie sensibile è stata fissata a 200~$\mu$m, in accordo con gli standard attuali.
+%Le condizioni di generazione delle particelle primarie continuano ad essere quelle del Paragrafo~\ref{par:interazioni_adroniche}.
+Le particelle primarie sono state generate mantenendo le caratteristiche esposte nel Paragrafo~\ref{par:interazioni_adroniche}.
 I grafici relativi alla lunghezza di 50~$\mu$m sono già stati mostrati in Figura~\ref{fig:leakage_res_1.5}.
 
 
@@ -756,9 +770,9 @@ Tale incremento, rispetto al caso con un valore di 50~$\mu$m, è di circa il 3\%
 
 %\subsection*{{\large Conclusioni }}
 
-Alla luce di questi risultati, è possibile affermare che, in tutti e tre i casi considerati, il sistema di identificazione rispetta i limiti sul riconoscimento del segnale e sulla contaminazioni stabiliti.
-L'andamento della percentuale di errore nell'identificazione dei nuclei in funzione della lunghezza della zona di transizione è riportata, nel caso di contaminazione di \ce{^{18}Ne} in \ce{^{18}O}, in Figura~\ref{fig:misident_vs_length}.
-Oltre ai tre valori succitati, si è valutato tale percentuale anche per una lunghezza di 500~$\mu$m, sebbene sia ben lontana dagli standard di produzione.
+Alla luce di questi risultati, è possibile affermare che, in tutti e tre i casi considerati, il sistema di identificazione rispetta i limiti stabiliti sul riconoscimento del segnale e sulla contaminazioni.
+L'andamento della percentuale di errore nell'identificazione dei nuclei in funzione della lunghezza della zona di transizione è riportato, nel caso di contaminazione di \ce{^{18}Ne} in \ce{^{18}O}, in Figura~\ref{fig:misident_vs_length}.
+Oltre ai tre valori suddetti, si è valutata tale percentuale anche per una lunghezza di 500~$\mu$m, sebbene sia ben lontana dagli standard di produzione.
 In questo caso la percentuale di errore è vicina al 20\%, diventando, dunque, eccessivamente alta per i requisiti del progetto.
 
 
@@ -778,6 +792,23 @@ In questo caso la percentuale di errore è vicina al 20\%, diventando, dunque, e
 %\clearpage
 \subsection{\iflanguage{italian}{Studio dello spessore del substrato morto}{Study of dead-substrate}}
 
+
+
+
+Come anticipato nel Paragrafo~\ref{par:geometria}, grazie all'utilizzo di sofisticate tecniche di lavorazione, lo spessore del substrato epitassiale del rivelatore al SiC potrebbe essere ridotto fino a 10~$\mu$m.
+Tuttavia, queste tecniche non soltanto richiedono costi di produzione maggiori ma rischiano anche di danneggiare alcuni dispositivi;
+dunque, è ragionevole effettuare tale operazione se i benefici portati sono superiori agli svantaggi.
+Secondo questa prospettiva, nel presente lavoro di tesi sono state valutate le possibili conseguenze sulla PID, mettendo a confronto le prestazioni ottenibili al variare dello spessore del substrato morto.
+
+%Le simulazioni sono state svolte considerando dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, 
+In questo studio le dimensioni trasversali dei telescopi sono state fissate a 1.5~cm $\times$ 1.5~cm, con lunghezze della regione di transizione e della cornice inattiva, rispettivamente, di 50 e 200~$\mu$m.
+Le particelle primarie sono state generate mantenendo le caratteristiche del Paragrafo~\ref{par:interazioni_adroniche}.
+Per il caso con substrato morto da 350~$\mu$m, le matrici $\Delta E_{SiC} - E_{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_1.5}, mentre i grafici sulle contaminazioni sono già stati mostrati in Figura~\ref{fig:leakage_res_1.5}.
+
+
+
+
+
 \begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/1.5per1.5/deltaE_ERes.png}
@@ -785,22 +816,14 @@ In questo caso la percentuale di errore è vicina al 20\%, diventando, dunque, e
 \end{figure}
 
 
-Come anticipato nel Paragrafo~\ref{par:geometria}, lo spessore del substrato epitassiale del rivelatore al SiC, fin qui mantenuto fisso ad un valore di 350~$\mu$m, potrebbe essere ridotto, grazie all'utilizzo di sofisticate tecniche di lavorazione, fino a 10~$\mu$m.
-Tuttavia, queste tecniche non soltanto richiedono costi di produzione maggiori ma rischiano anche di danneggiare alcuni dispositivi;
-dunque, è ragionevole effettuare tale operazione se i benefici che porta sono superiori agli svantaggi.
-In questo lavoro di tesi sono state valutate le possibili conseguenze sulla PID, mettendo a confronto con le prestazioni ottenibili nei due casi.
 
-%Le simulazioni sono state svolte considerando dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, 
-In questo studio le dimensioni trasversali dei telescopi sono state fissate a 1.5~cm $\times$ 1.5~cm, con lunghezze della regione di transizione e della cornice inattiva rispettivamente di 50~$\mu$m e 200~$\mu$m.
-Infine, le condizioni di generazione delle particelle primarie continuano ad essere quelle del Paragrafo~\ref{par:interazioni_adroniche}.
-Per il caso con substrato morto da 350~$\mu$m, le matrici $\Delta E_{SiC} - E_{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_1.5}, mentre i grafici sulle contaminazioni sono già stati mostrati in Figura~\ref{fig:leakage_res_1.5}.
 
 \subsection*{Spessore del substrato morto: 10~$\mu$m}
 
 
 
 
-\begin{figure} [!t]
+\begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Substrato/deltaE_ERes.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando uno spessore del substrato morto pari a 10~$\mu$m.} \label{fig:deltaE_ERes_substrate}
@@ -808,24 +831,13 @@ Per il caso con substrato morto da 350~$\mu$m, le matrici $\Delta E_{SiC} - E_{C
 
 
 
-In questo caso le relative matrici $\Delta E_{SiC} - E_{CsI}$ sono mostrate in Figura~\ref{fig:deltaE_ERes_substrate}: come si può notare, rispetto alla Figura~\ref{fig:leakage_res_1.5}, le bande sono collocate ad un'energia più alta; infatti, dal momento che il substrato morto è più sottile, le particelle perdono in esso meno energia e, di conseguenza, l'energia residua rilasciata nel rivelatore al CsI è maggiore.
-Inoltre, le bande in Figura~\ref{fig:deltaE_ERes_1.5} sono più lunghe di quelle in Figura~\ref{fig:deltaE_ERes_substrate}, in quanto, aumentando lo spessore del substrato morto, vengono introdotte maggiori fluttuazioni sull'energia, così che alcune particelle possono perdere molta più energia di altre (\textcolor{red}{giusto?}).
+%Le matrici $\Delta E_{SiC} - E_{CsI}$ relative al caso in discussione sono mostrate in Figura~\ref{fig:deltaE_ERes_substrate}: come si può notare, rispetto alla Figura~\ref{fig:leakage_res_1.5}, le bande sono collocate ad un'energia $E_{CsI}$ più alta; infatti, dal momento che il substrato morto è più sottile, le particelle perdono in esso meno energia e, di conseguenza, l'energia residua rilasciata nel rivelatore al CsI è maggiore.
+Come si può evincere dal confronto tra la Figura~\ref{fig:deltaE_ERes_substrate} e la Figura~\ref{fig:deltaE_ERes_1.5}, riducendo lo spessore del substrato morto, le matrici $\Delta E_{SiC} - E_{CsI}$ si collocano ad un'energia $E_{CsI}$ più alta; infatti, dal momento che tale substrato è più sottile, le particelle perdono in esso meno energia, rilasciando nel rivelatore allo CsI un'energia residua maggiore.
+Inoltre, si può notare che le bande in Figura~\ref{fig:deltaE_ERes_1.5} sono più lunghe di quelle in Figura~\ref{fig:deltaE_ERes_substrate}, in quanto, aumentando lo spessore del substrato morto, vengono introdotte maggiori fluttuazioni sull'energia, così che alcune particelle possono perdere molta più energia di altre (\textcolor{red}{giusto?}).
 
-Confrontando la Figura~\ref{fig:leakage_res_substrate} con la Figura~\ref{fig:leakage_res_1.5} si può osservare che
+%Il grafico della percentuale di errore al variare di $E_{CsI}$ è, invece
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Confrontando la Figura~\ref{fig:leakage_res_substrate} con la Figura~\ref{fig:leakage_res_1.5} si può osservare che vi è un aumento della percentuale di errore nell'identificazione dei nuclei, che diventa più rilevante a più bassa energia.
 
 
 
@@ -843,12 +855,10 @@ Confrontando la Figura~\ref{fig:leakage_res_substrate} con la Figura~\ref{fig:le
 
 \subsection*{Conclusioni}
 
-
-
-
-
-
-
+In accordo con quanto trovato, la riduzione dello spessore del substrato morto provoca un leggero peggioramento delle capacità di PID, sebbene vengano rispettati i limiti fissati sul riconoscimento del segnale e sulla contaminazione.
+L'andamento della percentuale di errore nell'identificazione dei nuclei al variare dello spessore del substrato morto è riportato, nel caso di contaminazione di \ce{^{18}Ne} in \ce{^{18}O}, in Figura~\ref{fig:misident_vs_substrate}.
+(\textcolor{red}{Ha senso mettere questo grafico con soltanto due casi studiati?})
+Osservando tale grafico è possibile dedurre che, dal punto di vista dell'identificazione dei prodotti di reazione, la riduzione dello spessore del substrato morto risulta un'operazione ingiustificata.
 
 
 
@@ -864,19 +874,47 @@ Confrontando la Figura~\ref{fig:leakage_res_substrate} con la Figura~\ref{fig:le
 
 
 
-
-\clearpage
+%\clearpage
 \subsection{\iflanguage{italian}{Studio a fissata rigidità magnetica}{Study of fixed magnetic rigidity}}
 
+%Dal momento che il muro di telescopi farà parte del FPD di uno spe
+
+%Nel Paragrafo~\ref{par:particelle_primarie} è stato anticipato che 
+
+%Nelle simulazioni finora presentate, il telescopio sul quale venivano generate le particelle primarie
+%Nelle simulazioni finora discusse, le particelle primarie sono state prodotte con un'energia compresa tra 500 e 1000~MeV
+Le simulazioni finora discusse hanno contemplato delle situazioni in cui sul singolo telescopio incidessero particelle primarie con un'energia compresa tra 500 e 1000~MeV.
+%In realtà, dal momento che negli spettrometri magnetici la posizione di una particella al piano focale è legata alla sua energia secondo la~\ref{eq:legge_spettrometri_approx}, sul singolo telescopio possono arrivare soltanto ioni che abbiano la stessa rigidità magnetica.
+In realtà, negli spettrometri magnetici la posizione di una particella al piano focale è legata alla sua energia secondo la~\ref{eq:legge_spettrometri_approx}.
+%Quindi, dal momento che ad ogni telescopio corrisponde una determinata $x_{foc}$, 
+Dunque, in ogni telescopio del muro possono arrivare soltanto ioni che abbiano la stessa rigidità magnetica (\textcolor{red}{È abbastanza chiaro il perché?}).
+Per questo motivo è stata svolta una simulazione fissando il $B \rho$ a 1.96~Tm e calcolando per ogni nuclide la corrispondente energia: i risultati di tale calcolo sono riportati in Tabella~\ref{tab:energia}, dove si può notare che in questo caso sono stati considerati nove nuclidi.
+
+\begin{table}[t!]
+	\begin{center}
+		\begin{tabular}{ccc}
+			Nuclide       & &  Energia [MeV] \\
+			%\hline
+			\toprule
+			\ce{^{16}O}  &  &  724.3 \\
+			\ce{^{17}O}  &  &  683.3 \\
+			\ce{^{18}O}  &  &  646.8 \\
+			\ce{^{18}F}   & &  814.6 \\
+			\ce{^{19}F}   & &  773.6 \\
+			\ce{^{20}F}   & &  736.4 \\
+			\ce{^{18}Ne}  & &  1000  \\
+			\ce{^{19}Ne}  & &  950.3 \\
+			\ce{^{20}Ne}  & &  905.4
+		\end{tabular}
+	\end{center}
+	\caption{Principali picchi energetici con i relativi branching ratio dell'~\ce{^{241}Am}. Informazioni tratte da.
+		\label{tab:energia}}
+\end{table}
 
 
 
-
-
-
-
-
-
-
-
-
+\begin{figure} [!b]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Rigidita/deltaE-Eres_3.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando uno spessore del substrato morto pari a 10~$\mu$m.} \label{fig:deltaE_ERes_rigidita}
+\end{figure}
