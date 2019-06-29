@@ -43,7 +43,7 @@ Il modo in cui tali grandezze vengono misurate sarà esplicato nel paragrafo suc
 %Noti i quattro parametri al piano focale, si procede all'inversione dell'operatore $G$ che esprime il legame fra questi e i quattro parametri sul target.
 %Se l'operatore $G^{-1}$ esiste, 
 %
-Noti i quattro parametri al piano focale, essi vengono propagati all'indietro per ricostruire i quattro parametri iniziali corrispondenti, dai quali si ricavano i valori delle sezioni d'urto e delle altre quantità di interesse. 
+Noti i quattro parametri al piano focale, essi vengono utilizzati per risolvere le equazioni del moto di ogni singolo ione e da queste si ricavano i valori delle sezioni d'urto e delle altre quantità di interesse. 
 
 
 
@@ -64,7 +64,7 @@ Noti i quattro parametri al piano focale, essi vengono propagati all'indietro pe
 L'attuale FPD di MAGNEX, la cui rappresentazione schematica è riportata in Figura~\ref{fig:fpd}, è un sistema di rivelazione ibrido, costituito da un tracciatore a gas a bassa pressione e da un muro di rivelatori al silicio.
 Esso è posizionato a 1.91~m dall'uscita del dipolo e, al fine di minimizzare gli effetti dovuti alle aberrazioni cromatiche~\cite{cunsolo:nima01}, è inclinato di 59.2\textdegree{} rispetto ad un piano perpendicolare all'asse ottico.
 %Una finestra di mylar spessa 1.5~$\mu$m è utilizzata per contenere il gas, solitamente costituito da N35 isobutano, segnando l'ingresso nel volume attivo.
-L'ingresso nel volume attivo è una finestra di mylar spessa 1.5~$\mu$m, la quale è utilizzata per contenere il gas, solitamente costituito da N35 isobutano a pressioni di poche decine di~mbar.
+L'ingresso nel volume attivo è definito da una finestra di Mylar spessa 1.5~$\mu$m, la quale è utilizzata per contenere il gas, solitamente costituito da N35 isobutano (C\ped{4}H\ped{10}) a pressioni di poche decine di~mbar.
 
 
 
@@ -76,9 +76,9 @@ L'ingresso nel volume attivo è una finestra di mylar spessa 1.5~$\mu$m, la qual
 %Il tracciatore a gas è essenzialmente una camera a deriva, in cui un sistema costituito da sei fili (DC\ped{\textit{i}}) e da un anodo segmentato in pad consente la misura dei quattro parametri necessari per la ricostruzione tridimensionale della traccia.
 %In particolare, al di sopra di ciascun filo è presente una fila di pad, le quali sono orientate parallelamente all'asse ottico.
 Il tracciatore a gas, che consente la ricostruzione tridimensionale della traiettoria degli ioni, è formato da sei fili proporzionali (DC\ped{\textit{i}}) e da un anodo segmentato in sei file di pad, disposte in maniera che sopra ogni filo ci sia una fila di pad.
-Come descritto più avanti, i fili, sfruttando il principio di lavoro delle camere a deriva, danno una misura di sei posizioni verticali ($Y_i$), mentre le pad permettono di determinare sei posizioni orizzontali ($X_i$).
+%Come descritto più avanti, i fili, sfruttando il principio di lavoro delle camere a deriva, danno una misura di sei posizioni verticali ($Y_i$), mentre le pad permettono di determinare sei posizioni orizzontali ($X_i$).
 %Una griglia di Frisch è posta al di sotto dei fili, in quanto questi vengono anche utilizzati per misurare l'energia persa dagli ioni nel gas.
-Dal momento che i fili vengono anche utilizzati per misurare l'energia persa dagli ioni nel gas, una griglia di Frisch è posta al di sotto di essi, in modo da rendere il segnale indipendente dalla posizione dell'evento di ionizzazione.
+%Dal momento che i fili vengono anche utilizzati per misurare l'energia persa dagli ioni nel gas, una griglia di Frisch è posta al di sotto di essi, in modo da rendere il segnale indipendente dalla posizione dell'evento di ionizzazione.
 
 
 
@@ -89,7 +89,7 @@ Ogni rivelatore ha un'area attiva di $70 \times 50$~mm\ap{2} ed uno spessore di 
 %Ogni pad ha un'area attiva di $70 \times 50$~mm\ap{2} ed è spessa 500~$\mu$m, sufficienti per fermare i prodotti di reazioni nel range energetico di interesse. 
 Essi vengono utilizzati per fermare gli ioni, misurandone l'energia residua e producendo il segnale di trigger per l'acquisizione. 
 
-Quando una particella carica, attraversando la finestra di mylar, entra nel volume attivo, perde energia nel gas producendo coppie elettrone-ione, le quali, sotto l'effetto di un campo elettrico uniforme, migrano rispettivamente verso la griglia di Frisch e il catodo. 
+Quando una particella carica, attraversando la finestra di Mylar, entra nel volume attivo, perde energia nel gas producendo coppie elettrone-ione, le quali, sotto l'effetto di un campo elettrico uniforme, migrano rispettivamente verso la griglia di Frisch e il catodo. 
 %mentre gli elettroni diffondono verso la griglia di Frisch, con una velocità che per questi ultimi è di circa $3 - 5 $~cm/$\mu$s. 
 %La presenza di un campo elettrico costante provoca 
 %La velocità di deriva tipica degli elettroni è di $3 - 5 $~cm/$\mu$s
@@ -118,7 +118,7 @@ Questo aspetto, che costituisce una delle principali limitazioni all'intensità 
 Esso costituisce, dunque, uno dei principali motivi alla base del cambiamento del sistema di rivelazione degli eiettili con uno in grado di lavorare con un rate elevato di ioni pesanti. 
 %Da qui trae origine la grande opera di cambiamento del sistema di rivelazione degli eiettili con uno in grado di lavorare con un rate elevato di ioni pesanti.
 
-%\vspace{0.5 cm}
+\vspace{0.5 cm}
 
 \section{\iflanguage{italian}{Il futuro rivelatore di piano focale}{Future Focal Plane Detector}}
 
@@ -146,14 +146,14 @@ Il suo principio di lavoro è il seguente: una particella carica incidente, dopo
 Sotto l'azione del campo elettrico uniforme presente fra catodo e anodo, gli elettroni primari si muovono con velocità costante nella regione di deriva fino a raggiungere il MPGD.
 Analogamente a quanto visto nel Paragrafo~\ref{sez:fpd}, dalla misura del tempo di deriva degli elettroni primari è possibile estrarre l'informazione sulla posizione e sull'angolo verticali.
 %Giunti al MPGD, gli elettroni primari danno origine ad una moltiplicazione a valanga, che risulta nella formazione di un jet elettronico. 
-In seguito, gli elettroni primari giungono al MPGD, che dovrebbe essere basato sulla tecnologia delle Thick-GEM.
-Questi rivelatori sono costituiti da una pila di fogli di materiale isolante (solitamente kapton) rivestiti su entrambe le facce con uno strato metallico.
+In seguito, gli elettroni primari giungono al MPGD, che dovrebbe essere basato sulla tecnologia delle M-THGEM.
+Ciascun THGEM è costituito da una pila di fogli di materiale isolante (solitamente kapton) rivestiti su entrambe le facce con uno strato metallico.
 I fogli, che possono avere superfici molto grandi, sono tra loro distanti pochi~mm e si trovano immersi nel gas.
-Ogni foglio presenta una trama regolare di fori, i quali hanno un diametro tipicamente compreso fra $ 0.3 \div 1$~mm.
+Ogni foglio presenta una trama regolare di fori, i quali hanno un diametro di 0.6~mm.
 %Una differenza di potenziale è applicata tra le due superfici metalliche, in modo che gli elettroni vengano guidati verso i fori, dove, incontrando un campo elettrico molto intenso, viene prodotta una moltiplicazione a valanga.
 Quando gli elettroni arrivano al primo foglio, la differenza di potenziale applicata tra le due superfici metalliche li guida verso i fori, dove, sotto l'effetto di un campo elettrico molto intenso, producono una moltiplicazione a cascata.
 A questo punto, la valanga viene indirizzata da un'ulteriore differenza di potenziale verso il foglio successivo, dando luogo ad una seconda moltiplicazione.
-Il processo si ripete per i diversi stadi della Thick-GEM, fino a raggiungere fattori di guadagno dell'ordine di $10^6$. 
+Il processo si ripete per i diversi stadi (2 o 3 a seconda del sistema utilizzato) della M-THGEM, fino a raggiungere fattori di guadagno dell'ordine di $10^4 \div 10^5$. 
 Superato l'ultimo foglio, la valanga viene guidata dal campo elettrico verso la scheda segmentata di readout, dove induce su delle strip un impulso di carica. 
 Di conseguenza, note le strip coinvolte, è possibile misurare la posizione e l'angolo orizzontali. 
 
@@ -167,12 +167,12 @@ Dopo aver attraversato il tracciatore a gas, la particella carica raggiunge il m
 Poiché l'argomento principale del presente lavoro di tesi consiste nella simulazione di tale sistema di identificazione, per maggiore chiarezza si è preferito discuterne le caratteristiche nella sezione successiva.
 
 %La scelta della tecnologia da utilizzare per il MPGD è oggi orientata verso le Thick-GEM, che, grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, sono adatte agli scopi di NUMEN.
-Grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, le Thick-GEM costituiscono un'ottima soluzione alle esigenze di NUMEN.
-Tuttavia, diverse delle condizioni in cui questo tipo di rivelatori è abitualmente impiegato non sono attuabili per NUMEN. 
-In primo luogo, le Thick-GEM sono tipicamente utilizzate con gas a pressione atmosferica, mentre il FPD opera solitamente a pressioni di alcune decine di mbar.
-Inoltre, esse spesso sono utilizzate per rivelare particelle in condizioni di Minimum Ionizing Particle, mentre gli ioni di interesse per NUMEN saranno ben lontani da tali energie.
+Grazie alla loro capacità di sostenere rate fino al MHz/mm\ap{2}, le M-THGEM costituiscono un'ottima soluzione alle esigenze di NUMEN anche per applicazioni a bassa pressione.
+%Tuttavia, diverse delle condizioni in cui questo tipo di rivelatori è abitualmente impiegato non sono attuabili per NUMEN. 
+%In primo luogo, le Thick-GEM sono tipicamente utilizzate con gas a pressione atmosferica, mentre il FPD opera solitamente a pressioni di alcune decine di mbar.
+%Inoltre, esse spesso sono utilizzate per rivelare particelle in condizioni di Minimum Ionizing Particle, mentre gli ioni di interesse per NUMEN saranno ben lontani da tali energie.
 %In aggiunta, dal momento che diversi tipi di ioni raggiungono il rivelatore, il tracciatore deve avere ...
-Dunque, sebbene incoraggianti risultati siano stati recentemente ottenuti~\cite{cortesi:rsi17}, questa soluzione richiede un'intensa attività di sviluppo.
+%Dunque, sebbene incoraggianti risultati siano stati recentemente ottenuti~\cite{cortesi:rsi17}, questa soluzione richiede un'intensa attività di sviluppo.
 
 
 \begin{figure} [!p]
@@ -202,7 +202,7 @@ Un prototipo di dimensioni ridotte, mostrato in Figura~\ref{fig:castelletto}, è
 
 
 
-\vspace{0.5 cm}
+%\vspace{0.3 cm}
 
 %\clearpage
 %\section{\iflanguage{italian}{Il test sui telescopi SiC-CsI}{Experimental setting for the test}}
@@ -222,10 +222,13 @@ Un prototipo di dimensioni ridotte, mostrato in Figura~\ref{fig:castelletto}, è
 
 %Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto per identificare i prodotti di reazione
 
-Quando si studiano le reazioni fra ioni pesanti, l'identificazione in numero atomico, massa e carica dei prodotti di reazione è una componente indispensabile che, a seconda delle esigenze, viene eseguita sfruttando vari metodi.
+%Quando si studiano le reazioni fra ioni pesanti, l'identificazione in numero atomico, massa e carica dei prodotti di reazione è una componente indispensabile che, a seconda delle esigenze, viene eseguita sfruttando vari metodi.
 %Una delle tecniche più diffuse prevede l'utilizzo di telescopi $\Delta E - E$.
-Come anticipato nel Paragrafo~\ref{sez:sistema_identif_part}, il progetto NUMEN ha individuato come possibile soluzione per la PID in condizioni di alti rate di particelle incidenti l'utilizzo di telescopi $\Delta E - E$, in cui il primo stadio è costituito da un rivelatore al carburo di silicio (SiC), mentre il secondo è uno scintillatore allo CsI.
-Il progetto al momento prevede la realizzazione di un muro composto da circa 1200 telescopi, arrangiati in 40 colonne.
+Quando si studiano le reazioni fra ioni pesanti, l'identificazione in numero atomico ($Z$), massa ($A$) e carica ($q$) dei prodotti di reazione è una componente indispensabile per la ricostruzione e la misura delle sezioni d'urto.
+Il progetto NUMEN, a tale scopo, propone l'utilizzo combinato di diversi metodi: l'identificazione in $Z$ verrà svolta mediante la tecnica $\Delta E - E_{resid}$, mentre quella in $A$ e $q$ attraverso la correlazione fra la deflessione dovuta alla forza di Lorents e il tempo di volo degli ioni.
+%Come anticipato nel Paragrafo~\ref{sez:sistema_identif_part}, il progetto NUMEN ha individuato come possibile soluzione per la PID in condizioni di alti rate di particelle incidenti l'utilizzo di telescopi $\Delta E - E$, in cui il primo stadio è costituito da un rivelatore al carburo di silicio (SiC), mentre il secondo è uno scintillatore allo CsI.
+In particolare, come anticipato nel Paragrafo~\ref{sez:sistema_identif_part}, i telescopi $\Delta E - E_{resid}$ saranno costituiti da un primo stadio basato su un rivelatore al carburo di silicio (SiC), seguito da uno scintillatore allo ioduro di cesio (CsI).
+Il progetto al momento prevede la realizzazione di un muro composto da 1230 telescopi, arrangiati in 41 colonne.
 Ogni colonna è, a sua volta, costituita da 3 moduli contenenti una matrice di $2 \times 5$ telescopi ciascuno.
 In Figura~\ref{fig:muro_telescopi} è riportato uno schema di come dovrebbe apparire il futuro muro per la PID.
 
@@ -245,8 +248,8 @@ Prima di proseguire, vediamo più in dettaglio le principali caratteristiche dei
 
 
 
-
-
+%\vspace{0.5 cm}
+\clearpage
 
 %\subsection{\iflanguage{italian}{I telescopi SiC-CsI}{SiC-CsI telescope detectors}}
 
@@ -257,15 +260,47 @@ Prima di proseguire, vediamo più in dettaglio le principali caratteristiche dei
 Grazie alle sue interessanti proprietà, il SiC costituisce oggi una promettente realtà nel campo della realizzazione di rivelatori per la fisica, configurandosi come una potenziale alternativa al silicio nelle applicazioni che richiedono una grande resistenza alle radiazioni.
 %La larghezza della sua gap, quasi tripla rispetto a quella del silicio, se da un lato aumenta l'energia media per la produzione di una coppia elettrone-lacuna, dall'altro riduce il numero di portatori di carica generati per agitazione termica, mantenendo, dunque, un ottimo rapporto segnale-rumore.
 %
-La larghezza della sua gap, quasi tripla rispetto a quella del silicio, se da un lato riduce il numero di portatori di carica generati per agitazione termica, dall'altro aumenta l'energia media per la produzione di una coppia elettrone-lacuna. 
+%La larghezza della sua gap, quasi tripla rispetto a quella del silicio, se da un lato riduce il numero di portatori di carica generati per agitazione termica, dall'altro aumenta l'energia media per la produzione di una coppia elettrone-lacuna. 
+%La larghezza della sua gap, essendo quasi tripla rispetto a quella del silicio, aumenta l'energia media per la produzione di una coppia elettrone-lacuna.
+%Esso fa parte dei semiconduttori a grande larghezza di banda
+%Dal momento che la larghezza della sua gap è quasi tripla rispetto a quella del silicio, l'energia media per la produzione di una coppia elettrone-lacuna nel SiC è maggiore di quella nel silicio. 
+La caratteristica che ha suscitato grande interesse nella comunità scientifica nei confronti di questo materiale deriva dalla larghezza della sua gap, che risulta essere quasi tripla rispetto a quella del silicio.
+Ciò implica diverse conseguenze: in primo luogo, dal momento che l'energia media per la produzione di una coppia elettrone-lacuna nel SiC è maggiore di quella nel silicio, a parità di energia una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio.
+Dunque, ne deriva non soltanto un'inferiore ampiezza del segnale generato, ma anche un peggioramento della risoluzione, in quanto la componente statistica di tale grandezza è inversamente proporzionale alla radice quadrata del numero di portatori~\cite{knoll:10}.
+%\textcolor{red}{???} Tuttavia, gli ioni pesanti di interesse per NUMEN, rilasciando molta energia nel rivelatore, producono un numero elevato di portatori, in modo tale che le fluttuazioni statistiche risultano trascurabili.
 %
 %% MODIFICHIAMO QUESTA PARTE
 %Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio, generando, dunque, un segnale di ampiezza inferiore.
 %Ciò significa che, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio.
-Dunque, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio.
-Ciò ha due diverse conseguenze: innanzitutto, il segnale generato presenta un'ampiezza inferiore; in secondo luogo, peggiora la risoluzione, in quanto la componente statistica di tale grandezza è inversamente proporzionale alla radice quadrata del numero di portatori~\cite{knoll:10}.
+%
+%% PRIMA DELLA CORREZIONE DEL PROF
+%Dunque, a parità di energia, una particella incidente su un rivelatore al SiC crea un terzo dei portatori di carica prodotti in un rivelatore al silicio, generando, di conseguenza, un segnale di ampiezza inferiore.
+%Ciò ha come conseguenza che il segnale generato presenta un'ampiezza inferiore.
+%Ciò ha come effetto un peggioramento della risoluzione, in quanto la componente statistica di tale grandezza è inversamente proporzionale alla radice quadrata del numero di portatori~\cite{knoll:10}.
+%Tuttavia, la maggiore larghezza della gap determina una riduzione del numero di coppie generate per agitazione termica, che risulta, dunque, in una diminuzione della corrente inversa e del livello di rumore.
+%Tuttavia, la maggiore larghezza della gap determina l'estrema resistenza alle radiazioni del SiC, poiché, sebbene a causa del danno da radiazioni possano introdursi dei livelli in banda proibita, questi possono restare piuttosto lontani dalle bande di conduzione e di valenza.
+%Di conseguenza, le transizioni elettroniche da o verso tali livelli possono risultare sfavorite, in modo da non causare un aumento significativo della corrente inversa.
+%Tuttavia, la maggiore larghezza della gap determina l'estrema resistenza alle radiazioni del SiC.
+%Ciò può essere spiegato nel modo seguente: l'irraggiamento può causare l'introduzione di livelli in banda proibita
+
+%
+%% ALTRIMENTI CI METTO QUESTO (Tratto da EPJ)
+Tuttavia, la maggiore larghezza della gap del SiC, insieme all'elevata forza dei suoi legami chimici, determina la sua estrema resistenza alle radiazioni.
+Tale proprietà può essere spiegata nel modo seguente: quando una particella carica attraversa un rivelatore, oltre a ionizzare gli atomi del mezzo, può causare la comparsa nel reticolo cristallino di interstizi, vacanze o strutture più complesse.
+Questi difetti possono introdurre dei livelli nella banda proibita, che alterano le proprietà originali del semiconduttore; in particolare, i principali effetti macroscopici sono: l'aumento della corrente inversa, il cambiamento della tensione di svuotamento e la riduzione dell'efficienza di raccolta di carica, in quanto i difetti agiscono come trappole per i portatori di carica.
+Dal momento che il SiC ha una gap piuttosto grande, i livelli nella banda proibita possono comunque risultare piuttosto distanti dalle bande di valenza e di conduzione, in modo tale da sfavorirne il popolamento.
+Di conseguenza, sebbene si verifichi la comparsa di tali livelli, la corrente inversa non subisce un aumento significativo.
+
+Inoltre, bisogna ricordare che il danno causato da protoni, neutroni o particelle al MIP è totalmente diverso da quello prodotto da ioni pesanti; infatti, mentre i primi, depositando poca energia nel rivelatore, danno luogo principalmente a fenomeni di dislocamento di singoli atomi, i secondi, rilasciando elevate quantità di energia, possono originare lo spostamento di interi cluster.
+Se la prima tipologia di danno può essere contrastata mantenendo i rivelatori a bassa temperatura (come avviene con il silicio), la seconda dipende soltanto dalla resistenza del reticolo.
+%Inoltre, l'elevata forza dei legami chimici del SiC si traduce in un'energia di dislocamento di $30 \div 40$~eV, circa tre volte superiore a quella del silicio.
+In entrambi i casi il SiC esibisce delle notevoli proprietà di robustezza, in quanto l'elevata forza dei suoi legami chimici si traduce in un'energia di dislocamento di $30 \div 40$~eV, circa tre volte superiore a quella del silicio. 
+
+
+
+
 %Questo ha due diverse conseguenze sul segnale generato: in primis, ne diminuisce l'ampiezza; in secondo luogo, ne aumenta le fluttuazioni relative, in quanto la componente statistica della risoluzione è inversamente proporzionale alla radice quadrata del numero dei portatori~\cite{knoll:10}.
-Se il primo problema può essere risolto aumentando l'amplificazione del segnale, il secondo è intrinseco del rivelatore.
+%Se il primo problema può essere risolto aumentando l'amplificazione del segnale, il secondo è intrinseco del rivelatore.
 %, dando origine a due diversi problemi: in primo luogo, il segnale generato presenta un'ampiezza inferiore, 
 %di conseguenza, 
 %di conseguenza, non soltanto il segnale generato presenta un'ampiezza inferiore, ma la risoluzione energetica 
@@ -279,12 +314,38 @@ Se il primo problema può essere risolto aumentando l'amplificazione del segnale
 %
 %Inoltre, i rivelatori al SiC hanno un ottimo rapporto segnale-rumore anche a temperature piuttosto alte, mentre i rivelatori al silicio hanno, in alcuni casi, bisogno di un sistema di raffreddamento.
 
-Oltre alla resistenza alle radiazioni, un ulteriore vantaggio rispetto ai rivelatori al silicio riguarda il comportamento a temperature piuttosto alte: mentre i rivelatori al SiC continuano ad avere un ottimo rapporto segnale-rumore, i rivelatori al silicio mostrano un aumento della corrente inversa, rendendo a volte necessario l'utilizzo di sistemi di raffreddamento.
-In aggiunta, i rivelatori al SiC esibiscono risoluzioni energetiche confrontabili con quelle dei dispositivi al silicio; recenti test hanno, infatti, dimostrato che con un rivelatore da 100~$\mu$m di spessore è possibile ottenere una risoluzione energetica dello 0.8\%~FWHM per le particelle $\alpha$ dell'\ce{^{241}Am} a 5486~keV~\cite{tudisco:sensors18}, mentre con i rivelatori al silicio per le stesse particelle si possono raggiungere valori dello 0.2\% FWHM~\cite{steinbauer:nimb94}.
 
+%Oltre alla resistenza alle radiazioni, un ulteriore vantaggio rispetto ai rivelatori al silicio riguarda il comportamento a temperature piuttosto alte: mentre i rivelatori al SiC continuano ad avere un ottimo rapporto segnale-rumore, i rivelatori al silicio mostrano un aumento della corrente inversa, rendendo a volte necessario l'utilizzo di sistemi di raffreddamento.
+Oltre alla resistenza alle radiazioni, i rivelatori al SiC presentano un ulteriore vantaggio rispetto a quelli al silicio: la maggiore larghezza della gap determina una riduzione del numero di coppie generate per agitazione termica, che risulta, dunque, in una diminuzione della corrente inversa e del livello di rumore.
+Di conseguenza, anche a temperature piuttosto alte, i rivelatori al SiC continuano ad avere un ottimo rapporto segnale-rumore, mentre i rivelatori al silicio mostrano un aumento della corrente inversa, rendendo a volte necessario l'utilizzo di sistemi di raffreddamento.
 
-Come tutti i rivelatori a semiconduttore, i rivelatori al SiC sono costituiti da una giunzione p-n, polarizzata inversamente per aumentare l'estensione della regione svuotata e per migliorare l'efficienza di raccolta dei portatori di carica.
+Grazie ai notevoli progressi in campo tecnologico, oggi i rivelatori al SiC possono essere realizzati mediante una giunzione p-n, polarizzata inversamente per aumentare l'estensione della regione svuotata e per migliorare l'efficienza di raccolta dei portatori di carica.
 Quando una particella carica attraversa il rivelatore, perde energia generando coppie elettrone-lacuna, le quali, in presenza di un campo elettrico, si muovono verso gli elettrodi, producendo un segnale elettrico proporzionale all'energia depositata.
+
+Nella rivelazione di ioni pesanti ad energie maggiori di diverse decine di~MeV, i rivelatori al SiC esibiscono risoluzioni energetiche confrontabili con quelle dei dispositivi al silicio, in quanto, essendo rilasciata molta energia nel rivelatore, viene prodotto un numero elevato di portatori di carica.
+Dunque, le fluttuazioni statistiche sul segnale risultano trascurabili.
+%Inoltre, recenti test hanno dimostrato che con un rivelatore da 100~$\mu$m di spessore è possibile ottenere una risoluzione energetica dello 0.4\%~FWHM per le particelle $\alpha$ dell'\ce{^{241}Am} a 5486~keV~\cite{tudisco:sensors18}, mentre con i rivelatori al silicio per le stesse particelle si possono raggiungere valori dello 0.2\% FWHM~\cite{steinbauer:nimb94}.
+
+Nel periodo recente, diversi test sono stati condotti su rivelatori al SiC dello stesso tipo di quelli che verranno utilizzati per NUMEN: in uno di questi test sono state messe a confronto le prestazioni in termini di risoluzione energetica di tale rivelatore con quelle di un rivelatore al silicio~\cite{tudisco:sensors18}
+Il risultato, riportato in Figura~, dimostra che col rivelatore al SiC è possibile ottenere una risoluzione energetica dello 0.4\%~FWHM per le particelle $\alpha$ dell'\ce{^{241}Am} a 5486~keV, mentre col rivelatore al silicio per le stesse particelle si è raggiunto un valore dello 0.22\%~FWHM.
+In un altro test~ref, il rivelatore al SiC è stato adoperato per la realizzazione di un telescopio SiC-CsI, simile a quelli previsti per NUMEN.
+Tale telescopio, la cui rappresentazione schematica è mostrata in Figura~\ref{fig:ciampi_telescopio}, è stato utilizzato per l'identificazione degli eiettili prodotti dalla collisione di un fascio di \ce{^{40}Ca} e \ce{^{48}Ca} a 40~AMeV con un bersaglio di \ce{^{12}C}. 
+Le correlazioni $\Delta E - E_{resid}$ sono riportate in Figura~\ref{fig:ciampi_deltaE_E}: come si può notare, i differenti elementi sono ben identificati fino a $Z \sim 20$, consentendo perfino un'identificazione in $A$ per $Z \sim 3$.
+
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/ciampi-telescopio.png}
+	\caption{Schema del muro di telescopi previsto per NUMEN.} \label{fig:ciampi_telescopio}
+\end{figure}
+
+
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/ciampi-deltaE-E.png}
+	\caption{Schema del muro di telescopi previsto per NUMEN.} \label{fig:ciampi_deltaE_E}
+\end{figure}
 
 %La resistenza alle radiazioni dei rivelatori al SiC è stata indagata sia attraverso simulazioni Monte Carlo sia per mezzo di test sperimentali. 
 %Poiché la resistenza alle radiazioni è l'aspetto di maggiore importanza per la scelta dei dispositivi da utilizzare per NUMEN, alcune simulazioni Monte Carlo sono state implementate allo scopo di darne una stima nel caso dei rivelatori al SiC. 
@@ -293,10 +354,12 @@ Quando una particella carica attraversa il rivelatore, perde energia generando c
 %Un andamento simile si osserva anche per la corrente inversa, mostrata in Figura~\ref{fig:sic_simul_resist_radiaz} (a destra). Sebbene questa aumenti di diversi ordini di grandezza dopo alte dosi di irradiazione, può essere ancora tollerabile, essendo cinque ordini di grandezza inferiore a quella del silicio.
 
 %La resistenza alle radiazioni di rivelatori al SiC di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) è stata analizzata in un test in cui i dispositivi erano irraggiati con ioni pesanti~\cite{raciti:npa10}. 
-Dal momento che la resistenza alle radiazioni è l'aspetto di maggiore importanza per la scelta dei dispositivi da utilizzare per NUMEN, è stata svolta un'attenta ricerca bibliografica per cercare dati sperimentali sul comportamento del SiC quando viene sottoposto ad elevate dosi di radiazioni.
+Dal momento che la resistenza alle radiazioni è un aspetto essenziale per la scelta dei dispositivi da utilizzare per NUMEN, è stata svolta un'attenta ricerca bibliografica per cercare dati sperimentali sul comportamento del SiC quando viene sottoposto ad elevate dosi di radiazioni.
 %Da tale ricerca è emerso che su rivelatori di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) è stato condotto un test in cui i dispositivi erano irraggiati con ioni pesanti~\cite{raciti:npa10}.
-Dalla ricerca è emerso che diversi studi sono stati condotti su tale argomento, i quali affermano concordemente che la robustezza del SiC è, a parità di condizioni, molto maggiore di quella del silicio~\cite{garcialopez:nimb16, nava:nima03}; in particolare, è stato realizzato un test su rivelatori di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) in cui i dispositivi erano irraggiati con ioni pesanti~\cite{raciti:npa10}.
-I risultati hanno dimostrato che tali rivelatori sono in grado di sostenere fluenze dell'ordine di $10^{14}$  $\mbox{ioni}/\mbox{cm}^2$, soddisfacendo il principale requisito di NUMEN.
+%Dalla ricerca è emerso che diversi studi sono stati condotti su tale argomento, i quali affermano concordemente che la robustezza del SiC è, a parità di condizioni, molto maggiore di quella del silicio~\cite{garcialopez:nimb16, nava:nima03}; in particolare, è stato realizzato un test su rivelatori di piccole dimensioni ($2 \times 2$~mm\ap{2}, 30~$\mu$m di spessore) in cui i dispositivi erano irraggiati con ioni pesanti~\cite{raciti:npa10}.
+%I risultati hanno dimostrato che tali rivelatori sono in grado di sostenere fluenze dell'ordine di $10^{14}$  $\mbox{ioni}/\mbox{cm}^2$.
+Dalla ricerca è emerso che diversi studi sono stati condotti su tale argomento, i quali affermano concordemente che la robustezza del SiC è, a parità di condizioni, molto maggiore di quella del silicio~\cite{raciti:npa10, garcialopez:nimb16, nava:nima03}
+Tuttavia, dal momento che tali studi sono stati condotti adoperando dispositivi con caratteristiche differenti da quelle previste per NUMEN, una campagna di test specifici è stata ed è ancora in svolgimento.
 
 %\begin{figure} [!t]
 %	\centering
@@ -308,10 +371,14 @@ I risultati hanno dimostrato che tali rivelatori sono in grado di sostenere flue
 
 %Gli attuali limiti tecnologici alla produzione di rivelatori al SiC sono legati alla capacità di controllare le dimensioni dell'area attiva e lo spessore dei dispositivi, dal momento che essi vengono realizzati tramite crescita epitassiale su un substrato di SiC.
 Gli attuali limiti tecnologici alla produzione di rivelatori al SiC sono legati alla capacità di fabbricare dispositivi con area attiva e spessori relativamente grandi, dal momento che essi vengono realizzati tramite crescita epitassiale su un substrato di SiC.
-%Ciò comporta anche la presenza di una regione in cui la ... ZONA PARZIALMENTE VIVA .... NON SO BENE COME INTRODURLA
-Inoltre, la presenza di tale substrato può rappresentare un problema ai fini della rivelazione, in quanto costituisce uno strato morto in cui le particelle perdono energia senza che questa possa essere misurata o possono perfino fermarsi.
+%Ciò comporta anche la presenza di una regione in cui la ... ZONA PARZIALMENTE VIVA .... NON SO BENE COME INTRODURLA 
+Inoltre, la presenza di tale substrato potrebbe rappresentare un problema ai fini della rivelazione, in quanto costituisce uno strato morto in cui le particelle perdono energia senza che questa possa essere misurata o possono perfino fermarsi.
+Grazie all'utilizzo di tecniche di ablazione LASER, il substrato potrebbe essere assottigliato fino a pochi~$\mu$m di spessore, ma tale operazione comporta un aumento dei costi, nonché una diminuzione dell'efficienza di produzione, in quanto alcuni dispositivi potrebbero venire danneggiati.
+%Inoltre, poiché non è detto che la riduzione del substrato porti significativi benefici, 
+Bisogna, dunque, ponderare l'effettiva utilità della riduzione del substrato.
 %Tali problematiche sono state tenute in considerazione nella simulazione svolta per questo lavoro di tesi, la quale ne ha valutato l'impatto sulle performance del previsto sistema di rivelazione. 
-La simulazione svolta per questo lavoro di tesi ha tenuto in considerazione tali limiti e problematiche, valutandone l'impatto sulle performance del sistema di rivelazione e suggerendo le migliori specifiche tecniche ai fini del progetto. 
+
+La simulazione svolta per questo lavoro di tesi ha tenuto in considerazione tali limiti e problematiche, valutandone l'impatto sulle performance del sistema di rivelazione e suggerendo le specifiche tecniche ottimali ai fini del progetto. 
 
 
 
@@ -360,7 +427,7 @@ Dal momento che possiede una fra le maggiori rese in luce e una notevole malleab
 Uno degli aspetti che ha contribuito alla diffusione dello CsI(Tl) (nel seguito indicato come CsI) è la sua resistenza alle radiazioni, che è stata oggetto di innumerevoli studi in cui i cristalli venivano irraggiati con raggi gamma o con elettroni~\cite{beylin:nima04, zhu:nima98}.
 %I risultati sperimentali danno incoraggianti prospettive di sopravvivenza per i cristalli alle intensità di fascio che verranno utilizzate per NUMEN.
 %I risultati sono concordi nell'affermare che, sebbene ci siano fluttuazioni legate alla purezza e alle dimensioni dei cristalli, la resa in luce non dovrebbe subire variazioni significative alle intensità di fascio che verranno utilizzate per NUMEN.
-Tuttavia, dal momento che in letteratura non sono stati trovati dati sperimentali riguardo la sua resistenza agli ioni pesanti, la collaborazione NUMEN ha svolto un test sottoponendo un cristallo di CsI di $ 1 \times 1$~cm\ap{2} ad un fascio di \ce{^{14}N} a 65~AMeV, per una fluenza totale di circa $10^{12}$~particelle/cm\ap{2}, equivalente a circa un anno di esperimento (\textcolor{red}{giusto?}).
+Tuttavia, dal momento che in letteratura non sono stati trovati dati sperimentali riguardo la sua resistenza agli ioni pesanti, la collaborazione NUMEN ha svolto specifici test sottoponendo un cristallo di CsI di $ 1 \times 1$~cm\ap{2} ad un fascio di \ce{^{14}N} a 65~AMeV, per una fluenza totale di circa $10^{12}$~particelle/cm\ap{2}, equivalente a circa due anni di esperimento.
 Alla fine dell'irraggiamento, il cristallo non presentava danni visibili e la sua resa in luce non mostrava variazioni.
 Supportati da questi incoraggianti risultati, la scelta di utilizzare lo CsI sembra promettere le capacità di resistenza alle radiazioni necessarie per NUMEN.
 
@@ -383,10 +450,10 @@ Ad Aprile 2019 i primi due prototipi di rivelatori al SiC per il progetto NUMEN 
 Lo scopo principale del test era valutare la capacità di PID dei telescopi SiC-CsI per gli ioni di interesse, confrontandola con quella dell'attuale sistema basato sulla combinazione di fili proporzionali e rivelatori al silicio.
 %valutandone la capacità di PID nella regione di interesse per NUMEN e confrontandola con quella accessibile con l'attuale apparato. 
 %Come illustrato nel Paragrafo~\ref{sez:sistema_identif_part}, i rivelatori al SiC sono stati scelti nell'ambito del progetto come stadio~$\Delta E$ di un telescopio SiC-CsI per l'identificazione in numero atomico dei prodotti di reazione. Lo scopo principale del test era, dunque, valutare la capacità di PID di questo sistema nella regione di interesse per NUMEN, confrontandola con quella accessibile con l'attuale apparato.
-In aggiunta, poiché l'upgrade del FPD prevede anche la sostituzione dell'elettronica attualmente utilizzata con una basata su chip VMM3~\cite{degeronimo:ieee13}, il test aveva anche l'obiettivo di valutare le prestazioni del primo prototipo di elettronica di front-end prevista per NUMEN.
+In aggiunta, poiché l'upgrade del FPD prevede anche la sostituzione dell'elettronica attualmente utilizzata con una basata su chip VMM3a~\cite{degeronimo:ieee13}, il test aveva anche l'obiettivo di valutare le prestazioni del primo prototipo di elettronica di front-end prevista per NUMEN.
 Ciò ha, inoltre, permesso di effettuare un confronto delle performance dei telescopi in funzione dell'elettronica adoperata.
 
-Il test è stato svolto ai LNS utilizzando un fascio di~\ce{^{20}Ne} a 20~AMeV, incidente su \ce{^{197}Au} o \ce{^{12}C}, laddove i due bersagli avevano funzioni differenti: il primo serviva per la localizzazione dello scattering elastico, il secondo per favorire la formazione dei prodotti di reazione di interesse.
+Il test è stato svolto ai LNS utilizzando un fascio di~\ce{^{20}Ne} a 20~AMeV, incidente su \ce{^{197}Au} o \ce{^{12}C}, laddove i due bersagli avevano funzioni differenti: il primo serviva per massimizzare eventi di scattering elastico, il secondo per favorire la formazione dei prodotti di reazione di interesse.
 %, ovvero quella dell'O, del F e del Ne.
 
 
@@ -403,13 +470,13 @@ Il test è stato svolto ai LNS utilizzando un fascio di~\ce{^{20}Ne} a 20~AMeV, 
 	\caption{I rivelatori al carburo di silicio (SiC) utilizzati nel test: a sinistra il \emph{SiC~B}, a destra il \emph{SiC~A}.} \label{fig:sic}
 \end{figure}
 
-I due prototipi di rivelatori al SiC utilizzati nel test sono mostrati in Figura~\ref{fig:sic}: come è possibile notare, essi differivano innanzitutto per la segmentazione dell'area attiva, in quanto uno (\emph{SiC~A}) era costituito da un'unica pad, mentre l'altro (\emph{SiC~B}) era suddiviso in quattro regioni. 
+I due prototipi di rivelatori al SiC utilizzati nel test sono mostrati in Figura~\ref{fig:sic}: come è possibile notare, essi differiscono innanzitutto per la segmentazione dell'area attiva, in quanto uno (\emph{SiC~A}) è costituito da un'unica pad, mentre l'altro (\emph{SiC~B}) è suddiviso in quattro regioni. 
 %Inoltre, mentre il SiC~A aveva un'area attiva di $10 \times 10$~mm\ap{2}, il SiC~B presentava 
 %I due telescopi SiC-CsI utilizzati nel test
-Entrambi i rivelatori avevano un'area attiva complessiva di $10 \times 10$~mm\ap{2}, laddove ogni pad del SiC~B aveva un'estensione di $5 \times 5$~mm\ap{2}.
+Entrambi i rivelatori hanno un'area attiva complessiva di $10 \times 10$~mm\ap{2}, laddove ogni pad del SiC~B ha un'estensione di $5 \times 5$~mm\ap{2}.
 %Un'ulteriore differenza riguardava gli spessori dei due rivelatori: mentre il SiC~A era spesso 10~$\mu$m con 100~$\mu$m di strato morto, il SiC~B aveva uno spessore di 100~$\mu$m con 350~$\mu$m di .
-Un'ulteriore differenza riguardava lo spessore della regione attiva dei due rivelatori: per il SiC~A era di 10~$\mu$m, mentre per il SiC~B misurava 100~$\mu$m.
-Infine, entrambi i rivelatori avevano un substrato morto, che per il SiC~A era spesso 100~$\mu$m, invece per il SiC~B aveva uno spessore di~350~$\mu$m.
+Un'ulteriore differenza riguarda lo spessore della regione attiva dei due rivelatori: per il SiC~A è di 10~$\mu$m, mentre per il SiC~B misura 100~$\mu$m.
+Infine, entrambi i rivelatori hanno un substrato morto, che per il SiC~A è spesso 100~$\mu$m, invece per il SiC~B ha uno spessore di~350~$\mu$m.
 In occasione del test si è scelto di utilizzare soltanto due delle quattro pad del SiC~B, le quali sono state cortocircuitate tra loro in modo che questo rivelatore avesse una superficie sensibile di $10 \times 5$~mm\ap{2}.
 
 
@@ -422,17 +489,17 @@ In occasione del test si è scelto di utilizzare soltanto due delle quattro pad 
 \begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/csi_etichette.png}
-	\caption{Gli scintillatori allo ioduro di cesio (CsI) utilizzati nel test: a sinistra il \emph{CsI~B}, a destra il \emph{CsI~A}.} \label{fig:csi}
+	\caption{I rivelatori a scintillazione utilizzati nel test: a sinistra il \emph{CsI~B}, a destra il \emph{CsI~A}. Guardando, ad esempio, il CsI~B, si possono notare lo scintillatore (CsI), che appare come un materiale trasparente, e il fotodiodo, che si trova coperto dal nastro isolante nero per migliorare la schermatura. Inoltre, è possibile vedere anche il Mylar bianco con cui sono stati rivestiti i cristalli.} \label{fig:csi}
 \end{figure}
 
 
 
 %In occasione del test sono stati utilizzati due scintillatori allo CsI, i quali sono mostrati in Figura~\ref{fig:csi}.
 Gli scintillatori allo CsI utilizzati nel test sono mostrati in Figura~\ref{fig:csi}.
-Essi avevano dimensioni differenti: uno (\emph{CsI~A}) era da $1 \times 1$~cm\ap{2}, l'altro (\emph{CsI~B}) era suddiviso in quattro regioni da $1.5 \times 1.5$~cm\ap{2}. 
+Essi hanno dimensioni differenti: uno (\emph{CsI~A}) è da $1 \times 1$~cm\ap{2}, l'altro (\emph{CsI~B}) è suddiviso in quattro regioni da $1.5 \times 1.5$~cm\ap{2}. 
 %La luce di scintillazione veniva letta in entrambi i casi con un fotodiodo da $1 \times 1$~cm\ap{2}, che 
 %Ognuno dei due scintillatori era accoppiato ad un fotodiodo $1 \times 1$~cm\ap{2}
-A causa delle dimensioni dei rivelatori al SiC, soltanto una delle quattro aree sensibili del CsI~B è stata utilizzata. Per migliorare la raccolta della luce, i cristalli sono stati avvolti con del mylar bianco, il quale è stato fissato con del nastro isolante nero.
+A causa delle dimensioni dei rivelatori al SiC, soltanto una delle quattro aree sensibili del CsI~B è stata utilizzata. Per migliorare la raccolta della luce, i cristalli sono stati avvolti con del Mylar bianco, il quale è stato fissato con del nastro isolante nero.
 %
 %I cristalli sono stati avvolti con del mylar e del nastro isolante nero per migliorare la raccolta della luce.
 %
@@ -453,14 +520,14 @@ Ciascuno scintillatore era accoppiato tramite grasso ottico ad un fotodiodo di a
 
 Il SiC~A e il SiC~B sono stati assemblati, rispettivamente, con il CsI~A e il CsI~B, così da formare i due telescopi (\emph{Tel~A} e \emph{Tel~B}) mostrati in Figura~\ref{fig:telescopi}.
 %; in particolare, mentre nel Tel~A il SiC~A era \emph{reverse mounted}, nel Tel~B il SiC~B era \emph{direct mounted} (\textcolor{red}{va bene detto così?}).
-Al fine di ottenere una migliore correlazione $\Delta E - E$, il SiC~A è stato montato in configurazione \emph{reverse}, ovvero rivolgendo alle particelle incidenti prima il substrato morto e poi la regione sensibile.
+Al fine di ottenere una migliore correlazione $\Delta E - E_{resid}$, il SiC~A è stato montato in configurazione \emph{reverse}, ovvero rivolgendo alle particelle incidenti prima il substrato morto e poi la regione sensibile.
 Ciò non è stato possibile per il SiC~B a causa del maggiore substrato morto che avrebbe fermato gli ioni.
 %I due telescopi, fissati su due delle strutture che solitamente ospitano i rivelatori al silicio, sono stati posti nel FPD secondo lo schema riportato in Figura.
 %Come si può notare, quattro rivelatori al silicio sono stati montati in modo simmetrico rispetto al SiC~A, in modo da avere un utile riferimento sia per la fase di acquisizione sia per l'analisi offline.
 %Come si può notare, a sinistra e a destra del Tel~A sono stati montati due rivelatori al silicio, in modo da avere un utile riferimento sia per la fase di acquisizione sia per l'analisi offline.
 Dunque, all'energia utilizzata nel test, gli ioni incidenti sul Tel~B venivano arrestati nel substrato del SiC~B, per cui da questo telescopio era possibile estrarre soltanto l'informazione sul $\Delta E$.
 
-I due telescopi, fissati su schede in PCB, sono stati posti nel FPD in due delle colonne che solitamente ospitano i rivelatori al silicio.
+I due telescopi, fissati su schede in PCB, sono stati posti nel FPD di MAGNEX in due delle colonne che solitamente ospitano i rivelatori al silicio.
 %A sinistra e a destra del Tel~A sono stati montati due rivelatori al silicio, in modo da avere un utile riferimento sia per la fase di acquisizione sia per l'analisi offline.
 Insieme ai due telescopi sono stati montati quattro rivelatori al silicio: due erano posizionati fra il Tel~A e il Tel~B, e due a sinistra del Tel~A.
 Questi avevano lo scopo di fornire un riferimento durante l'acquisizione dei dati sperimentali ed essere un metro di paragone per le capacità di PID in fase di analisi.
@@ -480,7 +547,7 @@ Questi avevano lo scopo di fornire un riferimento durante l'acquisizione dei dat
 %La catena elettronica 
 %Dal momento che il test aveva anche lo scopo di valutare le differenze di risposta dei telescopi SiC-CsI a seconda dell'elettronica utilizzata, sono state montate due diverse catene elettroniche:
 Dal momento che il test aveva anche lo scopo di valutare le differenze di risposta dei telescopi SiC-CsI a seconda dell'elettronica utilizzata, il Tel~A è stato equipaggiato con due diverse catene elettroniche:
-la prima (\emph{standard}) rispecchia quella attualmente adoperata per i rivelatori al silicio, la seconda (\emph{VMM3}) era incentrata sul prototipo di chip VMM3.
+la prima (\emph{standard}) rispecchia quella attualmente adoperata per i rivelatori al silicio, la seconda (\emph{VMM3a}) era incentrata sul prototipo di chip VMM3a.
 %, a cui ci si riferisce come \emph{elettronica~Boiano} nel caso dell'elettronica attualmente adoperata e come \emph{elettronica~VMM3} nel caso di quella prevista per NUMEN.
 %La catena elettronica del sistema fili+silici non è discussa nel presente lavoro di tesi
 %Dunque, nel presente lavoro di tesi viene
@@ -499,26 +566,26 @@ Dunque, nel seguito verranno descritte soltanto le due catene elettroniche relat
 
 \paragraph{Elettronica standard} 
 Nella catena elettronica standard, di cui in Figura~\ref{fig:elettronica_standard} si riporta uno schema, il segnale proveniente dal SiC~A era inviato ad un preamplificatore (PA) di carica~\cite{boiano:ieee08} con sensibilità di 45~mV/MeV.
-Questo, oltre a raccogliere ed integrare il segnale, era utilizzato anche per fornire la tensione di alimentazione al rivelatore, pari a $-50$~V.
+Questo, oltre a raccogliere ed integrare il segnale, era utilizzato anche per fornire la tensione di alimentazione al rivelatore, pari a $-50$~V, generata da un alimentatore esterno.
 %L'output del PA era collegata ad un amplificatore MEGAMP.
 %L'uscita del MEGAMP era inviata all'ADC per l'acquisizione.
 %L'output del PA era collegato ad un amplificatore MEGAMP a 16 canali, che, oltre ad amplificare il segnale, ne modificava la forma in modo da renderlo gaussiano.
 %L'output del PA era collegato ad un amplificatore formatore MEGAMP a 16 canali, il quale possedeva due tipologie di uscite: una restituiva un segnale analogico,  impiegato per la misura dell'energia, l'altra produceva un segnale logico da discriminatore a frazione costante (Constant Fraction Discriminator, CFD), solitamente utilizzato per misure di tempo o per la creazione del gate.
-L'output del PA era collegato ad un amplificatore formatore MEGAMP a 16 canali, il quale in un unico modulo riuniva amplificatore e discriminatore a frazione costante (Constant Fraction Discriminator, CFD); esso, infatti, possedeva per ogni ingresso due tipologie di uscita: una restituiva un segnale analogico, tipicamente impiegato per la misura dell'energia, l'altra produceva un segnale logico, solitamente utilizzato per misure di tempo o per la creazione del gate.
+L'output del PA era collegato ad un amplificatore formatore MEGAMP a 16 canali, il quale in un unico modulo riunisce amplificatore e discriminatore a frazione costante (Constant Fraction Discriminator, CFD); esso, infatti, possiede per ogni ingresso due tipologie di uscita: una restituisce un segnale analogico, tipicamente impiegato per la misura dell'energia, l'altra produce un segnale logico, solitamente utilizzato per misure di tempo o per la creazione del gate.
 %
 %
 %Mentre la prima è tipicamente impiegata per la spettroscopia, 
 %L'uscita del PA era, infine, inviata all'ADC per l'acquisizione dell'informazione sulla perdita di energia~$\Delta E$.
 %Dal MEGAMP veniva, in questo caso, prelevato soltanto il segnale analogico, il quale, formato con uno shaping time di 500~ns.
 In questo ramo della catena, dal MEGAMP veniva prelevato soltanto il segnale analogico, per il quale si era scelto uno shaping time di 500~ns.
-Tale segnale era, infine, inviato all'ADC per l'acquisizione dell'informazione sulla perdita di energia~$\Delta E$.
+Tale segnale era, infine, inviato all'ADC di picco per l'acquisizione dell'informazione sulla perdita di energia~$\Delta E$.
 %
 %Il segnale prodotto dal fotodiodo era collegato ad un PA analogo a quello utilizzato per il rivelatore al SiC.
 %Dal momento che il segnale dello scintillatore era utilizzato per dare il trigger,
 
 Per quanto riguarda il CsI~A, il segnale di output del fotodiodo era raccolto da un PA analogo a quello utilizzato per il SiC~A.
-La tensione di alimentazione del fotodiodo, pari a $-70$~V, era fornita, anche in questo caso, tramite il PA.
-L'uscita del PA era inviata al MEGAMP, da cui venivano estratti due segnali: quello analogico era inviato direttamente all'ADC per l'acquisizione dell'energia residua $E_{resid}$, quello del CFD veniva utilizzato per dare il trigger all'acquisizione.
+La tensione di alimentazione del fotodiodo, pari a $-70$~V, era fornita, anche in questo caso, tramite il PA e generata da un alimentatore esterno.
+L'uscita del PA era inviata al MEGAMP, da cui venivano estratti due segnali: quello analogico era inviato direttamente all'ADC di picco per l'acquisizione dell'energia residua $E_{resid}$, quello del CFD veniva utilizzato per dare il trigger all'acquisizione.
 
 \begin{figure} [!p]
 	\centering
@@ -529,33 +596,33 @@ L'uscita del PA era inviata al MEGAMP, da cui venivano estratti due segnali: que
 %\clearpage
 
 
-\paragraph{Elettronica VMM3} 
+\paragraph{Elettronica VMM3a} 
 %Nella catena elettronica VMM3, il cui schema è illustrato in Figura~\ref{fig:elettronica_vmm}, il segnale del SiC~A era inviato direttamente al chip VMM3, il quale racchiudeva in sé un PA da $3 \div 6$~mV/fC e un amplificatore formatore con shaping time da 200~ns.
 %
-Nella catena elettronica VMM3, il cui schema è illustrato in Figura~\ref{fig:elettronica_vmm}, il segnale del SiC~A era inviato direttamente al chip VMM3, che, sviluppato in origine per l'esperimento ATLAS, è stato adattato per gli scopi di NUMEN.
+Nella catena elettronica VMM3a, il cui schema è illustrato in Figura~\ref{fig:elettronica_vmm}, il segnale del SiC~A era inviato direttamente al chip VMM3a, che, sviluppato in origine per l'esperimento ATLAS, è stato adattato per gli scopi di NUMEN.
 Possedendo un'architettura a 64~canali, esso consente una più semplice gestione di apparati con un grande numero di canali.
 %
 %
 %Tale chip possiede 64 canali e, per ogni canale, è capace di fornire informazioni sull'ampiezza del picco e sul timing del segnale. 
 %La sensibilità del PA poteva essere selezionata nel range $3 \div 6$~mV/fC. 
 %Tale chip possedeva un'architettura a 64~canali, consentendo, dunque, una più semplice gestione di apparati con un grande numero di canali.
-Dal momento che il futuro muro per la PID prevede l'utilizzo di circa 1200 telescopi, la scelta di un'elettronica di front-end con questo tipo di caratteristiche è essenziale in termini di facilità di controllo dei dispositivi, di economia degli spazi e di più semplice dissipazione del calore.
+Dal momento che il futuro muro per la PID prevede l'utilizzo di 1230 telescopi, la scelta di un'elettronica di front-end con questo tipo di caratteristiche è essenziale in termini di facilità di controllo dei dispositivi, di economia degli spazi e di più semplice dissipazione del calore.
 %Per ogni canale, il chip poteva restituire l'informazione sul canale di provenienza, sull'ampiezza del picco e sul timing del segnale.
-Per ogni canale il chip racchiude in sè un PA da $3 \div 6$~mV/fC e un amplificatore formatore con shaping time da 200~ns.
+Per ogni canale il chip racchiude in sè un PA da $3 \div 6$~mV/fC e un amplificatore formatore con shaping time da $25 \div 200$~ns.
 La scheda è, inoltre, dotata di un'uscita monitor, attraverso la quale è possibile osservare il segnale analogico formato dal circuito amplificatore.
 
-Il VMM3 era collegato alla scheda di read-out System On Module (SOM) della National Instruments~\cite{national_instruments}.
+Il VMM3a era collegato alla scheda di read-out System On Module (SOM) della National Instruments~\cite{national_instruments}.
 %, che univa un efficace Field Programmable Gate Array (FPGA) ad un potente processore.
 %Il compito principale della SOM era la lettura veloce dei segnali provenienti dal VMM3
-Nella prospettiva della Fase~4, la SOM deve assicurare la lettura veloce dei segnali provenienti dal VMM3 e il trasferimento rapido dei dati al sistema di acquisizione tramite una connessione Gb~Ethernet.
+Nella prospettiva della Fase~4, la SOM deve assicurare la lettura veloce dei segnali provenienti dal VMM3a e il trasferimento rapido dei dati al sistema di acquisizione tramite una connessione Gb~Ethernet.
 Tali obiettivi saranno possibili grazie alla struttura della SOM, che unisce un efficace Field Programmable Gate Array (FPGA) ad un potente processore.
-In Figura~\ref{fig:vmm+som} è riportata una foto del chip VMM3 e della scheda SOM utilizzati nel test.
+In Figura~\ref{fig:vmm+som} è riportata una foto del chip VMM3a e della scheda SOM utilizzati nel test.
 
 Dal momento che all'oscilloscopio si era notato che il segnale di output della SOM era in anticipo rispetto al gate, il primo era inviato ad una linea di ritardo passiva da 140~ns. Infine, il segnale giungeva all'ADC per l'acquisizione.
 
 %Il segnale di output della SOM, opportunamente ritardato di 140~ns, era inviato all'ADC, dove veniva acquisito.
 
-Per quanto concerne il CsI~A, il segnale del fotodiodo era inviato al VMM3, da cui, in questo caso, venivano estratti due segnali: uno, analogico, era dato in input alla SOM, l'altro, logico, veniva utilizzato per la formazione del gate. 
+Per quanto concerne il CsI~A, il segnale del fotodiodo era inviato al VMM3a, da cui, in questo caso, venivano estratti due segnali: uno, analogico, era dato in input alla SOM, l'altro, logico, veniva utilizzato per la formazione del gate. 
 Poiché l'ADC utilizzata richiedeva in ingresso un gate negativo mentre il segnale logico prodotto dalla SOM era positivo, quest'ultimo era prima inviato ad un modulo Fan~in/Fan~out, da cui si prelevava l'uscita invertente (INV).
 Dal momento che l'inversione del segnale richiedeva del tempo di elaborazione, il segnale analogico risultava in anticipo rispetto al gate. Anche in questo caso è stato, dunque, necessario ritardare opportunamente il segnale di output della SOM prima di inviarlo all'ADC.
 
