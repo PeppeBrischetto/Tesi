@@ -237,7 +237,7 @@ Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rim
 %Sebbene il muro di telescopi comprenderà oltre 1000 
 %La simulazione ha considerato un unico modulo di $2 \times 5$ rivelatore.
 Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di oltre 1000 telescopi, tutte le simulazioni sono state svolte prendendo in esame una matrice di $3 \times 3$ elementi.
-In Figura~\ref{fig:simulazione_muro} è mostrato l'aspetto assunto da tale matrice nella simulazione \geant. (\textcolor{red}{sarebbe meglio dire che ho preso in considerazione un modulo $2 \times 5$  oppure un solo telescopio?})
+In Figura~\ref{fig:simulazione_muro} è mostrato l'aspetto assunto da tale matrice nella simulazione \geant. 
 %In Figura~ è possibile vedere la realizzazione grafica di \geant{} di un modulo $2 \times 5$ del sistema di rivelazione.
 
 \begin{figure} [!p]
@@ -267,7 +267,7 @@ B  \rho \, = \,  \frac{p}{q} \,
 \end{equation}
 laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, sotto opportune condizioni è possibile affermare che\footnote{La relazione $p = \sqrt{2 m E}$ vale in approssimazione non relativistica.}
 \begin{equation} \label{eq:legge_spettrometri_approx}
-B x_{foc} \, \approx \, B  \rho  \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E}
+B x_{foc} \, \approx \, B  \rho  \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E_{resid}}
 \end{equation}
 Dunque, per tenere in considerazione questo aspetto, alcune simulazioni sono state svolte tenendo fissata la rigidità magnetica $B \rho$ degli ioni primari e variandone in corrispondenza l'energia.
 %Inoltre, dal momento che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia, in accordo con la nota relazione
@@ -275,7 +275,7 @@ Dunque, per tenere in considerazione questo aspetto, alcune simulazioni sono sta
 %B  \rho \, = \,  \frac{p}{q}
 %\end{equation}
 %laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, alcune simulazioni sono state svolte tenendo fissato la rigidità magnetica $B \rho$ degli ioni primari.
-(\textcolor{red}{secondo lei è meglio inserire la relazione del $B \rho $ nel cap 2?})
+
 
 
 \subsection{\iflanguage{italian}{I processi fisici}{Physics processes}}
@@ -311,8 +311,7 @@ Dal momento che, ai fini di questo lavoro, una modifica dei parametri di cut-off
 %Grazie ad un'apposita classe, è possibile accedere a diverse informazioni legate a tale step.
 Come anticipato nella sezione precedente, in \geant{} è possibile modificare il comportamente della funzione UserSteppingAction.
 Dal momento che, ai fini di questo lavoro, si volevano valutare le conseguenze sulla PID causate dagli effetti di bordo dei rivelatori, era necessario sapere punto per punto la posizione dello ione. 
-Dunque, è stato modificato il comportamento di questa classe, affinché ad ogni step si conoscessero la posizione e il deposito di energia.
-(\textcolor{red}{Spiego più in dettaglio che in realtà venivano estratti gli estremi dello step e poi veniva estratto un punto casuale fra tali estremi?})
+Dunque, è stato modificato il comportamento di questa classe, affinché ad ogni step si conoscessero la posizione e il deposito di energia; in particolare, dal momento che \geant{} permette di conoscere gli estremi dello step, si è scelto di far corrispondere le coordinate del deposito di energia a quelle di un punto estratto in modo casuale sul segmento congiungente i due estremi.
 
 
 
@@ -340,7 +339,15 @@ Secondo le misurazioni effettuate, la zona totalmente morta ha una lunghezza di 
 %\end{cases}
 %\end{equation}
 %
-Nella macro si è tenuto conto degli \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} così definita: nella zona interamente attiva era pari ad uno, nella regione di transizione decresceva linearmente e nella zona del tutto inattiva aveva valore nullo (\textcolor{red}{Secondo lei è più chiaro se esplicito la formula del caso unidimensionale?}).
+Nella macro si è tenuto conto degli \emph{effetti di bordo} pesando ciascun deposito di energia con una \emph{funzione di risposta} così definita: nella zona interamente attiva era pari ad uno, nella regione di transizione decresceva linearmente e nella zona del tutto inattiva aveva valore nullo.
+Uno grafico esemplificativo dell'andamento di tale funzione nel caso unidimensionale è riportato in Figura~\ref{fig:funzione_risposta}.
+
+
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Funzione/funzione.png}
+	\caption{L'andamento della funzione di risposta $f(x)$ assunta per descrivere gli effetti di bordo del rivelatore al SiC.} \label{fig:funzione_risposta}
+\end{figure}
 
 %Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale nel rivelatore al SiC e nel cristallo allo CsI.
 Nella macro, inoltre, sommando step dopo step l'energia persa dallo ione, per ogni evento è stata ricostruita l'energia rilasciata nel rivelatore al SiC e quella depositata nel cristallo allo CsI.
@@ -424,7 +431,7 @@ Tali eventi costituiscono la principale componente di errore nella PID, in quant
 Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che la frazione di questi eventi rispetto al totale sia piccola.
 
 
-\begin{figure} [!t]
+\begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_monocromatiche/deltaE_ETot_punti_grandi.png}
 	\caption{Matrici $\Delta E_{SiC} - E_{tot}$ per \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}.} \label{fig:deltaE_ETot}
@@ -719,7 +726,24 @@ Tale andamento può essere spiegato considerando che, a parità di lunghezza del
 
 
 Tuttavia, avere superfici più grandi significa anche aumentare il verificarsi del pile-up, in quanto cresce la probabilità che due o più ioni vadano a finire nello stesso rivelatore nella stessa finestra temporale, producendo un segnale somma di due segnali.
-In Figura~\ref{fig:pile-up} è riportato il risultato di un calcolo analitico che mostra l'andamento della probabilità di avere pile-up rispetto alla probabilità di avere un solo evento in funzione del flusso di particelle incidenti: come si può notare, tale quantità cresce rapidamente all'aumentare della superficie del rivelatore.
+È stato, dunque, effettuato un calcolo analitico per dedurre la probabilità di pile-up: si ricorda che il rapporto fra la probabilità $\mathcal{P}(> \! 1)$ di avere più di un evento e la probabilità $\mathcal{P}(1)$ di averne uno solo può essere espressa come il seguente rapporto
+\begin{equation}
+	\frac{\mathcal{P}(> \! 1)}{\mathcal{P}(1)} = \frac{1 - 
+	\mathcal{P}(0) - \mathcal{P}(1)}{\mathcal{P}(1)}
+\end{equation}
+Poiché questa tipologia di fenomeni è governata dalla statistica di Poisson, la precedente espressione assume la forma
+\begin{equation}
+\frac{\mathcal{P}(> \! 1)}{\mathcal{P}(1)} = \frac{1 - 
+	\mbox{e}^{-\mu} - \mu \,\mbox{e}^{- \mu}}{\mu \, \mbox{e}^{- \mu}}
+\end{equation} \label{eq:calcolo_pile-up}
+laddove $\mu$ indica il valore medio della distribuzione.
+Nel caso in esame, tale valore medio non è altro che il prodotto fra la larghezza dell'intervallo temporale $\tau$ e il rate di particelle, con quest'ultima quantità data dal rapporto tra il flusso $\Phi$ di particelle incidenti e la superficie $S$ del rivelatore.
+Dunque, la~\ref{eq:calcolo_pile-up} può essere scritta come
+\begin{equation}
+\frac{\mathcal{P}(> \! 1)}{\mathcal{P}(1)} = \frac{1 - 
+	\mbox{e}^{- \tau \, \Phi \, S^{-1}} - \tau \, \Phi \, S^{-1} \,\mbox{e}^{- \tau\, \Phi \, S^{-1}}}{\tau \, \Phi \, S^{-1} \, \mbox{e}^{- \tau \, \Phi \, S^{-1}}}
+\end{equation} \label{eq:pile-up}
+Assumendo una finestra temporale della durata di 1~$\mu$s, si è riportato in Figura~\ref{fig:pile-up} l'andamento della~\ref{eq:pile-up} in funzione del flusso di particelle incidenti e della superficie del rivelatore: come si può notare, tale quantità cresce rapidamente all'aumentare della superficie.
 Dal momento che per gli obiettivi di NUMEN è necessario lavorare con fasci di elevata intensità, è fondamentale che la probabilità di pile-up sia piccola; di conseguenza, la superficie dei telescopi non può essere eccessivamente grande.
 
 
@@ -889,6 +913,11 @@ Confrontando la Figura~\ref{fig:leakage_res_substrate} con la Figura~\ref{fig:le
 \subsection*{Conclusioni}
 
 In accordo con quanto trovato, la riduzione dello spessore del substrato morto provoca un leggero peggioramento delle capacità di PID, sebbene vengano rispettati i limiti fissati sul riconoscimento del segnale e sulla contaminazione.
+Ciò può essere spiegato considerando che, poiché la perdita di energia dipende dal numero atomico, se ioni diversi con la stessa energia cinetica iniziale attraversano uno spessore grande di materia, in un plot $\Delta E - E_{resid}$ vanno a disporsi non soltanto a $\Delta E$ diversi ma anche a $E_{resid}$ molto differenti, occupando, dunque, zone molto distanti tra loro; se, invece, lo spessore attraversato è piccolo, le differenze in $\Delta E$ restano invariate, mentre quelle in $E_{resid}$ si riducono.
+È bene precisare che tali considerazioni possono valere se lo strato morto si trova in mezzo ai due stadi del telescopio, ma la situazione potrebbe essere diversa nel caso in cui tale strato fosse posto davanti al rivelatore $\Delta E$.
+
+Alla luce di queste considerazioni è possibile affermare che, dal punto di vista dell'identificazione dei prodotti di reazione, la riduzione dello spessore del substrato morto risulta un'operazione ingiustificata.
+
 %L'andamento della percentuale di errore nell'identificazione dei nuclei al variare dello spessore del substrato morto è riportato, nel caso di contaminazione di \ce{^{18}Ne} in \ce{^{18}O}, in Figura~\ref{fig:misident_vs_substrate}.
 %(\textcolor{red}{Ha senso mettere questo grafico con soltanto due casi studiati?})
 %Osservando tale grafico è possibile dedurre che, dal punto di vista dell'identificazione dei prodotti di reazione, la riduzione dello spessore del substrato morto risulta un'operazione ingiustificata.
@@ -920,10 +949,10 @@ Le simulazioni finora discusse hanno contemplato delle situazioni in cui sul sin
 %In realtà, dal momento che negli spettrometri magnetici la posizione di una particella al piano focale è legata alla sua energia secondo la~\ref{eq:legge_spettrometri_approx}, sul singolo telescopio possono arrivare soltanto ioni che abbiano la stessa rigidità magnetica.
 In realtà, negli spettrometri magnetici la posizione di una particella al piano focale è legata alla sua energia secondo la~\ref{eq:legge_spettrometri_approx}.
 %Quindi, dal momento che ad ogni telescopio corrisponde una determinata $x_{foc}$, 
-Dunque, in ogni telescopio del muro possono arrivare soltanto ioni che abbiano la stessa rigidità magnetica (\textcolor{red}{È abbastanza chiaro il perché?}).
-Per questo motivo è stata svolta una simulazione fissando il $B \rho$ a 1.96~Tm e calcolando per ogni nuclide la corrispondente energia: i risultati di tale calcolo sono riportati in Tabella~\ref{tab:energia}, dove si può notare che in questa occasione sono stati considerati nove nuclidi.
+Dunque, in ogni telescopio del muro possono arrivare soltanto ioni che abbiano la stessa rigidità magnetica.
+Per questo motivo è stata svolta una simulazione fissando il $B \rho$ a 1.96~T$\cdot$m e calcolando per ogni nuclide la corrispondente energia: i risultati di tale calcolo sono riportati in Tabella~\ref{tab:energia}, dove si può notare che in questa occasione sono stati considerati nove nuclidi.
 Le matrici $\Delta E_{SiC} - E_{CsI}$, mostrate in Figura~\ref{fig:deltaE_ERes_rigidita}, appaiono come dei blob ben distinti l'uno dall'altro, assicurando, dunque, un'ottima capacità di identificazione anche dei diversi isotopi di una stessa specie atomica.
-(\textcolor{red}{Non mi viene in mente altro da aggiungere})
+
 
 
 \begin{table}[t!]

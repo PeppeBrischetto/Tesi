@@ -44,17 +44,17 @@
 
 \begin{supervisors}
    \supervisor{Chiar.mo}{Prof.}{F. Cappuzzello}
-   \supervisor{}{Dr.}{L. Pandola}
+   %\supervisor{}{Dr.}{L. Pandola}
 \end{supervisors}
 
 %\phdname{physics} % default
 %\phdname{science of materials}
 %\phdname{complex systems}
 
-%\maketitlepage
+\maketitlepage
 
 %\tableofcontents
-\thispagestyle{empty}
+%\thispagestyle{empty}
 % Le prossime righe servono per aggiungere l'indice alla barra dei segnalibri nel pdf.
 \cleardoublepage
 \pdfbookmark[1]{Indice}{Indice}
@@ -66,9 +66,10 @@
 % Le prossime due righe servono per sistemare il collegamento ipertestuale nell'indice. Si è usato \cleardoublepage perché la classe è book, mentre per article si usa \clearpage. Comunque vedere ArteLateX.pdf per ogni evenienza
 \cleardoublepage
 \phantomsection
+\addcontentsline{toc}{chapter}{\iflanguage{italian}{Introduzione}{Introduction}}
 \chapter*{\iflanguage{italian}{Introduzione}{Introduction}}
 \input{introduzione.tex}
-\addcontentsline{toc}{chapter}{\iflanguage{italian}{Introduzione}{Introduction}}
+
 
 % Queste due righe non mi sembra che servano
 %\chapter*{\iflanguage{italian}{Introduzione}{Introduction}}
