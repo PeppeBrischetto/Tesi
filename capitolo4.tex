@@ -1,28 +1,51 @@
 
-All'interno dell'intensa campagna di studi in corso per verificare se le soluzioni previste per il progetto NUMEN possano garantire le prestazioni necessarie, è stato svolto ad Aprile 2019 un test beam sui primi due prototipi di telescopi basati sulla tecnologia SiC-CsI.
-Tale test è stato svolto ai Laboratori Nazionali del Sud (LNS) utilizzando un fascio di particelle di \ce{^{20}Ne} a 20 AMeV, prodotto dal Ciclotrone Superconduttore K800.
-Al fine di favorire la generazione degli ioni tipicamente di interesse per NUMEN, ovvero Ossigeno, Fluoro e Neon, si è scelto di utilizzare un bersaglio di \ce{^{12}C} da 400~$\mu$g/cm\ap{2}.
+All'interno dell'intensa campagna di studi in corso per verificare se le soluzioni previste per il progetto NUMEN possano garantire le prestazioni richieste, è stato svolto ad Aprile 2019 un test beam sui primi due prototipi di telescopi basati sulla tecnologia SiC-CsI.
+Tale test è stato svolto ai Laboratori Nazionali del Sud (LNS) utilizzando un fascio di particelle di \ce{^{20}Ne} a 20~AMeV, prodotto dal Ciclotrone Superconduttore K800.
+Al fine di favorire la generazione degli ioni di interesse per NUMEN, ovvero Ossigeno, Fluoro e Neon, si è scelto di utilizzare un bersaglio di \ce{^{12}C} da 400~$\mu$g/cm\ap{2}.
 
-In questo capitolo vengono presentati i risultati ottenuti dall'analisi dei dati raccolti durante tale test e viene mostrato il confronto tra questi e i dati prodotti attraverso la simulazione implementata per questo lavoro di tesi. 
+In questo capitolo vengono presentati i risultati ottenuti durante tale test e viene mostrato il confronto tra questi e i dati prodotti attraverso la simulazione implementata per il presente lavoro di tesi. 
 
 \section{\iflanguage{italian}{I dati del telescopio SiC-CsI}{Data of SiC-CsI telescope}}
 
 
-Gli eiettili prodotti nell'interazione fra proiettile e bersaglio, dopo aver attraversato il quadrupolo e il dipolo, giungevano al rivelatore di piano focale (Focal Plane Detector, FPD) di MAGNEX, dove erano stati posti i due telescopi, chiamati Tel~A e Tel~B. 
-Come descritto nella Sezione~\ref{sez:test}, insieme ai due telescopi, erano stati montati quattro dei rivelatori al silicio attualmente in uso, i quali servivano da riferimento e da modello per la Particle IDentification (PID).
+Gli eiettili prodotti nell'interazione fra proiettile e bersaglio, dopo aver attraversato il quadrupolo e il dipolo, giungono al rivelatore di piano focale (Focal Plane Detector, FPD) di MAGNEX, dove, in occasione del test, erano stati posti i due telescopi, chiamati Tel~A e Tel~B. 
+Come descritto nella Sezione~\ref{sez:test}, insieme ai due telescopi, erano stati montati quattro dei rivelatori al silicio attualmente in uso, i quali servivano da riferimento e da confronto per la Particle IDentification (PID).
 
-Poiché all'energia utilizzata nel test i prodotti di reazione non erano in grado di superare il substrato epitassiale del Tel~B, da tale telescopio era possibile estrarre soltanto il segnale sulla perdita di energia, non permettendo di riprodurre le correlazioni $\Delta E - E_{resid}$ utili per l'identificazione degli ioni.
+Poiché all'energia utilizzata nel test i prodotti di reazione non erano in grado di superare il substrato epitassiale del Tel~B, da tale telescopio era possibile estrarre soltanto il segnale sulla perdita di energia, non permettendo di riprodurre le correlazioni $\Delta E - E_{resid}$ utili per l'identificazione in numero atomico $Z$ degli ioni.
 Di conseguenza, dal momento che questo lavoro aveva lo scopo di studiare le performance di PID di tale sistema, sono stati analizzati soltanto i dati relativi al Tel~A.
 
 
-\subsection{\iflanguage{italian}{Le matrici $\Delta E_{SiC} - E_{CsI}$}{$\Delta E_{SiC} - E_{CsI}$ matrices}}
+%\subsection{\iflanguage{italian}{Le matrici $\Delta E_{SiC} - E_{CsI}$}{$\Delta E_{SiC} - E_{CsI}$ matrices}}
 
-Una delle matrici $\Delta E_{SiC} - E_{CsI}$ registrate durante il test è riportata in Figura~
+In Figura~ è riportata una delle matrici $\Delta E_{SiC} - E_{CsI}$ registrate dal Tel~A utilizzando l'elettronica standard: come si può notare i luoghi dei diversi ioni appaiono ben separati in una regione che va dal Boro (B) al Neon (Ne).
+Si può, inoltre, osservare che, poiché ai fini della PID non è necessario utilizzare la correlazione $\Delta E_{SiC} - E_{tot}$, i rivelatori non sono stati calibrati e, conseguentemente, le variabili $\Delta E_{SiC}$ e $E_{CsI}$ sono misurate in canali.
+Alla luce di questo risultato, il telescopio SiC-CsI sembra, dunque, rispondere alle richieste del progetto.
+%Ricordando che questo telescopio era montato in configurazione reverse, si può anche osservare che il substrato epitassiale da 100~$\mu$m non sembra influire negativamente sulle sue proprietà di identificazione. 
+
+%Ciò consente, dunque, di selezionare 
 
 
 \section{\iflanguage{italian}{Analisi dei dati del test beam}{Analysis of test beam data}}
 
+Per poter confrontare i dati sperimentali con i risultati delle simulazioni è necessario che queste riproducano nel modo più fedele possibile le condizioni sperimentali.
+Dunque, è stata svolta un'analisi dei dati raccolti durante il test per estrarre delle informazioni da inserire opportunamente nella simulazione.
+In primo luogo, è necessario stabilire quali ioni debbano costituire le particelle primarie nella simulazione, per cui è stata svolta un'identificazione dei prodotti di reazione.
+%Inoltre, poiché l'energia delle particelle primarie è un parametro di fondamentale importanza, è stata determinare l'energia con cui gli ioni incidevano sul telescopio.
+Inoltre, dal momento che un altro parametro di fondamentale importanza riguarda l'energia delle particelle, è stata condotta un'analisi per determinare l'energia di incidenza degli ioni sul telescopio.
+
+
+%Ciò è stato possibile grazie alla correlazione tra posizione ed energia indotta dalla forza di Lorentz: 
+
 \subsection{\iflanguage{italian}{Identificazione dell'\ce{^{16}O}}{Identification of \ce{^{16}O}}}
+
+A causa della bassa statistica raccolta durante il test, è stato deciso di simulare soltanto la specie atomica più abbondante nel campione.
+%, che, come si può evincere dalla Figura~, risulta essere l'Ossigeno.
+La prima fase nella procedura di identificazione consiste nel determinare il numero atomico $Z$ delle particelle rivelate: tale informazione è stata ricavata dalle matrici $\Delta E_{SiC} - E_{CsI}$ in Figura~, dove si può notare che la specie atomica maggiormente presente è l'Ossigeno (O). 
+Dopo avere selezionato gli ioni O è necessario distinguerne gli isotopi in numero di massa $A$; a tale scopo, si è sfruttata la correlazione tra posizione ed energia indotta dalla forza di Lorentz: ricordando la~\ref{eq:legge_spettrometri_approx}, è possibile notare che la correlazione $x_{foc} - E_{resid}$ permette di separare gli ioni in base al loro rapporto $\sqrt{m}/q$, laddove $m$ e $q$ rappresentano, rispettivamente, la massa e la carica della particella.
+Nel caso del telescopio, la quantità $E_{resid}$ corrisponde con buona approssimazione a $E_{CsI}$.
+La matrice $x_{foc} - E_{CsI}$ è mostrata in Figura~, dove è possibile osservare che gli isotopi dell'O originati dall'interazione proiettile-bersaglio sono \ce{^{16}O}, \ce{^{17}O} e \ce{^{18}O}.
+Si sottolinea che nella correlazione $x_{foc} - E_{resid}$ il numero di massa cresce spostandosi verso sinistra poiché, per mantenere lo stesso valore di $x_{foc}$, se la massa aumenta $E_{resid}$.
+Come si può notare dalla Figura~, l'isotopo più abbondante dell'O presente nel campione è l'\ce{^{16}O}, la cui comparsa è probabilmente favorita poiché deriva da un processo di trasferimento di una particella $\alpha$ dal proiettile al bersaglio. 
 
 
 \section{\iflanguage{italian}{Confronto fra i dati del test e la simulazione \geant}{Comparison between test data and \geant simulation}}

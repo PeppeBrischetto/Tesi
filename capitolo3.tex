@@ -301,7 +301,7 @@ In Figura~\ref{fig:simulazione_evento} è riportata la visualizzazione grafica d
 %Non sono state modificate le impostazioni di default di
 Una delle componenti fondamentali di \geant{} riguarda la scelta dei parametri di cut-off.
 È possibile definire una soglia in range: elettroni di ionizzazione e gamma di bremsstrahlung aventi un range inferiore alla soglia non vengono generati esplicitamente, ma la loro energia viene considerata essere un deposito locale.
-Dal momento che, ai fini di questo lavoro, una modifica dei parametri di cut-off non avrebbe portato a significativi cambiamenti dei risultati, si è scelto di mantenere le impostazioni di default.
+Dal momento che, ai fini di questo lavoro, una modifica dei parametri di cut-off non avrebbe portato a significativi cambiamenti dei risultati, si è scelto di mantenere le impostazioni di default, che corrispondono ad un range di 1~mm.
 
 
 
@@ -343,7 +343,7 @@ Nella macro si è tenuto conto degli \emph{effetti di bordo} pesando ciascun dep
 Uno grafico esemplificativo dell'andamento di tale funzione nel caso unidimensionale è riportato in Figura~\ref{fig:funzione_risposta}.
 
 
-\begin{figure} [!t]
+\begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Funzione/funzione.png}
 	\caption{L'andamento della funzione di risposta $f(x)$ assunta per descrivere gli effetti di bordo del rivelatore al SiC.} \label{fig:funzione_risposta}
@@ -431,12 +431,12 @@ Tali eventi costituiscono la principale componente di errore nella PID, in quant
 Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che la frazione di questi eventi rispetto al totale sia piccola.
 
 
-\begin{figure} [!p]
+
+\begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_monocromatiche/deltaE_ETot_punti_grandi.png}
 	\caption{Matrici $\Delta E_{SiC} - E_{tot}$ per \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}.} \label{fig:deltaE_ETot}
 \end{figure}
-
 
 
 
@@ -563,30 +563,15 @@ Questo evita che il numero di eventi di fondo erroneamente identificati come seg
 
 
 %Uno studio interessante riguarda il confronto fra la correlazione $\Delta E_{SiC} - E_{tot}$ e quella $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes}.
-A questo punto, è interessante studiare la correlazione $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes} sono riportate le matrici delle tre specie di interesse, le quali continuano ad essere ben separate per tutto il range energetico. 
-%Dal confronto con la Figura~\ref{fig:deltaE_ETot_full_energy} si nota che tali matrici si estendono ad energie inferiori, in quanto alla variabile sull'asse orizzontale viene a mancare il contributo di $\Delta E_{SiC}$. 
-Confrontando tali matrici con quelle in Figura~\ref{fig:deltaE_ETot_full_energy}, non si notano sostanziali differenze, in particolare per quanto riguarda la densità degli eventi spuri.
-Questa affermazione è supportata dalla Figura~\ref{fig:leakage_res}, nella quale si riscontrano percentuali simili a quelle viste in Figura~\ref{fig:leakage}.
-L'unica differenza sembra essere dovuta al punto in Figura~\ref{fig:leakage_res}.a ad 850~MeV, per il quale si osservano percentuali lievemente maggiori del suo corrispettivo in Figura~\ref{fig:leakage}.a. 
-%Ciò sembra essere legato al modo in cui si dispongono gli eventi con raccolta di carica incompleta; 
-Ciò è legato alla correlazione delle due grandezze;
-infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ la loro discesa verso all'asse $E_{CsI}$ procede in direzione perpendicolare. 
-Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica dei telescopi, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
-Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, la possibilità di evitarne la calibrazione consentirebbe un notevole risparmio di tempo.
-%Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli della correlazione $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate le matrici soltanto 
-
-
+A questo punto, è interessante studiare la correlazione $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes} sono riportate le matrici delle tre specie di interesse, le quali continuano ad essere ben separate per tutto il range energetico.
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/deltaE_ERes.png}
 	\caption{Matrici $\Delta E_{SiC} - E_{CsI}$.} \label{fig:deltaE_ERes}
-\end{figure}
-
-
-
-
-
-
+\end{figure} 
+%Dal confronto con la Figura~\ref{fig:deltaE_ETot_full_energy} si nota che tali matrici si estendono ad energie inferiori, in quanto alla variabile sull'asse orizzontale viene a mancare il contributo di $\Delta E_{SiC}$. 
+Confrontando tali matrici con quelle in Figura~\ref{fig:deltaE_ETot_full_energy}, non si notano sostanziali differenze, in particolare per quanto riguarda la densità degli eventi spuri.
+Questa affermazione è supportata dalla Figura~\ref{fig:leakage_res}, nella quale si riscontrano percentuali simili a quelle viste in Figura~\ref{fig:leakage}.
 \begin{figure}[!p] 
 	\centering
 	\subfigure[]
@@ -596,6 +581,23 @@ Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, l
 	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_basso.png}}
 	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res}
 \end{figure}
+L'unica differenza sembra essere dovuta al punto in Figura~\ref{fig:leakage_res}.a ad 850~MeV, per il quale si osservano percentuali lievemente maggiori del suo corrispettivo in Figura~\ref{fig:leakage}.a. 
+%Ciò sembra essere legato al modo in cui si dispongono gli eventi con raccolta di carica incompleta; 
+Ciò è legato alla correlazione delle due grandezze;
+infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ la loro discesa verso all'asse $E_{CsI}$ procede in direzione perpendicolare. 
+Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica dei telescopi, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
+Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, la possibilità di evitarne la calibrazione consentirebbe un notevole risparmio di tempo.
+%Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli della correlazione $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate le matrici soltanto 
+
+
+
+
+
+
+
+
+
+
 
 Poiché anche in altri casi si è riscontrato che la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli di $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate soltanto le matrici $\Delta E_{SiC} - E_{CsI}$.
 
