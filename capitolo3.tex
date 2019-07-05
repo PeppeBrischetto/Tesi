@@ -236,14 +236,14 @@ Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rim
 
 %Sebbene il muro di telescopi comprenderà oltre 1000 
 %La simulazione ha considerato un unico modulo di $2 \times 5$ rivelatore.
-Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di oltre 1000 telescopi, tutte le simulazioni sono state svolte prendendo in esame una matrice di $3 \times 3$ elementi.
+Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di 1230 telescopi, tutte le simulazioni sono state svolte prendendo in esame una matrice di $2 \times 5$ elementi.
 In Figura~\ref{fig:simulazione_muro} è mostrato l'aspetto assunto da tale matrice nella simulazione \geant. 
 %In Figura~ è possibile vedere la realizzazione grafica di \geant{} di un modulo $2 \times 5$ del sistema di rivelazione.
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/wall11_ritagliato_schiarito.png}
-	\caption{Una matrice di $3 \times 3$ telescopi: in rosso il rivelatore al SiC, in verde il substrato morto di tale rivelatore e in blu il cristallo allo CsI.} \label{fig:simulazione_muro}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/modulo2_ritagliato.png}
+	\caption{Una matrice di $2 \times 5$ telescopi: in rosso il rivelatore al SiC, in verde, appena visibile, il substrato morto di tale rivelatore e in blu il cristallo allo CsI.} \label{fig:simulazione_muro}
 \end{figure}
 
 
@@ -383,7 +383,7 @@ Nella somma al secondo membro, il primo addendo corrisponde al termine legato al
 %\end{equation}
 %la deviazione standard risulta collegata alla risoluzione energetica.
 %Dal momento che quest'ultima è generalmente determinata dalla somma in quadratura di un termine legato all
-Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica intrinseca dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI del 2\% FWHM a 850~MeV, in affinità con i valori tipici di questi dispositivi. (\textcolor{red}{Devo specificare i valori di a e b scelti nei due casi?})
+Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica intrinseca dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI del 2\% FWHM a 850~MeV, in affinità con i valori tipici di questi dispositivi. 
 
 
 
@@ -527,11 +527,11 @@ La scelta del punto mediano come soglia è arbitraria e non necessariamente otti
 \begin{figure}[!p] 
 	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_alto.png}}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_alto_corr.png}}
 	\hspace{10mm}
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_basso.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{tot}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_basso_corr.png}}
+	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{tot}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage}
 \end{figure}
 
 
@@ -539,6 +539,7 @@ Il risultato di tale procedura è illustrato in Figura~\ref{fig:leakage}, dove i
 Si può notare che la contaminazione da una specie atomica con $Z$ più grande verso una con $Z$ più piccolo è nettamente maggiore; infatti, le percentuali che si trovano in Figura~\ref{fig:leakage}.a sono comprese fra il 7\% e il 15\%, mentre quelle in Figura~\ref{fig:leakage}.b sono inferiori all'1\%.
 In entrambi i casi si può osservare che la frazione di nuclei erroneamente identificati ha un andamento decrescente al crescere dell'energia.
 Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della carica sono maggiormente significativi, la capacità di separare gli ioni peggiora.
+Infine, si può osservare che con la statistica simulata non si osserva una contaminazione di O in Ne, per cui si può mettere un limite superiore.
 
 
 
@@ -575,11 +576,11 @@ Questa affermazione è supportata dalla Figura~\ref{fig:leakage_res}, nella qual
 \begin{figure}[!p] 
 	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_alto.png}}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_alto_corr.png}}
 	\hspace{10mm}
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_basso.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_basso_corr.png}}
+	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res}
 \end{figure}
 L'unica differenza sembra essere dovuta al punto in Figura~\ref{fig:leakage_res}.a ad 850~MeV, per il quale si osservano percentuali lievemente maggiori del suo corrispettivo in Figura~\ref{fig:leakage}.a. 
 %Ciò sembra essere legato al modo in cui si dispongono gli eventi con raccolta di carica incompleta; 
@@ -621,7 +622,8 @@ Poiché anche in altri casi si è riscontrato che la correlazione $\Delta E_{SiC
 Rispetto all'esempio precedente, in questa simulazione la geometria e le caratteristiche delle particelle primarie restano invariate, mentre il modello dei processi fisici adesso include le interazioni adroniche. 
 Le corrispondenti matrici $\Delta E_{SiC} - E_{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_adron}: a differenza del caso in cui erano considerate soltanto le interazioni elettromagnetiche, si può osservare per tutte e tre le specie nucleari la comparsa di eventi ad un'energia $\Delta E_{SiC}$ più alta di quella delle rispettive bande.
 Ciò è dovuto a reazioni nucleari esotermiche, nelle quali viene rilasciata una quantità di energia aggiuntiva rispetto alla sola energia cinetica del proiettile.
-La presenza di questi eventi non sembra provocare significativi cambiamenti nelle capacità di PID, in quanto, come si può evincere dalla Figura~\ref{fig:leakage_res_adron}, le percentuali di nuclei potenzialmente male identificati aumentano di meno dell'1\%. 
+La presenza di questi eventi non sembra provocare significativi cambiamenti nelle capacità di PID, in quanto, come si può evincere dalla Figura~\ref{fig:leakage_res_adron}, le percentuali di nuclei potenzialmente male identificati aumentano di meno dell'1\%.
+L'unico mutamento degno di nota riguarda la comparsa di contaminazioni di O in Ne.
 Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la minore probabilità che avvenga un'interazione adronica.
 
 
@@ -637,11 +639,11 @@ Dunque, è evidente che la maggior parte degli eventi spuri è originata da racc
 \begin{figure}[!p] 
 	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/Interazioni_adroniche/leakage_alto.png}}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/Interazioni_adroniche/leakage_alto_corr.png}}
 	\hspace{10mm}
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/Interazioni_adroniche/leakage_basso.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, utilizzando un modello che comprenda anche le interazioni adroniche: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_adron}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/Interazioni_adroniche/leakage_basso_corr.png}}
+	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, utilizzando un modello che comprenda anche le interazioni adroniche: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_adron}
 \end{figure}
 
 
@@ -667,11 +669,11 @@ Dalla Figura~\ref{fig:leakage_res_1.5} si può, invece, notare come la percentua
 \begin{figure}[!p] 
 	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/1.5per1.5/leakage_alto.png}}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/1.5per1.5/leakage_alto_corr.png}}
 	\hspace{10mm}
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/1.5per1.5/leakage_basso.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di $1.5 \times 1.5$~cm\ap{2}: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_1.5}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/1.5per1.5/leakage_basso_corr.png}}
+	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di $1.5 \times 1.5$~cm\ap{2}: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_1.5}
 \end{figure}
 
 
@@ -689,11 +691,11 @@ In questo caso, tuttavia, l'entità della diminuzione è inferiore rispetto al c
 \begin{figure}[!p] 
 	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/2per2/leakage_alto.png}}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/2per2/leakage_alto_corr.png}}
 	\hspace{10mm}
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/2per2/leakage_basso.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di $2 \times 2$~cm\ap{2}: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_2}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/2per2/leakage_basso_corr.png}}
+	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di $2 \times 2$~cm\ap{2}: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_2}
 \end{figure}
 
 
@@ -739,11 +741,11 @@ Poiché questa tipologia di fenomeni è governata dalla statistica di Poisson, l
 	\mbox{e}^{-\mu} - \mu \,\mbox{e}^{- \mu}}{\mu \, \mbox{e}^{- \mu}}
 \end{equation} \label{eq:calcolo_pile-up}
 laddove $\mu$ indica il valore medio della distribuzione.
-Nel caso in esame, tale valore medio non è altro che il prodotto fra la larghezza dell'intervallo temporale $\tau$ e il rate di particelle, con quest'ultima quantità data dal rapporto tra il flusso $\Phi$ di particelle incidenti e la superficie $S$ del rivelatore.
+Nel caso in esame, tale valore medio non è altro che il prodotto fra la larghezza dell'intervallo temporale $\tau$ e il rate di particelle, con quest'ultima quantità data dal prodotto tra il flusso $\Phi$ di particelle incidenti e la superficie $S$ del rivelatore.
 Dunque, la~\ref{eq:calcolo_pile-up} può essere scritta come
 \begin{equation}
 \frac{\mathcal{P}(> \! 1)}{\mathcal{P}(1)} = \frac{1 - 
-	\mbox{e}^{- \tau \, \Phi \, S^{-1}} - \tau \, \Phi \, S^{-1} \,\mbox{e}^{- \tau\, \Phi \, S^{-1}}}{\tau \, \Phi \, S^{-1} \, \mbox{e}^{- \tau \, \Phi \, S^{-1}}}
+	\mbox{e}^{- \tau \, \Phi \, S} - \tau \, \Phi \, S \,\mbox{e}^{- \tau\, \Phi \, S}}{\tau \, \Phi \, S \, \mbox{e}^{- \tau \, \Phi \, S}}
 \end{equation} \label{eq:pile-up}
 Assumendo una finestra temporale della durata di 1~$\mu$s, si è riportato in Figura~\ref{fig:pile-up} l'andamento della~\ref{eq:pile-up} in funzione del flusso di particelle incidenti e della superficie del rivelatore: come si può notare, tale quantità cresce rapidamente all'aumentare della superficie.
 Dal momento che per gli obiettivi di NUMEN è necessario lavorare con fasci di elevata intensità, è fondamentale che la probabilità di pile-up sia piccola; di conseguenza, la superficie dei telescopi non può essere eccessivamente grande.
@@ -751,8 +753,8 @@ Dal momento che per gli obiettivi di NUMEN è necessario lavorare con fasci di e
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[scale=0.55]{Grafici_Tesi/Granularita/pile-up_label2.png}
-	\caption{La probabilità di avere eventi di pile-up rispetto alla probabilità di avere un singolo evento al variare del flusso di particelle incidenti e della superficie del rivelatore. La linea tratteggiata indica il flusso atteso per NUMEN.} \label{fig:pile-up}
+	\includegraphics[scale=0.55]{Grafici_Tesi/Granularita/pile-up3.png}
+	\caption{La probabilità di avere eventi di pile-up rispetto alla probabilità di avere un singolo evento al variare del flusso di particelle incidenti e della superficie del rivelatore. Le linee tratteggiate indicano rispettivamente il flusso massimo e medio attesi per NUMEN.} \label{fig:pile-up}
 \end{figure}
 
 
@@ -793,11 +795,11 @@ Come si evince confrontando la Figura~\ref{fig:leakage_res_1.5} con la Figura~ \
 \begin{figure}[!p] 
 	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/20um/leakage_alto.png}}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/20um/leakage_alto_corr.png}}
 	\hspace{10mm}
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/20um/leakage_basso.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una lunghezza della zona di transizione di 20~$\mu$m: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_20um}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/20um/leakage_basso_corr.png}}
+	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una lunghezza della zona di transizione di 20~$\mu$m: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_20um}
 \end{figure}
 
 
@@ -811,11 +813,11 @@ Tale incremento, rispetto al caso con un valore di 50~$\mu$m, è di circa il 3\%
 \begin{figure}[!p] 
 	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/200um/leakage_alto.png}}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/200um/leakage_alto_corr.png}}
 	\hspace{10mm}
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/200um/leakage_basso.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una lunghezza della zona di transizione di 200~$\mu$m: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_200um}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/200um/leakage_basso_corr.png}}
+	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una lunghezza della zona di transizione di 200~$\mu$m: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_200um}
 \end{figure}
 
 
@@ -903,11 +905,11 @@ Confrontando la Figura~\ref{fig:leakage_res_substrate} con la Figura~\ref{fig:le
 \begin{figure}[!p] 
 	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/Substrato/leakage_alto.png}}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/Substrato/leakage_alto_corr.png}}
 	\hspace{10mm}
 	\subfigure[]
-	{\includegraphics[scale=0.5]{Grafici_Tesi/Substrato/leakage_basso.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una lunghezza della zona di transizione di 200~$\mu$m: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa.} \label{fig:leakage_res_substrate}
+	{\includegraphics[scale=0.4]{Grafici_Tesi/Substrato/leakage_basso_corr.png}}
+	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando uno spessore del substrato epitassiale di 10~$\mu$m: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_substrate}
 \end{figure}
 
 
@@ -974,7 +976,7 @@ Le matrici $\Delta E_{SiC} - E_{CsI}$, mostrate in Figura~\ref{fig:deltaE_ERes_r
 			\ce{^{20}Ne}  & &  905.4
 		\end{tabular}
 	\end{center}
-	\caption{I valori di energia corrispondenti ad una rigidità magnetica di 1.96~Tm per i diversi nuclidi.
+	\caption{I valori di energia corrispondenti ad una rigidità magnetica di 1.96~T$\cdot$m per i diversi nuclidi.
 		\label{tab:energia}}
 \end{table}
 
