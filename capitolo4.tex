@@ -149,7 +149,7 @@ Noti tutti i parametri rilevanti, è stata svolta una simulazione per cercare di
 Dal momento che il processo di produzione degli ioni di \ce{^{16}O} nell'interazione fra proiettile e bersaglio è governato da una sezione d'urto che varia in funzione dell'energia, era necessario introdurre nella simulazione una ``modulazione'' del numero di particelle primarie generate rispetto all'energia.
 A tal fine, si è eseguito un fit con una distribuzione alla Landau sullo spettro in Figura~\ref{fig:spettro_ekin}, ottenendo il risultato riportato in Figura~\ref{fig:spettro_ekin_fit}.
 La distribuzione dell'energia cinetica delle particelle primarie deve, dunque, rispecchiare l'andamento di tale funzione di fit.
-Nella simulazione si è provato ad ``imitare'' la sezione d'urto della reazione generando le energie cinetiche dei primari secondo la distribuzione di Landau ottenuta dal fit, la quale risultava avere un valore più probabile pari a 297.3~MeV ed una $\sigma$ di 2.33~MeV.
+Nella simulazione si è provato ad ``imitare'' la sezione d'urto della reazione generando le energie cinetiche dei primari secondo la distribuzione di Landau ottenuta dal fit, la quale risultava avere un valore più probabile pari a 297.3~MeV ed una deviazione standard di 2.33~MeV.
 
 
 
@@ -171,7 +171,7 @@ La risoluzione energetica dedotta dalla simulazione sembra, quindi, rispecchiare
 Dal momento che tale quantità gioca un ruolo cruciale nella capacità di PID del telescopio, l'accordo tra il dato simulato e quello sperimentale permette di validare i risultati mostrati nel capitolo precedente.
 
 
-In Figura~\ref{fig:spettro_csi_simul} è illustrato il confronto tra lo spettro in $E_{CsI}$ ottenuto attraverso la simulazione e quello sperimentale: anche in questo caso la compatibilità è significativa, sebbene, allo scopo di rappresentare meglio i dati sperimentali, sia stato necessario aumentare la risoluzione assunta per il rivelatore al CsI.
+In Figura~\ref{fig:spettro_csi_simul} è illustrato il confronto tra lo spettro in $E_{CsI}$ ottenuto attraverso la simulazione e quello sperimentale: anche in questo caso la compatibilità è significativa, sebbene, allo scopo di rappresentare meglio i dati sperimentali, è stata aumentata la FWHM della distribuzione simulata fino a 27~MeV.
 Una peggiore risoluzione energetica rispetto alle assunzioni del Capitolo~\ref{cap:simulazione} può essere dovuta a diversi fattori sperimentali, come ad esempio rumore elettromagnetico o disuniformità nella raccolta di luce dello scintillatore, la quale può essere causata da un accoppiamento non ottimale con il riflettore o il fotodiodo.
 
 L'accordo fra dati simulati e sperimentali è avvalorato dalla complessità della situazione presa in esame: in primo luogo, la reazione $^{12}\mbox{C}\,  ( ^{20}\mbox{Ne}, ^{20}\mbox{O} ) \, ^{16}\mbox{O} $ avviene in cinematica inversa, così che l'energia cinetica dell'eiettile risulta estremamente sensibile alla variazione dell'angolo di emissione.
@@ -185,16 +185,16 @@ Infine, la bassa statistica registrata durante il test ha complicato la deduzion
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_sic.png}
-	\caption{Lo spettro in $\Delta E_{SiC}$: in blu sono rappresentati i dati sperimentali, in rosso quelli simulati.} \label{fig:spettro_sic}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_sic_normArea2.png}
+	\caption{Lo spettro in $\Delta E_{SiC}$: in blu sono rappresentati i dati sperimentali, in rosso quelli simulati. Gli istogrammi sono normalizzati in area.} \label{fig:spettro_sic}
 \end{figure}
 
 
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_csi.png}
-	\caption{Lo spettro in $E_{CsI}$: in blu sono rappresentati i dati sperimentali, in rosso quelli simulati.} \label{fig:spettro_csi_simul}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_csi_normArea.png}
+	\caption{Lo spettro in $E_{CsI}$: in blu sono rappresentati i dati sperimentali, in rosso quelli simulati. Gli istogrammi sono normalizzati in area.} \label{fig:spettro_csi_simul}
 \end{figure}
 
 
