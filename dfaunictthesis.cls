@@ -152,7 +152,7 @@
                         \label{svno}
                         \\
                         \textsc{Correlatore:} \\
-                        \textsc{Dr. L. Pandola}
+                        \textsc{Dott. L. Pandola}
                     \end{tabbing}
                 \end{minipage}
             \end{flushright}
