@@ -28,8 +28,11 @@ Si può, inoltre, osservare che, poiché ai fini della PID non è necessario uti
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/matrice_sic_csi_taglio3.png}
-	\caption{Le correlazioni $\Delta E_{SiC} - E_{CsI}$ ottenute dal Tel~A durante il test. La linea nera indica il taglio grafico effettuato per la selezione in numero atomico dell'Ossigeno.} \label{fig:sic_csi_standard}
+	\caption{Le correlazioni $\Delta E_{SiC} - E_{CsI}$ ottenute dal Tel~A durante il test utilizzando la catena elettronica standard. La linea nera indica il taglio grafico effettuato per la selezione in numero atomico dell'Ossigeno.} \label{fig:sic_csi_standard}
 \end{figure}
+
+
+
 
 %Alla luce di questo risultato, il telescopio SiC-CsI sembra, dunque, rispondere alle richieste del progetto.
 %Ricordando che questo telescopio era montato in configurazione reverse, si può anche osservare che il substrato epitassiale da 100~$\mu$m non sembra influire negativamente sulle sue proprietà di identificazione. 
@@ -45,11 +48,15 @@ Si può, inoltre, osservare che, poiché ai fini della PID non è necessario uti
 %	\Delta E^{corr}_{tot} \, = \, \frac{\cos \theta_{foc}}{\cos \theta_{tilt}} \, \sum_{i=1}^{6} \Delta E_i
 %\end{equation}
 %laddove $\theta_{tilt}$ rappresenta l'angolo di rotazione del FPD, pari a 59.2\textdegree.
-In Figura~ si riporta la  matrice $\Delta E_{SiC} - E_{CsI}$ ottenuta con lo stesso telescopio utilizzando l'elettronica VMM3a: in questo caso si può notare che, sebbene si possano ancora riconoscere i luoghi corrispondenti ai diversi ioni, le curve sono parzialmente sovrapposte.
+In Figura~\ref{fig:sic_csi_vmm3a} si riporta la  matrice $\Delta E_{SiC} - E_{CsI}$ ottenuta con lo stesso telescopio utilizzando l'elettronica VMM3a: in questo caso si può notare che, sebbene si possano ancora riconoscere i luoghi corrispondenti ai diversi ioni, le curve sono parzialmente sovrapposte.
 Ciò deriva da un maggiore contributo del rumore elettronico e da un peggiore accoppiamento fra i rivelatori e l'elettronica di front-end.
 Dal momento che i dati relativi all'elettronica VMM3a non consentono un'agevole identificazione, si è scelto di analizzare soltanto quelli ottenuti utilizzando l'elettronica standard.
 
-
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/matrice_sic_csi_vmm3a.png}
+	\caption{Le correlazioni $\Delta E_{SiC} - E_{CsI}$ ottenute dal Tel~A durante il test utilizzando l'elettronica basata sul chip VMM3a.} \label{fig:sic_csi_vmm3a}
+\end{figure}
 
 \section{\iflanguage{italian}{Analisi dei dati del test beam}{Analysis of test beam data}}
 
@@ -72,7 +79,7 @@ Dopo avere selezionato gli ioni O è necessario distinguerne gli isotopi in nume
 Nel caso del telescopio, la quantità $E_{resid}$ corrisponde con buona approssimazione a $E_{CsI}$.
 La matrice $x_{foc} - E_{CsI}$ è mostrata in Figura~\ref{fig:xfoc2_csi_standard}, dove è possibile osservare che gli isotopi dell'O originati dall'interazione proiettile-bersaglio sono prevalentemente \ce{^{16}O}, \ce{^{17}O} e \ce{^{18}O}.
 Si sottolinea che nella correlazione $x_{foc} - E_{resid}$ il numero di massa cresce spostandosi verso sinistra poiché, per mantenere lo stesso valore di $x_{foc}$, se la massa aumenta $E_{resid}$ deve diminuire.
-Come si può notare dalla Figura~\ref{fig:xfoc2_csi_standard}, l'isotopo più abbondante dell'O presente nel campione è \ce{^{16}O}, la cui comparsa è probabilmente favorita poiché deriva da un processo di trasferimento di una particella $\alpha$ dal proiettile al bersaglio. 
+Come si può notare dalla Figura~\ref{fig:xfoc2_csi_standard}, l'isotopo più abbondante dell'O presente nel campione è \ce{^{16}O}, la cui comparsa è favorita poiché deriva da un processo di trasferimento di una particella $\alpha$ dal proiettile al bersaglio. 
 
 \begin{figure} [!p]
 	\centering
@@ -120,14 +127,15 @@ dove $\theta_{tilt}$ denota l'angolo di rotazione del FPD, $-2.7$ rappresenta l'
 Prendendo in considerazione i quattro stati simulati è stato possibile ricavare quattro coppie $(\theta_{foc} , E_{kin})$, sulle quali è stato effettuato un fit lineare allo scopo di derivare una relazione fra le due grandezze.
 La retta trovata ha la seguente equazione:
 \begin{equation} \label{eq:correlazione_angolo_energia}
-	\theta_{foc} \, = \, -0.012 \, E_{kin} + 4.588
+	\theta_{foc} \, = \, (-0.012 \mbox{ MeV}^{-1} )\, E_{kin} + 4.588
 \end{equation}
 
 Grazie alla~\ref{eq:correlazione_angolo_energia} è possibile trasformare una misura di angolo in una misura di energia.
 Dunque, gli eventi relativi al Tel~A nella matrice $\theta_{foc} - x_{foc}$ sono stati proiettati sull'asse verticale, ottenendo lo spettro energetico riportato in Figura~\ref{fig:spettro_ekin}, il quale riproduce la distribuzione in energia cinetica degli ioni di \ce{^{16}O} all'ingresso del FPD.
 Tali energie non corrispondono a quelle di incidenza sul telescopio, in quanto i prodotti di reazione devono prima attraversare la finestra di Mylar e il tracciatore a gas.
-Sono state, quindi, calcolate le perdite di energia in queste due componenti grazie al software LISE++, variando opportunamente l'energia cinetica e l'angolo della particella.
-Alla fine di tale procedura è stato possibile stimare che il range di energia con cui gli ioni di \ce{^{16}O} giungevano sul Tel~A era compreso tra 290 e 310~MeV.
+Sono state, quindi, calcolate le perdite di energia in queste due componenti grazie a LISE++~\cite{tarasov:nimb08}, software nato per simulare la produzione di fasci di ioni radioattivi attraverso meccanismi di reazioni nucleari.
+%Tale software possiede, inoltre, diverse applicazioni, che permettono di calcolare stimare, oltre alle perdite di energia, 
+Variando opportunamente l'energia cinetica e l'angolo della particella, è stato possibile stimare che il range di energia con cui gli ioni di \ce{^{16}O} giungevano sul Tel~A era compreso tra 290 e 310~MeV.
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_ekin.png}
@@ -147,7 +155,7 @@ Nella simulazione si è provato ad ``imitare'' la sezione d'urto della reazione 
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_ekin_fit.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_ekin_fit2.png}
 	\caption{Lo spettro in Figura~\ref{fig:spettro_ekin} su cui è stato eseguito un fit con una distribuzione alla Landau.} \label{fig:spettro_ekin_fit}
 \end{figure}
 
@@ -164,6 +172,7 @@ Dal momento che tale quantità gioca un ruolo cruciale nella capacità di PID de
 
 
 In Figura~\ref{fig:spettro_csi_simul} è illustrato il confronto tra lo spettro in $E_{CsI}$ ottenuto attraverso la simulazione e quello sperimentale: anche in questo caso la compatibilità è significativa, sebbene, allo scopo di rappresentare meglio i dati sperimentali, sia stato necessario aumentare la risoluzione assunta per il rivelatore al CsI.
+Una peggiore risoluzione energetica rispetto alle assunzioni del Capitolo~\ref{cap:simulazione} può essere dovuta a diversi fattori sperimentali, come ad esempio rumore elettromagnetico o disuniformità nella raccolta di luce dello scintillatore, la quale può essere causata da un accoppiamento non ottimale con il riflettore o il fotodiodo.
 
 L'accordo fra dati simulati e sperimentali è avvalorato dalla complessità della situazione presa in esame: in primo luogo, la reazione $^{12}\mbox{C}\,  ( ^{20}\mbox{Ne}, ^{20}\mbox{O} ) \, ^{16}\mbox{O} $ avviene in cinematica inversa, così che l'energia cinetica dell'eiettile risulta estremamente sensibile alla variazione dell'angolo di emissione.
 %la correlazione fra angolo di emissione ed energia cinetica dell'eiettile risulta molto sensibile alla variazione 
