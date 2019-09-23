@@ -121,9 +121,9 @@ Il tasso di dimezzamento $ \left[ T_{1/2} \right]^{-1} $ del processo \doppiobet
 \begin{equation} \label{eq:rate_doppio_beta}
 	\left[ T_{1/2} \right]^{-1} \; = \; G^{0 \nu} \: \left| M^{0 \nu} \right|^2 \: \left| f ( m_i, U_{ei}) \right|^2 
 \end{equation}
-laddove $G^{0 \nu}$ è il fattore cinematico di spazio delle fasi dei due elettroni emessi; $ f ( m_i, U_{ei}) $ è un termine contenente una combinazione delle masse $m_i$ delle tre specie di neutrini, dei coefficienti $U_{ei}$ della matrice PMNS; $M^{0 \nu}$ rappresenta l'ampiezza di probabilità di transizione del nucleo dallo stato iniziale~$\phi_i$ a quello finale~$\phi_f$, ossia
+laddove $G^{0 \nu}$ è il fattore cinematico di spazio delle fasi dei due elettroni emessi; $ f ( m_i, U_{ei}) $ è un termine contenente una combinazione delle masse $m_i$ delle tre specie di neutrini e dei coefficienti $U_{ei}$ della matrice PMNS; $M^{0 \nu}$ rappresenta l'ampiezza di probabilità di transizione del nucleo dallo stato iniziale~$\phi_i$ a quello finale~$\phi_f$, ossia
 \begin{equation}
-	M^{0 \nu} = \bra{\phi_f} \hat{O}^{0 \nu \beta \beta} \ket{\phi_f} 
+	M^{0 \nu} = \bra{\phi_f} \hat{O}^{0 \nu \beta \beta} \ket{\phi_i} 
 \end{equation}
 in cui $\hat{O}^{0 \nu \beta \beta}$ è l'operatore che descrive il \doppiobeta{}. 
 Ad oggi i numerosi esperimenti che tentano di misurare il tempo di dimezzamento del processo sono stati in grado di fornire soltanto dei limiti inferiori; i più recenti risultati affermano che, al 90\% di livello di confidenza, $T_{1/2}$ deve essere maggiore di $8.0 \cdot 10^{25}$~yr nel caso del \ce{^{76}Ge}~\cite{agostini:prl18}, e di $1.1 \cdot 10^{26}$~yr nel caso del \ce{^{136}Xe}~\cite{gando:prl16}. Tali valori corrispondono ad un limite superiore per la massa del neutrino compreso tra 120 -- 260~meV nel primo caso e tra 50 -- 160~meV nel secondo.
@@ -131,7 +131,7 @@ Ad oggi i numerosi esperimenti che tentano di misurare il tempo di dimezzamento 
 
 
 
-La quantità $M^{0 \nu}$, nota in letteratura come \emph{elemento di matrice nucleare} (\emph{Nuclear Matrix Element}, NME), viene attualmente valutata attraverso avanzati metodi di calcolo, come ad esempio la Quasi-particle Random Phase Approximation (QRPA), il Large-scale Shell Model, l'Interacting Boson Model (IBM), l'Energy Density Functional (EDF) e i calcoli Ab-initio~\cite{caurier:prl08,suhonen:ijmpe08,vaquero:prl14,barea:prc13,kwiatkowski:prc14}. I vari metodi differiscono essenzialmente per il model space adottato, proponendo schemi di troncamento delle funzioni d'onda nucleari diversi a seconda dei gradi di libertà considerati rilevanti. 
+La quantità $M^{0 \nu}$, nota in letteratura come \emph{elemento di matrice nucleare} (Nuclear Matrix Element, NME), viene attualmente valutata attraverso avanzati metodi di calcolo, come ad esempio la Quasi-particle Random Phase Approximation (QRPA), il Large-scale Shell Model, l'Interacting Boson Model (IBM), l'Energy Density Functional (EDF) e i calcoli Ab-initio~\cite{caurier:prl08,suhonen:ijmpe08,vaquero:prl14,barea:prc13,kwiatkowski:prc14}. I vari metodi differiscono essenzialmente per il model space adottato, proponendo schemi di troncamento delle funzioni d'onda nucleari diversi a seconda dei gradi di libertà considerati rilevanti. 
 Sebbene accurate informazioni provenienti da esperimenti di singolo scambio di carica (Single Charge Exchange, SCE), reazioni di transfer e cattura elettronica siano state utilizzate per porre dei vincoli ai calcoli teorici, le differenze tra i modelli sono ancora piuttosto grandi, tanto da osservare discrepanze tipiche di un fattore due o tre, come si può evincere dalla Figura~\ref{fig:NME}. 
 
 \begin{figure} [!t]
@@ -249,7 +249,7 @@ Dunque, al fine di raggiungere gli obiettivi preposti da NUMEN è necessaria una
 %Dei cambiamenti precedentemente elencati particolare attenzione merita quello del tracciatore a gas 
 %È importante sottolineare un aspetto dei cambiamenti precedentemente elencati: la sostituzione dell'attuale tracciatore a gas con un sistema 
 Dei cambiamenti precedentemente elencati è importante sottolineare un aspetto: il sistema di tracciamento attuale, oltre a fornire accurate informazioni sulla posizione, è sensibile alla perdita di energia degli ioni nel gas. Esso viene, quindi, utilizzato anche come stadio $\Delta E$ per l'identificazione in numero atomico ($Z$) dei prodotti di reazione.
-La tecnologia delle M-THGEM, scelta perché promette buone proprietà di misura della posizione anche in presenza di alti rate, non è invece in grado di dare accurate informazioni sull'energia persa dagli ioni.
+La tecnologia delle M-THGEM, scelta perché promette buone proprietà di misura della posizione anche in presenza di alti rate, non è invece in grado di dare accurate informazioni sull'energia persa dagli ioni, per cui non può contribuire all'identificazione in $Z$ degli eiettili.
 Inoltre, gli attuali rivelatori a larga area al silicio, usati per misurare l'energia residua ($ E_{resid} $), non soltanto verrebbero danneggiati da rate così alti, ma sarebbero anche soggetti ad un significativo pile-up a causa delle loro grandi dimensioni.
 Di conseguenza, per preservare le attuali capacità complessive di identificazione dei prodotti di reazione (Particle IDentification, PID) è necessario introdurre nel FPD un sistema dedicato a questo scopo.
 
@@ -276,7 +276,7 @@ Negli esperimenti di fisica nucleare questo genere di sistema è tipicamente com
 %Tale tecnica permette l'identificazione degli ioni poiché la correlazione tra l'energia persa nel primo stadio e l'energia residua depositata nel secondo è legata al numero atomico dello ione rivelato, in accordo con la nota formula di Bethe-Block~\cite{knoll:10}.
 Tale tecnica permette l'identificazione degli ioni poiché la correlazione tra l'energia persa nel primo stadio e l'energia residua depositata nel secondo è legata al numero atomico dello ione rivelato, in accordo con la nota formula di Bethe-Block~\cite{knoll:10}.
 
-Dal momento che, come già detto in precedenza, i rivelatori al silicio non possiedono le proprietà di resistenza alle radiazioni necessarie per il progetto, la scelta è oggi indirizzata verso un telescopio in cui il primo stadio è costituito da un rivelatore sottile (100~$\mu $m) al carburo di silicio~\cite{tudisco:sensors18} (SiC), mentre il rivelatore di stop è uno scintillatore allo ioduro di cesio (CsI) spesso 1~cm.
+Dal momento che, come già detto in precedenza, i rivelatori al silicio non possiedono le proprietà di resistenza alle radiazioni necessarie per il progetto, la scelta è oggi indirizzata verso un telescopio in cui il primo stadio è costituito da un rivelatore sottile (100~$\mu $m) al carburo di silicio~(SiC)~\cite{tudisco:sensors18}, mentre il rivelatore di stop è uno scintillatore allo ioduro di cesio (CsI) spesso 1~cm.
 
 %Il principale scopo del presente lavoro di tesi è stato la valutazione 
 Al fine di verificare se questa scelta possa garantire le performance di PID e la risoluzione energetica necessarie per gli obiettivi del progetto, è stata implementata una simulazione Monte Carlo sulla piattaforma \geant~\cite{agostinelli:nima02,allison:nima16,allison:ieeetns06}.
@@ -296,7 +296,7 @@ Il progetto NUMEN è articolato in quattro fasi, di cui verranno esposti i tratt
 La \emph{Fase 1}, già completata, ha dimostrato, grazie all'esperimento pilota \ce{^{40}Ca}(\ce{^{18}O},\ce{^{18}Ne})\ce{^{40}Ar}, che è possibile estrarre informazioni sulle funzioni d'onda nucleari del \doppiobeta{} tramite lo studio di reazioni di DCE~\cite{cappuzzello:epja15}.
 
 La \emph{Fase 2}, attualmente in corso, prevede lo svolgimento di una campagna sperimentale limitata ad alcuni isotopi di interesse, scelti come compromesso tra la rilevanza di tali isotopi per gli esperimenti sul \doppiobeta{} e le esigenze tecniche. I primi sistemi oggetto di studio sono stati $^{116}\mbox{Cd}\,  - \, ^{116}\mbox{Sn} $ e $^{76}\mbox{Ge}\,  - \, ^{76}\mbox{Se} $, sondati attraverso le reazioni (\ce{^{20}Ne}, \ce{^{20}O}) e (\ce{^{18}O}, \ce{^{18}Ne}) per esplorare il meccanismo di DCE in entrambe le direzioni. 
-È stata, inoltre, studiata la transizione $^{130}\mbox{Te}\,  - \, ^{130}\mbox{Xe} $ mediante la reazione $^{130}\mbox{Te}\,  ( ^{20}\mbox{Ne}, ^{20}\mbox{O} ) \, ^{130}\mbox{Xe} $.
+È stata, inoltre, studiata la transizione $^{130}\mbox{Te}\,  - \, ^{130}\mbox{Xe} $ mediante la reazione $^{130}\mbox{Te}  ( ^{20}\mbox{Ne}, ^{20}\mbox{O} )  ^{130}\mbox{Xe} $.
 In aggiunta, è stato appena effettuato un esperimento sulla reazione \ce{^{48}Ti}(\ce{^{18}O},\ce{^{18}Ne})\ce{^{48}Ca}. 
 %Durante questa fase verrà anche ottimizzata la strategia di analisi dei dati.
 Della Fase~2 fa parte anche l'attività di R\&D su rivelatori, materiali e tecnologie precedentemente descritta.

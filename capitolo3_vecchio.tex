@@ -25,7 +25,7 @@ Successivamente, dopo aver spiegato gli aspetti più importanti di tali simulazi
 
 
 In fisica, come in altre scienze, le simulazioni computerizzate giocano un ruolo fondamentale, in quanto permettono di affrontare lo studio di sistemi che sarebbero difficilmente trattabili utilizzando tecniche teoriche o sperimentali~``classiche'';
-spesso, infatti, questi approcci possono presentare problematicità legate alla complessità del sistema, al tempo necessario per lo sviluppo e l'analisi, ai costi per la realizzazione di prototipi.
+spesso, infatti, tali approcci possono presentare problematicità legate alla complessità del sistema, al tempo necessario per lo sviluppo e l'analisi, ai costi per la realizzazione di prototipi.
 Introdotte negli anni Quaranta grazie all'apporto di prestigiosi scienziati come von Neumann, Ulam e Fermi, il loro progresso è stato parallelo a quello dei computer, arrivando oggi ad essere uno strumento imprescindibile in molti esperimenti.
 %Esse forniscono una diversa prospettiva con cui guardare alla realtà, diventando in alcuni casi una base teorica da cui partire per l'interpretazione dei risultati sperimentali, oppure in altre situazioni producendo dati ``sperimentali'' con cui mettere al vaglio le teorie.
 Esse forniscono una diversa prospettiva con cui guardare alla realtà, diventando in alcuni casi una base teorica da cui partire per l'interpretazione dei risultati sperimentali e in altri producendo dati ``sperimentali'' con cui mettere al vaglio le teorie.
@@ -42,7 +42,7 @@ Il numero di problemi che al giorno d'oggi vengono studiati utilizzando questa t
 %
 %
 %Sebbene darne una definizione comprensiva di tutte le aree di interesse sia un compito difficile, in generale è possibile dire che i metodi Monte Carlo sono dei metodi numerici di risoluzione di equazioni o di calcolo di integrali basati sulla generazione di numeri casuali.
-Sebbene darne una definizione comprensiva di tutte le aree di interesse sia un compito difficile, in generale è possibile dire che i metodi Monte Carlo sono dei metodi numerici, basati sulla generazione di numeri casuali, per la risoluzione di equazioni o per il calcolo di integrali.
+Sebbene darne una definizione comprensiva di tutte le aree di interesse sia un compito difficile, in generale è possibile dire che i metodi Monte Carlo sono dei metodi numerici, basati sulla generazione di numeri casuali, per la risoluzione di equazioni o per il calcolo di integrali .
 %I metodi Monte Carlo utilizzano la generazione di numeri casuali per simulare le fluttuazioni statistiche di un sistema con un numero elevato di gradi di libertà.
 Il generico metodo si compone principalmente di quattro fasi:
 \begin{itemize}
@@ -78,7 +78,7 @@ Una delle ragioni di tale successo deriva dalla grande efficacia di queste tecni
 \begin{figure} [!t]
 	\centering
 	\includegraphics[scale=0.75]{Grafici/monte_carlo_vs_analytic2.png}
-	\caption{Confronto fra il tempo necessario per la risoluzione di un problema con un metodo analitico-deterministico e con un metodo Monte Carlo, al variare della complessità del problema. Figura tratta da~\cite{bielajew:13}.} \label{fig:monte_carlo}
+	\caption{Confronto fra il tempo necessario per la risoluzione di un problema con un metodo analitico-deterministico e con un metodo Monte Carlo, al variare della complessità del problema. Figura tratta da~\cite{bielajew:13}} \label{fig:monte_carlo}
 \end{figure}
 
 
@@ -124,9 +124,9 @@ Essa è interamente basata sul linguaggio C++, traendo vantaggio, dunque, da tut
 Oggi \geant{} consente di simulare l'interazione con la materia di tutte le particelle note, in un range energetico che va da pochi~eV fino ai~TeV.
 %
 %La sua notevole duttilità lo ha reso uno strumento 
-Grazie alla sua notevole duttilità, sono innumerevoli gli esperimenti che si avvalgono di questo strumento: la sua area d'azione comprende la fisica delle alte energie, la fisica nucleare, le applicazioni in campo medico e l'astrofisica.
+Grazie alla sua notevole duttilità, sono innumerevoli gli esperimenti che si avvalgono di questo strumento: la sua area d'applicazione comprende la fisica delle alte energie, la fisica nucleare, le applicazioni in campo medico e l'astrofisica.
 Il codice è, inoltre, open-source e viene periodicamente aggiornato dalla collaborazione. 
-Dal momento che la documentazione su \geant{} è ampia e dettagliata\footnote{Si veda, ad esempio, \url{www.geant4.cern.ch}.}, nel prosieguo vengono presentati soltanto gli aspetti utili alla comprensione delle simulazioni svolte per questo lavoro di tesi.  
+Dal momento che la documentazione su \geant{} è ampia e dettagliata\footnote{Si veda, ad esempio, \url{www.geant4.cern.ch}}, nel prosieguo vengono presentati soltanto gli aspetti utili alla comprensione delle simulazioni svolte per questo lavoro di tesi.  
 
 
 
@@ -189,7 +189,7 @@ L'utente può personalizzare la funzione che accede alle informazioni dello step
 
 %La simulazione implementata per questo lavoro di tesi considera una matrice di telescopi SiC-CsI.
 %Allo scopo di valutare le prestazioni di PID
-Nell'ambito di questo lavoro di tesi è stata realizzata un'applicazione in \geant{} per simulare la risposta di un sistema di telescopi SiC-CsI agli ioni di interesse per il progetto NUMEN.
+Nell'ambito del presente lavoro di tesi è stata realizzata un'applicazione in \geant{} per simulare la risposta di un sistema di telescopi SiC-CsI agli ioni di interesse per il progetto NUMEN.
 Nel seguito di questa sezione vengono illustrate nel dettaglio le caratteristiche di tale applicazione.
 
 
@@ -197,8 +197,8 @@ Nel seguito di questa sezione vengono illustrate nel dettaglio le caratteristich
 
 \subsection{\iflanguage{italian}{La geometria e i materiali}{Geometry and materials}} \label{par:geometria}
 
-Ciascun telescopio è formato da due stadi, il rivelatore al carburo di silicio (SiC) e il cristallo allo ioduro di cesio (CsI), i quali sono posti a contatto.
-Per tenere in considerazione il substrato morto del rivelatore al SiC, il primo stadio è, a sua volta, costituito da due parti: il volume attivo e il substrato morto.
+Ciascun telescopio è formato da due componenti, il rivelatore al carburo di silicio (SiC) e il cristallo allo ioduro di cesio (CsI), le quali sono poste a contatto.
+Per tenere in considerazione il substrato morto del rivelatore al SiC, tale componente è, a sua volta, costituita da due parti: il volume attivo e il substrato morto.
 
 Considerando un sistema di riferimento in cui l'asse $z$ è individuato dalla direzione di propagazione delle particelle, i telescopi sono fra loro separati di 2~mm lungo la direzione $x$ e di 1~mm lungo la direzione $y$.
 
@@ -215,7 +215,7 @@ Considerando un sistema di riferimento in cui l'asse $z$ è individuato dalla di
 
 %Poiché uno degli obiettivi di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità,  sono stati considerati diversi valori per le dimensioni trasversali; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
 %Poiché uno degli obiettivi di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità,  per le dimensioni trasversali dei telescopi sono stati presi in esame diversi valori; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
-Poiché uno degli obiettivi principali di questo lavoro consisteva nella ricerca delle condizioni ottimali di granularità, sono state condotte diverse simulazioni al variare delle dimensioni trasversali dei telescopi; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
+Poiché uno degli obiettivi principali di questo lavoro consisteva nella ricerca delle migliori condizioni di granularità, sono state condotte diverse simulazioni al variare delle dimensioni trasversali dei telescopi; in particolare, sulla base degli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono state simulate aree sensibili di $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}.
 
 
 
@@ -236,11 +236,8 @@ Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rim
 
 %Sebbene il muro di telescopi comprenderà oltre 1000 
 %La simulazione ha considerato un unico modulo di $2 \times 5$ rivelatore.
-
-%%Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di 1230 telescopi, tutte le simulazioni sono state svolte prendendo in esame una matrice di $2 \times 5$ elementi.
-
-In Figura~\ref{fig:simulazione_muro} è mostrato l'aspetto assunto da un modulo elementare di~$2 \times 5$ telescopi nella simulazione \geant. 
-Dal momento che allo scopo di valutare le capacità di PID del sistema non è necessario includere l'intero muro di rivelatori, tutte le simulazioni sono state svolte considerando un solo telescopio.
+Dal momento che per gli scopi di questo lavoro non era necessario includere l'intero muro di 1230 telescopi, tutte le simulazioni sono state svolte prendendo in esame una matrice di $2 \times 5$ elementi.
+In Figura~\ref{fig:simulazione_muro} è mostrato l'aspetto assunto da tale matrice nella simulazione \geant. 
 %In Figura~ è possibile vedere la realizzazione grafica di \geant{} di un modulo $2 \times 5$ del sistema di rivelazione.
 
 \begin{figure} [!p]
@@ -254,55 +251,10 @@ Dal momento che allo scopo di valutare le capacità di PID del sistema non è ne
 
 %Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}. 
 %In alcune simulazioni sono stati coinvolti anche altri isotopi di tali specie nucleari, 
-%Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}, coinvolgendo in alcune simulazioni anche altri isotopi di tali specie atomiche, quali \ce{^{16}O}, \ce{^{17}O}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{19}Ne} e \ce{^{20}Ne}.
-In una simulazione \geant{} i parametri che tipicamente devono essere introdotti per la generazione di un evento sono: la tipologia della particella primaria, la sua energia iniziale, la sua direzione iniziale e la sua posizione iniziale.
-%In questo paragrafo verranno spiegate le condizioni di lavoro scelte in merito a tali parametri.
-In questo paragrafo verranno spiegate le scelte effettuate in merito a tali parametri.
-(\textcolor{red}{Lo tolgo questo paragrafetto?})
-
-Le particelle primarie simulate comprendono nove degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{19}O}, \ce{^{20}O}, \ce{^{18}F}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{18}Ne}, \ce{^{19}Ne} e~\ce{^{20}Ne}.
-In tutti i casi esaminati, gli ioni sono stati considerati completamente ionizzati.
-
-%In ciascun evento, la particella primaria è stata generata in modo casuale sulla faccia anteriore del rivelatore al SiC centrale, con una direzione estratta casualmente all'interno di un angolo solido corrispondente ad un cono con un'apertura di~20\textdegree{}. 
-%Poiché il sistema che si intende analizzare è posto nel piano focale di uno spettrometro magnetico, l'energia e la 
-%Affinché gli eventi simulati potessero riprodurre fedelmente gli eventi reali, 
-%al fine di riprodurre fedelmente gli eventi reali
-
-%Poiché il sistema che si intende analizzare è posto nel piano focale di uno spettrometro magnetico, è stato necessario introdurre una correlazione tra la posizione di impatto delle particelle sul telescopio e la loro energia cinetica; infatti, nella situazione reale gli eiettili prodotti nell'interazione fra il fascio di particelle e il bersaglio attraversano il quadrupolo e il dipolo 
-
-%Per quanto riguarda l'energia iniziale delle particelle primarie, bisogna ricordare che 
+Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}, coinvolgendo in alcune simulazioni anche altri isotopi di tali specie atomiche, quali \ce{^{16}O}, \ce{^{17}O}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{19}Ne} e \ce{^{20}Ne}.
 
 
-%Poiché il sistema che si intende analizzare sarà posto nel piano focale di uno spettrometro magnetico, l'energia delle particelle primarie deve essere correlata alla loro posizione di arrivo sul piano focale; infatti, nell'apparato sperimentale reale, gli eiettili, attraversando il dipolo, subiranno una deflessione dovuta alla forza di Lorentz. 
-
-% la forza di Lorentz stabilisce la relazione 
-%la quale definisce la traiettoria della particella fissandone il raggio di curvatura $\rho$.
-
-%Poiché il sistema che si intende analizzare sarà posto nel piano focale di uno spettrometro magnetico, è stato necessario introdurre una correlazione tra la posizione di arrivo delle particelle sul piano focale e la loro energia cinetica; 
-Poiché il sistema che si intende analizzare sarà posto nel piano focale di uno spettrometro magnetico, l'energia cinetica delle particelle simulate non può essere indipendente dalla loro posizione di arrivo sul piano focale, ma deve essere introdotta una correlazione fra le quantità;
-infatti, quando una particella con carica~$q$ si muove in un campo magnetico~$B$ ortogonale al suo impulso~$p$, a causa della forza di Lorentz essa descrive una traiettoria con raggio di curvatura~$\rho$, dato dalla nota relazione
-\begin{equation} \label{eq:legge_spettrometri}
-B  \rho \, = \,  \frac{p}{q}
-\end{equation}
-%In approssimazione non relativistica, l'impulso $p$ è legato all'energia cinetica $E$ dalla relazione $p = \sqrt{2 m E}$, laddove $m$ indica massa della particella; dunque, la precedente può essere scritta nella forma
-%\begin{equation} \label{eq:legge_spettrometri_energia}
-% \rho \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E}
-%\end{equation}
-%La~\ref{eq:legge_spettrometri_energia} afferma che 
-In prima approssimazione, $\rho$ è proporzionale a $x_{foc}$, coordinata orizzontale del punto di arrivo della particella sul piano focale.
-D'altro canto, in approssimazione non relativistica, l'impulso $p$ è legato all'energia cinetica $E$ dalla formula $p = \sqrt{2 m E}$, laddove $m$ indica massa della particella.
-Dunque, la relazione fra $x_{foc}$ ed $E$ è circa quadratica e dipende dal rapporto $\sqrt{m}/q$, ovvero
-\begin{equation} \label{eq:legge_spettrometri_approx}
- x_{foc} \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E}
-\end{equation}
-La~\ref{eq:legge_spettrometri_approx} afferma che ioni uguali, emessi ad angoli differenti con energie cinetiche uguali, giungono sullo stesso punto del piano focale; equivalentemente, ioni uguali, emessi allo stesso angolo con energie cinetiche differenti, giungono su punti diversi del piano focale.
-Quanto appena detto è illustrato in Figura~\ref{fig:magnex_diverse_traiettorie}, la quale mostra una simulazione GEANT di MAGNEX.
-
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/magnex_diverse_tracce.png}
-	\caption{Simulazione GEANT di MAGNEX: traiettorie con colori differenti hanno energie diverse. Figura tratta da~\cite{cappuzzello:epja16}.} \label{fig:magnex_diverse_traiettorie}
-\end{figure}
+In ciascun evento, la particella primaria è stata generata in modo casuale sulla faccia anteriore del rivelatore al SiC centrale, con una direzione estratta casualmente all'interno di un angolo solido corrispondente ad un cono con un'apertura di~20\textdegree{}. 
 
 
 %Allo scopo di coprire un ampio range energetico, realisticamente significativo per NUMEN, le particelle primarie hanno un'energia scelta casualmente fra 500 e 1000~MeV.
@@ -310,11 +262,11 @@ Allo scopo di valutare la capacità di PID in un ampio range energetico, realist
 %Dal momento che l'apparato sperimentale si incardina sulle proprietà dello spettrometro magnetico MAGNEX, 
 
 È bene ricordare che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia; infatti, partendo dalla nota relazione
-\begin{equation} 
+\begin{equation} \label{eq:legge_spettrometri}
 B  \rho \, = \,  \frac{p}{q} \, 
 \end{equation}
 laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, sotto opportune condizioni è possibile affermare che\footnote{La relazione $p = \sqrt{2 m E}$ vale in approssimazione non relativistica.}
-\begin{equation} 
+\begin{equation} \label{eq:legge_spettrometri_approx}
 B x_{foc} \, \approx \, B  \rho  \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E_{resid}}
 \end{equation}
 Dunque, per tenere in considerazione questo aspetto, alcune simulazioni sono state svolte tenendo fissata la rigidità magnetica $B \rho$ degli ioni primari e variandone in corrispondenza l'energia.
@@ -333,7 +285,7 @@ Affinché la simulazione possa riprodurre con la maggiore accuratezza possibile 
 Per gli scopi di questo lavoro, in una prima fase sono state prese in esame soltanto le interazioni elettromagnetiche (oltre ai processi di decadimento e di decadimento radioattivo) in quanto sufficienti a separare i luoghi di specie atomiche diverse nelle matrici $\Delta E - E$.
 Successivamente, sono state aggiunte anche le interazioni adroniche, incorporando, dunque, processi di scattering elastico e inelastico e meccanismi di reazioni nucleari.
 
-In Figura~\ref{fig:simulazione_evento} è riportata la visualizzazione grafica della simulazione di 20~eventi nel caso in cui il modello dei processi fisici comprendesse sia le interazioni elettromagnetiche sia quelle adroniche: in nero sono raffigurate le tracce degli ioni primari, mentre in altri colori sono mostrate le tracce delle particelle secondarie originate da reazioni nucleari. 
+In Figura~\ref{fig:simulazione_evento} è riportata la visualizzazione grafica della simulazione di 20~eventi nel caso in cui il modello dei processi fisici comprendesse sia le interazioni elettromagnetiche sia quelle adroniche; infatti, in nero sono raffigurate le tracce degli ioni primari, mentre in altri colori sono mostrate le tracce delle particelle secondarie originate da reazioni nucleari. 
 
 
 
