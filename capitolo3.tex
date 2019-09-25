@@ -255,13 +255,13 @@ Dal momento che allo scopo di valutare le capacità di PID del sistema non è ne
 %Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}. 
 %In alcune simulazioni sono stati coinvolti anche altri isotopi di tali specie nucleari, 
 %Le particelle primarie simulate comprendono tre degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}, coinvolgendo in alcune simulazioni anche altri isotopi di tali specie atomiche, quali \ce{^{16}O}, \ce{^{17}O}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{19}Ne} e \ce{^{20}Ne}.
-In una simulazione \geant{} i parametri che tipicamente devono essere introdotti per la generazione di un evento sono: la tipologia della particella primaria, la sua energia iniziale, la sua direzione iniziale e la sua posizione iniziale.
+In una simulazione \geant{} i parametri che tipicamente devono essere introdotti per la generazione di un evento sono: la tipologia della particella primaria, la sua energia cinetica iniziale, la sua direzione iniziale e la sua posizione iniziale.
 %In questo paragrafo verranno spiegate le condizioni di lavoro scelte in merito a tali parametri.
 In questo paragrafo verranno spiegate le scelte effettuate in merito a tali parametri.
 (\textcolor{red}{Lo tolgo questo paragrafetto?})
 
 Le particelle primarie simulate comprendono nove degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{19}O}, \ce{^{20}O}, \ce{^{18}F}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{18}Ne}, \ce{^{19}Ne} e~\ce{^{20}Ne}.
-In tutti i casi esaminati, gli ioni sono stati considerati completamente ionizzati.
+In tutti i casi esaminati gli ioni sono stati considerati completamente ionizzati.
 
 %In ciascun evento, la particella primaria è stata generata in modo casuale sulla faccia anteriore del rivelatore al SiC centrale, con una direzione estratta casualmente all'interno di un angolo solido corrispondente ad un cono con un'apertura di~20\textdegree{}. 
 %Poiché il sistema che si intende analizzare è posto nel piano focale di uno spettrometro magnetico, l'energia e la 
@@ -279,8 +279,8 @@ In tutti i casi esaminati, gli ioni sono stati considerati completamente ionizza
 %la quale definisce la traiettoria della particella fissandone il raggio di curvatura $\rho$.
 
 %Poiché il sistema che si intende analizzare sarà posto nel piano focale di uno spettrometro magnetico, è stato necessario introdurre una correlazione tra la posizione di arrivo delle particelle sul piano focale e la loro energia cinetica; 
-Poiché il sistema che si intende analizzare sarà posto nel piano focale di uno spettrometro magnetico, l'energia cinetica delle particelle simulate non può essere indipendente dalla loro posizione di arrivo sul piano focale, ma deve essere introdotta una correlazione fra le quantità;
-infatti, quando una particella con carica~$q$ si muove in un campo magnetico~$B$ ortogonale al suo impulso~$p$, a causa della forza di Lorentz essa descrive una traiettoria con raggio di curvatura~$\rho$, dato dalla nota relazione
+%Poiché il sistema che si intende analizzare sarà posto nel piano focale di uno spettrometro magnetico, l'energia cinetica delle particelle simulate non può essere indipendente dalla loro posizione di arrivo sul piano focale, ma deve essere introdotta una correlazione fra queste quantità;
+Le energie cinetiche simulate devono essere scelte tenendo in considerazione che negli spettrometri magnetici gli ioni vengono separati in base alla loro \emph{rigidità magnetica} $B \rho$; infatti, quando una particella con carica~$q$ e massa $m$ si muove in un campo magnetico~$B$ ortogonale al suo impulso~$p$, a causa della forza di Lorentz essa descrive una traiettoria con raggio di curvatura~$\rho$, dato dalla nota relazione
 \begin{equation} \label{eq:legge_spettrometri}
 B  \rho \, = \,  \frac{p}{q}
 \end{equation}
@@ -289,35 +289,44 @@ B  \rho \, = \,  \frac{p}{q}
 % \rho \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E}
 %\end{equation}
 %La~\ref{eq:legge_spettrometri_energia} afferma che 
-In prima approssimazione, $\rho$ è proporzionale a $x_{foc}$, coordinata orizzontale del punto di arrivo della particella sul piano focale.
-D'altro canto, in approssimazione non relativistica, l'impulso $p$ è legato all'energia cinetica $E$ dalla formula $p = \sqrt{2 m E}$, laddove $m$ indica massa della particella.
+Al primo ordine di approssimazione, $\rho$ è proporzionale a $x_{foc}$, coordinata orizzontale del punto di arrivo della particella sul piano focale.
+Inoltre, in approssimazione non relativistica, l'impulso $p$ è legato all'energia cinetica $E$ dalla formula $p = \sqrt{2 m E}$. 
 Dunque, la relazione fra $x_{foc}$ ed $E$ è circa quadratica e dipende dal rapporto $\sqrt{m}/q$, ovvero
 \begin{equation} \label{eq:legge_spettrometri_approx}
- x_{foc} \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E}
+B \, x_{foc} \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E}
 \end{equation}
-La~\ref{eq:legge_spettrometri_approx} afferma che ioni uguali, emessi ad angoli differenti con energie cinetiche uguali, giungono sullo stesso punto del piano focale; equivalentemente, ioni uguali, emessi allo stesso angolo con energie cinetiche differenti, giungono su punti diversi del piano focale.
-Quanto appena detto è illustrato in Figura~\ref{fig:magnex_diverse_traiettorie}, la quale mostra una simulazione GEANT di MAGNEX.
-
+%La~\ref{eq:legge_spettrometri_approx} afferma che ioni uguali, emessi ad angoli differenti con energie cinetiche uguali, giungono sullo stesso punto del piano focale; equivalentemente, ioni uguali, emessi allo stesso angolo con energie cinetiche differenti, giungono su punti diversi del piano focale.
+La~\ref{eq:legge_spettrometri_approx} afferma che ioni con la stessa rigidità magnetica giungono sullo stesso punto del piano focale; equivalentemente, ioni con diversa rigidità magnetica giungono su punti diversi del piano focale.
+Quanto appena detto è illustrato in Figura~\ref{fig:magnex_diverse_traiettorie}, la quale mostra una simulazione GEANT di MAGNEX per diverse traiettorie accettate dallo spettrometro.
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/magnex_diverse_tracce.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici/magnex_traiettorie_diverse.png}
 	\caption{Simulazione GEANT di MAGNEX: traiettorie con colori differenti hanno energie diverse. Figura tratta da~\cite{cappuzzello:epja16}.} \label{fig:magnex_diverse_traiettorie}
 \end{figure}
 
+La dipendenza della \ref{eq:legge_spettrometri_approx} dal rapporto $\sqrt{m}/q$ costituisce il fondamento di una innovativa tecnica di identificazione per spettrometri di grande accettanza; se, infatti, si misurano in correlazione la posizione $x_{foc}$ e l'energia cinetica $E$, è possibile identificare gli ioni in massa e stato di carica.
+L'applicazione di tale tecnica allo spettrometro MAGNEX è stata ampiamente discussa in numerose pubblicazioni, alle quali si rimanda per informazioni più dettagliate (si veda ad esempio~\cite{cappuzzello:nima10}). 
+
+A causa della estensione finita dei rivelatori, in realtà gli ioni arrivano sul telescopio in una finestra di valori di $B \rho$. La larghezza di tale finestra è data, al primo ordine, da
+\begin{equation}
+	\Delta \left(B \rho \right) \sim \frac{\Delta x}{D}
+\end{equation}
+laddove $\Delta x$ indica l'estensione lungo la direzione dispersiva del rivelatore e $D$ è la dispersione in impulso dello spettrometro, pari a 3.68~cm/\%.
+
 
 %Allo scopo di coprire un ampio range energetico, realisticamente significativo per NUMEN, le particelle primarie hanno un'energia scelta casualmente fra 500 e 1000~MeV.
-Allo scopo di valutare la capacità di PID in un ampio range energetico, realisticamente significativo per NUMEN, sono state simulate particelle primarie con un'energia scelta casualmente fra 500 e 1000~MeV.
+%%Allo scopo di valutare la capacità di PID in un ampio range energetico, realisticamente significativo per NUMEN, sono state simulate particelle primarie con un'energia scelta casualmente fra 500 e 1000~MeV.
 %Dal momento che l'apparato sperimentale si incardina sulle proprietà dello spettrometro magnetico MAGNEX, 
 
-È bene ricordare che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia; infatti, partendo dalla nota relazione
-\begin{equation} 
-B  \rho \, = \,  \frac{p}{q} \, 
-\end{equation}
-laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, sotto opportune condizioni è possibile affermare che\footnote{La relazione $p = \sqrt{2 m E}$ vale in approssimazione non relativistica.}
-\begin{equation} 
-B x_{foc} \, \approx \, B  \rho  \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E_{resid}}
-\end{equation}
-Dunque, per tenere in considerazione questo aspetto, alcune simulazioni sono state svolte tenendo fissata la rigidità magnetica $B \rho$ degli ioni primari e variandone in corrispondenza l'energia.
+%%È bene ricordare che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia; infatti, partendo dalla nota relazione
+%\begin{equation} 
+%B  \rho \, = \,  \frac{p}{q} \, 
+%\end{equation}
+%laddove $B$ è il campo magnetico, mentre $\rho$, $p$ e $q$ sono, rispettivamente, il raggio di curvatura, l'impulso e la carica della particella, sotto opportune condizioni è possibile affermare che\footnote{La relazione $p = \sqrt{2 m E}$ vale in approssimazione non relativistica.}
+%\begin{equation} 
+%B x_{foc} \, \approx \, B  \rho  \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E_{resid}}
+%\end{equation}
+%Dunque, per tenere in considerazione questo aspetto, alcune simulazioni sono state svolte tenendo fissata la rigidità magnetica $B \rho$ degli ioni primari e variandone in corrispondenza l'energia.
 %Inoltre, dal momento che negli spettrometri magnetici la posizione di una particella al piano focale è correlata alla sua energia, in accordo con la nota relazione
 %\begin{equation} \label{eq:legge_spettrometri}
 %B  \rho \, = \,  \frac{p}{q}
