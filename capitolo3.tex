@@ -261,7 +261,7 @@ In questo paragrafo verranno spiegate le scelte effettuate in merito a tali para
 (\textcolor{red}{Lo tolgo questo paragrafetto?})
 
 Le particelle primarie simulate comprendono nove degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{19}O}, \ce{^{20}O}, \ce{^{18}F}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{18}Ne}, \ce{^{19}Ne} e~\ce{^{20}Ne}.
-In tutti i casi esaminati gli ioni sono stati considerati completamente ionizzati.
+In molti casi esaminati gli ioni sono stati considerati completamente ionizzati, mentre in alcuni sono stati simulati diversi stati di carica.
 
 %In ciascun evento, la particella primaria è stata generata in modo casuale sulla faccia anteriore del rivelatore al SiC centrale, con una direzione estratta casualmente all'interno di un angolo solido corrispondente ad un cono con un'apertura di~20\textdegree{}. 
 %Poiché il sistema che si intende analizzare è posto nel piano focale di uno spettrometro magnetico, l'energia e la 
@@ -291,7 +291,7 @@ B  \rho \, = \,  \frac{p}{q}
 %La~\ref{eq:legge_spettrometri_energia} afferma che 
 Al primo ordine di approssimazione, $\rho$ è proporzionale a $x_{foc}$, coordinata orizzontale del punto di arrivo della particella sul piano focale.
 Inoltre, in approssimazione non relativistica, l'impulso $p$ è legato all'energia cinetica $E$ dalla formula $p = \sqrt{2 m E}$. 
-Dunque, la relazione fra $x_{foc}$ ed $E$ è circa quadratica e dipende dal rapporto $\sqrt{m}/q$, ovvero
+Esiste, dunque, una relazione fra $x_{foc}$ ed $E$: essa è circa quadratica e dipende dal rapporto $\sqrt{m}/q$, ovvero
 \begin{equation} \label{eq:legge_spettrometri_approx}
 B \, x_{foc} \, \propto \,  \frac{\sqrt{m}}{q} \sqrt{E}
 \end{equation}
@@ -304,14 +304,30 @@ Quanto appena detto è illustrato in Figura~\ref{fig:magnex_diverse_traiettorie}
 	\caption{Simulazione GEANT di MAGNEX: traiettorie con colori differenti hanno energie diverse. Figura tratta da~\cite{cappuzzello:epja16}.} \label{fig:magnex_diverse_traiettorie}
 \end{figure}
 
-La dipendenza della \ref{eq:legge_spettrometri_approx} dal rapporto $\sqrt{m}/q$ costituisce il fondamento di una innovativa tecnica di identificazione per spettrometri di grande accettanza; se, infatti, si misurano in correlazione la posizione $x_{foc}$ e l'energia cinetica $E$, è possibile identificare gli ioni in massa e stato di carica.
-L'applicazione di tale tecnica allo spettrometro MAGNEX è stata ampiamente discussa in numerose pubblicazioni, alle quali si rimanda per informazioni più dettagliate (si veda ad esempio~\cite{cappuzzello:nima10}). 
+
 
 A causa della estensione finita dei rivelatori, in realtà gli ioni arrivano sul telescopio in una finestra di valori di $B \rho$. La larghezza di tale finestra è data, al primo ordine, da
 \begin{equation}
 	\Delta \left(B \rho \right) \sim \frac{\Delta x}{D}
 \end{equation}
 laddove $\Delta x$ indica l'estensione lungo la direzione dispersiva del rivelatore e $D$ è la dispersione in impulso dello spettrometro, pari a 3.68~cm/\%.
+
+La dipendenza della \ref{eq:legge_spettrometri_approx} dal rapporto $\sqrt{m}/q$ costituisce il fondamento di una innovativa tecnica di identificazione per spettrometri di grande accettanza; se, infatti, si misurano in correlazione la posizione $x_{foc}$ e l'energia cinetica~$E$, è possibile identificare gli ioni in massa e stato di carica.
+L'applicazione di tale tecnica allo spettrometro MAGNEX è stata ampiamente discussa in numerose pubblicazioni, alle quali si rimanda per informazioni più dettagliate (si veda ad esempio~\cite{cappuzzello:nima10}). 
+
+Dal momento che la simulazione deve riflettere il comportamento reale degli ioni nello spettrometro, è stato necessario introdurre le suddette correlazioni energia-posizione. 
+A tal fine si è scelto di utilizzare i software dedicati al trasporto ottico dei prodotti di reazione attraverso gli elementi magnetici dello spettrometro. 
+Tali software sono basati sui potenti algoritmi di COSY INFINITY~\cite{makino:nima99} e utilizzano il formalismo dell'algebra differenziale per calcolare la matrice del trasporto fino al decimo ordine~\cite{cappuzzello:epja16}.
+Scegliendo lo spazio delle fasi iniziale, essi ricostruiscono il moto degli eiettili fino all'ingresso del rivelatore di piano focale (Focal Plane Detector, FPD), permettendo di conoscere alcune osservabili fondamentali, come l'energia cinetica~$E$, la posizione~$(x_{foc},y_{foc})$ e gli angoli~$(\theta_{foc},\phi_{foc})$ di incidenza. 
+Queste osservabili sono date in input alla simulazione \geant{}, la quale descrive dunque l'interazione degli ioni con il telescopio.
+
+Per valutare le capacità di PID del telescopio, era necessario che tutti i nove ioni simulati andassero ad incidere sul dispositivo. 
+In base a quanto detto precedentemente, essi devono avere la stessa finestra di $B \rho$, che comporta energie cinetiche differenti per i diversi ioni. 
+Per ogni ione si è considerato range di energia cinetica con larghezza di 10~MeV.
+
+
+
+%Per introdurre le correlazioni energia-posizione, si è scelto di utilizzare i software dedicati al trasporto ottico dei prodotti di reazione attraverso lo spettrometro magnetico. 
 
 
 %Allo scopo di coprire un ampio range energetico, realisticamente significativo per NUMEN, le particelle primarie hanno un'energia scelta casualmente fra 500 e 1000~MeV.
