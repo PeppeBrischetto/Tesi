@@ -258,7 +258,7 @@ Dal momento che allo scopo di valutare le capacità di PID del sistema non è ne
 In una simulazione \geant{} i parametri che tipicamente devono essere introdotti per la generazione di un evento sono: la tipologia della particella primaria, la sua energia cinetica iniziale, la sua direzione iniziale e la sua posizione iniziale.
 %In questo paragrafo verranno spiegate le condizioni di lavoro scelte in merito a tali parametri.
 In questo paragrafo verranno spiegate le scelte effettuate in merito a tali parametri.
-(\textcolor{red}{Lo tolgo questo paragrafetto?})
+%(\textcolor{red}{Lo tolgo questo paragrafetto?})
 
 Le particelle primarie simulate comprendono nove degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{19}O}, \ce{^{20}O}, \ce{^{18}F}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{18}Ne}, \ce{^{19}Ne} e~\ce{^{20}Ne}.
 In alcuni casi esaminati gli ioni sono stati considerati completamente ionizzati, mentre in altri sono stati simulati diversi stati di carica.
@@ -316,21 +316,27 @@ La dipendenza della \ref{eq:legge_spettrometri_approx} dal rapporto $\sqrt{m}/q$
 L'applicazione di tale tecnica allo spettrometro MAGNEX è stata ampiamente discussa in numerose pubblicazioni, alle quali si rimanda per informazioni più dettagliate (si veda ad esempio~\cite{cappuzzello:nima10}). 
 
 Dal momento che la simulazione deve riflettere il comportamento reale degli ioni nello spettrometro, è stato necessario introdurre le suddette correlazioni energia-posizione. 
-Inoltre, nello studio di una reazione nucleare, la cinematica introduce ulteriori correlazioni fra l'energia cinetica e l'angolo di emissione dell'eiettile.
+Inoltre, nel meccanismo delle reazioni nucleari la cinematica introduce ulteriori correlazioni fra l'energia cinetica e l'angolo di emissione dell'eiettile.
 Entrambi questi fattori sono caratterizzati da effetti non-lineari che difficilmente potevano essere inseriti direttamente nella simulazione \geant. 
 %A tal fine si è scelto di utilizzare i software dedicati al trasporto ottico dei prodotti di reazione attraverso gli elementi magnetici dello spettrometro. 
 Per questo motivo si è scelto di affidare l'introduzione di queste correlazioni a dei software già sviluppati e ottimizzati dalla collaborazione NUMEN.
 %Poiché all'interno della collaborazione NUMEN erano già stati sviluppati e ottimizzati dei software dedicati al calcolo della cinematica di reazione e al trasporto ottico degli eiettili attraverso gli elementi magnetici dello spettrometro, si è scelto di   
-Tali software sono basati sui potenti algoritmi di COSY INFINITY~\cite{makino:nima99} e utilizzano il formalismo dell'algebra differenziale per calcolare la matrice del trasporto fino al decimo ordine~\cite{cappuzzello:epja16}.
-Scegliendo la tipologia e l'energia della reazione nucleare di interesse, essi determinano la cinematica di reazione e lo spazio delle fasi iniziale; dopo di che calcolano la matrice del trasporto fino al decimo ordine e ricostruiscono il moto degli eiettili fino all'ingresso del rivelatore di piano focale (Focal Plane Detector, FPD).
+Tali software sono basati sui potenti algoritmi di COSY INFINITY~\cite{makino:nima99} e utilizzano il formalismo dell'algebra differenziale per risolvere le equazioni del moto dei prodotti di reazione fino al decimo ordine~\cite{cappuzzello:epja16}.
+Scegliendo la tipologia e l'energia della reazione nucleare di interesse, essi determinano la cinematica di reazione e lo spazio delle fasi iniziale; dopo di che calcolano la matrice del trasporto e ricostruiscono il moto degli eiettili fino all'ingresso del rivelatore di piano focale (Focal Plane Detector, FPD).
 %Scegliendo lo spazio delle fasi iniziale, essi ricostruiscono il moto degli eiettili fino all'ingresso del rivelatore di piano focale (Focal Plane Detector, FPD), permettendo di conoscere alcune osservabili fondamentali, come l'energia cinetica~$E$, la posizione~$(x_{foc},y_{foc})$ e gli angoli~$(\theta_{foc},\phi_{foc})$ di incidenza. 
 %Queste osservabili sono date in input alla simulazione \geant{}, la quale descrive dunque l'interazione degli ioni con il telescopio.
+Questi software producono in output un file contenente i valori delle osservabili rilevanti, come ad esempio l'energia cinetica~$E$, la posizione~$(x_{foc},y_{foc})$ e gli angoli di incidenza~$(\theta_{foc},\phi_{foc})$ sul FPD.
+La simulazione \geant{} è stata realizzata in modo da prendere in input tale file e, a partire da questo, ricavare tutte le informazioni necessarie per la generazione degli eventi; in altre parole, ad ogni particella primaria vengono assegnate un'energia cinetica iniziale, una posizione iniziale e una direzione iniziale lette dal file.
+%I software per il trasporto tracciano gli ioni fino all'ingresso del FPD 
+Rispetto all'ingresso del FPD, il telescopio è posto ad una distanza di 14~cm, in quanto nell'apparato sperimentale reale tale spazio è occupato dal tracciatore a~gas. 
+Attualmente la simulazione non comprende tale rivelatore, per cui gli ioni percorrono un tratto nel vuoto.
+L'integrazione tra i software dedicati al trasporto ottico e la simulazione \geant{} è stata fondamentale per riprodurre correttamente le condizioni operative reali dello spettrometro.
 
-
-
-Per valutare le capacità di PID del telescopio, era necessario che tutti i nove ioni simulati andassero ad incidere sul dispositivo. 
-In base a quanto detto precedentemente, essi devono avere la stessa finestra di $B \rho$, che comporta energie cinetiche differenti per i diversi ioni. 
-Per ogni ione si è considerato range di energia cinetica con larghezza di 10~MeV.
+Per valutare le capacità di PID del telescopio era necessario che tutti gli ioni simulati andassero ad incidere sul dispositivo. 
+In base a quanto detto precedentemente, essi devono dunque avere la stessa finestra di $B \rho$, che comporta energie cinetiche differenti per i diversi ioni. 
+Fissato un valore di riferimento per la rigidità magnetica, grazie ai software per il trasporto è stato possibile determinare per ogni ione l'intervallo di energia cinetica corrispondente al range di $B \rho$ accettato dal telescopio.
+%per ogni ione è stata determinata l'energia cinetica corrispondente a tale valore e 
+%Fissato un valore di rigidità magnetica di riferimento, per ogni ione è stata determinata l'energia cinetica corrispondente a tale valore e, attorno a tale valore, è stato considerato un intervallo di energia cinetica di 10~MeV, in modo da coprire la 
 
 
 
@@ -463,7 +469,7 @@ Nella somma al secondo membro, il primo addendo corrisponde al termine legato al
 %\end{equation}
 %la deviazione standard risulta collegata alla risoluzione energetica.
 %Dal momento che quest'ultima è generalmente determinata dalla somma in quadratura di un termine legato all
-Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica intrinseca dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI del 2\% FWHM a 850~MeV, in affinità con i valori tipici di questi dispositivi. 
+Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica intrinseca dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI del 2\% FWHM a 700~MeV, in affinità con i valori tipici di questi dispositivi. 
 
 
 
@@ -501,7 +507,7 @@ Per semplicità della trattazione si è preferito esporre i risultati in modo sc
 \subsection{\iflanguage{italian}{Particelle monocromatiche, ortogonali e centrali }{Monochromatic, orthogonal and central particles}}
 
 
-Come primo esempio si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono generate con un'energia di 1000~MeV ed incidono ortogonalmente e centralmente al telescopio, il quale ha, in questo caso, dimensioni trasversali di 1~cm $\times$ 1~cm.
+Come primo esempio si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono generate con un'energia di 800~MeV ed incidono ortogonalmente e centralmente al telescopio, il quale ha, in questo caso, dimensioni trasversali di 1~cm $\times$ 1~cm.
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
 Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{meas}$.
 Questa affermazione viene confermata dalla Figura~\ref{fig:deltaE_ETot}, in cui è possibile notare che i luoghi di \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne} sono chiaramente distinti.
@@ -550,7 +556,7 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 
 
 %\subsection{\iflanguage{italian}{Processi fisici senza interazioni adroniche}{Physics process without adronic interactions}}
-\subsection{\iflanguage{italian}{Particelle non monocromatiche, non ortogonali e non centrali }{Not monochromatic, not orthogonal and not central particles}} \label{par:particelle_non_monocromatiche}
+\subsection{\iflanguage{italian}{Particelle monocromatiche, non ortogonali e non centrali }{Not monochromatic, not orthogonal and not central particles}} \label{par:particelle_non_monocromatiche}
 
 
 
@@ -558,15 +564,15 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 
 
 
-In questo secondo esempio le particelle primarie hanno un'energia scelta in modo casuale fra 500 e 1000~MeV, la loro posizione iniziale è estratta casualmente sulla faccia anteriore del rivelatore al SiC centrale e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
+In questo secondo esempio le particelle primarie hanno sempre un'energia di 800~MeV, ma la loro posizione iniziale è estratta casualmente sulla faccia anteriore del rivelatore al SiC centrale e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
 Anche in questo caso viene utilizzato il modello dei processi fisici dell'esempio precedente, così come per la geometria e le dimensioni dei telescopi.
 %La geometria e le dimensioni dei telescopi restano, invece, uguali a quelle dell'esempio precedente.
-Le corrispondenti matrici $\Delta E_{SiC} - E_{tot}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}: innanzitutto, si vede la formazione delle bande previste dalla formula di Bethe-Block, le quali appaiono ben separate lungo tutto il range energetico esplorato.
+Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}.
 %Inoltre, a differenza del caso precedente si nota la comparsa di eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''.
-In secondo luogo, rispetto al caso precedente, fanno la loro comparsa degli eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello corretto. 
+Rispetto al caso precedente, fanno la loro comparsa degli eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{meas}$ ha un valore inferiore rispetto a quello corretto. 
 Ciò dipende da quegli eventi in cui le particelle escono fuori dal cristallo allo CsI, non rilasciando totalmente la loro energia residua.
 A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID.
-Per meglio comprendere l'entità degli eventi degradati, si è riportata in Figura~\ref{fig:fetta} la proiezione sull'asse verticale della ``fetta'' di energia compresa fra 600 e 700~MeV: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono asimmetriche le distribuzioni. 
+Per meglio comprendere l'entità degli eventi degradati, si è riportata in Figura~\ref{fig:fetta} la proiezione sull'asse verticale della matrice: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono asimmetriche le distribuzioni. 
 %Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
 \begin{figure} [!p]
 	\centering
