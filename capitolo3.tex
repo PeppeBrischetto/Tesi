@@ -261,7 +261,7 @@ In questo paragrafo verranno spiegate le scelte effettuate in merito a tali para
 (\textcolor{red}{Lo tolgo questo paragrafetto?})
 
 Le particelle primarie simulate comprendono nove degli ioni di maggiore interesse per NUMEN, ovvero \ce{^{18}O}, \ce{^{19}O}, \ce{^{20}O}, \ce{^{18}F}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{18}Ne}, \ce{^{19}Ne} e~\ce{^{20}Ne}.
-In molti casi esaminati gli ioni sono stati considerati completamente ionizzati, mentre in alcuni sono stati simulati diversi stati di carica.
+In alcuni casi esaminati gli ioni sono stati considerati completamente ionizzati, mentre in altri sono stati simulati diversi stati di carica.
 
 %In ciascun evento, la particella primaria è stata generata in modo casuale sulla faccia anteriore del rivelatore al SiC centrale, con una direzione estratta casualmente all'interno di un angolo solido corrispondente ad un cono con un'apertura di~20\textdegree{}. 
 %Poiché il sistema che si intende analizzare è posto nel piano focale di uno spettrometro magnetico, l'energia e la 
@@ -312,14 +312,21 @@ A causa della estensione finita dei rivelatori, in realtà gli ioni arrivano sul
 \end{equation}
 laddove $\Delta x$ indica l'estensione lungo la direzione dispersiva del rivelatore e $D$ è la dispersione in impulso dello spettrometro, pari a 3.68~cm/\%.
 
-La dipendenza della \ref{eq:legge_spettrometri_approx} dal rapporto $\sqrt{m}/q$ costituisce il fondamento di una innovativa tecnica di identificazione per spettrometri di grande accettanza; se, infatti, si misurano in correlazione la posizione $x_{foc}$ e l'energia cinetica~$E$, è possibile identificare gli ioni in massa e stato di carica.
+La dipendenza della \ref{eq:legge_spettrometri_approx} dal rapporto $\sqrt{m}/q$ costituisce il fondamento di un'innovativa tecnica di identificazione per spettrometri di grande accettanza; se, infatti, si misurano in correlazione la posizione $x_{foc}$ e l'energia cinetica~$E$, è possibile identificare gli ioni in massa e stato di carica.
 L'applicazione di tale tecnica allo spettrometro MAGNEX è stata ampiamente discussa in numerose pubblicazioni, alle quali si rimanda per informazioni più dettagliate (si veda ad esempio~\cite{cappuzzello:nima10}). 
 
 Dal momento che la simulazione deve riflettere il comportamento reale degli ioni nello spettrometro, è stato necessario introdurre le suddette correlazioni energia-posizione. 
-A tal fine si è scelto di utilizzare i software dedicati al trasporto ottico dei prodotti di reazione attraverso gli elementi magnetici dello spettrometro. 
+Inoltre, nello studio di una reazione nucleare, la cinematica introduce ulteriori correlazioni fra l'energia cinetica e l'angolo di emissione dell'eiettile.
+Entrambi questi fattori sono caratterizzati da effetti non-lineari che difficilmente potevano essere inseriti direttamente nella simulazione \geant. 
+%A tal fine si è scelto di utilizzare i software dedicati al trasporto ottico dei prodotti di reazione attraverso gli elementi magnetici dello spettrometro. 
+Per questo motivo si è scelto di affidare l'introduzione di queste correlazioni a dei software già sviluppati e ottimizzati dalla collaborazione NUMEN.
+%Poiché all'interno della collaborazione NUMEN erano già stati sviluppati e ottimizzati dei software dedicati al calcolo della cinematica di reazione e al trasporto ottico degli eiettili attraverso gli elementi magnetici dello spettrometro, si è scelto di   
 Tali software sono basati sui potenti algoritmi di COSY INFINITY~\cite{makino:nima99} e utilizzano il formalismo dell'algebra differenziale per calcolare la matrice del trasporto fino al decimo ordine~\cite{cappuzzello:epja16}.
-Scegliendo lo spazio delle fasi iniziale, essi ricostruiscono il moto degli eiettili fino all'ingresso del rivelatore di piano focale (Focal Plane Detector, FPD), permettendo di conoscere alcune osservabili fondamentali, come l'energia cinetica~$E$, la posizione~$(x_{foc},y_{foc})$ e gli angoli~$(\theta_{foc},\phi_{foc})$ di incidenza. 
-Queste osservabili sono date in input alla simulazione \geant{}, la quale descrive dunque l'interazione degli ioni con il telescopio.
+Scegliendo la tipologia e l'energia della reazione nucleare di interesse, essi determinano la cinematica di reazione e lo spazio delle fasi iniziale; dopo di che calcolano la matrice del trasporto fino al decimo ordine e ricostruiscono il moto degli eiettili fino all'ingresso del rivelatore di piano focale (Focal Plane Detector, FPD).
+%Scegliendo lo spazio delle fasi iniziale, essi ricostruiscono il moto degli eiettili fino all'ingresso del rivelatore di piano focale (Focal Plane Detector, FPD), permettendo di conoscere alcune osservabili fondamentali, come l'energia cinetica~$E$, la posizione~$(x_{foc},y_{foc})$ e gli angoli~$(\theta_{foc},\phi_{foc})$ di incidenza. 
+%Queste osservabili sono date in input alla simulazione \geant{}, la quale descrive dunque l'interazione degli ioni con il telescopio.
+
+
 
 Per valutare le capacità di PID del telescopio, era necessario che tutti i nove ioni simulati andassero ad incidere sul dispositivo. 
 In base a quanto detto precedentemente, essi devono avere la stessa finestra di $B \rho$, che comporta energie cinetiche differenti per i diversi ioni. 
@@ -477,13 +484,13 @@ Poiché l'obiettivo principale di questo lavoro di tesi consiste nella valutazio
 	E \, = \, \Delta E_{SiC} + E_{sub} + E_{CsI}
 \end{equation}
 laddove $E_{sub}$ è l'energia persa nel substrato morto ed $E_{CsI}$ è l'energia residua rilasciata nel cristallo allo CsI.
-In realtà, $E_{sub}$ non sarebbe sperimentalmente accessibile; di conseguenza, per tenere conto delle energie realmente misurabili, bisogna introdurre la quantità $E_{tot}$, definita nel modo seguente
+In realtà, $E_{sub}$ non sarebbe sperimentalmente accessibile; di conseguenza, per tenere conto delle energie realmente misurabili, bisogna introdurre la quantità $E_{meas}$, definita nel modo seguente
 \begin{equation}
-	E_{tot} \, = \, \Delta E_{SiC} + E_{CsI}
+	E_{meas} \, = \, \Delta E_{SiC} + E_{CsI}
 \end{equation}
 
 %Dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare la differenza fra la correlazione $\Delta E - E_{tot}$ e quella $\Delta E - E_{resid}$, per maggiore chiarezza nel prosieguo verrà specificato se  
-Inoltre, dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ può garantire prestazioni analoghe a quella $\Delta E_{SiC} - E_{tot}$, nel prosieguo verrà specificato quale tipo di correlazione si sta considerando.
+Inoltre, dal momento che uno degli aspetti studiati in questo lavoro consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ può garantire prestazioni analoghe a quella $\Delta E_{SiC} - E_{meas}$, nel prosieguo verrà specificato quale tipo di correlazione si sta considerando.
 %Dunque, dal momento che nel prosieguo verrà valutata la differenza fra le matrici 
 
 %Per semplicità della trattazione si è preferito suddividere la sezione in paragrafi specifici, evidenziando di volta in volta quali parametri sono stati variati e quali sono stati tenuti fissi.
@@ -496,9 +503,9 @@ Per semplicità della trattazione si è preferito esporre i risultati in modo sc
 
 Come primo esempio si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono generate con un'energia di 1000~MeV ed incidono ortogonalmente e centralmente al telescopio, il quale ha, in questo caso, dimensioni trasversali di 1~cm $\times$ 1~cm.
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
-Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{tot}$.
-Questa affermazione viene confermata dalla Figura~\ref{fig:deltaE_ETot}, in cui è possibile notare che i luoghi di \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne} sono chiaramente distinti.
-Le matrici si dispongono ad $E_{tot}$ diversi perché la parte di energia persa nel substrato morto dipende dal numero atomico ($Z$) dello ione.
+Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{meas}$.
+Questa affermazione viene confermata dalla Figura~\ref{fig:deltaE_ETot}, in cui è possibile notare che i luoghi di \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne} sono chiaramente distinti.
+Le matrici si dispongono ad $E_{meas}$ diversi perché la parte di energia persa nel substrato morto dipende dal numero atomico ($Z$) dello ione.
 In secondo luogo, si fa notare che al di sotto di ciascuna delle tre matrici sono presenti degli eventi in cui l'energia residua è stata misurata correttamente, mentre la perdita di energia risulta inferiore al valore ``corretto'': si tratta di eventi in cui la carica prodotta nel rivelatore al SiC è stata raccolta parzialmente. 
 Tali eventi costituiscono la principale componente di errore nella PID, in quanto, potendo andare a posizionarsi sul luogo di uno ione diverso, in una procedura di identificazione effettuata mediante tagli grafici verrebbe attribuito loro uno~$Z$ sbagliato.
 Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che la frazione di questi eventi rispetto al totale sia piccola.
@@ -507,29 +514,29 @@ Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che 
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_monocromatiche/deltaE_ETot_punti_grandi.png}
-	\caption{Matrici $\Delta E_{SiC} - E_{tot}$ per \ce{^{18}O}, \ce{^{18}F} e \ce{^{18}Ne}.} \label{fig:deltaE_ETot}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Particelle_monocromatiche/deltaE_ETot_quadrata.png}
+	\caption{Matrici $\Delta E_{SiC} - E_{tot}$ per \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne}.} \label{fig:deltaE_ETot}
 \end{figure}
 
 
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_monocromatiche/ETot.png}
-	\caption{Spettro in $E_{tot} = \Delta E_{SiC} + E_{CsI}$.} \label{fig:ETot}
+	\includegraphics[scale=0.5]{Grafici_Tesi2/Particelle_monocromatiche/ETot.png}
+	\caption{Spettro in $E_{meas} = \Delta E_{SiC} + E_{CsI}$.} \label{fig:ETot}
 \end{figure}
 
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[scale=0.5]{Grafici_Tesi/Particelle_monocromatiche/deltaE_Tot.png}
+	\includegraphics[scale=0.5]{Grafici_Tesi2/Particelle_monocromatiche/deltaE.png}
 	\caption{Spettro in $ \Delta E_{SiC} $.} \label{fig:deltaE_Tot}
 \end{figure}
 
 
 
-In Figura~\ref{fig:ETot} e in Figura~\ref{fig:deltaE_Tot} sono riportate, rispettivamente, le proiezioni sull'asse $E_{tot}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{tot}$: esse rappresentano gli spettri energetici misurati dal rivelatore al SiC e da quello allo CsI.
-Effettuando un fit gaussiano sul picco dell'\ce{^{18}O} nello spettro di $\Delta E_{SiC}$, si trova una FWHM di 1.1~MeV, corrispondente ad una risoluzione del 5.8\%.
+In Figura~\ref{fig:ETot} e in Figura~\ref{fig:deltaE_Tot} sono riportate, rispettivamente, le proiezioni sull'asse $E_{meas}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{meas}$: esse rappresentano gli spettri energetici misurati dal rivelatore al SiC e da quello allo CsI.
+Effettuando un fit gaussiano sul picco dell'\ce{^{20}O} nello spettro di $\Delta E_{SiC}$, si trova una FWHM di 1.1~MeV, corrispondente ad una risoluzione del 4.5\%.
 Poiché questo valore è ben più grande della risoluzione intrinseca assunta per tale rivelatore, si deduce che in questo caso la componente più significativa della risoluzione compete alle fluttuazioni nel processo di ionizzazione.
 
 
