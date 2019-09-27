@@ -216,7 +216,8 @@ In questo tipo di attività le simulazioni costituiscono un potente strumento pe
 
 %In questo contesto si colloca il ruolo del presente lavoro di tesi, che ha contribuito all'analisi attraverso simulazioni Monte Carlo delle prestazioni di un sistema di rivelazione a stato solido per l'identificazione di ioni pesanti ad alto rate.
 
-In questo contesto si colloca il ruolo del presente lavoro di tesi, grazie al quale per la prima volta è stato sviluppato e implementato un tool di simulazioni che permette di studiare la risposta dell'apparato sperimentale ad eventi realistici; tale tool incorpora, infatti, una descrizione completa della cinematica di reazione, del trasporto ottico degli eiettili attraverso lo spettrometro MAGNEX e dell'interazione di questi con il sistema di rivelazione.
+In questo contesto si colloca il ruolo del presente lavoro di tesi, grazie al quale per la prima volta è stato sviluppato e implementato un tool di simulazioni che permette di studiare la risposta dell'apparato sperimentale ad eventi realistici; esso incorpora, infatti, una descrizione completa della cinematica di reazione, del trasporto ottico degli eiettili attraverso lo spettrometro MAGNEX e dell'interazione di questi con i rivelatori.
+Il tool è basato su metodi Monte Carlo ed è stato realizzato integrando i software per il calcolo della cinematica e della matrice del trasporto con un'applicazione sviluppata sulla piattaforma \geant~\cite{agostinelli:nima02,allison:nima16,allison:ieeetns06}.
 %I possibili utilizzi di questo tool sono molteplici e riguardano sia la fase di progettazione sia la fase operativa dell'apparato
 In questo lavoro, il tool è stato utilizzato per l'analisi delle prestazioni di un sistema di rivelazione a stato solido per l'identificazione di ioni pesanti ad alto rate.
 %Al fine di validare i risultati della simulazione, è stata svolta un'analisi dei dati sperimentali raccolti in occasione di un test beam svolto ad Aprile 2019, in cui
@@ -284,10 +285,13 @@ Tale tecnica permette l'identificazione degli ioni poiché la correlazione tra l
 Dal momento che, come già detto in precedenza, i rivelatori al silicio non possiedono le proprietà di resistenza alle radiazioni necessarie per il progetto, la scelta è oggi indirizzata verso un telescopio in cui il primo stadio è costituito da un rivelatore sottile (100~$\mu $m) al carburo di silicio~(SiC)~\cite{tudisco:sensors18}, mentre il rivelatore di stop è uno scintillatore allo ioduro di cesio (CsI) spesso 1~cm.
 
 %Il principale scopo del presente lavoro di tesi è stato la valutazione 
-Al fine di verificare se questa scelta possa garantire le performance di PID e la risoluzione energetica necessarie per gli obiettivi del progetto, è stata implementata una simulazione Monte Carlo sulla piattaforma \geant~\cite{agostinelli:nima02,allison:nima16,allison:ieeetns06}.
-Tale simulazione, che costituisce l'argomento centrale del presente lavoro di tesi, ha anche lo scopo di valutare la migliore soluzione in termini di granularità, stimando il numero di eventi con raccolta di carica incompleta.
-
-
+%%Al fine di verificare se questa scelta possa garantire le performance di PID e la risoluzione energetica necessarie per gli obiettivi del progetto, è stata implementata una simulazione Monte Carlo sulla piattaforma \geant~\cite{agostinelli:nima02,allison:nima16,allison:ieeetns06}.
+%%Tale simulazione, che costituisce l'argomento centrale del presente lavoro di tesi, ha anche lo scopo di valutare la migliore soluzione in termini di granularità, stimando il numero di eventi con raccolta di carica incompleta.
+%Al fine di verificare se questa scelta possa garantire le performance di PID e la risoluzione energetica necessarie per gli obiettivi del progetto, è stato implementato un tool di simulazioni che integra i software per il calcolo della cinematica e del trasporto ottico dei prodotti di reazione con un'applicazione basata sulla piattaforma \geant~\cite{agostinelli:nima02,allison:nima16,allison:ieeetns06}.
+Il tool di simulazioni sviluppato per questo lavoro di tesi ha permesso di valutare le performance di PID e la risoluzione energetica di tale sistema di rivelazione, verificandone la compatibilità con le esigenze di NUMEN.
+Inoltre, è stato condotto uno studio accurato per l'ottimizzazione della granularità, stimando la frazione di eventi degradati al variare della superficie di rivelazione. 
+%Tale tool è basato su metodi Monte Carlo ed è stato realizzato integrando i software per il calcolo della cinematica e del trasporto ottico dei prodotti di reazione con un'applicazione sviluppata sulla piattaforma \geant~\cite{agostinelli:nima02,allison:nima16,allison:ieeetns06}.
+%Grazie a questo tool è possibile condurre uno studio accurato per l'ottimizzazione delle caratteristiche tecniche e della geometria del 
 
 
 
