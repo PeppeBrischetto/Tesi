@@ -437,7 +437,7 @@ Uno grafico esemplificativo dell'andamento di tale funzione nel caso unidimensio
 
 %Nella macro, inoltre, sommando le diverse perdite di energia, per ogni evento veniva ricostruito il deposito energetico totale nel rivelatore al SiC e nel cristallo allo CsI.
 Nella macro, inoltre, sommando step dopo step l'energia persa dallo ione, per ogni evento è stata ricostruita l'energia rilasciata nel rivelatore al SiC e quella depositata nel cristallo allo CsI.
-Registrando in un istogramma, evento per evento, tutti i depositi di energia, si sono riprodotti gli spettri energetici degli ioni per entrambi gli stadi del telescopio.
+Registrando, evento per evento, tutti i depositi di energia, si sono riprodotti gli spettri energetici degli ioni per entrambi gli stadi del telescopio.
 A questo livello, soltanto le fluttuazioni statistiche legate alla ionizzazione sono tenute in considerazione.
 Dunque, al fine di riprodurre le risoluzioni energetiche tipiche dei rivelatori in esame, lo spettro energetico è stato ``allargato'' campionando ciascun deposito di energia con una distribuzione gaussiana, la cui espressione è
 %\begin{equation}
@@ -469,7 +469,7 @@ Nella somma al secondo membro, il primo addendo corrisponde al termine legato al
 %\end{equation}
 %la deviazione standard risulta collegata alla risoluzione energetica.
 %Dal momento che quest'ultima è generalmente determinata dalla somma in quadratura di un termine legato all
-Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica intrinseca dello 0.8\% FWHM a 19.4~MeV, mentre per il rivelatore allo CsI del 2\% FWHM a 700~MeV, in affinità con i valori tipici di questi dispositivi. 
+Scegliendo opportuni valori per $a$ e $b$, si è assunta per il rivelatore al SiC una risoluzione energetica intrinseca dello 0.8\% FWHM a 25.3~MeV, mentre per il rivelatore allo CsI del 2\% FWHM a 700~MeV, in affinità con i valori tipici di questi dispositivi. 
 
 
 
@@ -507,22 +507,35 @@ Per semplicità della trattazione si è preferito esporre i risultati in modo sc
 \subsection{\iflanguage{italian}{Particelle monocromatiche, ortogonali e centrali }{Monochromatic, orthogonal and central particles}}
 
 
-Come primo esempio si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono generate con un'energia di 800~MeV ed incidono ortogonalmente e centralmente al telescopio, il quale ha, in questo caso, dimensioni trasversali di 1~cm $\times$ 1~cm.
+Come primo esempio si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono generate con un'energia di 800~MeV ed incidono ortogonalmente e centralmente al telescopio, il quale ha, in questo caso, dimensioni trasversali di 1.5~cm $\times$ 1.5~cm.
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
 Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{meas}$.
 Questa affermazione viene confermata dalla Figura~\ref{fig:deltaE_ETot}, in cui è possibile notare che i luoghi di \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne} sono chiaramente distinti.
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Particelle_monocromatiche/deltaE_ETot_quadrata.png}
+	\caption{Matrici $\Delta E_{SiC} - E_{meas}$ per \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne} con particelle monocromatiche, ortogonali e centrali.} \label{fig:deltaE_ETot}
+\end{figure}
 Le matrici si dispongono ad $E_{meas}$ diversi perché la parte di energia persa nel substrato morto dipende dal numero atomico ($Z$) dello ione.
 In secondo luogo, si fa notare che al di sotto di ciascuna delle tre matrici sono presenti degli eventi in cui l'energia residua è stata misurata correttamente, mentre la perdita di energia risulta inferiore al valore ``corretto'': si tratta di eventi in cui la carica prodotta nel rivelatore al SiC è stata raccolta parzialmente. 
-Tali eventi costituiscono la principale componente di errore nella PID, in quanto, potendo andare a posizionarsi sul luogo di uno ione diverso, in una procedura di identificazione effettuata mediante tagli grafici verrebbe attribuito loro uno~$Z$ sbagliato.
+Tali eventi costituiscono una delle principali componenti di errore nella PID, in quanto, potendo andare a posizionarsi sul luogo di uno ione diverso, in una procedura di identificazione effettuata mediante tagli grafici verrebbe attribuito loro uno~$Z$ sbagliato.
+Inoltre, essi costituiscono in ogni caso una perdita di segnali corretti che deve essere minimizzata, in particolar modo se si intende studiare processi estremamente rari come quelli di DCE.
 Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che la frazione di questi eventi rispetto al totale sia piccola.
 
 
 
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Particelle_monocromatiche/deltaE_ETot_quadrata.png}
-	\caption{Matrici $\Delta E_{SiC} - E_{tot}$ per \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne}.} \label{fig:deltaE_ETot}
-\end{figure}
+
+
+
+
+
+
+
+
+In Figura~\ref{fig:ETot} e in Figura~\ref{fig:deltaE_Tot} sono riportate, rispettivamente, le proiezioni sull'asse $E_{meas}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{meas}$: esse rappresentano gli spettri energetici misurati dal rivelatore al SiC e da quello allo CsI.
+Effettuando un fit gaussiano sul picco dell'\ce{^{20}O} nello spettro di $\Delta E_{SiC}$, si trova una FWHM di 1.1~MeV, corrispondente ad una risoluzione del 4.5\%.
+Poiché questo valore è ben più grande della risoluzione intrinseca assunta per tale rivelatore, si deduce che in questo caso la componente più significativa della risoluzione compete alle fluttuazioni nel processo di ionizzazione.
+
 
 
 
@@ -541,17 +554,6 @@ Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che 
 
 
 
-In Figura~\ref{fig:ETot} e in Figura~\ref{fig:deltaE_Tot} sono riportate, rispettivamente, le proiezioni sull'asse $E_{meas}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{meas}$: esse rappresentano gli spettri energetici misurati dal rivelatore al SiC e da quello allo CsI.
-Effettuando un fit gaussiano sul picco dell'\ce{^{20}O} nello spettro di $\Delta E_{SiC}$, si trova una FWHM di 1.1~MeV, corrispondente ad una risoluzione del 4.5\%.
-Poiché questo valore è ben più grande della risoluzione intrinseca assunta per tale rivelatore, si deduce che in questo caso la componente più significativa della risoluzione compete alle fluttuazioni nel processo di ionizzazione.
-
-
-
-
-
-
-
-
 
 
 
@@ -564,68 +566,48 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 
 
 
-In questo secondo esempio le particelle primarie hanno sempre un'energia di 800~MeV, ma la loro posizione iniziale è estratta casualmente sulla faccia anteriore del rivelatore al SiC centrale e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
+In questo secondo esempio ideale le particelle primarie hanno sempre un'energia di 800~MeV, ma la loro posizione iniziale è estratta casualmente sulla faccia anteriore del rivelatore al SiC centrale e la direzione del loro impulso varia in modo casuale in un cono di apertura di 20\textdegree{}.
 Anche in questo caso viene utilizzato il modello dei processi fisici dell'esempio precedente, così come per la geometria e le dimensioni dei telescopi.
 %La geometria e le dimensioni dei telescopi restano, invece, uguali a quelle dell'esempio precedente.
 Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono rappresentate in Figura~\ref{fig:deltaE_ETot_full_energy}.
 %Inoltre, a differenza del caso precedente si nota la comparsa di eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{tot}$ ha un valore inferiore rispetto a quello ``corretto''.
 Rispetto al caso precedente, fanno la loro comparsa degli eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{meas}$ ha un valore inferiore rispetto a quello corretto. 
 Ciò dipende da quegli eventi in cui le particelle escono fuori dal cristallo allo CsI, non rilasciando totalmente la loro energia residua.
-A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID.
-Per meglio comprendere l'entità degli eventi degradati, si è riportata in Figura~\ref{fig:fetta} la proiezione sull'asse verticale della matrice: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono asimmetriche le distribuzioni. 
+A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID e una perdita di segnali corretti.
+Per meglio comprendere l'entità degli eventi degradati, si sono riportate in Figura~\ref{fig:fetta} le proiezioni sull'asse verticale e su quello orizzontale della matrice: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono asimmetriche le distribuzioni. 
 %Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche/deltaE_ETot_full_energy.png}
-	\caption{Matrici $\Delta E_{SiC} - E_{tot}$.} \label{fig:deltaE_ETot_full_energy}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Particelle_non_ortogonali/deltaE_ETot_intero_range_quadrata.png}
+	\caption{Matrici $\Delta E_{SiC} - E_{meas}$ con particelle monocromatiche, non ortogonali e non centrali.} \label{fig:deltaE_ETot_full_energy}
 \end{figure}
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche/fetta_quadrata.png}
-	\caption{Proiezione sull'asse $\Delta E_{SiC}$ della fetta in $E_{tot}$ compresa tra 600 e 700~MeV.} \label{fig:fetta}
-\end{figure}
-
-
-
-\begin{figure} [!t]
-	\centering
-	\includegraphics[scale=0.28]{Grafici_Tesi/Contaminazione/contaminazione.png}
-	\caption{Proiezione sull'asse $\Delta E_{SiC}$ della fetta in $E_{tot}$ compresa tra 600 e 700~MeV per l'\ce{^{18}O} e il \ce{^{18}F}. La linea tratteggiata indica il punto mediano tra i valori medi dei due spettri. In ombreggiatura blu si possono distinguere gli eventi di \ce{^{18}F} identificati come \ce{^{18}O}, in ombreggiatura rossa si notano gli eventi di \ce{^{18}O} identificati come \ce{^{18}F}.} \label{fig:fetta_con_contaminazione}
-\end{figure}
-
-
-
-
-
-
-
-
-
-
-Allo scopo di dare una stima quantitativa della frazione di nuclei male identificati, si è proceduto nel modo seguente: si è diviso l'intero intervallo energetico $E_{tot}$ in un certo numero di fette; per ogni fetta si è effettuata una proiezione sull'asse $\Delta E_{SiC}$; per ogni coppia di specie atomiche si è calcolato il punto mediano fra i valori medi delle due distribuzioni; infine, si è determinato il numero di eventi al di sotto (o al di sopra) del punto mediano.
-Un'immagine esemplificativa dell'idea alla base della procedura seguita è riportata in Figura~\ref{fig:fetta_con_contaminazione}: la linea tratteggiata indica il punto mediano tra i valori medi degli spettri di \ce{^{18}O} e \ce{^{18}F}.
-A sinistra di tale punto sono evidenziati con ombreggiatura blu gli eventi di \ce{^{18}F} identificati come \ce{^{18}O}, mentre a destra sono contrassegnati con ombreggiatura rossa gli eventi di \ce{^{18}O} identificati come \ce{^{18}F}.
-La contaminazione di \ce{^{18}F} in \ce{^{18}O} può essere, dunque, calcolata integrando lo spettro del \ce{^{18}F} da zero fino al punto mediano; invece, la contaminazione di \ce{^{18}O} in \ce{^{18}F} viene determinata integrando lo spettro dell'\ce{^{18}O} dal punto mediano fino alla fine della distribuzione.
-La scelta del punto mediano come soglia è arbitraria e non necessariamente ottimale: è funzionale comunque per fare un confronto quantitativo e omogeneo fra molte configurazioni diverse.
-%per quantificare la contaminazione di \ce{^{18}O} in \ce{^{18}F} si calcola 
-
-\begin{figure}[!p] 
-	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_alto_corr.png}}
+	{\includegraphics[scale=0.48]{Grafici_Tesi2/Particelle_non_ortogonali/deltaE.png}}
 	\hspace{10mm}
 	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_basso_corr.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{tot}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage}
+	{\includegraphics[scale=0.48]{Grafici_Tesi2/Particelle_non_ortogonali/ETot.png}}
+
+	\caption{Le proiezioni della matrice $\Delta E_{SiC} - E_{meas}$ di Figura~\ref{fig:deltaE_ETot_full_energy}: in (a) sull'asse $\Delta E_{SiC}$, in (b) sull'asse $E_{meas}$.} \label{fig:fetta}
 \end{figure}
 
+%\begin{figure}[!p] 
+%	\centering
+%	\subfigure[]
+%	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_alto_corr.png}}
+%	\hspace{10mm}
+%	\subfigure[]
+%	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_basso_corr.png}}
+%	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{tot}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage}
+%\end{figure}
 
-Il risultato di tale procedura è illustrato in Figura~\ref{fig:leakage}, dove il range energetico è stato suddiviso in intervalli da 100~MeV e si è scelto di rappresentare i dati soltanto laddove fossero presenti tutte e tre le bande.
-Si può notare che la contaminazione da una specie atomica con $Z$ più grande verso una con $Z$ più piccolo è nettamente maggiore; infatti, le percentuali che si trovano in Figura~\ref{fig:leakage}.a sono comprese fra il 7\% e il 15\%, mentre quelle in Figura~\ref{fig:leakage}.b sono inferiori all'1\%.
-In entrambi i casi si può osservare che la frazione di nuclei erroneamente identificati ha un andamento decrescente al crescere dell'energia.
-Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della carica sono maggiormente significativi, la capacità di separare gli ioni peggiora.
-Infine, si può osservare che con la statistica simulata non si osserva una contaminazione di O in Ne, per cui si può mettere un limite superiore.
+%\begin{figure} [!t]
+%	\centering
+%	\includegraphics[scale=0.28]{Grafici_Tesi/Contaminazione/contaminazione.png}
+%	\caption{Proiezione sull'asse $\Delta E_{SiC}$ della fetta in $E_{tot}$ compresa tra 600 e 700~MeV per l'\ce{^{18}O} e il \ce{^{18}F}. La linea tratteggiata indica il punto mediano tra i valori medi dei due spettri. In ombreggiatura blu si possono distinguere gli eventi di \ce{^{18}F} identificati come \ce{^{18}O}, in ombreggiatura rossa si notano gli eventi di \ce{^{18}O} identificati come \ce{^{18}F}.} \label{fig:fetta_con_contaminazione}
+%\end{figure}
 
 
 
@@ -633,14 +615,47 @@ Infine, si può osservare che con la statistica simulata non si osserva una cont
 
 
 
-I due grafici in Figura~\ref{fig:leakage} sono estremamente importanti nella valutazione dell'idoneità di questo sistema di rivelazione agli scopi di NUMEN, in quanto per riuscire a misurare processi rari come quelli di DCE è essenziale che il segnale venga riconosciuto e che il fondo non venga identificato come segnale: se, ad esempio, consideriamo che il segnale da ricercare sia \ce{^{18}Ne}, allora gli eventi di tale ione identificati come \ce{^{18}O} o \ce{^{18}F} costituiscono una perdita di segnali corretti. 
-Dunque, è necessario stabilire un limite inferiore alla probabilità di riconoscimento del segnale.
-Ai fini di questo lavoro di tesi, tale limite può essere posto all'80\%.
-D'altra parte, sempre considerando che il segnale sia costituito da \ce{^{18}Ne}, gli eventi di \ce{^{18}O} e \ce{^{18}F} identificati come \ce{^{18}Ne} rappresentano, invece, una contaminazione, ovvero fondo scambiato per segnale.
-In questo caso bisogna fissare un limite superiore a tale contaminazione:
-per gli scopi di questo lavoro, esso è stato posto allo 0.5\%.
-Poiché gli eventi di fondo sono tipicamente molto più abbondanti di quelli di segnale, è necessario avere una selezione molto più stringente.
-Questo evita che il numero di eventi di fondo erroneamente identificati come segnale sia comparabile con il numero dei reali eventi di segnale.
+
+
+
+%%Allo scopo di dare una stima quantitativa della frazione di nuclei male identificati, si è proceduto nel modo seguente: si è diviso l'intero intervallo energetico $E_{tot}$ in un certo numero di fette; per ogni fetta si è effettuata una proiezione sull'asse $\Delta E_{SiC}$; per ogni coppia di specie atomiche si è calcolato il punto mediano fra i valori medi delle due distribuzioni; infine, si è determinato il numero di eventi al di sotto (o al di sopra) del punto mediano.
+%%Un'immagine esemplificativa dell'idea alla base della procedura seguita è riportata in Figura~\ref{fig:fetta_con_contaminazione}: la linea tratteggiata indica il punto mediano tra i valori medi degli spettri di \ce{^{18}O} e \ce{^{18}F}.
+%%A sinistra di tale punto sono evidenziati con ombreggiatura blu gli eventi di \ce{^{18}F} identificati come \ce{^{18}O}, mentre a destra sono contrassegnati con ombreggiatura rossa gli eventi di \ce{^{18}O} identificati come \ce{^{18}F}.
+%%La contaminazione di \ce{^{18}F} in \ce{^{18}O} può essere, dunque, calcolata integrando lo spettro del \ce{^{18}F} da zero fino al punto mediano; invece, la contaminazione di \ce{^{18}O} in \ce{^{18}F} viene determinata integrando lo spettro dell'\ce{^{18}O} dal punto mediano fino alla fine della distribuzione.
+%%La scelta del punto mediano come soglia è arbitraria e non necessariamente ottimale: è funzionale comunque per fare un confronto quantitativo e omogeneo fra molte configurazioni diverse.
+%per quantificare la contaminazione di \ce{^{18}O} in \ce{^{18}F} si calcola 
+
+%\begin{figure}[!p] 
+%	\centering
+%	\subfigure[]
+%	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_alto_corr.png}}
+%	\hspace{10mm}
+%	\subfigure[]
+%	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche/leakage_basso_corr.png}}
+%	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{tot}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage}
+%\end{figure}
+
+
+%%Il risultato di tale procedura è illustrato in Figura~\ref{fig:leakage}, dove il range energetico è stato suddiviso in intervalli da 100~MeV e si è scelto di rappresentare i dati soltanto laddove fossero presenti tutte e tre le bande.
+%%Si può notare che la contaminazione da una specie atomica con $Z$ più grande verso una con $Z$ più piccolo è nettamente maggiore; infatti, le percentuali che si trovano in Figura~\ref{fig:leakage}.a sono comprese fra il 7\% e il 15\%, mentre quelle in Figura~\ref{fig:leakage}.b sono inferiori all'1\%.
+%%In entrambi i casi si può osservare che la frazione di nuclei erroneamente identificati ha un andamento decrescente al crescere dell'energia.
+%%Di conseguenza, a basse energie, dove gli effetti di raccolta parziale della carica sono maggiormente significativi, la capacità di separare gli ioni peggiora.
+%%Infine, si può osservare che con la statistica simulata non si osserva una contaminazione di O in Ne, per cui si può mettere un limite superiore.
+
+
+
+
+
+
+
+%%I due grafici in Figura~\ref{fig:leakage} sono estremamente importanti nella valutazione dell'idoneità di questo sistema di rivelazione agli scopi di NUMEN, in quanto per riuscire a misurare processi rari come quelli di DCE è essenziale che il segnale venga riconosciuto e che il fondo non venga identificato come segnale: se, ad esempio, consideriamo che il segnale da ricercare sia \ce{^{18}Ne}, allora gli eventi di tale ione identificati come \ce{^{18}O} o \ce{^{18}F} costituiscono una perdita di segnali corretti. 
+%%Dunque, è necessario stabilire un limite inferiore alla probabilità di riconoscimento del segnale.
+%%Ai fini di questo lavoro di tesi, tale limite può essere posto all'80\%.
+%%D'altra parte, sempre considerando che il segnale sia costituito da \ce{^{18}Ne}, gli eventi di \ce{^{18}O} e \ce{^{18}F} identificati come \ce{^{18}Ne} rappresentano, invece, una contaminazione, ovvero fondo scambiato per segnale.
+%%In questo caso bisogna fissare un limite superiore a tale contaminazione:
+%%per gli scopi di questo lavoro, esso è stato posto allo 0.5\%.
+%%Poiché gli eventi di fondo sono tipicamente molto più abbondanti di quelli di segnale, è necessario avere una selezione molto più stringente.
+%%Questo evita che il numero di eventi di fondo erroneamente identificati come segnale sia comparabile con il numero dei reali eventi di segnale.
 
 %(\textcolor{red}{Scrivere la parte sull'efficienza di riconoscimento del segnale})
 
@@ -650,30 +665,30 @@ Questo evita che il numero di eventi di fondo erroneamente identificati come seg
 
 
 %Uno studio interessante riguarda il confronto fra la correlazione $\Delta E_{SiC} - E_{tot}$ e quella $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes}.
-A questo punto, è interessante studiare la correlazione $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes} sono riportate le matrici delle tre specie di interesse, le quali continuano ad essere ben separate per tutto il range energetico.
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/deltaE_ERes.png}
-	\caption{Matrici $\Delta E_{SiC} - E_{CsI}$.} \label{fig:deltaE_ERes}
-\end{figure} 
+%%A questo punto, è interessante studiare la correlazione $\Delta E_{SiC} - E_{CsI}$: in Figura~\ref{fig:deltaE_ERes} sono riportate le matrici delle tre specie di interesse, le quali continuano ad essere ben separate per tutto il range energetico.
+%%\begin{figure} [!p]
+%	\centering
+%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/deltaE_ERes.png}
+%	\caption{Matrici $\Delta E_{SiC} - E_{CsI}$.} \label{fig:deltaE_ERes}
+%\end{figure} 
 %Dal confronto con la Figura~\ref{fig:deltaE_ETot_full_energy} si nota che tali matrici si estendono ad energie inferiori, in quanto alla variabile sull'asse orizzontale viene a mancare il contributo di $\Delta E_{SiC}$. 
-Confrontando tali matrici con quelle in Figura~\ref{fig:deltaE_ETot_full_energy}, non si notano sostanziali differenze, in particolare per quanto riguarda la densità degli eventi spuri.
-Questa affermazione è supportata dalla Figura~\ref{fig:leakage_res}, nella quale si riscontrano percentuali simili a quelle viste in Figura~\ref{fig:leakage}.
-\begin{figure}[!p] 
-	\centering
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_alto_corr.png}}
-	\hspace{10mm}
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_basso_corr.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res}
-\end{figure}
-L'unica differenza sembra essere dovuta al punto in Figura~\ref{fig:leakage_res}.a ad 850~MeV, per il quale si osservano percentuali lievemente maggiori del suo corrispettivo in Figura~\ref{fig:leakage}.a. 
+%%Confrontando tali matrici con quelle in Figura~\ref{fig:deltaE_ETot_full_energy}, non si notano sostanziali differenze, in particolare per quanto riguarda la densità degli eventi spuri.
+%%Questa affermazione è supportata dalla Figura~\ref{fig:leakage_res}, nella quale si riscontrano percentuali simili a quelle viste in Figura~\ref{fig:leakage}.
+%\begin{figure}[!p] 
+%	\centering
+%	\subfigure[]
+%	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_alto_corr.png}}
+%	\hspace{10mm}
+%	\subfigure[]
+%	{\includegraphics[scale=0.43]{Grafici_Tesi/Particelle_non_monocromatiche_Resid/leakage_basso_corr.png}}
+%	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$: in (a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res}
+%\end{figure}
+%%L'unica differenza sembra essere dovuta al punto in Figura~\ref{fig:leakage_res}.a ad 850~MeV, per il quale si osservano percentuali lievemente maggiori del suo corrispettivo in Figura~\ref{fig:leakage}.a. 
 %Ciò sembra essere legato al modo in cui si dispongono gli eventi con raccolta di carica incompleta; 
-Ciò è legato alla correlazione delle due grandezze;
-infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ la loro discesa verso all'asse $E_{CsI}$ procede in direzione perpendicolare. 
-Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica dei telescopi, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
-Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, la possibilità di evitarne la calibrazione consentirebbe un notevole risparmio di tempo.
+%%Ciò è legato alla correlazione delle due grandezze;
+%%infatti, mentre nelle matrici $\Delta E_{SiC} - E_{tot}$ tali eventi scendono verso l'asse orizzontale con una certa inclinazione, nelle matrici $\Delta E_{SiC} - E_{CsI}$ la loro discesa verso all'asse $E_{CsI}$ procede in direzione perpendicolare. 
+%%Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica dei telescopi, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
+%%Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, la possibilità di evitarne la calibrazione consentirebbe un notevole risparmio di tempo.
 %Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli della correlazione $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate le matrici soltanto 
 
 
@@ -686,7 +701,7 @@ Dal momento che il muro di telescopi sarà composto da oltre 1000 dispositivi, l
 
 
 
-Poiché anche in altri casi si è riscontrato che la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli di $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate soltanto le matrici $\Delta E_{SiC} - E_{CsI}$.
+%%Poiché anche in altri casi si è riscontrato che la correlazione $\Delta E_{SiC} - E_{CsI}$ offre risultati paragonabili a quelli di $\Delta E_{SiC} - E_{tot}$, da questo momento in poi verranno presentate soltanto le matrici $\Delta E_{SiC} - E_{CsI}$.
 
 
 
@@ -706,370 +721,94 @@ Poiché anche in altri casi si è riscontrato che la correlazione $\Delta E_{SiC
 
 
 Rispetto all'esempio precedente, in questa simulazione la geometria e le caratteristiche delle particelle primarie restano invariate, mentre il modello dei processi fisici adesso include le interazioni adroniche. 
-Le corrispondenti matrici $\Delta E_{SiC} - E_{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_adron}: a differenza del caso in cui erano considerate soltanto le interazioni elettromagnetiche, si può osservare per tutte e tre le specie nucleari la comparsa di eventi ad un'energia $\Delta E_{SiC}$ più alta di quella delle rispettive bande.
+Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono riportate in Figura~\ref{fig:deltaE_ERes_adron}: a differenza del caso in cui erano considerate soltanto le interazioni elettromagnetiche, si può osservare per tutte e tre le specie nucleari la comparsa di eventi ad un'energia $\Delta E_{SiC}$ più alta di quella dei rispettivi luoghi.
 Ciò è dovuto a reazioni nucleari esotermiche, nelle quali viene rilasciata una quantità di energia aggiuntiva rispetto alla sola energia cinetica del proiettile.
-La presenza di questi eventi non sembra provocare significativi cambiamenti nelle capacità di PID, in quanto, come si può evincere dalla Figura~\ref{fig:leakage_res_adron}, le percentuali di nuclei potenzialmente male identificati aumentano di meno dell'1\%.
-L'unico mutamento degno di nota riguarda la comparsa di contaminazioni di O in Ne.
-Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la minore probabilità che avvenga un'interazione adronica.
+%La presenza di questi eventi non sembra provocare significativi cambiamenti nelle capacità di PID, in quanto, come si può evincere dalla Figura~\ref{fig:leakage_res_adron}, le percentuali di nuclei potenzialmente male identificati aumentano di meno dell'1\%.
+%L'unico mutamento degno di nota riguarda la comparsa di contaminazioni di O in Ne.
+%Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la minore probabilità che avvenga un'interazione adronica.
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Interazioni_adroniche/deltaE_ETot_quadrata.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando un modello di processi fisici che comprenda anche le interazioni adroniche.} \label{fig:deltaE_ERes_adron}
+\end{figure}
+
+
+
+
+
+%\begin{figure}[!p] 
+%	\centering
+%	\subfigure[]
+%	{\includegraphics[scale=0.43]{Grafici_Tesi/Interazioni_adroniche/leakage_alto_corr.png}}
+%	\hspace{10mm}
+%	\subfigure[]
+%	{\includegraphics[scale=0.43]{Grafici_Tesi/Interazioni_adroniche/leakage_basso_corr.png}}
+%	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, utilizzando un modello che comprenda anche le interazioni adroniche: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_adron}
+%\end{figure}
+
+
+%\clearpage
+
+\subsection{\iflanguage{italian}{Studio delle capacità di PID}{Study of PID performance}}
+
+%Uno degli obiettivi fondamentali di questo lavoro di tesi consiste nel valutare la risposta del telescopio SiC-CsI agli eventi  
+
+Dopo aver esposto tre casi ideali, utili per comprendere alcuni fenomeni rilevanti incontrati in questo studio, si esamina adesso una situazione realistica, in cui alla simulazione \geant{} viene dato in input il file prodotto dai software per il trasporto degli eiettili.
+In questo caso, dunque, gli ioni presentano sia le correlazioni cinematiche sia quelle legate allo spettrometro.
+A differenza dei casi precedenti, si sono simulati nove ioni, ovvero \ce{^{18}O}, \ce{^{19}O}, \ce{^{20}O}, \ce{^{18}F}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{18}Ne}, \ce{^{19}Ne} e~\ce{^{20}Ne}.
+Il telescopio ha dimensioni trasversali di 1.5~cm $\times$ 1.5~cm ed è posto a 14~cm di distanza dal piano in cui vengono prodotte le particelle primarie, che coincide con il piano di ingresso nel FDP.
+Per fissare la rigidità magnetica di riferimento si è scelto il \ce{^{18}Ne}, che fra gli ioni considerati è quello con il rapporto massa su carica più piccolo.
+In questo modo, dovendo mantenere costante il prodotto $\sqrt{m}/q \cdot \sqrt{E}$, gli altri ioni hanno energia cinetica inferiore.
+Questa considerazione è confermata dalla Figura~\ref{fig:KinE}, in cui viene riportato lo spettro delle energie cinetiche dei diversi ioni.
+%Gli ioni hanno la stessa finestra di rigidità magnetica, per cui tutti vanno a finire sul telescopio simulato. 
+La corrispondente matrice $\Delta E_{SiC} - E_{meas}$ è riportata in Figura~\ref{fig:deltaE_Emeas_PID}: come si può notare, i luoghi degli ioni simulati appaiono ben separati sia in numero atomico~($Z$) sia in numero di massa~($A$).
 
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Interazioni_adroniche/deltaE_ERes.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando un modello di processi fisici che comprenda anche le interazioni adroniche.} \label{fig:deltaE_ERes_adron}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/KinE.png}
+	\caption{Lo spettro delle energie cinetiche~$E$ dei diversi ioni simulati.} \label{fig:KinE}
 \end{figure}
 
 
 
-
-\begin{figure}[!p] 
+\begin{figure} [!p]
 	\centering
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/Interazioni_adroniche/leakage_alto_corr.png}}
-	\hspace{10mm}
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/Interazioni_adroniche/leakage_basso_corr.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, utilizzando un modello che comprenda anche le interazioni adroniche: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_adron}
-\end{figure}
-
-
-%\clearpage
-\subsection{\iflanguage{italian}{Studio della granularità}{Study of granularity}}
-
-Uno degli obiettivi fondamentali di questo lavoro di tesi consiste nell'ottimizzazione delle dimensioni trasversali dei telescopi, al fine di minimizzare la percentuale di eventi in cui la carica è stata raccolta parzialmente. 
-Dal momento che la lunghezza della cornice completamente inattiva e della regione di transizione dovrebbero essere circa costanti pur variando la superficie del rivelatore al~SiC, ci si aspetta che all'aumentare delle dimensioni trasversali del telescopio la frazione degli eventi con raccolta di carica incompleta diminuisca.
-Tenendo presenti gli attuali limiti imposti dal processo di produzione dei rivelatori al SiC, sono stati esaminati tre casi: $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}. 
-In ciascuna delle tre possibilità le particelle primarie sono state generate mantenendo i parametri elencati nel Paragrafo~\ref{par:interazioni_adroniche}.
-Per quanto riguarda il primo caso, i plot di riferimento sono quelli mostrati nel paragrafo precedente, mentre per gli altri due vengono adesso esposti.
-
-\subsection*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm}
-%\paragraph*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm.}
-%Come si può notare dalla Figura~\ref{fig:deltaE_ERes_1.5}, le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in esame 
-
-
-
-
-Poiché nel caso in esame le matrici $\Delta E_{SiC} - E_{CsI}$ continuano ad essere ben separate e non mostrano variazioni percettibili rispetto a quelle in Figura~\ref{fig:deltaE_ERes_adron}, si è scelto di non riportarle.
-Dalla Figura~\ref{fig:leakage_res_1.5} si può, invece, notare come la percentuale di eventi con raccolta di carica incompleta sia diminuita per tutte le coppie di specie atomiche; in particolare, confrontando la Figura~\ref{fig:leakage_res_1.5}.a con la Figura~\ref{fig:leakage_res_adron}.a, si evidenzia un calo di circa il 2\% per ogni intervallo energetico.
-
-\begin{figure}[!p] 
-	\centering
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/1.5per1.5/leakage_alto_corr.png}}
-	\hspace{10mm}
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/1.5per1.5/leakage_basso_corr.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di $1.5 \times 1.5$~cm\ap{2}: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_1.5}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando per tutti gli ioni sia la cinematica di reazione sia il trasporto ottico.} \label{fig:deltaE_Emeas_PID}
 \end{figure}
 
 
 
-
-
-
-\subsection*{Dimensioni trasversali: 2~cm $\times$ 2~cm}
-%\paragraph*{Dimensioni trasversali: 2~cm $\times$ 2~cm.}
-Anche in questo caso, per i motivi esposti precedentemente, si è preferito non mostrare le matrici $\Delta E_{SiC} - E_{CsI}$.
-In Figura~\ref{fig:leakage_res_2} si può osservare che, aumentando ulteriormente le dimensioni trasversali del telescopio, la percentuale di nuclei identificati erroneamente si riduce.
-In questo caso, tuttavia, l'entità della diminuzione è inferiore rispetto al caso precedente, in quanto per le coppie in Figura~\ref{fig:leakage_res_2}.a corrisponde a circa l'1\%, mentre per quelle in Figura~\ref{fig:leakage_res_2}.b si osservano soltanto piccolissimi cambiamenti.
-
-
-\begin{figure}[!p] 
-	\centering
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/2per2/leakage_alto_corr.png}}
-	\hspace{10mm}
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/2per2/leakage_basso_corr.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una superficie totale di $2 \times 2$~cm\ap{2}: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_2}
-\end{figure}
-
-
-
-
-
-
-
-
-
-\subsection*{Conclusioni}
-%\paragraph*{Conclusioni.}
-
-
-
-
-
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Granularita/misident_surface3.png}
-	\caption{L'andamento della probabilità di identificare nuclei di \ce{^{18}Ne} come \ce{^{18}O} al variare della superficie del rivelatore e per energie pari a 450 e 850~MeV. I punti si riferiscono ai tre valori di superficie considerati nelle simulazioni.} \label{fig:misident_vs_surface}
-\end{figure}
-
-
-
-
-In accordo con quanto trovato, si può affermare che, al fine di minimizzare gli eventi con raccolta di carica incompleta, è opportuno avere la maggiore superficie di rivelazione possibile.
-Ciò si può evincere dalla Figura~\ref{fig:misident_vs_surface}, dove è mostrato, per un caso rappresentativo, l'andamento della probabilità di errore nell'identificazione dei nuclei al variare della superficie e dell'energia.
-%Ciò si spiega considerando che, a parità di lunghezza della cornice, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
-Tale andamento può essere spiegato considerando che, a parità di lunghezza della cornice non attiva, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
-
-
-
-Tuttavia, avere superfici più grandi significa anche aumentare il verificarsi del pile-up, in quanto cresce la probabilità che due o più ioni vadano a finire nello stesso rivelatore nella stessa finestra temporale, producendo un segnale somma di due segnali.
-È stato, dunque, effettuato un calcolo analitico per dedurre la probabilità di pile-up: si ricorda che il rapporto fra la probabilità $\mathcal{P}(> \! 1)$ di avere più di un evento e la probabilità $\mathcal{P}(1)$ di averne uno solo può essere espressa come il seguente rapporto
-\begin{equation}
-	\frac{\mathcal{P}(> \! 1)}{\mathcal{P}(1)} = \frac{1 - 
-	\mathcal{P}(0) - \mathcal{P}(1)}{\mathcal{P}(1)}
-\end{equation}
-Poiché questa tipologia di fenomeni è governata dalla statistica di Poisson, la precedente espressione assume la forma
-\begin{equation}
-\frac{\mathcal{P}(> \! 1)}{\mathcal{P}(1)} = \frac{1 - 
-	\mbox{e}^{-\mu} - \mu \,\mbox{e}^{- \mu}}{\mu \, \mbox{e}^{- \mu}}
-\end{equation} \label{eq:calcolo_pile-up}
-laddove $\mu$ indica il valore medio della distribuzione.
-Nel caso in esame, tale valore medio non è altro che il prodotto fra la larghezza dell'intervallo temporale $\tau$ e il rate di particelle, con quest'ultima quantità data dal prodotto tra il flusso $\Phi$ di particelle incidenti e la superficie $S$ del rivelatore.
-Dunque, la~\ref{eq:calcolo_pile-up} può essere scritta come
-\begin{equation}
-\frac{\mathcal{P}(> \! 1)}{\mathcal{P}(1)} = \frac{1 - 
-	\mbox{e}^{- \tau \, \Phi \, S} - \tau \, \Phi \, S \,\mbox{e}^{- \tau\, \Phi \, S}}{\tau \, \Phi \, S \, \mbox{e}^{- \tau \, \Phi \, S}}
-\end{equation} \label{eq:pile-up}
-Assumendo una finestra temporale della durata di 1~$\mu$s, si è riportato in Figura~\ref{fig:pile-up} l'andamento della~\ref{eq:pile-up} in funzione del flusso di particelle incidenti e della superficie del rivelatore: come si può notare, tale quantità cresce rapidamente all'aumentare della superficie.
-Dal momento che per gli obiettivi di NUMEN è necessario lavorare con fasci di elevata intensità, è fondamentale che la probabilità di pile-up sia piccola; di conseguenza, la superficie dei telescopi non può essere eccessivamente grande.
-
-
-\begin{figure} [!t]
-	\centering
-	\includegraphics[scale=0.55]{Grafici_Tesi/Granularita/pile-up3.png}
-	\caption{La probabilità di avere eventi di pile-up rispetto alla probabilità di avere un singolo evento al variare del flusso di particelle incidenti e della superficie del rivelatore. Le linee tratteggiate indicano rispettivamente il flusso massimo e medio attesi per NUMEN.} \label{fig:pile-up}
-\end{figure}
-
-
-Due aspetti diversi spingono in direzioni opposte: è necessario cercare una situazione di compromesso fra le due esigenze.
-Alla luce delle considerazione svolte, la migliore condizione di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto riesce ad unire un'alta percentuale di riconoscimento del segnale con una bassa probabilità di pile-up.
-
-
-
-
-
-%\clearpage
-\subsection{\iflanguage{italian}{Studio degli effetti di bordo}{Study of frame effects}}
-
-Da quanto finora detto, è emerso che l'estensione della regione di transizione fra la zona inattiva e quella sensibile del rivelatore al SiC gioca un ruolo estremamente importante nella PID.
-Di conseguenza, è opportuno valutare come cambia la frazione di eventi con raccolta di carica incompleta al variare della lunghezza di tale regione; 
-%ciò permette, infatti, di porre dei limiti di accettabilità, che, nel caso in cui venissero superati, renderebbero i rivelatori inadatti agli scopi del progetto.
-ciò permette, infatti, di porre dei limiti di accettabilità sui rivelatori, che devono essere tenuti in considerazione durante la progettazione e rispettati in fase di realizzazione.
-Qualora non fosse possibile soddisfare tali requisiti, i rivelatori diventerebbero inadatti agli scopi del progetto.
-
-
-Sulla base delle attuali specifiche di produzione dei rivelatori al SiC e di recenti misure, sono stati presi in esame tre valori: 20, 50 e 200~$\mu$m.
-Il primo rappresenta un traguardo concreto nelle tecniche di realizzazione, il secondo è il valore medio al momento raggiungibile, il terzo costituisce lo studio di una situazione estrema.
-In tutti e tre i casi, i telescopi avevano dimensioni trasversali pari a 1.5~cm $\times$ 1.5~cm, mentre lo spessore del substrato morto era di 350~$\mu$m.
-La lunghezza della zona inattiva attorno alla superficie sensibile è stata fissata a 200~$\mu$m, in accordo con gli standard attuali.
-%Le condizioni di generazione delle particelle primarie continuano ad essere quelle del Paragrafo~\ref{par:interazioni_adroniche}.
-Le particelle primarie sono state generate mantenendo le caratteristiche esposte nel Paragrafo~\ref{par:interazioni_adroniche}.
-I grafici relativi alla lunghezza di 50~$\mu$m sono già stati mostrati in Figura~\ref{fig:leakage_res_1.5}.
-
-
-
-\subsection*{Lunghezza della regione di transizione: 20~$\mu$m}
-
-%Le matrici $\Delta E_{SiC} - E_{CsI}$ corrispondenti al caso in esame sono riportate in Figura~: come si può notare, 
-Come si evince confrontando la Figura~\ref{fig:leakage_res_1.5} con la Figura~ \ref{fig:leakage_res_20um}, diminuendo la lunghezza della regione di transizione si osserva una riduzione della percentuale di eventi con raccolta di carica incompleta dell'ordine dello 0.5\%.
-
-
-
-\begin{figure}[!p] 
-	\centering
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/20um/leakage_alto_corr.png}}
-	\hspace{10mm}
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/20um/leakage_basso_corr.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una lunghezza della zona di transizione di 20~$\mu$m: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_20um}
-\end{figure}
-
-
-\subsection*{Lunghezza della regione di transizione: 200~$\mu$m}
-
-Dalla Figura~\ref{fig:leakage_res_200um} si può notare che, aumentando la lunghezza della regione di transizione, la percentuale di nuclei identificati erroneamente cresce.
-Tale incremento, rispetto al caso con un valore di 50~$\mu$m, è di circa il 3\%.
-
-
-
-\begin{figure}[!p] 
-	\centering
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/200um/leakage_alto_corr.png}}
-	\hspace{10mm}
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/200um/leakage_basso_corr.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando una lunghezza della zona di transizione di 200~$\mu$m: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_200um}
-\end{figure}
-
-
-
-\subsection*{Conclusioni}
-
-%\subsection*{{\large Conclusioni }}
-
-Alla luce di questi risultati, è possibile affermare che, in tutti e tre i casi considerati, il sistema di identificazione rispetta i limiti stabiliti sul riconoscimento del segnale e sulla contaminazione.
-L'andamento della percentuale di errore nell'identificazione dei nuclei in funzione della lunghezza della zona di transizione è riportato, nel caso di contaminazione di \ce{^{18}Ne} in \ce{^{18}O}, in Figura~\ref{fig:misident_vs_length}.
-Oltre ai tre valori suddetti, si è valutata tale percentuale anche per una lunghezza di 500~$\mu$m, sebbene sia ben lontana dagli standard di produzione.
-In questo caso la percentuale di errore è vicina al 20\%, diventando, dunque, eccessivamente alta per i requisiti del progetto.
-
-
-
-
-
-
-
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Cornice/misident_length2.png}
-	\caption{L'andamento della probabilità di identificare nuclei di \ce{^{18}Ne} come \ce{^{18}O} al variare della lunghezza della regione di transizione e per energie pari a 450 e 850~MeV.} \label{fig:misident_vs_length}
-\end{figure}
-
-
-
-%\clearpage
-\subsection{\iflanguage{italian}{Studio dello spessore del substrato morto}{Study of dead-substrate}}
-
-
-
-
-Come anticipato nel Paragrafo~\ref{par:geometria}, grazie all'utilizzo di sofisticate tecniche di lavorazione, lo spessore del substrato epitassiale del rivelatore al SiC potrebbe essere ridotto fino a 10~$\mu$m.
-Tuttavia, queste tecniche non soltanto richiedono costi di produzione maggiori ma rischiano anche di danneggiare alcuni dispositivi;
-dunque, è ragionevole effettuare tale operazione se i benefici portati sono superiori agli svantaggi.
-Secondo questa prospettiva, nel presente lavoro di tesi sono state valutate le possibili conseguenze sulla PID, mettendo a confronto le prestazioni ottenibili al variare dello spessore del substrato morto.
-
-%Le simulazioni sono state svolte considerando dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, 
-In questo studio le dimensioni trasversali dei telescopi sono state fissate a 1.5~cm $\times$ 1.5~cm, con lunghezze della regione di transizione e della cornice inattiva, rispettivamente, di 50 e 200~$\mu$m.
-Le particelle primarie sono state generate mantenendo le caratteristiche del Paragrafo~\ref{par:interazioni_adroniche}.
-Per il caso con substrato morto da 350~$\mu$m, le matrici $\Delta E_{SiC} - E_{CsI}$ sono riportate in Figura~\ref{fig:deltaE_ERes_1.5}, mentre i grafici sulle contaminazioni sono già stati mostrati in Figura~\ref{fig:leakage_res_1.5}.
-
-
-
-
-
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/1.5per1.5/deltaE_ERes.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando uno spessore del substrato morto pari a 350~$\mu$m.} \label{fig:deltaE_ERes_1.5}
-\end{figure}
-
-
-
-
-\subsection*{Spessore del substrato morto: 10~$\mu$m}
-
-
-
-
-
-
-
-%Le matrici $\Delta E_{SiC} - E_{CsI}$ relative al caso in discussione sono mostrate in Figura~\ref{fig:deltaE_ERes_substrate}: come si può notare, rispetto alla Figura~\ref{fig:leakage_res_1.5}, le bande sono collocate ad un'energia $E_{CsI}$ più alta; infatti, dal momento che il substrato morto è più sottile, le particelle perdono in esso meno energia e, di conseguenza, l'energia residua rilasciata nel rivelatore al CsI è maggiore.
-Come si può evincere dal confronto tra la Figura~\ref{fig:deltaE_ERes_substrate} e la Figura~\ref{fig:deltaE_ERes_1.5}, riducendo lo spessore del substrato morto, le matrici $\Delta E_{SiC} - E_{CsI}$ si collocano ad un'energia $E_{CsI}$ più alta; infatti, dal momento che tale substrato è più sottile, le particelle perdono in esso meno energia, rilasciando nel rivelatore allo CsI un'energia residua maggiore.
-Inoltre, si può notare che le bande in Figura~\ref{fig:deltaE_ERes_1.5} sono più lunghe di quelle in Figura~\ref{fig:deltaE_ERes_substrate}, in quanto, aumentando lo spessore del substrato morto, vengono introdotte maggiori fluttuazioni sull'energia, così che alcune particelle possono perdere molta più energia di altre.
-
-%Il grafico della percentuale di errore al variare di $E_{CsI}$ è, invece
-
-
-
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Substrato/deltaE_ERes.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ considerando uno spessore del substrato morto pari a 10~$\mu$m.} \label{fig:deltaE_ERes_substrate}
-\end{figure}
-
-
-
-Confrontando la Figura~\ref{fig:leakage_res_substrate} con la Figura~\ref{fig:leakage_res_1.5} si può osservare che vi è un aumento della percentuale di errore nell'identificazione dei nuclei, che diventa più rilevante a più bassa energia.
-
-
-
-\begin{figure}[!p] 
-	\centering
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/Substrato/leakage_alto_corr.png}}
-	\hspace{10mm}
-	\subfigure[]
-	{\includegraphics[scale=0.43]{Grafici_Tesi/Substrato/leakage_basso_corr.png}}
-	\caption{La percentuale di nuclei identificati in modo erroneo in funzione di $E_{CsI}$, considerando uno spessore del substrato epitassiale di 10~$\mu$m: in~(a) la contaminazione da specie atomiche con $Z$ maggiore verso quelle con $Z$ minore, in (b) il viceversa. La linea tratteggiata in (a) indica il limite massimo imposto sul mancato riconoscimento del segnale, mentre in (b) rappresenta il limite massimo fissato sulla contaminazione del segnale. Laddove non sono mostrate, le barre di errore sono più piccole del marker.} \label{fig:leakage_res_substrate}
-\end{figure}
-
-
-
-\subsection*{Conclusioni}
-
-In accordo con quanto trovato, la riduzione dello spessore del substrato morto provoca un leggero peggioramento delle capacità di PID, sebbene vengano rispettati i limiti fissati sul riconoscimento del segnale e sulla contaminazione.
-Ciò può essere spiegato considerando che, poiché la perdita di energia dipende dal numero atomico, se ioni diversi con la stessa energia cinetica iniziale attraversano uno spessore grande di materia, in un plot $\Delta E - E_{resid}$ vanno a disporsi non soltanto a $\Delta E$ diversi ma anche a $E_{resid}$ molto differenti, occupando, dunque, zone molto distanti tra loro; se, invece, lo spessore attraversato è piccolo, le differenze in $\Delta E$ restano invariate, mentre quelle in $E_{resid}$ si riducono.
-È bene precisare che tali considerazioni possono valere se lo strato morto si trova in mezzo ai due stadi del telescopio, ma la situazione potrebbe essere diversa nel caso in cui tale strato fosse posto davanti al rivelatore $\Delta E$.
-
-Alla luce di queste considerazioni è possibile affermare che, dal punto di vista dell'identificazione dei prodotti di reazione, la riduzione dello spessore del substrato morto risulta un'operazione ingiustificata.
-
-%L'andamento della percentuale di errore nell'identificazione dei nuclei al variare dello spessore del substrato morto è riportato, nel caso di contaminazione di \ce{^{18}Ne} in \ce{^{18}O}, in Figura~\ref{fig:misident_vs_substrate}.
-%(\textcolor{red}{Ha senso mettere questo grafico con soltanto due casi studiati?})
-%Osservando tale grafico è possibile dedurre che, dal punto di vista dell'identificazione dei prodotti di reazione, la riduzione dello spessore del substrato morto risulta un'operazione ingiustificata.
-
-
-
-
-
-
-%\begin{figure} [!t]
+%\begin{figure} [!p]
 %	\centering
-%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Substrato/misident_substrate.png}
-%	\caption{L'andamento della probabilità di identificare nuclei di \ce{^{18}Ne} come \ce{^{18}O} al variare dello spessore del substrato morto e per energie pari a 450 e 850~MeV.} \label{fig:misident_vs_substrate}
+%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata_taglio.png}
+%	\caption{Taglio grafico per l'identificazione del~\ce{^{20}O}.} \label{fig:deltaE_Emeas_taglio}
 %\end{figure}
 
 
 
 
-%\clearpage
-\subsection{\iflanguage{italian}{Studio a fissata rigidità magnetica}{Study of fixed magnetic rigidity}}
 
-%Dal momento che il muro di telescopi farà parte del FPD di uno spe
-
-%Nel Paragrafo~\ref{par:particelle_primarie} è stato anticipato che 
-
-%Nelle simulazioni finora presentate, il telescopio sul quale venivano generate le particelle primarie
-%Nelle simulazioni finora discusse, le particelle primarie sono state prodotte con un'energia compresa tra 500 e 1000~MeV
-Le simulazioni finora discusse hanno contemplato delle situazioni in cui sul singolo telescopio incidessero particelle primarie con un'energia compresa tra 500 e 1000~MeV.
-%In realtà, dal momento che negli spettrometri magnetici la posizione di una particella al piano focale è legata alla sua energia secondo la~\ref{eq:legge_spettrometri_approx}, sul singolo telescopio possono arrivare soltanto ioni che abbiano la stessa rigidità magnetica.
-In realtà, negli spettrometri magnetici la posizione di una particella al piano focale è legata alla sua energia secondo la~\ref{eq:legge_spettrometri_approx}.
-%Quindi, dal momento che ad ogni telescopio corrisponde una determinata $x_{foc}$, 
-Dunque, in ogni telescopio del muro possono arrivare soltanto ioni che abbiano la stessa rigidità magnetica.
-Per questo motivo è stata svolta una simulazione fissando il $B \rho$ a 1.96~T$\cdot$m e calcolando per ogni nuclide la corrispondente energia: i risultati di tale calcolo sono riportati in Tabella~\ref{tab:energia}, dove si può notare che in questa occasione sono stati considerati nove nuclidi.
-Le matrici $\Delta E_{SiC} - E_{CsI}$, mostrate in Figura~\ref{fig:deltaE_ERes_rigidita}, appaiono come dei blob ben distinti l'uno dall'altro, assicurando, dunque, un'ottima capacità di identificazione anche dei diversi isotopi di una stessa specie atomica.
-
-
-
-\begin{table}[t!]
-	\begin{center}
-		\begin{tabular}{ccc}
-			Nuclide       & &  Energia [MeV] \\
-			%\hline
-			\toprule
-			\ce{^{16}O}  &  &  724.3 \\
-			\ce{^{17}O}  &  &  683.3 \\
-			\ce{^{18}O}  &  &  646.8 \\
-			\ce{^{18}F}   & &  814.6 \\
-			\ce{^{19}F}   & &  773.6 \\
-			\ce{^{20}F}   & &  736.4 \\
-			\ce{^{18}Ne}  & &  1000  \\
-			\ce{^{19}Ne}  & &  950.3 \\
-			\ce{^{20}Ne}  & &  905.4
-		\end{tabular}
-	\end{center}
-	\caption{I valori di energia corrispondenti ad una rigidità magnetica di 1.96~T$\cdot$m per i diversi nuclidi.
-		\label{tab:energia}}
-\end{table}
+%\begin{table}[t!]
+%	\begin{center}
+%		\begin{tabular}{ccc}
+%			Nuclide       & &  Energia [MeV] \\
+%			\toprule
+%			\ce{^{16}O}  &  &  724.3 \\
+%			\ce{^{17}O}  &  &  683.3 \\
+%			\ce{^{18}O}  &  &  646.8 \\
+%			\ce{^{19}F}   & &  773.6 \\
+%			\ce{^{20}F}   & &  736.4 \\
+%			\ce{^{18}Ne}  & &  1000  \\
+%			\ce{^{19}Ne}  & &  950.3 \\
+%			\ce{^{20}Ne}  & &  905.4
+%		\end{tabular}
+%	\end{center}
+%	\caption{I valori di energia corrispondenti ad una rigidità magnetica di 1.96~T$\cdot$m per i diversi nuclidi.
+%		\label{tab:energia}}
+%\end{table}
 
 
 
-\begin{figure} [!b]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Rigidita/deltaE-Eres_3.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ per i nove nuclidi indicati, tenendo fissato il $B \rho$ a 1.96~T$\cdot$m.} \label{fig:deltaE_ERes_rigidita}
-\end{figure}

@@ -64,7 +64,7 @@ Per poter confrontare i dati sperimentali con i risultati delle simulazioni è n
 Dunque, è stata svolta un'analisi dei dati raccolti durante il test per estrarre delle informazioni da inserire opportunamente nella simulazione.
 In primo luogo, è necessario stabilire quali ioni debbano costituire le particelle primarie simulate, per cui è stata svolta un'identificazione dei prodotti di reazione.
 %Inoltre, poiché l'energia delle particelle primarie è un parametro di fondamentale importanza, è stata determinare l'energia con cui gli ioni incidevano sul telescopio.
-Inoltre, dal momento che un altro parametro di fondamentale importanza riguarda l'energia di tali particelle, è stata condotta un'analisi per determinare l'energia di incidenza degli ioni sul telescopio.
+%%Inoltre, dal momento che un altro parametro di fondamentale importanza riguarda l'energia di tali particelle, è stata condotta un'analisi per determinare l'energia di incidenza degli ioni sul telescopio.
 
 
 %Ciò è stato possibile grazie alla correlazione tra posizione ed energia indotta dalla forza di Lorentz: 
@@ -88,113 +88,7 @@ Come si può notare dalla Figura~\ref{fig:xfoc2_csi_standard}, l'isotopo più ab
 \end{figure}
 
 
-
-\subsection{\iflanguage{italian}{Determinazione dell'energia dell'\ce{^{16}O}}{Energy determination of \ce{^{16}O}}}
-
-Una volta identificato l'isotopo, è possibile determinare la sua energia cinetica $E_{kin}$ all'ingresso del rivelatore di piano focale (Focal Plane Detector, FPD) grazie alla correlazione tra l'angolo orizzontale $\theta_{foc}$ della traccia al piano focale e la coordinata orizzontale $x_{foc}$ del punto di arrivo della particella sullo stesso piano.
-Ciascuno dei rivelatori di stop del FPD, indipendentemente dal fatto che si tratti di un rivelatore al silicio o di un telescopio, corrisponde ad una certa posizione $x_{foc}$; in particolare, dal momento che i rivelatori hanno superficie finita, ognuno di loro copre un'intervallo di posizioni in $x_{foc}$, legato alla propria estensione.
-%Dunque, ricordando la~\ref{eq:legge_spettrometri_approx}, è possibile affermare che una misura di $x_{foc}$ equivale ad una misura dell'energia.
-Dunque, ricordando la~\ref{eq:legge_spettrometri_approx}, è possibile affermare che, fissato lo ione, esso può arrivare in un certo intervallo in $x_{foc}$ soltanto con un determinato range energetico; in altre parole, gli ioni di \ce{^{16}O} che incidevano sul telescopio dovevano necessariamente avere degli specifici valori di energia.
-Tali valori di energia sono correlati alle corrispondenti variabili $\theta_{foc}$ attraverso la cinematica della reazione $^{12}\mbox{C}\,  ( ^{20}\mbox{Ne}, ^{20}\mbox{O} ) \, ^{16}\mbox{O} $.
-
-La matrice $\theta_{foc} - x_{foc}$ è riportata in Figura~\ref{fig:tefoc_xfoc2}, dove in rosso sono rappresentati i dati relativi al Tel~A, mentre in blu sono indicati i dati dello stesso ione, identificati tramite le tecniche di identificazione standard di MAGNEX.
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/matrice_tefoc_xfoc.png}
-	\caption{Le correlazioni $\theta_{foc} - x_{foc}$ ottenute, durante il test, dalla misura in correlazione dell'angolo della traccia al piano focale e della posizione di arrivo allo stesso piano. Le matrici si riferiscono all'\ce{^{16}O}: in blu sono riportati i dati misurati con i rivelatori standard di MAGNEX, in rosso sono mostrati i dati raccolti con il Tel~A.} \label{fig:tefoc_xfoc2}
-\end{figure}
-Come si può notare, la larghezza della striscia rossa è molto inferiore rispetto a quella delle strisce blu: ciò dipende dalla grande differenza fra la superficie del telescopio, pari a $1 \times 1$~cm\ap{2}, e quella dei rivelatori al silicio, ciascuna uguale a $5 \times 7$~cm\ap{2}.
-In questo caso, le variabili $\theta_{foc}$ e $x_{foc}$ sono calibrate e sono misurate, rispettivamente, in radianti e metri.
-Per determinare il range energetico all'interno del quale gli ioni di \ce{^{16}O} arrivavano sul telescopio, è sufficiente conoscere i valori di energia corrispondenti ai due estremi della striscia rossa.
-Sebbene, in base a quanto detto, potrebbe sembrare possibile estrarre tale informazione a partire dalla sola misura della coordinata $x_{foc}$, in realtà, un punto della matrice $\theta_{foc} - x_{foc}$ potrebbe essere occupato da uno ione in uno stato eccitato.
-È stata, quindi, svolta una simulazione, basata su metodi Monte Carlo, allo scopo di generare in modo casuale i parametri fisici dei prodotti della reazione in esame.
-In tale simulazione sono stati presi in considerazione diversi stati eccitati dell'\ce{^{16}O} e, tramite una scelta accurata, si è fatto in modo che due di questi passassero per gli estremi della regione pertinente al telescopio.
-Il risultato di tale procedura è mostrato in Figura~\ref{fig:simulazione}, dove, sovrapposti alle matrici precedentemente descritte, appaiono in nero i luoghi corrispondenti alle energie di eccitazione considerate.
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/simulazione.png}
-	\caption{Il risultato della simulazione della reazione $^{12}\mbox{C}\,  ( ^{20}\mbox{Ne}, ^{16}\mbox{O} ) \, ^{16}\mbox{O} $ per diverse energie di eccitazione dell'\ce{^{16}O}.} \label{fig:simulazione}
-\end{figure}
-Come si può notare, gli ioni di \ce{^{16}O} si trovano in uno stato altamente eccitato, laddove gli estremi della regione del telescopio sono attraversati dagli stati eccitati a 38 e 72~MeV, mentre gli altri due stati a 55 e 65~MeV si posizionano circa a metà di tale regione.
-%Nota questa informazione, si è utilizzato il software di cinematica CATKIN, grazie al quale, introducendo gli opportuni valori di energia cinetica del proiettile e di energia di eccitazione del l'eiettile, si è ricavata la correlazione l'energia cinetica dell'eiettile ad un determinato angolo di emissione.
-%Nota questa informazione, per calcolare l'energia cinetica dell'eiettile si è utilizzato il software di cinematica CATKIN, nel quale vengono tenuti in considerazione i parametri rilevanti come energia di eccitazione e angolo di emissione. 
-La simulazione permette, inoltre, di conoscere, evento per evento, l'energia cinetica dell'eiettile, nonché l'angolo di emissione $\theta_{p}$.
-È bene sottolineare che tale angolo non coincide con $\theta_{foc}$, ma esiste una relazione empirica fra le due quantità, ovvero
-\begin{equation}
-	\theta_{p} = \frac{\theta_{foc} - \theta_{tilt}}{-2.7} + \ang{10}
-\end{equation}
-dove $\theta_{tilt}$ denota l'angolo di rotazione del FPD, $-2.7$ rappresenta l'ingrandimento angolare di MAGNEX e 10\textdegree{} indica l'angolo ottico dello spettrometro.
-Prendendo in considerazione i quattro stati simulati è stato possibile ricavare quattro coppie $(\theta_{foc} , E_{kin})$, sulle quali è stato effettuato un fit lineare allo scopo di derivare una relazione fra le due grandezze.
-La retta trovata ha la seguente equazione:
-\begin{equation} \label{eq:correlazione_angolo_energia}
-	\theta_{foc} \, = \, (-0.012 \mbox{ MeV}^{-1} )\, E_{kin} + 4.588
-\end{equation}
-
-Grazie alla~\ref{eq:correlazione_angolo_energia} è possibile trasformare una misura di angolo in una misura di energia.
-Dunque, gli eventi relativi al Tel~A nella matrice $\theta_{foc} - x_{foc}$ sono stati proiettati sull'asse verticale, ottenendo lo spettro energetico riportato in Figura~\ref{fig:spettro_ekin}, il quale riproduce la distribuzione in energia cinetica degli ioni di \ce{^{16}O} all'ingresso del FPD.
-Tali energie non corrispondono a quelle di incidenza sul telescopio, in quanto i prodotti di reazione devono prima attraversare la finestra di Mylar e il tracciatore a gas.
-Sono state, quindi, calcolate le perdite di energia in queste due componenti grazie a LISE++~\cite{tarasov:nimb08}, software nato per simulare la produzione di fasci di ioni radioattivi attraverso meccanismi di reazioni nucleari.
-%Tale software possiede, inoltre, diverse applicazioni, che permettono di calcolare stimare, oltre alle perdite di energia, 
-Variando opportunamente l'energia cinetica e l'angolo della particella, è stato possibile stimare che il range di energia con cui gli ioni di \ce{^{16}O} giungevano sul Tel~A era compreso tra 290 e 310~MeV.
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_ekin.png}
-	\caption{La proiezione sull'asse $\theta_{foc}$ della  regione dell'\ce{^{16}}O vista dal telescopio. La calibrazione in energia è stata effettuata grazie alla~\ref{eq:correlazione_angolo_energia}.} \label{fig:spettro_ekin}
-\end{figure}
-
-
 \section{\iflanguage{italian}{Confronto fra i dati del test e la simulazione \geant}{Comparison between test data and \geant simulation}}
 
-Noti tutti i parametri rilevanti, è stata svolta una simulazione per cercare di riprodurre lo spettro sperimentale. 
-Dal momento che il processo di produzione degli ioni di \ce{^{16}O} nell'interazione fra proiettile e bersaglio è governato da una sezione d'urto che varia in funzione dell'energia, era necessario introdurre nella simulazione una ``modulazione'' del numero di particelle primarie generate rispetto all'energia.
-A tal fine, si è eseguito un fit con una distribuzione alla Landau sullo spettro in Figura~\ref{fig:spettro_ekin}, ottenendo il risultato riportato in Figura~\ref{fig:spettro_ekin_fit}.
-La distribuzione dell'energia cinetica delle particelle primarie deve, dunque, rispecchiare l'andamento di tale funzione di fit.
-Nella simulazione si è provato ad ``imitare'' la sezione d'urto della reazione generando le energie cinetiche dei primari secondo la distribuzione di Landau ottenuta dal fit, la quale risultava avere un valore più probabile pari a 297.3~MeV ed una deviazione standard di 2.33~MeV.
 
-
-
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_ekin_fit2.png}
-	\caption{Lo spettro in Figura~\ref{fig:spettro_ekin} su cui è stato eseguito un fit con una distribuzione alla Landau.} \label{fig:spettro_ekin_fit}
-\end{figure}
-
-I dati simulati sono stati, dunque, elaborati dalla macro di post-processing, allo scopo di ricostruire gli spettri  da comparare con i dati sperimentali.
-È bene precisare che prima di effettuare il confronto è necessario uniformare le unità di misura; infatti, mentre le distribuzioni energetiche ricavate dalla simulazione sono già espresse nell'opportuna grandezza, gli spettri sperimentali devono essere calibrati.
-A tale scopo sono stati utilizzati i dati relativi allo scattering elastico del \ce{^{20}Ne} su bersaglio di \ce{^{197}Au}, per il quale i campi magnetici del dipolo e del quadrupolo sono stati opportunamente fissati facendo  in modo che una parte degli ioni scatterati arrivasse sul telescopio.
-È stata, dunque, svolta un'analisi per determinare l'energia cinetica incidente, nota la quale, grazie al software LISE++, è stato possibile stimare il deposito energetico nel rivelatore al SiC e nel cristallo allo CsI.
-Tale procedura permette di calcolare la pendenza della retta di calibrazione, ma non fissa l'offset.
-Di conseguenza, quest'ultimo parametro è stato determinato sovrapponendo i centroidi delle distribuzioni sperimentale e simulata.
-
-In Figura~\ref{fig:spettro_sic} è riportato lo spettro simulato in $\Delta E_{SiC}$, messo a confronto con quello sperimentale: come si può notare, la compatibilità delle due distribuzioni è molto alta; in particolare, la simulazione riproduce correttamente la larghezza dello spettro sperimentale.
-La risoluzione energetica dedotta dalla simulazione sembra, quindi, rispecchiare in modo fedele quella riscontrata nel test.
-Dal momento che tale quantità gioca un ruolo cruciale nella capacità di PID del telescopio, l'accordo tra il dato simulato e quello sperimentale permette di validare i risultati mostrati nel capitolo precedente.
-
-
-In Figura~\ref{fig:spettro_csi_simul} è illustrato il confronto tra lo spettro in $E_{CsI}$ ottenuto attraverso la simulazione e quello sperimentale: anche in questo caso la compatibilità è significativa, sebbene, allo scopo di rappresentare meglio i dati sperimentali, è stata aumentata la FWHM della distribuzione simulata fino a 27~MeV.
-Una peggiore risoluzione energetica rispetto alle assunzioni del Capitolo~\ref{cap:simulazione} può essere dovuta a diversi fattori sperimentali, come ad esempio rumore elettromagnetico o disuniformità nella raccolta di luce dello scintillatore, la quale può essere causata da un accoppiamento non ottimale con il riflettore o il fotodiodo.
-
-L'accordo fra dati simulati e sperimentali è avvalorato dalla complessità della situazione presa in esame: in primo luogo, la reazione $^{12}\mbox{C}\,  ( ^{20}\mbox{Ne}, ^{20}\mbox{O} ) \, ^{16}\mbox{O} $ avviene in cinematica inversa, così che l'energia cinetica dell'eiettile risulta estremamente sensibile alla variazione dell'angolo di emissione.
-%la correlazione fra angolo di emissione ed energia cinetica dell'eiettile risulta molto sensibile alla variazione 
-%Dal momento che MAGNEX è uno spettrometro a grande accettanza, l'ampio range angolare 
-Inoltre, la presenza del substrato epitassiale davanti al volume sensibile del rivelatore al SiC genera fenomeni non-lineari nell'energia.
-Infine, la bassa statistica registrata durante il test ha complicato la deduzione della funzione di fit da adottare per riprodurre la distribuzione dell'energia cinetica delle particelle primarie.
-
-%Alla luce di questi risultati, è possibile affermare che i dati sperimentali offrono una validazione dei risultati ottenuti attraverso le simulazioni.
-
-
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_sic_normArea2.png}
-	\caption{Lo spettro in $\Delta E_{SiC}$: in blu sono rappresentati i dati sperimentali, in rosso quelli simulati. Gli istogrammi sono normalizzati in area.} \label{fig:spettro_sic}
-\end{figure}
-
-
-
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi/Test/spettro_csi_normArea.png}
-	\caption{Lo spettro in $E_{CsI}$: in blu sono rappresentati i dati sperimentali, in rosso quelli simulati. Gli istogrammi sono normalizzati in area.} \label{fig:spettro_csi_simul}
-\end{figure}
-
-
+Da continuare
