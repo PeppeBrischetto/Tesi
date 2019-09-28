@@ -508,8 +508,9 @@ Per semplicità della trattazione si è preferito esporre i risultati in modo sc
 
 
 Come primo esempio si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono generate con un'energia di 800~MeV ed incidono ortogonalmente e centralmente al telescopio, il quale ha, in questo caso, dimensioni trasversali di 1.5~cm $\times$ 1.5~cm.
+Per semplicità gli ioni considerati sono soltanto \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne}.
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
-Dal momento che la formula di Bethe-Block è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{meas}$.
+Dal momento che la formula di Bethe-Bloch è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{meas}$.
 Questa affermazione viene confermata dalla Figura~\ref{fig:deltaE_ETot}, in cui è possibile notare che i luoghi di \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne} sono chiaramente distinti.
 \begin{figure} [!t]
 	\centering
@@ -532,11 +533,15 @@ Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che 
 
 
 
-In Figura~\ref{fig:ETot} e in Figura~\ref{fig:deltaE_Tot} sono riportate, rispettivamente, le proiezioni sull'asse $E_{meas}$ e sull'asse $\Delta E_{SiC}$ delle matrici $\Delta E_{SiC} - E_{meas}$: esse rappresentano gli spettri energetici misurati dal rivelatore al SiC e da quello allo CsI.
+In Figura~\ref{fig:deltaE_Tot} e in Figura~\ref{fig:ETot} sono riportate, rispettivamente, le proiezioni sull'asse $\Delta E_{SiC}$ e sull'asse $E_{meas}$ delle matrici $\Delta E_{SiC} - E_{meas}$: esse rappresentano gli spettri energetici misurati dal rivelatore al SiC e da quello allo CsI.
 Effettuando un fit gaussiano sul picco dell'\ce{^{20}O} nello spettro di $\Delta E_{SiC}$, si trova una FWHM di 1.1~MeV, corrispondente ad una risoluzione del 4.5\%.
 Poiché questo valore è ben più grande della risoluzione intrinseca assunta per tale rivelatore, si deduce che in questo caso la componente più significativa della risoluzione compete alle fluttuazioni nel processo di ionizzazione.
 
-
+\begin{figure} [!p]
+	\centering
+	\includegraphics[scale=0.5]{Grafici_Tesi2/Particelle_monocromatiche/deltaE.png}
+	\caption{Spettro in $ \Delta E_{SiC} $.} \label{fig:deltaE_Tot}
+\end{figure}
 
 
 \begin{figure} [!p]
@@ -546,11 +551,7 @@ Poiché questo valore è ben più grande della risoluzione intrinseca assunta pe
 \end{figure}
 
 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[scale=0.5]{Grafici_Tesi2/Particelle_monocromatiche/deltaE.png}
-	\caption{Spettro in $ \Delta E_{SiC} $.} \label{fig:deltaE_Tot}
-\end{figure}
+
 
 
 
@@ -585,14 +586,27 @@ Per meglio comprendere l'entità degli eventi degradati, si sono riportate in Fi
 \begin{figure} [!p]
 	\centering
 	\subfigure[]
-	{\includegraphics[scale=0.48]{Grafici_Tesi2/Particelle_non_ortogonali/deltaE.png}}
-	\hspace{10mm}
+	{\includegraphics[scale=0.479]{Grafici_Tesi2/Particelle_non_ortogonali/deltaE.png}}
+	%\vspace{7mm}
 	\subfigure[]
-	{\includegraphics[scale=0.48]{Grafici_Tesi2/Particelle_non_ortogonali/ETot.png}}
+	{\includegraphics[scale=0.479]{Grafici_Tesi2/Particelle_non_ortogonali/ETot.png}}
 
-	\caption{Le proiezioni della matrice $\Delta E_{SiC} - E_{meas}$ di Figura~\ref{fig:deltaE_ETot_full_energy}: in (a) sull'asse $\Delta E_{SiC}$, in (b) sull'asse $E_{meas}$.} \label{fig:fetta}
+	\caption{Le proiezioni delle matrici $\Delta E_{SiC} - E_{meas}$ di Figura~\ref{fig:deltaE_ETot_full_energy}: in (a) sull'asse $\Delta E_{SiC}$, in (b) sull'asse $E_{meas}$.} \label{fig:fetta}
 \end{figure}
 
+
+%\begin{figure} [!p]
+%	\centering
+%	\includegraphics[scale=0.5]{Grafici_Tesi2/Particelle_non_ortogonali/deltaE.png}
+%	\caption{Proiezione delle matrici di Figura~\ref{fig:fetta} sull'asse~$ E_{meas} $.} \label{fig:ETot1}
+%\end{figure}
+
+
+%\begin{figure} [!p]
+%	\centering
+%	\includegraphics[scale=0.5]{Grafici_Tesi2/Particelle_non_ortogonali/ETot.png}
+%	\caption{Proiezione delle matrici di Figura~\ref{fig:fetta} sull'asse~$ \Delta E_{SiC} $.} \label{fig:deltaE_Tot1}
+%\end{figure}
 %\begin{figure}[!p] 
 %	\centering
 %	\subfigure[]
@@ -727,7 +741,7 @@ Ciò è dovuto a reazioni nucleari esotermiche, nelle quali viene rilasciata una
 %L'unico mutamento degno di nota riguarda la comparsa di contaminazioni di O in Ne.
 %Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la minore probabilità che avvenga un'interazione adronica.
 
-\begin{figure} [!p]
+\begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Interazioni_adroniche/deltaE_ETot_quadrata.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando un modello di processi fisici che comprenda anche le interazioni adroniche.} \label{fig:deltaE_ERes_adron}
@@ -756,13 +770,14 @@ Ciò è dovuto a reazioni nucleari esotermiche, nelle quali viene rilasciata una
 
 Dopo aver esposto tre casi ideali, utili per comprendere alcuni fenomeni rilevanti incontrati in questo studio, si esamina adesso una situazione realistica, in cui alla simulazione \geant{} viene dato in input il file prodotto dai software per il trasporto degli eiettili.
 In questo caso, dunque, gli ioni presentano sia le correlazioni cinematiche sia quelle legate allo spettrometro.
-A differenza dei casi precedenti, si sono simulati nove ioni, ovvero \ce{^{18}O}, \ce{^{19}O}, \ce{^{20}O}, \ce{^{18}F}, \ce{^{19}F}, \ce{^{20}F}, \ce{^{18}Ne}, \ce{^{19}Ne} e~\ce{^{20}Ne}.
+A differenza dei casi precedenti, si sono simulati nove ioni, tutti completamente ionizzati, ossia \ce{^{18}O^{8+}}, \ce{^{19}O^{8+}}, \ce{^{20}O^{8+}}, \ce{^{18}F^{9+}}, \ce{^{19}F^{9+}}, \ce{^{20}F^{9+}}, \ce{^{18}Ne^{10+}}, \ce{^{19}Ne^{10+}} e \ce{^{20}Ne^{10+}}.
 Il telescopio ha dimensioni trasversali di 1.5~cm $\times$ 1.5~cm ed è posto a 14~cm di distanza dal piano in cui vengono prodotte le particelle primarie, che coincide con il piano di ingresso nel FDP.
+
 Per fissare la rigidità magnetica di riferimento si è scelto il \ce{^{18}Ne}, che fra gli ioni considerati è quello con il rapporto massa su carica più piccolo.
 In questo modo, dovendo mantenere costante il prodotto $\sqrt{m}/q \cdot \sqrt{E}$, gli altri ioni hanno energia cinetica inferiore.
-Questa considerazione è confermata dalla Figura~\ref{fig:KinE}, in cui viene riportato lo spettro delle energie cinetiche dei diversi ioni.
+Questa considerazione è confermata dalla Figura~\ref{fig:KinE}, in cui viene illustrato lo spettro delle energie cinetiche dei diversi ioni.
+Da tale figura si evince che le energie cinetiche accettate dal telescopio sono molto differenti per i diversi ioni, con una differenza fra lo ione più energetico e quello meno energetico di oltre 350~MeV.
 %Gli ioni hanno la stessa finestra di rigidità magnetica, per cui tutti vanno a finire sul telescopio simulato. 
-La corrispondente matrice $\Delta E_{SiC} - E_{meas}$ è riportata in Figura~\ref{fig:deltaE_Emeas_PID}: come si può notare, i luoghi degli ioni simulati appaiono ben separati sia in numero atomico~($Z$) sia in numero di massa~($A$).
 
 
 \begin{figure} [!p]
@@ -772,6 +787,13 @@ La corrispondente matrice $\Delta E_{SiC} - E_{meas}$ è riportata in Figura~\re
 \end{figure}
 
 
+
+La corrispondente matrice $\Delta E_{SiC} - E_{meas}$ è riportata in Figura~\ref{fig:deltaE_Emeas_PID}: come si può notare, i luoghi degli ioni simulati appaiono ben separati sia in numero atomico~($Z$) sia in numero di massa~($A$).
+Si può, inoltre, osservare che l'energia rilasciata nel rivelatore al~SiC è molto simile per le tre specie atomiche: ciò dipende dalla notevole differenza in energia cinetica degli ioni che compensa la variazione legata al cambiamento di $Z$.
+ciò dipende dal fatto che, a causa del filtro in $B \rho$, gli ioni con carica $q$ più piccolo hanno energia cinetica minore, mentre quelli con $q$ più grande hanno energia cinetica maggiore; ricordando che nella formula di Bethe-Bloch la perdita di energia è proporzionale a $Z^2$ e inversamente proporzionale ad $E$, si può dedurre che la notevole differenza in energia cinetica degli ioni compensa la variazione legata al cambiamento di $Z$.
+
+
+Da continuare...
 
 \begin{figure} [!p]
 	\centering
