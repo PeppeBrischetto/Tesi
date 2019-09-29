@@ -307,9 +307,9 @@ Quanto appena detto è illustrato in Figura~\ref{fig:magnex_diverse_traiettorie}
 
 
 A causa della estensione finita dei rivelatori, in realtà gli ioni arrivano sul telescopio in una finestra di valori di $B \rho$. La larghezza di tale finestra è data, al primo ordine, da
-\begin{equation}
+\begin{equation} \label{eq:finestra_Brho}
 	\Delta \left(B \rho \right) \sim \frac{\Delta x}{D}
-\end{equation}
+\end{equation} 
 laddove $\Delta x$ indica l'estensione lungo la direzione dispersiva del rivelatore e $D$ è la dispersione in impulso dello spettrometro, pari a 3.68~cm/\%.
 
 La dipendenza della \ref{eq:legge_spettrometri_approx} dal rapporto $\sqrt{m}/q$ costituisce il fondamento di un'innovativa tecnica di identificazione per spettrometri di grande accettanza; se, infatti, si misurano in correlazione la posizione $x_{foc}$ e l'energia cinetica~$E$, è possibile identificare gli ioni in massa e stato di carica.
@@ -777,6 +777,7 @@ Per fissare la rigidità magnetica di riferimento si è scelto il \ce{^{18}Ne}, 
 In questo modo, dovendo mantenere costante il prodotto $\sqrt{m}/q \cdot \sqrt{E}$, gli altri ioni hanno energia cinetica inferiore.
 Questa considerazione è confermata dalla Figura~\ref{fig:KinE}, in cui viene illustrato lo spettro delle energie cinetiche dei diversi ioni.
 Da tale figura si evince che le energie cinetiche accettate dal telescopio sono molto differenti per i diversi ioni, con una differenza fra lo ione più energetico e quello meno energetico di oltre 350~MeV.
+La Figura~\textcolor{red}{Inserire figura} mostra un ingrandimento della precedente nella zona degli ioni di ossigeno: come si può notare, per ogni ione il range energetico che arriva sul telescopio è di circa 6~MeV, in buon accordo con la~\ref{eq:finestra_Brho}.
 %Gli ioni hanno la stessa finestra di rigidità magnetica, per cui tutti vanno a finire sul telescopio simulato. 
 
 
@@ -789,43 +790,61 @@ Da tale figura si evince che le energie cinetiche accettate dal telescopio sono 
 
 
 La corrispondente matrice $\Delta E_{SiC} - E_{meas}$ è riportata in Figura~\ref{fig:deltaE_Emeas_PID}: come si può notare, i luoghi degli ioni simulati appaiono ben separati sia in numero atomico~($Z$) sia in numero di massa~($A$).
-Si può, inoltre, osservare che l'energia rilasciata nel rivelatore al~SiC è molto simile per le tre specie atomiche: ciò dipende dalla notevole differenza in energia cinetica degli ioni che compensa la variazione legata al cambiamento di $Z$.
-ciò dipende dal fatto che, a causa del filtro in $B \rho$, gli ioni con carica $q$ più piccolo hanno energia cinetica minore, mentre quelli con $q$ più grande hanno energia cinetica maggiore; ricordando che nella formula di Bethe-Bloch la perdita di energia è proporzionale a $Z^2$ e inversamente proporzionale ad $E$, si può dedurre che la notevole differenza in energia cinetica degli ioni compensa la variazione legata al cambiamento di $Z$.
-
-
-Da continuare...
-
+Si può, inoltre, osservare che l'energia rilasciata nel rivelatore al~SiC è molto simile per le tre specie atomiche: 
+%ciò dipende dalla notevole differenza in energia cinetica degli ioni che compensa la variazione legata al cambiamento di $Z$.
+ciò dipende dal fatto che, a causa del filtro in $B \rho$, gli ioni con carica $q$ più piccola hanno energia cinetica minore, mentre quelli con $q$ più grande hanno energia cinetica maggiore; ricordando che nella formula di Bethe-Bloch la perdita di energia è proporzionale a $Z^2$ e inversamente proporzionale ad $E$, si può dedurre che la notevole differenza in energia cinetica degli ioni compensa la variazione legata al cambiamento di $Z$.
+%Di conseguenza, assumendo di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, la principale componente di contaminazione nell'identificazione proviene dagli ioni che non si fermano nel rivelatore al~CsI.
+Di conseguenza, nel caso in esame la principale componente di contaminazione nell'identificazione degli eventi di interesse proviene dagli ioni che non si fermano nel rivelatore al~CsI.
+%Di conseguenza, nel caso in esame la principale componente di contaminazione nella PID proviene dagli ioni che non si fermano nel rivelatore al~CsI.
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando per tutti gli ioni sia la cinematica di reazione sia il trasporto ottico.} \label{fig:deltaE_Emeas_PID}
 \end{figure}
+Per dare una stima quantitativa della percentuale di eventi degradati che potrebbero 
+
+
+%Supponiamo, adesso, di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}: il primo passo nell'analisi dei dati consiste nell'identificazione degli ioni di interesse attraverso l'utilizzo di tagli grafici.
 
 
 
-%\begin{figure} [!p]
-%	\centering
-%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata_taglio.png}
-%	\caption{Taglio grafico per l'identificazione del~\ce{^{20}O}.} \label{fig:deltaE_Emeas_taglio}
-%\end{figure}
 
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata_taglio.png}
+	\caption{Taglio grafico per l'identificazione del~\ce{^{20}O}.} \label{fig:deltaE_Emeas_taglio}
+\end{figure}
+
+
+
+
+%A questo punto è interessante mostrare le correlazioni $x_{foc} - E$
+L'integrazione fra i software dedicati al trasporto ottico degli eiettili e la simulazione del telescopio permette di ricavare altre importanti correlazioni, utili per la PID.
+In Figura~ sono mostrate le matrici $x_{foc} - E_{meas}$ relative al caso in esame: 
+
+
+
+
+Da continuare...
+
+
+%\begin{table} [t!]
+%	\begin{center}
+%		\renewcommand{\arraystretch}{1.2}
+%		\begin{tabular} {ccccccc}
+%			Reazione & & Ione & & \multirow{2}{35 mm}{Sez. d'urto sperim. norm. al DCE}  & & Fraz. di stato di carica \\
+%			         & &      & &        & &                          \\
+%			\toprule
+%			%\hline
+%			DCE  & & \ce{^{20}O} & &  1  & & $8+ \rightarrow 0.9987$ \\
+%			\hline
+%			DCE  & & \ce{^{20}O} & &  1  & & $8+ \rightarrow 0.9987$ \\
+%		\end{tabular}
+%	\end{center}
+%\end{table}
 \clearpage
-\begin{table} [t!]
-	\begin{center}
-		\renewcommand{\arraystretch}{1.2}
-		\begin{tabular} {ccccccc}
-			Reazione & & Ione & & \multirow{2}{35 mm}{Sez. d'urto sperim. norm. al DCE}  & & Fraz. di stato di carica \\
-			         & &      & &        & &                          \\
-			\toprule
-			%\hline
-			DCE  & & \ce{^{20}O} & &  1  & & $8+ \rightarrow 0.9987$ \\
-			\hline
-			DCE  & & \ce{^{20}O} & &  1  & & $8+ \rightarrow 0.9987$ \\
-		\end{tabular}
-	\end{center}
-\end{table}
-
-\begin{table} [h!]
+\begin{table} [p!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
 		\begin{tabular} {cccccccl}
@@ -854,7 +873,7 @@ Da continuare...
 			1-deuteron & & \ce{^{18}F}  & &     $10^3 $     & & & $9^+ > 0.99934$ \\
                        & &              & &                 & & & $8^+ < 10^{-4}$ \\
             \hline
-            2-p 1-n    & & \ce{^{19}O}  & &       $10$      & & & $8^+ \sim 0.99963$ \\
+            2-p 1-n    & & \ce{^{19}O}  & &        10       & & & $8^+ \sim 0.99963$ \\
             \hline
             inelastic  & & \ce{^{20}Ne} & &     $10^4 $     & & & $10^+ > 0.99905$ \\
                        & &              & &                 & & & $9^+ < 10^{-5}$ \\
@@ -862,6 +881,7 @@ Da continuare...
             \bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
+	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazion nucleari normalizzate alla sezione d'urto del DCE.} \label{tab:sez_d'urto}
 \end{table}
 
 
