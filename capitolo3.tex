@@ -517,7 +517,7 @@ Questa affermazione viene confermata dalla Figura~\ref{fig:deltaE_ETot}, in cui 
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Particelle_monocromatiche/deltaE_ETot_quadrata.png}
 	\caption{Matrici $\Delta E_{SiC} - E_{meas}$ per \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne} con particelle monocromatiche, ortogonali e centrali.} \label{fig:deltaE_ETot}
 \end{figure}
-Le matrici si dispongono ad $E_{meas}$ diversi perché la parte di energia persa nel substrato morto dipende dal numero atomico ($Z$) dello ione.
+Sebbene si siano simulate particelle primarie monocromatiche, le matrici si dispongono ad $E_{meas}$ diverse perché la parte di energia persa nel substrato morto dipende dal numero atomico ($Z$) dello ione.
 In secondo luogo, si fa notare che al di sotto di ciascuna delle tre matrici sono presenti degli eventi in cui l'energia residua è stata misurata correttamente, mentre la perdita di energia risulta inferiore al valore ``corretto'': si tratta di eventi in cui la carica prodotta nel rivelatore al SiC è stata raccolta parzialmente. 
 Tali eventi costituiscono una delle principali componenti di errore nella PID, in quanto, potendo andare a posizionarsi sul luogo di uno ione diverso, in una procedura di identificazione effettuata mediante tagli grafici verrebbe attribuito loro uno~$Z$ sbagliato.
 Inoltre, essi costituiscono in ogni caso una perdita di segnali corretti che deve essere minimizzata, in particolar modo se si intende studiare processi estremamente rari come quelli di DCE.
@@ -789,7 +789,7 @@ La Figura~\textcolor{red}{Inserire figura} mostra un ingrandimento della precede
 
 
 
-La corrispondente matrice $\Delta E_{SiC} - E_{meas}$ è riportata in Figura~\ref{fig:deltaE_Emeas_PID}: come si può notare, i luoghi degli ioni simulati appaiono ben separati sia in numero atomico~($Z$) sia in numero di massa~($A$).
+Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono riportate in Figura~\ref{fig:deltaE_Emeas_PID}: come si può notare, i luoghi degli ioni simulati appaiono ben separati sia in numero atomico~($Z$) sia in numero di massa~($A$).
 Si può, inoltre, osservare che l'energia rilasciata nel rivelatore al~SiC è molto simile per le tre specie atomiche: 
 %ciò dipende dalla notevole differenza in energia cinetica degli ioni che compensa la variazione legata al cambiamento di $Z$.
 ciò dipende dal fatto che, a causa del filtro in $B \rho$, gli ioni con carica $q$ più piccola hanno energia cinetica minore, mentre quelli con $q$ più grande hanno energia cinetica maggiore; ricordando che nella formula di Bethe-Bloch la perdita di energia è proporzionale a $Z^2$ e inversamente proporzionale ad $E$, si può dedurre che la notevole differenza in energia cinetica degli ioni compensa la variazione legata al cambiamento di $Z$.
@@ -801,39 +801,39 @@ Di conseguenza, nel caso in esame la principale componente di contaminazione nel
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando per tutti gli ioni sia la cinematica di reazione sia il trasporto ottico.} \label{fig:deltaE_Emeas_PID}
 \end{figure}
-Per dare una stima quantitativa della percentuale di eventi degradati che potrebbero costituire un fondo nella regione di interesse (Region Of Interest, ROI), si è proceduto nel modo seguente: supponendo di voler analizzare una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, si può effettuare nel plot $\Delta E_{SiC} - E_{meas}$ un taglio grafico attorno al luogo pertinente a tale ione, come mostrato in Figura~\ref{fig:deltaE_Emeas_taglio}.
+Per dare una stima quantitativa della percentuale di eventi degradati che potrebbero costituire un fondo nella regione di interesse (Region Of Interest, ROI), si è proceduto nel modo seguente: supponendo di voler analizzare una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, si è effettuato nel plot $\Delta E_{SiC} - E_{meas}$ un taglio grafico attorno al luogo pertinente a tale ione, come mostrato in Figura~\ref{fig:deltaE_Emeas_taglio}.
 All'interno del taglio sono presenti, oltre allo ione di interesse, anche altre specie ioniche, che potrebbero essere erroneamente identificate come~\ce{^{20}O^{8+}}.
-
-
+La percentuale di contaminazione nella ROI dovuta ad un particolare ione può essere calcolata dividendo il numero di eventi di quello ione presenti nella ROI per il numero totale di eventi dello stesso.
 %Supponiamo, adesso, di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}: il primo passo nell'analisi dei dati consiste nell'identificazione degli ioni di interesse attraverso l'utilizzo di tagli grafici.
-
-
-
-
-
 \begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata_taglio.png}
 	\caption{Taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}}.} \label{fig:deltaE_Emeas_taglio}
 \end{figure}
-
-
-
-\begin{table} [p!]
+Il risultato di tale operazione, nel caso del taglio grafico considerato in Figura~\ref{fig:deltaE_Emeas_taglio}, è riportato in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5}: come si può notare, le percentuali sono molto basse, a dimostrazione delle grandi capacità di PID del telescopio~SiC-CsI.
+\begin{table} [t!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
 		\begin{tabular} {cccc}
 			Ione & & & Contaminazione nella ROI (\%) \\
 			\toprule[0.1em]
 			%\hline
-			\ce{^{18}F^{9+}} & & & 0.1 \\
+			\ce{^{18}F^{9+}} & & & 0.1 $\pm$ 0.01 \\
+			\ce{^{19}F^{9+}} & & & 0.1 $\pm$ 0.01 \\
 		\end{tabular}
 	\end{center}
 	\caption{La contaminazione dei diversi ioni nella ROI dell'\ce{^{20}O^{8+}} individuata dal taglio grafico in Figura~\ref{fig:deltaE_Emeas_taglio}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5}
 \end{table}
+La contaminazione più rilevante deriva dal \ce{^{20}F^{9+}} e dal \ce{^{20}Ne^{10+}}, come era lecito aspettarsi considerando che si tratta delle specie ioniche che hanno un valore di $\Delta E_{SiC}$ molto simile a quello dell'\ce{^{20}O^{8+}}.
+
+A questo punto è bene sottolineare che le percentuali riportate sono state calcolate simulando per tutti gli ioni lo stesso numero di eventi.
+Tuttavia, nella situazione reale la produzione degli ioni considerati avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto.
+
 
 
 %A questo punto è interessante mostrare le correlazioni $x_{foc} - E$
+
+
 L'integrazione fra i software dedicati al trasporto ottico degli eiettili e la simulazione del telescopio permette di ricavare altre importanti correlazioni, utili per la PID.
 In Figura~ sono mostrate le matrici $x_{foc} - E_{meas}$ relative al caso in esame: 
 
