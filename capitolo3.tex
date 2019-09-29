@@ -773,7 +773,7 @@ In questo caso, dunque, gli ioni presentano sia le correlazioni cinematiche sia 
 A differenza dei casi precedenti, si sono simulati nove ioni, tutti completamente ionizzati, ossia \ce{^{18}O^{8+}}, \ce{^{19}O^{8+}}, \ce{^{20}O^{8+}}, \ce{^{18}F^{9+}}, \ce{^{19}F^{9+}}, \ce{^{20}F^{9+}}, \ce{^{18}Ne^{10+}}, \ce{^{19}Ne^{10+}} e \ce{^{20}Ne^{10+}}.
 Il telescopio ha dimensioni trasversali di 1.5~cm $\times$ 1.5~cm ed è posto a 14~cm di distanza dal piano in cui vengono prodotte le particelle primarie, che coincide con il piano di ingresso nel FDP.
 
-Per fissare la rigidità magnetica di riferimento si è scelto il \ce{^{18}Ne}, che fra gli ioni considerati è quello con il rapporto massa su carica più piccolo.
+Per fissare la rigidità magnetica di riferimento si è scelto il \ce{^{18}Ne^{10+}}, che fra gli ioni considerati è quello con il rapporto massa su carica più piccolo.
 In questo modo, dovendo mantenere costante il prodotto $\sqrt{m}/q \cdot \sqrt{E}$, gli altri ioni hanno energia cinetica inferiore.
 Questa considerazione è confermata dalla Figura~\ref{fig:KinE}, in cui viene illustrato lo spettro delle energie cinetiche dei diversi ioni.
 Da tale figura si evince che le energie cinetiche accettate dal telescopio sono molto differenti per i diversi ioni, con una differenza fra lo ione più energetico e quello meno energetico di oltre 350~MeV.
@@ -801,7 +801,8 @@ Di conseguenza, nel caso in esame la principale componente di contaminazione nel
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando per tutti gli ioni sia la cinematica di reazione sia il trasporto ottico.} \label{fig:deltaE_Emeas_PID}
 \end{figure}
-Per dare una stima quantitativa della percentuale di eventi degradati che potrebbero 
+Per dare una stima quantitativa della percentuale di eventi degradati che potrebbero costituire un fondo nella regione di interesse (Region Of Interest, ROI), si è proceduto nel modo seguente: supponendo di voler analizzare una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, si può effettuare nel plot $\Delta E_{SiC} - E_{meas}$ un taglio grafico attorno al luogo pertinente a tale ione, come mostrato in Figura~\ref{fig:deltaE_Emeas_taglio}.
+All'interno del taglio sono presenti, oltre allo ione di interesse, anche altre specie ioniche, che potrebbero essere erroneamente identificate come~\ce{^{20}O^{8+}}.
 
 
 %Supponiamo, adesso, di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}: il primo passo nell'analisi dei dati consiste nell'identificazione degli ioni di interesse attraverso l'utilizzo di tagli grafici.
@@ -810,13 +811,26 @@ Per dare una stima quantitativa della percentuale di eventi degradati che potreb
 
 
 
-\begin{figure} [!p]
+\begin{figure} [!t]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata_taglio.png}
-	\caption{Taglio grafico per l'identificazione del~\ce{^{20}O}.} \label{fig:deltaE_Emeas_taglio}
+	\caption{Taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}}.} \label{fig:deltaE_Emeas_taglio}
 \end{figure}
 
 
+
+\begin{table} [p!]
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular} {cccc}
+			Ione & & & Contaminazione nella ROI (\%) \\
+			\toprule[0.1em]
+			%\hline
+			\ce{^{18}F^{9+}} & & & 0.1 \\
+		\end{tabular}
+	\end{center}
+	\caption{La contaminazione dei diversi ioni nella ROI dell'\ce{^{20}O^{8+}} individuata dal taglio grafico in Figura~\ref{fig:deltaE_Emeas_taglio}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5}
+\end{table}
 
 
 %A questo punto è interessante mostrare le correlazioni $x_{foc} - E$
@@ -881,7 +895,7 @@ Da continuare...
             \bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazion nucleari normalizzate alla sezione d'urto del DCE.} \label{tab:sez_d'urto}
+	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE.} \label{tab:sez_d'urto}
 \end{table}
 
 
