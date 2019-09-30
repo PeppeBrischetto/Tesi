@@ -510,6 +510,7 @@ Per semplicità della trattazione si è preferito esporre i risultati in modo sc
 
 
 Come primo esempio si è scelto di illustrare i risultati di un caso ideale in cui le particelle primarie sono generate con un'energia di 800~MeV ed incidono ortogonalmente e centralmente al telescopio, il quale ha, in questo caso, dimensioni trasversali di 1.5~cm $\times$ 1.5~cm.
+%Il substrato epitassiale ha una lunghezza di 350~$\mu$m.
 Per semplicità gli ioni considerati sono soltanto \ce{^{20}O}, \ce{^{20}F} e \ce{^{20}Ne}.
 Nella prima fase di implementazione della simulazione, il modello dei processi fisici utilizzato prendeva in considerazione soltanto le interazioni elettromagnetiche, i processi di decadimento e di decadimento radioattivo.
 Dal momento che la formula di Bethe-Bloch è ricavata tenendo conto della sola interazione elettromagnetica, il modello adottato è sufficiente a separare ioni diversi nelle matrici $\Delta E_{SiC} - E_{meas}$.
@@ -577,14 +578,11 @@ Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono rappresentate in Figu
 Rispetto al caso precedente, fanno la loro comparsa degli eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{meas}$ ha un valore inferiore rispetto a quello corretto. 
 Ciò dipende da quegli eventi in cui le particelle escono fuori dal cristallo allo CsI, non rilasciando totalmente la loro energia residua.
 A causa del motivo precedentemente citato, anche questi eventi introducono una componente di errore nella PID e una perdita di segnali corretti.
-Per meglio comprendere l'entità degli eventi degradati, si sono riportate in Figura~\ref{fig:fetta} le proiezioni sull'asse verticale e su quello orizzontale della matrice: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono asimmetriche le distribuzioni. 
-%Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Particelle_non_ortogonali/deltaE_ETot_intero_range_quadrata.png}
 	\caption{Matrici $\Delta E_{SiC} - E_{meas}$ con particelle monocromatiche, non ortogonali e non centrali.} \label{fig:deltaE_ETot_full_energy}
 \end{figure}
-
 \begin{figure} [!p]
 	\centering
 	\subfigure[]
@@ -592,9 +590,13 @@ Per meglio comprendere l'entità degli eventi degradati, si sono riportate in Fi
 	%\vspace{7mm}
 	\subfigure[]
 	{\includegraphics[scale=0.479]{Grafici_Tesi2/Particelle_non_ortogonali/ETot.png}}
-
+	
 	\caption{Le proiezioni delle matrici $\Delta E_{SiC} - E_{meas}$ di Figura~\ref{fig:deltaE_ETot_full_energy}: in (a) sull'asse $\Delta E_{SiC}$, in (b) sull'asse $E_{meas}$.} \label{fig:fetta}
 \end{figure}
+Per meglio comprendere l'entità degli eventi degradati, si sono riportate in Figura~\ref{fig:fetta} le proiezioni sull'asse verticale e su quello orizzontale della matrice: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono asimmetriche le distribuzioni. 
+In Figura~\ref{fig:fetta}.b si può, inoltre, osservare un secondo picco situato ad un valore di $E_{meas}$ di poco inferiore a quello assunto nel picco principale; esso è dovuto agli ioni che attraversano la cornice completamente inattiva attorno al rivelatore al~SiC, rilasciando una quantità di energia che non viene misurata.
+%Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
+
 
 
 %\begin{figure} [!p]
@@ -726,11 +728,16 @@ Per meglio comprendere l'entità degli eventi degradati, si sono riportate in Fi
 
 
 
-
+%\vspace{0.5cm}
 %\clearpage
 
 \subsection{\iflanguage{italian}{Modello di interazioni adroniche}{Model with adronic interactions}} \label{par:interazioni_adroniche}
 
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Interazioni_adroniche/deltaE_ETot_quadrata.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando un modello di processi fisici che comprenda anche le interazioni adroniche.} \label{fig:deltaE_ERes_adron}
+\end{figure}
 
 
 
@@ -743,11 +750,6 @@ Ciò è dovuto a reazioni nucleari esotermiche, nelle quali viene rilasciata una
 %L'unico mutamento degno di nota riguarda la comparsa di contaminazioni di O in Ne.
 %Dunque, è evidente che la maggior parte degli eventi spuri è originata da raccolta di carica incompleta, come d'altronde era lecito aspettarsi vista la minore probabilità che avvenga un'interazione adronica.
 
-\begin{figure} [!t]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Interazioni_adroniche/deltaE_ETot_quadrata.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando un modello di processi fisici che comprenda anche le interazioni adroniche.} \label{fig:deltaE_ERes_adron}
-\end{figure}
 
 
 
@@ -778,6 +780,16 @@ Il telescopio ha dimensioni trasversali di 1.5~cm $\times$ 1.5~cm ed è posto a 
 Per fissare la rigidità magnetica di riferimento si è scelto il \ce{^{18}Ne^{10+}}, che fra gli ioni considerati è quello con il rapporto massa su carica più piccolo.
 In questo modo, dovendo mantenere costante il prodotto $\sqrt{m}/q \cdot \sqrt{E}$, gli altri ioni hanno energia cinetica inferiore.
 Questa considerazione è confermata dalla Figura~\ref{fig:KinE}.a, in cui viene illustrato lo spettro delle energie cinetiche dei diversi ioni.
+\begin{figure} [!p]
+	\centering
+	\subfigure[]
+	{\includegraphics[scale=0.479]{Grafici_Tesi2/PID/KinE2.png}}
+	%\vspace{7mm}
+	\subfigure[]
+	{\includegraphics[scale=0.479]{Grafici_Tesi2/PID/KinE_zoom.png}}
+	
+	\caption{Lo spettro delle energie cinetiche~$E$ degli ioni simulati: in (a) per tutte le specie, in (b) per i soli ioni di ossigeno.} \label{fig:KinE}
+\end{figure}
 Da tale figura si evince che le energie cinetiche accettate dal telescopio sono molto differenti per i diversi ioni, con una differenza fra lo ione più energetico e quello meno energetico di oltre 350~MeV.
 La Figura~\ref{fig:KinE}.b mostra un ingrandimento della precedente nella zona degli ioni di ossigeno: come si può notare, per ogni ione il range energetico che arriva sul telescopio è di circa 8~MeV, in buon accordo con la~\ref{eq:finestra_Brho}.
 %Gli ioni hanno la stessa finestra di rigidità magnetica, per cui tutti vanno a finire sul telescopio simulato. 
@@ -795,16 +807,13 @@ La Figura~\ref{fig:KinE}.b mostra un ingrandimento della precedente nella zona d
 %	\caption{Ingrandimento della spettro in Figura~\ref{fig:KinE} nella zone degli ioni di ossigeno.} \label{fig:KinE_zoom}
 %\end{figure}
 
+
 \begin{figure} [!p]
 	\centering
-	\subfigure[]
-	{\includegraphics[scale=0.479]{Grafici_Tesi2/PID/KinE2.png}}
-	%\vspace{7mm}
-	\subfigure[]
-	{\includegraphics[scale=0.479]{Grafici_Tesi2/PID/KinE_zoom.png}}
-	
-	\caption{Lo spettro delle energie cinetiche~$E$ degli ioni simulati: in (a) per tutte le specie, in (b) per i soli ioni di ossigeno.} \label{fig:KinE}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata2.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando per tutti gli ioni sia la cinematica di reazione sia il trasporto ottico.} \label{fig:deltaE_Emeas_PID}
 \end{figure}
+
 
 Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono riportate in Figura~\ref{fig:deltaE_Emeas_PID}: come si può notare, i luoghi degli ioni simulati appaiono ben separati sia in numero atomico~($Z$) sia in numero di massa~($A$).
 Si può, inoltre, osservare che l'energia rilasciata nel rivelatore al~SiC è molto simile per le tre specie atomiche: 
@@ -813,20 +822,15 @@ ciò dipende dal fatto che, a causa del filtro in $B \rho$, gli ioni con carica 
 %Di conseguenza, assumendo di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, la principale componente di contaminazione nell'identificazione proviene dagli ioni che non si fermano nel rivelatore al~CsI.
 Di conseguenza, nel caso in esame la principale componente di contaminazione nell'identificazione degli eventi di interesse proviene dagli ioni che non si fermano nel rivelatore al~CsI.
 %Di conseguenza, nel caso in esame la principale componente di contaminazione nella PID proviene dagli ioni che non si fermano nel rivelatore al~CsI.
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata2.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando per tutti gli ioni sia la cinematica di reazione sia il trasporto ottico.} \label{fig:deltaE_Emeas_PID}
-\end{figure}
 Per dare una stima quantitativa della percentuale di eventi degradati che potrebbero costituire un fondo nella regione di interesse (Region Of Interest, ROI), si è proceduto nel modo seguente: supponendo di voler analizzare una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, si è effettuato nel plot $\Delta E_{SiC} - E_{meas}$ un taglio grafico attorno al luogo pertinente a tale ione, come mostrato in Figura~\ref{fig:deltaE_Emeas_taglio}.
-All'interno del taglio sono presenti, oltre allo ione di interesse, anche altre specie ioniche, che potrebbero essere erroneamente identificate come~\ce{^{20}O^{8+}}.
-La percentuale di contaminazione nella ROI dovuta ad un particolare ione può essere calcolata dividendo il numero di eventi di quello ione presenti nella ROI per il numero totale di eventi dello stesso.
-%Supponiamo, adesso, di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}: il primo passo nell'analisi dei dati consiste nell'identificazione degli ioni di interesse attraverso l'utilizzo di tagli grafici.
-\begin{figure} [!t]
+\begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata_taglio.png}
 	\caption{Taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}}.} \label{fig:deltaE_Emeas_taglio}
 \end{figure}
+All'interno del taglio sono presenti, oltre allo ione di interesse, anche altre specie ioniche, che potrebbero essere erroneamente identificate come~\ce{^{20}O^{8+}}.
+La percentuale di contaminazione nella ROI dovuta ad un particolare ione può essere calcolata dividendo il numero di eventi di quello ione presenti nella ROI per il numero totale di eventi dello stesso.
+%Supponiamo, adesso, di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}: il primo passo nell'analisi dei dati consiste nell'identificazione degli ioni di interesse attraverso l'utilizzo di tagli grafici.
 Il risultato di tale operazione, nel caso del taglio grafico considerato in Figura~\ref{fig:deltaE_Emeas_taglio}, è riportato in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5}: come si può notare, le percentuali sono molto basse, a dimostrazione delle grandi capacità di PID del telescopio~SiC-CsI.
 \begin{table} [t!]
 	\begin{center}
@@ -859,14 +863,16 @@ Questi derivano da una componente di particelle non completamente ionizzata pres
 Anche in questo caso, le energie cinetiche sono state determinate in modo che gli ioni avessero lo stessa finestra di rigidità magnetica.
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/20O8+_19F8+_19Ne8+.pdf}
-	\caption{\textcolor{red}{Figura da cambiare}.} \label{fig:deltaE_Emeas_PID_stati_carica}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_stati_carica_taglio.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ per ioni con rapporto $\sqrt{m}/q$ simile a quello dell'\ce{^{20}O^{8+}}. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}}.} \label{fig:deltaE_Emeas_PID_stati_carica}
 \end{figure} 
 Le matrici $\Delta E_{SiC} - E_{meas}$ corrispondenti sono mostrate in Figura~\ref{fig:deltaE_Emeas_PID_stati_carica}: come si può notare, anche in questa simulazione i luoghi delle specie ioniche appaiono ben distinti.
 Inoltre, si fa osservare che nel plot non appare il luogo del~\ce{^{20}Ne^{8+}} poiché la sua energia cinetica non è sufficiente a fargli attraversare il substrato passivato del rivelatore al~SiC.
 Supponendo di essere ancora interessati ad identificare l'\ce{^{20}O^{8+}}, la principale componente di contaminazione scaturisce in questo caso dagli eventi affetti da raccolta di carica incompleta.
 Se si effettua un taglio grafico come quello riportato in figura, si può procedere alla stima delle contaminazioni in modo analogo a quello appena discusso.
-I risultati sono mostrati in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}: il maggiore contaminante risulta essere il~\ce{^{19}F^{8+}}, in quanto la sua matrice va a posizionarsi ad una~$E_{meas}$ molto simile a quella dell'\ce{^{20}O^{8+}}.
+%I risultati sono mostrati in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}: il maggiore contaminante risulta essere il~\ce{^{19}F^{8+}}, in quanto la sua matrice va a posizionarsi ad una~$E_{meas}$ molto simile a quella dell'\ce{^{20}O^{8+}}.
+I risultati sono mostrati in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}: in questo caso soltanto il~\ce{^{18}F^{8+}} e il~\ce{^{19}F^{8+}} fanno da contaminanti per l'\ce{^{20}O^{8+}}, con il secondo che contribuisce in maniera nettamente superiore rispetto al primo.
+
 
 \begin{table} [t!]
 	\begin{center}
@@ -880,9 +886,8 @@ I risultati sono mostrati in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per
 			\ce{^{19}F^{8+}}   & & &   0.051 $\pm$ 0.005 \\
 		\end{tabular}
 	\end{center}
-	\caption{\textcolor{red}{Tabella da fare}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}
+	\caption{La contaminazione dei diversi ioni nella ROI dell'\ce{^{20}O^{8+}} individuata dal taglio grafico in Figura~\ref{fig:deltaE_Emeas_PID_stati_carica}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}
 \end{table}
-
 
 A questo punto è bene sottolineare che le percentuali riportate sono state calcolate simulando per tutti gli ioni lo stesso numero di eventi.
 Tuttavia, nella situazione reale la produzione degli ioni considerati avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto; questa rappresenta, infatti, la probabilità con cui può verificarsi una determinata reazione.  
