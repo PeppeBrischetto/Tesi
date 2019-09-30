@@ -64,7 +64,7 @@ Dunque, proprio la casualità con cui vengono prodotti tali numeri rappresenta i
 Tuttavia, dal momento che tali algoritmi sono inevitabilmente deterministici, ogni numero della sequenza è univocamente calcolato a partire dal suo predecessore. 
 Quindi, le sequenze di numeri sono, in realtà, \emph{pseudo-casuali}, ovvero presentano delle proprietà statistiche analoghe a quelle delle sequenze di numeri casuali, ma sono prodotte in modo deterministico. 
 Per questo motivo, una successione di numeri pseudo-casuali non può avere elementi infinitamente diversi, in quanto, prima o poi, cominceranno a ripetersi.
-
+Definendo \emph{periodo} il numero di iterazioni dopo le quali la successione si ripete, il problema legato alla pseudo-casualità della sequenza è irrilevante se il periodo è sufficientemente lungo rispetto al numero di eventi simulati.
 
 
 Negli ultimi trent'anni l'importanza delle simulazioni basate su metodi Monte Carlo è cresciuta senza soluzione di continuità. 
@@ -79,7 +79,7 @@ Una delle ragioni di tale successo deriva dalla grande efficacia di queste tecni
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[scale=0.75]{Grafici/monte_carlo_vs_analytic2.png}
+	\includegraphics[scale=0.66]{Grafici/monte_carlo_vs_analytic2.png}
 	\caption{Confronto fra il tempo necessario per la risoluzione di un problema con un metodo analitico-deterministico e con un metodo Monte Carlo, al variare della complessità del problema. Figura tratta da~\cite{bielajew:13}.} \label{fig:monte_carlo}
 \end{figure}
 
