@@ -64,7 +64,7 @@ Dunque, proprio la casualità con cui vengono prodotti tali numeri rappresenta i
 Tuttavia, dal momento che tali algoritmi sono inevitabilmente deterministici, ogni numero della sequenza è univocamente calcolato a partire dal suo predecessore. 
 Quindi, le sequenze di numeri sono, in realtà, \emph{pseudo-casuali}, ovvero presentano delle proprietà statistiche analoghe a quelle delle sequenze di numeri casuali, ma sono prodotte in modo deterministico. 
 Per questo motivo, una successione di numeri pseudo-casuali non può avere elementi infinitamente diversi, in quanto, prima o poi, cominceranno a ripetersi.
-Definendo \emph{periodo} il numero di iterazioni dopo le quali la successione si ripete, il problema legato alla pseudo-casualità della sequenza è irrilevante se il periodo è sufficientemente lungo rispetto al numero di eventi simulati.
+Definendo \emph{periodo} il numero di iterazioni dopo le quali la successione si ripete, il problema legato alla pseudo-casualità della sequenza è ininfluente se il periodo è sufficientemente lungo rispetto al numero di eventi simulati.
 
 
 Negli ultimi trent'anni l'importanza delle simulazioni basate su metodi Monte Carlo è cresciuta senza soluzione di continuità. 
@@ -535,7 +535,7 @@ Si deduce, quindi, che per avere delle buone capacità di PID è essenziale che 
 
 
 
-In Figura~\ref{fig:deltaE_Tot} e in Figura~\ref{fig:ETot} sono riportate, rispettivamente, le proiezioni sull'asse $\Delta E_{SiC}$ e sull'asse $E_{meas}$ delle matrici $\Delta E_{SiC} - E_{meas}$: esse rappresentano gli spettri energetici misurati dal rivelatore al SiC e da quello allo CsI.
+In Figura~\ref{fig:deltaE_Tot} e in Figura~\ref{fig:ETot} sono riportate, rispettivamente, le proiezioni sull'asse $\Delta E_{SiC}$ e sull'asse $E_{meas}$ delle matrici $\Delta E_{SiC} - E_{meas}$: esse rappresentano gli spettri energetici misurati dal rivelatore al SiC e da quello allo~CsI.
 Effettuando un fit gaussiano sul picco dell'\ce{^{20}O} nello spettro di $\Delta E_{SiC}$, si trova una FWHM di 1.1~MeV, corrispondente ad una risoluzione del 4.5\%.
 Poiché questo valore è ben più grande della risoluzione intrinseca assunta per tale rivelatore, si deduce che in questo caso la componente più significativa della risoluzione compete alle fluttuazioni nel processo di ionizzazione.
 
@@ -876,11 +876,8 @@ I risultati sono mostrati in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per
 			\toprule[0.1em]
 			%\hline
 			%	\ce{^{19}O^{8+}}   & & &   0.001 $\pm$ 0.001 \\
-			\ce{^{18}F^{8+}}   & & &   ??? $\pm$ ??? \\
-			\ce{^{19}F^{8+}}   & & &   ??? $\pm$ ??? \\
-			\ce{^{20}F^{8+}}   & & &   ??? $\pm$ ??? \\
-			\ce{^{18}Ne^{8+}}  & & &   ??? $\pm$ ??? \\
-			\ce{^{19}Ne^{8+}}  & & &   ??? $\pm$ ??? \\
+			\ce{^{18}F^{8+}}   & & &   0.002 $\pm$ 0.001 \\
+			\ce{^{19}F^{8+}}   & & &   0.051 $\pm$ 0.005 \\
 		\end{tabular}
 	\end{center}
 	\caption{\textcolor{red}{Tabella da fare}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}
