@@ -810,7 +810,7 @@ La Figura~\ref{fig:KinE}.b mostra un ingrandimento della precedente nella zona d
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata2.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata3.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando per tutti gli ioni sia la cinematica di reazione sia il trasporto ottico.} \label{fig:deltaE_Emeas_PID}
 \end{figure}
 
@@ -825,8 +825,8 @@ Di conseguenza, nel caso in esame la principale componente di contaminazione nel
 Per dare una stima quantitativa della percentuale di eventi degradati che potrebbero costituire un fondo nella regione di interesse (Region Of Interest, ROI), si è proceduto nel modo seguente: supponendo di voler analizzare una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, si è effettuato nel plot $\Delta E_{SiC} - E_{meas}$ un taglio grafico attorno al luogo pertinente a tale ione, come mostrato in Figura~\ref{fig:deltaE_Emeas_taglio}.
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata_taglio.png}
-	\caption{Taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}}.} \label{fig:deltaE_Emeas_taglio}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata_taglio_label.png}
+	\caption{Taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Emeas_taglio}
 \end{figure}
 All'interno del taglio sono presenti, oltre allo ione di interesse, anche altre specie ioniche, che potrebbero essere erroneamente identificate come~\ce{^{20}O^{8+}}.
 La percentuale di contaminazione nella ROI dovuta ad un particolare ione può essere calcolata dividendo il numero di eventi di quello ione presenti nella ROI per il numero totale di eventi dello stesso.
@@ -840,7 +840,7 @@ Il risultato di tale operazione, nel caso del taglio grafico considerato in Figu
 			\toprule[0.1em]
 			%\hline
 			\ce{^{18}O^{8+}}   & & &   0.002 $\pm$ 0.001 \\
-		%	\ce{^{19}O^{8+}}   & & &   0.001 $\pm$ 0.001 \\
+			\ce{^{19}O^{8+}}   & & &   0.001 $\pm$ 0.001 \\
 			\ce{^{18}F^{9+}}   & & &   0.017 $\pm$ 0.003 \\
 			\ce{^{19}F^{9+}}   & & &   0.100 $\pm$ 0.007 \\
 			\ce{^{20}F^{9+}}   & & &   0.057 $\pm$ 0.005 \\
@@ -863,8 +863,8 @@ Questi derivano da una componente di particelle non completamente ionizzata pres
 Anche in questo caso, le energie cinetiche sono state determinate in modo che gli ioni avessero lo stessa finestra di rigidità magnetica.
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_stati_carica_taglio.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ per ioni con rapporto $\sqrt{m}/q$ simile a quello dell'\ce{^{20}O^{8+}}. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}}.} \label{fig:deltaE_Emeas_PID_stati_carica}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_stati_carica_taglio2.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ per ioni con rapporto $\sqrt{m}/q$ simile a quello dell'\ce{^{20}O^{8+}}. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Emeas_PID_stati_carica}
 \end{figure} 
 Le matrici $\Delta E_{SiC} - E_{meas}$ corrispondenti sono mostrate in Figura~\ref{fig:deltaE_Emeas_PID_stati_carica}: come si può notare, anche in questa simulazione i luoghi delle specie ioniche appaiono ben distinti.
 Inoltre, si fa osservare che nel plot non appare il luogo del~\ce{^{20}Ne^{8+}} poiché la sua energia cinetica non è sufficiente a fargli attraversare il substrato passivato del rivelatore al~SiC.
@@ -891,8 +891,9 @@ I risultati sono mostrati in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per
 
 A questo punto è bene sottolineare che le percentuali riportate sono state calcolate simulando per tutti gli ioni lo stesso numero di eventi.
 Tuttavia, nella situazione reale la produzione degli ioni considerati avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto; questa rappresenta, infatti, la probabilità con cui può verificarsi una determinata reazione.  
-I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione sono riportati nella Tabella~\ref{tab:sez_d'urto}.
-
+I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urto}, insieme alla probabilità di avere uno ione in un certo stato di carica.
+%Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre uno ione con
+Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
 
 %A questo punto è interessante mostrare le correlazioni $x_{foc} - E$
 
@@ -958,7 +959,7 @@ Da continuare...
             \bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE.} \label{tab:sez_d'urto}
+	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica.} \label{tab:sez_d'urto}
 \end{table}
 
 
