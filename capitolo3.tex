@@ -872,6 +872,7 @@ Supponendo di essere ancora interessati ad identificare l'\ce{^{20}O^{8+}}, la p
 Se si effettua un taglio grafico come quello riportato in figura, si può procedere alla stima delle contaminazioni in modo analogo a quello appena discusso.
 %I risultati sono mostrati in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}: il maggiore contaminante risulta essere il~\ce{^{19}F^{8+}}, in quanto la sua matrice va a posizionarsi ad una~$E_{meas}$ molto simile a quella dell'\ce{^{20}O^{8+}}.
 I risultati sono mostrati in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}: in questo caso soltanto il~\ce{^{18}F^{8+}} e il~\ce{^{19}F^{8+}} fanno da contaminanti per l'\ce{^{20}O^{8+}}, con il secondo che contribuisce in maniera nettamente superiore rispetto al primo.
+La percentuale di eventi di \ce{^{20}O^{8+}} che si colloca al di fuori della ROI è del $(9.25 \pm 0.08)$~\%, compatibile con il valore precedentemente stimato.
 
 
 \begin{table} [t!]
@@ -886,25 +887,17 @@ I risultati sono mostrati in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per
 			\ce{^{19}F^{8+}}   & & &   0.051 $\pm$ 0.005 \\
 		\end{tabular}
 	\end{center}
-	\caption{La contaminazione dei diversi ioni nella ROI dell'\ce{^{20}O^{8+}} individuata dal taglio grafico in Figura~\ref{fig:deltaE_Emeas_PID_stati_carica}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}
+	\caption{La contaminazione di ioni con rapporto $\sqrt{m}/q$ simile a quello dell'\ce{^{20}O^{8+}} nella ROI individuata dal taglio grafico in Figura~\ref{fig:deltaE_Emeas_PID_stati_carica}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5_stati_carica}
 \end{table}
 
 A questo punto è bene sottolineare che le percentuali riportate sono state calcolate simulando per tutti gli ioni lo stesso numero di eventi.
 Tuttavia, nella situazione reale la produzione degli ioni considerati avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto; questa rappresenta, infatti, la probabilità con cui può verificarsi una determinata reazione.  
-I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urto}, insieme alla probabilità di avere uno ione in un certo stato di carica.
-%Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre uno ione con
-Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
+I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urto}, insieme alla probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio.
+Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
+%%Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
+questo è il fattore con cui bisogna riscalare le percentuali precedentemente mostrate per stimare le contaminazioni reali.
+Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazioni_riscalate}
 
-%A questo punto è interessante mostrare le correlazioni $x_{foc} - E$
-
-
-%L'integrazione fra i software dedicati al trasporto ottico degli eiettili e la simulazione del telescopio permette di ricavare altre importanti correlazioni, utili per la PID.
-%In Figura~ sono mostrate le matrici $x_{foc} - E_{meas}$ relative al caso in esame: 
-
-
-
-
-Da continuare...
 
 
 %\begin{table} [t!]
@@ -921,7 +914,7 @@ Da continuare...
 %		\end{tabular}
 %	\end{center}
 %\end{table}
-\clearpage
+%\clearpage
 \begin{table} [p!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -959,7 +952,7 @@ Da continuare...
             \bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica.} \label{tab:sez_d'urto}
+	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio.} \label{tab:sez_d'urto}
 \end{table}
 
 
@@ -1005,4 +998,48 @@ Da continuare...
 %\end{table}
 
 
+\begin{table} [p!]
+	\begin{center}
+		\renewcommand{\arraystretch}{1.2}
+		\begin{tabular} {ccccc}
+			Ione &  Stato di carica  & Numero di eventi nella ROI  & &  Contaminazione\\
+			     &                   &   norm. ad 1 evento di DCE  & &  
+			nella ROI (\%)\\
+			\toprule[0.1em]
+			%\hline
+			\ce{^{18}O}    &  $8^+$    &  $0.017 \pm 0.010$      & & \\
+			\hline
+			\ce{^{19}O}    &  $8^+$    &  $0.00006 \pm 0.00006$  & &\\
+			\hline
+			\ce{^{20}O}    &  $8^+$    &  $0.907 \pm 0.002$      & &\\
+			\hline
+			\ce{^{18}F}    &  $9^+$    &  $0.17 \pm 0.03$        & &\\
+						   &  $8^+$    &  $ \sim 10^{-6}$        & &\\
+			\hline
+			\ce{^{19}F}    &  $9^+$    &  $20 \pm 1$             & &\\
+						   &  $8^+$    &  $ 0.010 \pm 0.0001$    & &\\
+			\hline
+			\ce{^{20}F}    &  $9^+$    &  $5.7 \pm 0.5$          & &\\
+			\hline
+			\ce{^{18}Ne}   &  $10^+$   &  $0.031 \pm 0.004$      & &\\
+			\hline
+			\ce{^{19}Ne}   &  $10^+$   &  $27 \pm 2$             & &\\
+			\hline
+			\ce{^{20}Ne}   &  $10^+$   &  $0.14 \pm 0.08$        & &\\
+			\bottomrule[0.1em]
+		\end{tabular}
+	\end{center}
+	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio.} \label{tab:contaminazioni_riscalate}
+\end{table}
 
+
+
+%A questo punto è interessante mostrare le correlazioni $x_{foc} - E$
+
+
+%L'integrazione fra i software dedicati al trasporto ottico degli eiettili e la simulazione del telescopio permette di ricavare altre importanti correlazioni, utili per la PID.
+%In Figura~ sono mostrate le matrici $x_{foc} - E_{meas}$ relative al caso in esame:
+
+
+
+Da continuare...
