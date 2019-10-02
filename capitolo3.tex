@@ -1170,13 +1170,43 @@ Inoltre, nel paragrafo precedente si è mostrato che, se nelle correlazioni $\De
 Per questo motivo, nel prosieguo verranno trattate soltanto le correlazioni che coinvolgono $E_{CsI}$ piuttosto che l'energia cinetica~$E$.
 Ovviamente, se la perdita di energia $\Delta E$ è piccola rispetto ad~$E$, $E_{CsI}$ ed $E$ sono molto simili.
 
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/xf_csi_label.png}
+	\caption{Le tipiche matrici $x_{foc} - E_{CsI}$.} \label{fig:xf_Ecsi}
+\end{figure}
+
+Le tipiche matrici $x_{foc} - E_{CsI}$ sono riportate in Figura~\ref{fig:xf_Ecsi}: come si può notare, gli ioni si dispongono su luoghi diversi a secondo del loro rapporto~$\sqrt{m}/q$. 
+Nella maggior parte dei casi i luoghi sono ben separati, eccetto per quanto riguarda le coppie \ce{^{20}F^{9+}}--\ce{^{18}O^{8+}} e \ce{^{18}F^{9+}}--\ce{^{20}Ne^{10+}}, per le quali si osserva una parziale sovrapposizione.
+Ciò poteva essere già dedotto guardando la Figura~\ref{fig:deltaE_Ecsi}, in cui si può notare che le matrici delle coppie in questione hanno intervalli di energia $E_{CsI}$ in parte sovrapposti.
+Con lo stesso tipo di ragionamento, osservando la Figura~\ref{fig:deltaE_Ecsi_stati_carica}, si può desumere che se, oltre agli ioni considerati, si fossero simulati anche il \ce{^{18}F^{8+}} e il \ce{^{19}F^{8+}}, allora le matrici di questi due ioni si sarebbero in parte sovrapposta al luogo dell'\ce{^{20}O^{8+}}.
+È interessante sottolineare che, nonostante il telescopio abbia una lunghezza di 1.5~cm, esso vede un intervallo di $x_{foc}$ di circa 2.8~cm; ciò deriva dal fatto che gli ioni possono incidere sul telescopio con un certo angolo orizzontale non nullo, aumentando il numero di traiettorie accettate dal dispositivo.
+Inoltre, in Figura~\ref{fig:xf_Ecsi} è evidente la presenza di eventi degradati, che anche in questo caso possono andare a posizionarsi sui luoghi di altri ioni; dunque, anche in questa rappresentazione la specie ionica di interesse sarebbe affetta da contaminazioni.
+
+%Nella procedura di identificazione degli ioni effettuata con l'attuale apparato sperimentale, 
+Nell'attuale procedura di riduzione dei dati, l'identificazione dei prodotti di reazione viene svolta effettuando dapprima un taglio grafico nei plot $\Delta E - E_{resid}$ per selezionare in $Z$ la specie di interesse; dopo di che, gli eventi così selezionati vengono riportati in un grafico $x_{foc} - E_{resid}$ per separare i diversi isotopi e stati di carica. 
+%La simulazione svolta per questo lavoro ha dimostrato che il telescopio SiC-CsI è in grado, da solo, di identificare lo ione di interesse sia in $Z$ sia in $A$, rendendo, dunque, in linea di principio non necessaria la rappresentazione degli eventi nel plot $x_{foc} - E_{CsI}$.
+%Tuttavia, nel caso esposto in Figura~\ref{fig:deltaE_Ecsi} si vede come il telescopio SiC-CsI possa essere in grado, da solo, di identificare lo ione di interesse sia in $Z$ sia in $A$; di conseguenza, la rappresentazione de
+Tuttavia, nel caso esposto in Figura~\ref{fig:deltaE_Ecsi} si vede come il taglio grafico sia stato, da solo, sufficiente ad identificare lo ione di interesse sia in $Z$ sia in $A$; dunque, riportando gli eventi selezionati in un grafico $x_{foc} - E_{CsI}$ non si dovrebbero osservare altri luoghi se non quello dell'\ce{^{20}O^{8+}}.
+Questa affermazione viene confermata dalla Figura~\ref{fig:xf_Ecsi_O20}, dove è possibile vedere soltanto la matrice dello ione di interesse.
+Sovrapposti a tale matrice, si possono notare gli eventi degradati di altre specie ioniche che contaminano il segnale: purtroppo la rappresentazione $x_{foc} - E_{CsI}$ non risulta utile, in questo caso, a separare lo ione di interesse dai contaminanti, in quanto questi hanno un'energia $E_{CsI}$ uguale a quella del segnale.
+
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/xf_csi_taglio2.png}
+	\caption{La matrice $x_{foc} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}.} \label{fig:xf_Ecsi_O20}
+\end{figure} 
 
 
 
 
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/tof_csi_taglio.png}
+	\caption{La matrice $\mbox{tof} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}.} \label{fig:tof_Ecsi_O20}
+\end{figure} 
 
 
 
-
-
-Da continuare...
+%Da continuare...
