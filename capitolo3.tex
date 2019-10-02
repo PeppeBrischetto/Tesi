@@ -1031,30 +1031,31 @@ Dividendo il numero di segnali per la somma degli eventi di fondo, si ottiene un
 			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio.} \label{tab:contaminazioni_riscalate}
+	\caption{Per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_riscalate}
 \end{table}
 
 
 
 
 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Ecsi_quadrata_taglio_label.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi}
-\end{figure}
 
 
-Un aspetto importante di questo studio consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ possa dare risultati analoghi a quelli della correlazione $\Delta E_{SiC} - E_{meas}$. 
+%\clearpage
+%\subsection*{Studio della correlazione $\Delta E_{SiC} - E_{CsI}$} 
+\subsection*{\iflanguage{italian}{Studio della correlazione $\Delta E_{SiC} - E_{CsI}$}{Study of $\Delta E_{SiC} - E_{CsI}$ correlation}}
+
+Un aspetto importante di questo studio consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ possa dare risultati analoghi a quelli ottenuti con la correlazione $\Delta E_{SiC} - E_{meas}$. 
 %In Figura~\ref{fig:deltaE_Ecsi} si riportano le matrici degli ioni completamente ionizzati, le quali continuano ad essere ben separate.
 %Le percentuali di contaminazione nella ROI individuata dal taglio grafico in figura sono mostrate nella Tabella~\ref{tab:contaminazione_deltaE_Ecsi_1.5per1.5}; confrontando quest'ultima con la Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5} si può osservare che le percentuali sono molto simili.
 %Lo stesso risultato si ottiene considerando gli ioni con stati di carica diversi, le cui matrici sono rappresentate in Figura~\ref{fig:deltaE_Ecsi_stati_carica}.
 %Anche le matrici degli ioni non completamente ionizzati restano chiaramente distinte, come si può osservare dalla Figura~\ref{fig:deltaE_Ecsi_stati_carica}.  
-In Figura~\ref{fig:deltaE_Ecsi} si riportano le matrici degli ioni completamente ionizzati, mentre in Figura~\ref{fig:deltaE_Ecsi_stati_carica} sono illustrate le matrici degli ioni con rapporto $\sqrt{m}/q$ simile a quello dell'\ce{^{20}O^{8+}}: in entrambi i casi i luoghi continuano ad essere ben separati.
+In Figura~\ref{fig:deltaE_Ecsi} si riportano le matrici degli ioni completamente ionizzati, mentre in Figura~\ref{fig:deltaE_Ecsi_stati_carica} sono illustrate le matrici degli ioni con rapporto $\sqrt{m}/q$ simile a quello dell'\ce{^{20}O^{8+}}: in entrambi i casi i luoghi continuano ad essere ben separati sia in numero atomico sia in numero di massa.
 Le percentuali di contaminazione, riscalate per la sezione d'urto e per la probabilità di ottenere un certo stato di carica, sono mostrate in Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}: confrontando quest'ultima con la Tabella~\ref{tab:contaminazioni_riscalate} si può osservare che le percentuali sono, per tutti gli ioni considerati, molto simili.
 Il rapporto S/B risulta essere di $0.021 \pm 0.001 $, dunque migliore di quello trovato con la correlazione $\Delta E_{SiC} - E_{meas}$.
 Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica dei telescopi, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
 Dal momento che il muro di telescopi sarà composto da oltre 1200 dispositivi, la possibilità di evitarne la calibrazione consentirebbe un notevole risparmio di tempo necessario per la riduzione dei dati.
+Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ ha dimostrato offrire un rapporto S/B superiore a quello di $\Delta E_{SiC} - E_{meas}$, da questo momento in poi verranno presentate soltanto le matrici relative alla prima correlazione.
+%Poiché il rapporto S/B ottenuto dalla correlazione $\Delta E_{SiC} - E_{CsI}$ si è dimostrato superiore a quello della correlazione $\Delta E_{SiC} - E_{meas}$, da questo momento in poi verranno presentate soltanto le matrici relative a
 
 %\begin{table} [t!]
 %	\begin{center}
@@ -1076,7 +1077,11 @@ Dal momento che il muro di telescopi sarà composto da oltre 1200 dispositivi, l
 %	\caption{La contaminazione dei diversi ioni nella ROI dell'\ce{^{20}O^{8+}} individuata dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}.} \label{tab:contaminazione_deltaE_Ecsi_1.5per1.5}
 %\end{table}
 
-
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Ecsi_quadrata_taglio_label.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi}
+\end{figure}
 
 \begin{figure} [!p]
 	\centering
@@ -1117,13 +1122,29 @@ Dal momento che il muro di telescopi sarà composto da oltre 1200 dispositivi, l
 			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate}
+	\caption{Utilizzando la correlazione $\Delta E_{SiC} - E_{CsI}$, per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate}
 \end{table}
 
+
+
+
+
+
+%\subsection*{Studio delle correlazioni $x_{foc} - E_{CsI}$ e $\mbox{tof} - E_{CsI}$} 
+\subsection*{\iflanguage{italian}{Studio delle correlazioni $x_{foc} - E_{CsI}$ e $\mbox{tof} - E_{CsI}$}{Study of $x_{foc} - E_{CsI}$ and $\mbox{tof} - E_{CsI}$ correlations}}
 %A questo punto è interessante mostrare le correlazioni $x_{foc} - E$
-
-
 %L'integrazione fra i software dedicati al trasporto ottico degli eiettili e la simulazione del telescopio permette di ricavare altre importanti correlazioni, utili per la PID.
 %In Figura~ sono mostrate le matrici $x_{foc} - E_{meas}$ relative al caso in esame:
+
+%Grazie all'utilizzo combinato delle correlazioni $\Delta E - E$ e di quelle originate dalla forza di Lorentz, l'attuale apparato sperimentale consente di identificare i prodotti di reazione sia in~$Z$ sia in rapporto $\sqrt{m}/q$ con elevata risoluzione.
+%Nell'attuale apparato sperimentale i prodotti di reazione vengono identificati in numero atomico e in rapporto massa-carica grazie all'utilizzo congiunto della tecnica $\Delta E - E$ e della correlazione posizione-energia cinetica originata dalla forza di Lorentz.
+
+%Come anticipato nel Paragrafo~\ref{sez:telescopi_sic_csi}, il progetto NUMEN intende svolgere l'identificazione in numero atomico, numero di massa e carica dei prodotti di reazione utilizzando congiuntamente la tecnica $\Delta E - E$, la correlazione posizione-energia cinetica originata dalla forza di Lorentz e la misura del tempo di volo.
+%; allo scopo di studiare i processi di DCE è, infatti, fondamentale avere grandi capacità di PID per rigettare gli eventi di fondo.
+Nei paragrafi precedenti si è evidenziato come i telescopi SiC-CsI riescano a produrre nelle correlazioni $\Delta E - E$ un'efficace separazione degli ioni sia in $Z$ sia in $A$; tuttavia, lo spettrometro offre anche altre correlazioni che potrebbero migliorare notevolmente le capacità di PID. 
+Il progetto NUMEN intende, pertanto, svolgere l'identificazione in numero atomico, numero di massa e carica dei prodotti di reazione utilizzando congiuntamente la tecnica $\Delta E - E$, la correlazione posizione-energia cinetica originata dalla forza di Lorentz e la misura del tempo di volo.
+In questo paragrafo verranno esposti i risultati ottenuti dallo 
+
+
 
 Da continuare...
