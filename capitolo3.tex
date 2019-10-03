@@ -1312,6 +1312,11 @@ Dunque, sebbene l'efficienza di rivelazione del segnale sia diminuita, il fondo 
 %\paragraph*{Dimensioni trasversali: 2~cm $\times$ 2~cm.}
 
 In questo caso, l'intervallo di energia cinetica accettato dal telescopio è maggiore, come viene confermato dalla Figura~\ref{fig:xf_ecsi_2per2}, in cui si può notare che l'intervallo di $x_{foc}$ visto dal telescopio è di circa 3.4~cm.
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/2per2/xf_ecsi_quadrata.png}
+	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 2~cm~$\times$~2~cm.} \label{fig:xf_ecsi_2per2}
+\end{figure} 
 Per i motivi precedentemente esposti, anche in questo caso si è preferito non riportare le matrici $\Delta E_{SiC} - E_{CsI}$.
 Il numero di eventi nella ROI, riscalato per la sezione e per la probabilità di ottenere un determinato stato di carica e normalizzato ad un evento di DCE, viene mostrato, per ogni ione, nella Tabella~\ref{tab:contaminazioni_riscalate_2per2}: come si può notare, i valori sono più alti di quelli visti nelle altre due condizioni.
 %L'efficienza di rivelazione del segnale è maggiore rispetto ai casi precedenti, raggiungendo il $(91.9 \pm 0.002)$~\%.
@@ -1322,11 +1327,7 @@ Ciò significa che, aumentando le dimensioni trasversali del telescopio, diminui
 
 
 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/2per2/xf_ecsi_quadrata.png}
-	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 2~cm~$\times$~2~cm.} \label{fig:xf_ecsi_2per2}
-\end{figure} 
+
 
 
 %\begin{figure} [!p]
@@ -1374,14 +1375,23 @@ Ciò significa che, aumentando le dimensioni trasversali del telescopio, diminui
 \subsection*{Conclusioni}
 
 
-In accordo con quanto trovato, si può affermare che, al fine di minimizzare gli eventi con raccolta di carica incompleta, è opportuno avere la maggiore superficie di rivelazione possibile.
-Ciò si può evincere dalla Figura~\ref{fig:misident_vs_surface}, dove è mostrato, per un caso rappresentativo, l'andamento della probabilità di errore nell'identificazione dei nuclei al variare della superficie e dell'energia.
+%In accordo con quanto trovato, si può affermare che, al fine di minimizzare gli eventi con raccolta di carica incompleta, è opportuno avere la maggiore superficie di rivelazione possibile.
+%Ciò si può evincere dalla Figura~\ref{fig:misident_vs_surface}, dove è mostrato, per un caso rappresentativo, l'andamento della probabilità di errore nell'identificazione dei nuclei al variare della superficie e dell'energia.
 %Ciò si spiega considerando che, a parità di lunghezza della cornice, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
-Tale andamento può essere spiegato considerando che, a parità di lunghezza della cornice non attiva, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
+%Tale andamento può essere spiegato considerando che, a parità di lunghezza della cornice non attiva, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
+Lo studio effettuato ha dimostrato che, aumentando le dimensioni trasversali del telescopio, cresce l'efficienza di raccolta del segnale; tuttavia, la frazione di eventi di fondo cresce più velocemente, in modo tale che il rapporto S/B diminuisce.
+L'andamento di quest'ultimo in funzione della superficie del telescopio è riportato in Figura~\ref{fig:rapporto_segnale_fondo}, dove si può notare che la diminuzione è fortemente non lineare.
+Alla luce di questo risultato, per massimizzare la sensibilità di misura alla reazione di interesse bisognerebbe utilizzare i telescopi da 1~cm $\times$ 1~cm.
 
+\begin{figure} [!t]
+	\centering
+	\includegraphics[scale=0.5]{Grafici_Tesi2/Granularita/sig_back_ratio.png}
+	\caption{L'andamento del rapporto segnale-fondo al variare della superficie del telescopio.} \label{fig:rapporto_segnale_fondo}
+\end{figure}
 
-
-Tuttavia, avere superfici più grandi significa anche aumentare il verificarsi del pile-up, in quanto cresce la probabilità che due o più ioni vadano a finire nello stesso rivelatore nella stessa finestra temporale, producendo un segnale somma di due segnali.
+%Tuttavia, avere superfici più grandi significa anche aumentare il verificarsi del pile-up, in quanto cresce la probabilità che due o più ioni vadano a finire nello stesso rivelatore nella stessa finestra temporale, producendo un segnale somma di due segnali.
+Quando si analizzano le condizioni di granularità è opportuno prendere in considerazione anche un altro fenomeno legato alla superficie di rivelazione: il pile-up.
+In particolare, se le superfici sono più grandi, cresce la probabilità di pile-up, in quanto diventa più probabile che due o più ioni vadano a finire sullo stesso rivelatore nella stessa finestra temporale, producendo un segnale somma di due segnali.
 È stato, dunque, effettuato un calcolo analitico per dedurre la probabilità di pile-up: si ricorda che il rapporto fra la probabilità $\mathcal{P}(> \! 1)$ di avere più di un evento e la probabilità $\mathcal{P}(1)$ di averne uno solo può essere espressa come il seguente rapporto
 \begin{equation}
 \frac{\mathcal{P}(> \! 1)}{\mathcal{P}(1)} = \frac{1 - 
@@ -1394,25 +1404,33 @@ Poiché questa tipologia di fenomeni è governata dalla statistica di Poisson, l
 \end{equation}
 laddove $\mu$ indica il valore medio della distribuzione.
 Nel caso in esame, tale valore medio non è altro che il prodotto fra la larghezza dell'intervallo temporale $\tau$ e il rate di particelle, con quest'ultima quantità data dal prodotto tra il flusso $\Phi$ di particelle incidenti e la superficie $S$ del rivelatore.
+\begin{figure} [!t]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Granularita/pile-up3.png}
+	\caption{La probabilità di avere eventi di pile-up rispetto alla probabilità di avere un singolo evento al variare del flusso di particelle incidenti e della superficie del rivelatore. Le linee tratteggiate indicano rispettivamente il flusso massimo e medio attesi per NUMEN.} \label{fig:pile-up}
+\end{figure}
 Dunque, la~\ref{eq:calcolo_pile-up} può essere scritta come
 \begin{equation} \label{eq:pile-up}
 \frac{\mathcal{P}(> \! 1)}{\mathcal{P}(1)} = \frac{1 - 
 	\mbox{e}^{- \tau \, \Phi \, S} - \tau \, \Phi \, S \,\mbox{e}^{- \tau\, \Phi \, S}}{\tau \, \Phi \, S \, \mbox{e}^{- \tau \, \Phi \, S}}
 \end{equation} 
 Assumendo una finestra temporale della durata di 1~$\mu$s, si è riportato in Figura~\ref{fig:pile-up} l'andamento della~\ref{eq:pile-up} in funzione del flusso di particelle incidenti e della superficie del rivelatore: come si può notare, tale quantità cresce rapidamente all'aumentare della superficie.
-Dal momento che per gli obiettivi di NUMEN è necessario lavorare con fasci di elevata intensità, è fondamentale che la probabilità di pile-up sia piccola; di conseguenza, la superficie dei telescopi non può essere eccessivamente grande.
+Dal momento che i valori riscontrati sono comparabili alle percentuali di contaminazione mostrate in precedenza, il pile-up può rappresentare un serio problema per NUMEN.
+Poiché per gli obiettivi del progetto è necessario lavorare con fasci di elevata intensità, bisogna minimizzare la probabilità di pile-up; di conseguenza, la superficie dei telescopi non può essere eccessivamente grande.
 
 
-\begin{figure} [!t]
-	\centering
-	\includegraphics[scale=0.55]{Grafici_Tesi2/Granularita/pile-up3.png}
-	\caption{La probabilità di avere eventi di pile-up rispetto alla probabilità di avere un singolo evento al variare del flusso di particelle incidenti e della superficie del rivelatore. Le linee tratteggiate indicano rispettivamente il flusso massimo e medio attesi per NUMEN.} \label{fig:pile-up}
-\end{figure}
 
 
-Due aspetti diversi spingono in direzioni opposte: è necessario cercare una situazione di compromesso fra le due esigenze.
-Alla luce delle considerazione svolte, la migliore condizione di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto riesce ad unire un'alta percentuale di riconoscimento del segnale con una bassa probabilità di pile-up.
 
+%Due aspetti diversi spingono in direzioni opposte: è necessario cercare una situazione di compromesso fra le due esigenze.
+%Alla luce delle considerazione svolte, la migliore condizione di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto riesce ad unire un'alta percentuale di riconoscimento del segnale con una bassa probabilità di pile-up.
+
+Sebbene entrambi gli aspetti suggeriscano di utilizzare i telescopi da 1~cm $\times$ 1~cm, nella scelta finale entrano in gioco anche altri fattori, legati ad esempio al numero di canali necessari per leggere tutti i dispositivi e alla dissipazione del calore prodotto dai circuiti elettronici.
+È chiaro che, se le dimensioni sono più piccole, il numero di rivelatori da utilizzare per riempire la stessa superficie è più grande; di conseguenza, al diminuire della superficie dei telescopi, crescono sia il numero di canali sia il numero di circuiti elettronici.
+Ogni circuito, quando è in funzione, produce calore, che deve essere dissipato per evitare il surriscaldamento delle apparecchiature; se il numero di circuiti è grande, potrebbe essere necessario realizzare un sistema di raffreddamento ad hoc, che richiederebbe ulteriori sforzi di progettazione e costi di produzione.
+
+Dal momento che aspetti diversi spingono in direzioni opposte, è necessario cercare una situazione di compromesso.
+Alla luce delle considerazioni svolte, la condizione ottimale di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto offrono un buon rapporto S/B, che può essere migliorato utilizzando la correlazione $\mbox{tof} - E_{CsI}$, mantengono sufficientemente bassa la probabilità di pile-up e richiedono meno della metà dei dispositivi che occorrerebbero se si utilizzassero i telescopi 1.5~cm $\times$ 1.5~cm.
 
 
 
