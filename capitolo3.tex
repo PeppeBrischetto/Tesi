@@ -977,7 +977,7 @@ In Figura~\ref{fig:deltaE_Ecsi} sono riportate le matrici degli ioni simulati: c
 	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi}
 \end{figure}
 Il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE, è mostrato in Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}: confrontando quest'ultima con la Tabella~\ref{tab:contaminazioni_riscalate} si può osservare che i valori sono, per tutti gli ioni considerati, molto simili.
-L'efficienza di rivelazione del segnale resta del $(90.4 \pm 0.2)$~\%, mentre il rapporto S/B risulta essere pari a $10939 \pm 38 $, inferiore a quello trovato con la correlazione $\Delta E_{SiC} - E_{meas}$.
+L'efficienza di rivelazione del segnale resta del $(90.4 \pm 0.2)$~\%, mentre il rapporto S/B risulta essere pari a $10939 \pm 28 $, inferiore a quello trovato con la correlazione $\Delta E_{SiC} - E_{meas}$.
 La sensibilità di misura corrispondente a questo valore è di circa 460~pb a 5$\sigma$, pertanto anche con questo tipo di correlazione è possibile misurare le reazioni di DCE all'energia di eccitazione di interesse.
 Sulla base di queste considerazioni è possibile sostenere che non è necessario effettuare una calibrazione energetica dei telescopi, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori. 
 Dal momento che il muro di telescopi sarà composto da oltre 1200 dispositivi, la possibilità di evitarne la calibrazione consentirebbe un notevole risparmio di tempo necessario per la riduzione dei dati.
@@ -1196,7 +1196,9 @@ Il rapporto S/B risulta essere di $0.0172 \pm 0.0008$, notevolmente inferiore ai
 	\caption{Per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_riscalatea}
 \end{table}
 La sensibilità di misura corrispondente è di circa 300~$\mu$b a 5$\sigma$, estremamente più grande di quella necessaria per osservare il DCE.
-Sebbene questo valore escluda la possibilità di riuscire a distinguere con il telescopio SiC-CsI le reazioni di DCE dal fondo, l'utilizzo di altre correlazioni potrebbe portare ad un miglioramento del rapporto S/B e, conseguentemente, ad un abbassamento della sensibilità di misura.
+%Sebbene questo valore escluda la possibilità di riuscire a distinguere con il telescopio SiC-CsI le reazioni di DCE dal fondo, l'utilizzo di altre correlazioni potrebbe portare ad un miglioramento del rapporto S/B e, conseguentemente, ad un abbassamento della sensibilità di misura.
+%Sebbene questo valore escluda la possibilità di riuscire a distinguere con il telescopio SiC-CsI le reazioni di DCE dal fondo, altre correlazioni potrebbero, invece, riuscire a separare il segnale dal rumore e, conseguentemente, 
+Dunque, se si vuole effettuare uno studio delle reazioni di DCE ad elevate energie di eccitazione è necessario affiancare alla tecnica $\Delta E - E$ altre correlazioni, in grado di separare il segnale dai contaminanti; in tal modo, la sensibilità di misura complessiva dell'apparato potrebbe essere sufficiente per distinguere il DCE dal fondo.
 Due importanti correlazioni sono descritte nel paragrafo successivo.
 
 
@@ -1237,10 +1239,10 @@ Due importanti correlazioni sono descritte nel paragrafo successivo.
 
 %Come anticipato nel Paragrafo~\ref{sez:telescopi_sic_csi}, il progetto NUMEN intende svolgere l'identificazione in numero atomico, numero di massa e carica dei prodotti di reazione utilizzando congiuntamente la tecnica $\Delta E - E$, la correlazione posizione-energia cinetica originata dalla forza di Lorentz e la misura del tempo di volo.
 %; allo scopo di studiare i processi di DCE è, infatti, fondamentale avere grandi capacità di PID per rigettare gli eventi di fondo.
-Nei paragrafi precedenti si è evidenziato come i telescopi SiC-CsI riescano a produrre nei plot $\Delta E - E$ un'efficace separazione degli ioni sia in $Z$ sia in $A$; tuttavia, utilizzando anche altre tipologie di correlazioni è possibile migliorare le capacità complessive di PID e la reiezione degli eventi di fondo. 
-Il progetto NUMEN intende, infatti, svolgere l'identificazione in numero atomico, numero di massa e carica dei prodotti di reazione utilizzando congiuntamente la tecnica $\Delta E - E$, la correlazione posizione-energia cinetica originata dalla forza di Lorentz e la misura del \emph{tempo di volo} (time of flight, tof).
+%Nei paragrafi precedenti si è evidenziato come i telescopi SiC-CsI riescano a produrre nei plot $\Delta E - E$ un'efficace separazione degli ioni sia in $Z$ sia in $A$; tuttavia, utilizzando anche altre tipologie di correlazioni è possibile migliorare le capacità complessive di PID e la reiezione degli eventi di fondo. 
+Il progetto NUMEN intende svolgere l'identificazione in numero atomico, numero di massa e carica dei prodotti di reazione utilizzando congiuntamente la tecnica $\Delta E - E$, la correlazione posizione-energia cinetica originata dalla forza di Lorentz e la misura del \emph{tempo di volo} (time of flight, tof).
 %In questo paragrafo verranno esposti i risultati ottenuti dallo 
-Per poter studiare le ultime due tecniche di identificazione è stata di fondamentale importanza l'integrazione fra i software dedicati al trasporto ottico degli eiettili e la simulazione del telescopio, in quanto ha permesso di ricavare tutte le osservabili necessarie per questo tipo di analisi. 
+Per poter studiare, nell'ambito di questo lavoro, le ultime due tecniche di identificazione è stata di fondamentale importanza l'integrazione fra i software dedicati al trasporto ottico degli eiettili attraverso MAGNEX e la simulazione \geant{} del telescopio, in quanto ha permesso di ricavare tutte le osservabili necessarie per questo tipo di analisi. 
 %L'integrazione fra i software dedicati al trasporto ottico degli eiettili e la simulazione del telescopio è stata fondamentale per ricavare le osservabili necessarie allo studio delle ultime due tecniche di identificazione.
 %; in particolare, i primi contengono tutte le informazioni rilevanti  
 
@@ -1273,36 +1275,35 @@ Ovviamente, se la perdita di energia $\Delta E$ è piccola rispetto ad~$E$, $E_{
 \end{figure}
 
 Le matrici $x_{foc} - E_{CsI}$ corrispondenti alla simulazione della Sezione~\ref{sez:studio_PID} sono riportate in Figura~\ref{fig:xf_Ecsi}: come si può notare, gli ioni si dispongono su luoghi diversi a secondo del loro rapporto~$\sqrt{m}/q$. 
-I luoghi sono ben separati, ad eccezione ovviamente di quelli con lo stesso rapporto massa su carica.
+I luoghi sono ben separati, ad eccezione, ovviamente, di quelli con lo stesso rapporto massa su carica.
 %Ciò poteva essere già dedotto guardando la Figura~\ref{fig:deltaE_Ecsi}, in cui si può notare che le matrici delle coppie in questione hanno intervalli di energia $E_{CsI}$ in parte sovrapposti.
 %Con lo stesso tipo di ragionamento, osservando la Figura~\ref{fig:deltaE_Ecsi_stati_carica}, si può desumere che se, oltre agli ioni considerati, si fossero simulati anche il \ce{^{18}F^{8+}} e il \ce{^{19}F^{8+}}, allora le matrici di questi due ioni si sarebbero in parte sovrapposta al luogo dell'\ce{^{20}O^{8+}}.
 È interessante sottolineare che, nonostante il telescopio abbia una lunghezza di 1.5~cm, esso vede un intervallo di $x_{foc}$ di circa 2.8~cm; ciò deriva dal fatto che gli ioni possono incidere sul telescopio con un certo angolo orizzontale non nullo, aumentando il numero di traiettorie accettate dal dispositivo.
-Inoltre, in Figura~\ref{fig:xf_Ecsi} è evidente la presenza di eventi degradati, che anche in questo caso possono andare a posizionarsi sui luoghi di altri ioni; dunque, anche in questa rappresentazione la specie ionica di interesse sarebbe affetta da contaminazioni.
+Inoltre, in Figura~\ref{fig:xf_Ecsi} è evidente la presenza di eventi degradati, che anche in questo caso possono andare a posizionarsi sui luoghi di altri ioni.
+%; dunque, anche in questa rappresentazione la specie ionica di interesse sarebbe affetta da contaminazioni.
 
 %Nella procedura di identificazione degli ioni effettuata con l'attuale apparato sperimentale, 
-Nell'attuale procedura di riduzione dei dati, l'identificazione dei prodotti di reazione viene svolta effettuando dapprima un taglio grafico nei plot $\Delta E - E_{resid}$ per selezionare in $Z$ la specie di interesse; dopo di che, gli eventi così selezionati vengono riportati in un grafico $x_{foc} - E_{resid}$ per separare i diversi isotopi e stati di carica. 
+L'identificazione dei prodotti di reazione rivelati con l'attuale apparato sperimentale viene svolta effettuando dapprima un taglio grafico nei plot $\Delta E - E_{resid}$ per selezionare in $Z$ la specie di interesse; dopo di che, gli eventi così selezionati vengono riportati in un grafico $x_{foc} - E_{resid}$ per separare i diversi isotopi e stati di carica. 
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/xf_csi_taglio2.png}
+	\caption{La matrice $x_{foc} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi_altaE}.} \label{fig:xf_Ecsi_O20a}
+\end{figure}
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/tof_csi_taglio.png}
+	\caption{La matrice $\mbox{tof} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi_altaE}.} \label{fig:tof_Ecsi_O20a}
+\end{figure} 
 %La simulazione svolta per questo lavoro ha dimostrato che il telescopio SiC-CsI è in grado, da solo, di identificare lo ione di interesse sia in $Z$ sia in $A$, rendendo, dunque, in linea di principio non necessaria la rappresentazione degli eventi nel plot $x_{foc} - E_{CsI}$.
 %Tuttavia, nel caso esposto in Figura~\ref{fig:deltaE_Ecsi} si vede come il telescopio SiC-CsI possa essere in grado, da solo, di identificare lo ione di interesse sia in $Z$ sia in $A$; di conseguenza, la rappresentazione de
-Tuttavia, nel caso esposto in Figura~\ref{fig:deltaE_Ecsi} si vede come il taglio grafico sia stato, da solo, sufficiente ad identificare lo ione di interesse sia in $Z$ sia in $A$; dunque, riportando gli eventi selezionati in un grafico $x_{foc} - E_{CsI}$ non si dovrebbero osservare altri luoghi se non quello dell'\ce{^{20}O^{8+}}.
-Questa affermazione viene confermata dalla Figura~\ref{fig:xf_Ecsi_O20}, dove è possibile vedere soltanto la matrice dello ione di interesse.
+Tuttavia, nel caso esposto in Figura~\ref{fig:deltaE_Ecsi_altaE} si vede come il taglio grafico sia stato, da solo, sufficiente ad identificare lo ione di interesse sia in $Z$ sia in $A$; dunque, riportando gli eventi selezionati in un grafico $x_{foc} - E_{CsI}$ non si dovrebbero osservare altri luoghi se non quello dell'\ce{^{20}O^{8+}}.
+Questa affermazione viene confermata dalla Figura~\ref{fig:xf_Ecsi_O20a}, dove è possibile vedere soltanto la matrice dello ione di interesse.
 Sovrapposti a tale matrice, si possono notare gli eventi degradati dell\ce{^{20}O^{8+}} che contaminano il segnale: purtroppo la rappresentazione $x_{foc} - E_{CsI}$ non risulta utile, in questo caso, a separare lo ione di interesse dai contaminanti, in quanto questi hanno un'energia $E_{CsI}$ uguale a quella del segnale.
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/xf_csi_taglio_quadrato2.png}
-	\caption{La matrice $x_{foc} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}.} \label{fig:xf_Ecsi_O20}
-\end{figure} 
 
-
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/tof_csi_taglio_quadrato.png}
-	\caption{La matrice $\mbox{tof} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}.} \label{fig:tof_Ecsi_O20}
-\end{figure}
-
-Per cercare di separare lo ione di interesse dalle specie contaminanti si può, allora, pensare di utilizzare la correlazione $\mbox{tof} - E_{CsI}$: in Figura~\ref{fig:tof_Ecsi_O20}, dove sono riportati gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}, è possibile notare come questa rappresentazione permetta di distinguere chiaramente il segnale dagli ioni F e Ne.
+Per cercare di separare lo ione di interesse dalle specie contaminanti si può, allora, pensare di utilizzare la correlazione $\mbox{tof} - E_{CsI}$: in Figura~\ref{fig:tof_Ecsi_O20a}, dove sono riportati gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi_altaE}, è possibile notare come questa rappresentazione permetta di distinguere chiaramente il segnale dagli ioni F e Ne.
 %Ricordando che, a causa delle diverse sezioni d'urto dei processi, queste due specie 
 %Ricordando la Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}, queste due specie danno il maggiore contributo di contaminazione nella ROI, avendo delle sezioni d'urto estremamente più grandi 
-Si ricorda che queste due specie, a causa della loro elevata sezione d'urto di produzione, danno il maggiore contributo di contaminazione nella ROI(si veda la Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}); di conseguenza, riuscire a isolarle consentirebbe di aumentare il rapporto S/B.
+Si ricorda che queste due specie, a causa della loro elevata sezione d'urto, danno il maggiore contributo di contaminazione nella ROI (si veda la Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}); di conseguenza, riuscire a isolarle dal segnale consentirebbe di aumentare il rapporto S/B e di diminuire la sensibilità di misura complessiva dell'apparato.
 %Dal momento che queste due specie, a causa della loro elevata sezione d'urto di produzione, danno il maggiore contributo di contaminazione nella ROI (si veda la Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}), riuscire a 
 %È bene sottolineare che nel grafico mostrato, 
 Alla luce di questo risultato, si deduce che la misura del tempo di volo è fondamentale per migliorare le capacità di PID complessive dell'apparato.
@@ -1310,16 +1311,8 @@ Alla luce di questo risultato, si deduce che la misura del tempo di volo è fond
 
 
 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/xf_csi_taglio2.png}
-	\caption{La matrice $x_{foc} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsia}.} \label{fig:xf_Ecsi_O20a}
-\end{figure} 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/tof_csi_taglio.png}
-	\caption{La matrice $\mbox{tof} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}.} \label{fig:tof_Ecsi_O20a}
-\end{figure} 
+
+ 
 
 
 %\clearpage
@@ -1477,8 +1470,8 @@ Alla luce di questo risultato, per massimizzare la sensibilità di misura alla r
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[scale=0.5]{Grafici_Tesi2/Granularita/sig_back_ratio.png}
-	\caption{L'andamento del rapporto segnale-fondo al variare della superficie del telescopio.} \label{fig:rapporto_segnale_fondo}
+	\includegraphics[scale=0.5]{Grafici_Tesi2/Granularitanew/sig_back_ratio.png}
+	\caption{L'andamento del rapporto segnale-fondo al variare della superficie del telescopio. Le barra di errore sono più piccole della dimensione del marker.} \label{fig:rapporto_segnale_fondo}
 \end{figure}
 
 %Tuttavia, avere superfici più grandi significa anche aumentare il verificarsi del pile-up, in quanto cresce la probabilità che due o più ioni vadano a finire nello stesso rivelatore nella stessa finestra temporale, producendo un segnale somma di due segnali.
