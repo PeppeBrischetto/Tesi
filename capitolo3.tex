@@ -777,13 +777,13 @@ Ciò è dovuto a reazioni nucleari esotermiche, nelle quali viene rilasciata una
 Dopo aver esposto tre casi ideali, utili per comprendere alcuni fenomeni rilevanti incontrati in questo studio, si esamina adesso una situazione realistica, in cui alla simulazione \geant{} viene dato in input il file prodotto dai software per il trasporto degli eiettili attraverso MAGNEX.
 In questo caso, dunque, gli ioni presentano sia le correlazioni cinematiche sia quelle legate alle proprietà ottiche dello spettrometro.
 A differenza dei casi precedenti, sono stati simulati sette milioni di eventi ugualmente distribuiti su sette tipi di ioni, ossia \ce{^{20}O^{8+}}, \ce{^{21}O^{8+}}, \ce{^{20}F^{8+}}, \ce{^{21}F^{8+}}, \ce{^{20}Ne^{8+}}, \ce{^{21}Ne^{8+}} e \ce{^{22}Ne^{8+}}.
-Altri ioni, come ad esempio il \ce{^{19}F^{8+}} e l'\ce{^{19}O^{8+}}, e altri stati di carica, per esempio \ce{^{20}F^{9+}} e \ce{^{20}Ne^{10+}}, non sono stati presi in considerazione perché, per ragioni cinematiche e per le proprietà ottiche dello spettrometro, vengono rivelati in regioni del FPD lontane da quella in cui arriva lo ione di interesse.
+Altri ioni, come ad esempio il \ce{^{19}F^{8+}} e l'\ce{^{19}O^{8+}}, e altri stati di carica, per esempio i $9^+$ e i $10^+$, non sono stati presi in considerazione perché, per ragioni cinematiche e per le proprietà ottiche dello spettrometro, vengono rivelati in regioni del FPD lontane da quella in cui arriva lo ione di interesse.
 Il telescopio ha dimensioni trasversali di 1.5~cm $\times$ 1.5~cm ed è posto a 14~cm di distanza dal piano in cui vengono prodotte le particelle primarie, che coincide con il piano di ingresso nel FDP.
 
 
 
 %Per fissare la rigidità magnetica di riferimento si è scelto il \ce{^{18}Ne^{10+}}, che fra gli ioni considerati è quello con il rapporto massa su carica più piccolo.
-La rigidità magnetica di riferimento è stata scelta in modo che l'\ce{^{20}O^{8+}} nel suo stato fondamentale fosse focalizzato al centro del FPD.
+La rigidità magnetica di riferimento è stata scelta in modo che l'\ce{^{20}O^{8+}} nel suo stato fondamentale fosse focalizzato al centro del FPD, ovvero in corrispondenza del telescopio.
 %Gli altri ioni, dal momento che hanno un rapporto massa su carica uguale o molto vicino a quello dell'\ce{^{20}O^{8+}}, 
 %Si fa notare che, dovendo mantenere costante il prodotto $\sqrt{m}/q \cdot \sqrt{E}$, gli altri ioni hanno energia cinetica inferiore.
 Si fa notare che, dovendo tutti gli ioni simulati avere la stessa finestra di rigidità magnetica, all'aumentare del rapporto $\sqrt{m}/q$, l'energia cinetica $E$ deve diminuire.
@@ -794,6 +794,7 @@ Questa considerazione è confermata dalla Figura~\ref{fig:KinE}, in cui viene il
 	\caption{Lo spettro delle energie cinetiche~$E$ per \ce{^{20}Ne^{8+}}, \ce{^{21}Ne^{8+}} e \ce{^{22}Ne^{8+}}.} \label{fig:KinE}
 \end{figure}
 Per lo stesso motivo, ioni che hanno lo stesso rapporto massa su carica devono avere lo stesso intervallo di energia cinetica, per cui, ad esempio, la finestra di $E$ dell'\ce{^{20}O^{8+}} coincide con quella del \ce{^{20}Ne^{8+}}.
+Come si può notare, per ogni ione il range energetico che arriva sul telescopio è di circa 9~MeV, in buon accordo con la~\ref{eq:finestra_Brho}.
 %Da tale figura si evince che le energie cinetiche accettate dal telescopio sono molto differenti per i diversi ioni, con una differenza fra lo ione più energetico e quello meno energetico di oltre 350~MeV.
 %La Figura~\ref{fig:KinE}.b mostra un ingrandimento della precedente nella zona degli ioni di ossigeno: come si può notare, per ogni ione il range energetico che arriva sul telescopio è di circa 8~MeV, in buon accordo con la~\ref{eq:finestra_Brho}.
 %Gli ioni hanno la stessa finestra di rigidità magnetica, per cui tutti vanno a finire sul telescopio simulato. 
@@ -828,8 +829,8 @@ Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono riportate in Figura~\
 %Di conseguenza, nel caso in esame la principale componente di contaminazione nell'identificazione degli eventi di interesse proviene dagli ioni che non si fermano nel rivelatore al~CsI.
 %Di conseguenza, nel caso in esame la principale componente di contaminazione nella PID proviene dagli ioni che non si fermano nel rivelatore al~CsI.
 Si può, inoltre, osservare che anche in questo caso sono presenti sia gli eventi degradati dovuti alla parziale raccolta della carica nel rivelatore al~SiC, sia quelli originati dall'incompleto rilascio dell'energia residua nel cristallo di~CsI.
-Alla significativa separazione in $E_{meas}$ contribuisce il substrato passivato del rivelatore al~SiC, nel quale ioni con $Z$ diverso perdono quantità di energie differenti.
-Per dare una stima quantitativa della percentuale di tali eventi, che potrebbero costituire un fondo nella regione di interesse (Region Of Interest, ROI), si è proceduto nel modo seguente: supponendo di voler analizzare una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O^{8+}} nello stato fondamentale, si è effettuato nel plot $\Delta E_{SiC} - E_{meas}$ un taglio grafico attorno al luogo pertinente a tale ione, come mostrato in Figura~\ref{fig:deltaE_Emeas_taglio}.
+Alla significativa separazione in $E_{meas}$ delle matrici contribuisce il substrato passivato del rivelatore al~SiC, nel quale ioni con $Z$ diverso perdono quantità di energie notevolmente differenti.
+Per dare una stima quantitativa della percentuale degli eventi degradati, che potrebbero costituire un fondo nella regione di interesse (Region Of Interest, ROI), si è proceduto nel modo seguente: supponendo di voler analizzare una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O^{8+}} nello stato fondamentale, si è effettuato nel plot $\Delta E_{SiC} - E_{meas}$ un taglio grafico attorno al luogo pertinente a tale ione, come mostrato in Figura~\ref{fig:deltaE_Emeas_taglio}.
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Emeas_quadrata_taglio_menoeventi.png}
@@ -878,10 +879,6 @@ La restante parte del segnale viene persa a causa dell'incompleta raccolta di ca
 A questo punto è bene sottolineare che finora le contaminazioni sono state calcolate senza tenere in considerazione che nella situazione reale la produzione degli ioni avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto; questa rappresenta, infatti, la probabilità con cui può verificarsi una determinata reazione.
 I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urto}, insieme alla probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio.
 È bene precisare che, per l'\ce{^{19}O}, il valore indicato non deriva da misure sperimentali ma considerazioni sull'ordine del processo stesso.
-Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
-%%Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
-questo è il fattore con cui bisogna riscalare le percentuali precedentemente mostrate per stimare le contaminazioni reali.
-Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazioni_riscalate}: come si può osservare, il contributo maggiore deriva dal SCE.
 \begin{table} [p!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -893,7 +890,7 @@ Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazion
 			DCE        & & \ce{^{20}O}  & &        1        & & & $8^+ \sim 0.9963$ \\
 			\hline
 			SCE        & & \ce{^{20}F}  & &     $10^4$      & & & $9^+ \sim 0.99934$ \\
-			& &              & &                 & & & $8^+ \sim 10^{-4}$ \\
+			& &              & &                 & & & $8^+ \sim 6.6 \cdot 10^{-4}$ \\
 			\hline
 			1-neutron  & & \ce{^{21}Ne} & &  $3\cdot10^4 $  & & & $10^+ \sim 0.99905$ \\
 			& &              & &                 & & & $9^+ \sim 10^{-5}$ \\
@@ -907,18 +904,22 @@ Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazion
 			& &              & &                 & & & $9^+ \sim 10^{-5}$ \\
 			& &              & &                 & & & $8^+ \sim 10^{-7}$ \\
 			\hline
-			$3^{\mbox{rd}}$ order multi & & \ce{^{21}F}  & &     $10^3 $     & & & $9^+ > 0.99934$ \\
-			nucleon transfer      & &              & &                 & & & $8^+ \sim 10^{-4}$ \\
+			$3^{\mbox{rd}}$ order multi & & \ce{^{21}F}  & &     $10^3 $     & & & $9^+ \sim 0.99934$ \\
+			nucleon transfer      & &              & &                 & & & $8^+ \sim 6.6 \cdot 10^{-4}$ \\
 			\hline
 			$5^{\mbox{th}}$ order multi   & & \ce{^{19}O}  & &        0.1       & & & $8^+ \sim 0.99963$ \\
 			nucleon transfer              & &              & &                 & & &  \\
 			
 			\bottomrule[0.1em]
 		\end{tabular}
-
+		
 	\end{center}
 	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio. Si sottolinea che, nel caso dell'\ce{^{19}O}, il valore della sezione d'urto indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso.} \label{tab:sez_d'urto}
 \end{table}
+Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
+%%Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
+questo è il fattore con cui bisogna riscalare le percentuali precedentemente mostrate per stimare le contaminazioni reali.
+Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazioni_riscalate}: come si può osservare, il contributo maggiore deriva dal SCE.
 
 \begin{table} [t!]
 	\begin{center}
@@ -930,9 +931,9 @@ Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazion
 			%\hline
 			\ce{^{20}O}    &  $8^+$   & &  $0.904 \pm 0.002$      \\
 			\hline
-			\ce{^{21}O}    &  $8^+$   & &  $\sim 10^{-6}$      \\
+			\ce{^{21}O}    &  $8^+$   & &  $\sim 3 \cdot 10^{-6}$      \\
 			\hline
-			\ce{^{20}F}    &  $8^+$   & &  $\sim 10^{-5}$       \\
+			\ce{^{20}F}    &  $8^+$   & &  $\sim 3 \cdot 10^{-5}$       \\
 			\hline
 			\ce{^{21}F}    &  $8^+$   & &  $< 10^{-7} $ al 90\% CL     \\
 			\hline
@@ -950,7 +951,7 @@ Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazion
 Dividendo il numero di segnali per la somma degli eventi di fondo, si ottiene una quantità nota come \emph{rapporto segnale-background}~(S/B), che in questo caso risulta essere di $24174 \pm 62$.
 A partire da questo valore è possibile risalire alla sensibilità di misura nel modo seguente: sapendo che la sezione d'urto tipica del DCE nel range di energia di eccitazione studiato è di circa 1000~nb, dal rapporto S/B si deduce che il fondo corrisponde a circa 40~pb ad 1$\sigma$ di errore; dunque, considerando 5$\sigma$, si trova una sensibilità di circa 200~pb.
 Mentre il fondo ha una sezione d'urto circa costante, quella del DCE ha una forte dipendenza dall'energia; in particolare, nella regione di interesse, che corrisponde ad 1~MeV di energia di eccitazione, la sezione d'urto del DCE è di circa 10~nb.
-Pertanto, con la sensibilità di misura stimata, l'apparato sperimentale sarebbe in grado di misurare con certezza la reazione di interesse.
+Pertanto, con la sensibilità di misura stimata, l'apparato sperimentale sarebbe in grado di misurare la reazione di interesse.
 
 
 
@@ -960,22 +961,25 @@ Pertanto, con la sensibilità di misura stimata, l'apparato sperimentale sarebbe
 
 \subsection*{\iflanguage{italian}{Studio della correlazione $\Delta E_{SiC} - E_{CsI}$}{Study of $\Delta E_{SiC} - E_{CsI}$ correlation}}
 
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Ecsi_quadrata_taglio_menoeventi.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi}
+\end{figure}
+
 Un aspetto importante di questo studio consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ possa dare risultati analoghi a quelli ottenuti con la correlazione $\Delta E_{SiC} - E_{meas}$. 
 %In Figura~\ref{fig:deltaE_Ecsi} si riportano le matrici degli ioni completamente ionizzati, le quali continuano ad essere ben separate.
 %Le percentuali di contaminazione nella ROI individuata dal taglio grafico in figura sono mostrate nella Tabella~\ref{tab:contaminazione_deltaE_Ecsi_1.5per1.5}; confrontando quest'ultima con la Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5} si può osservare che le percentuali sono molto simili.
 %Lo stesso risultato si ottiene considerando gli ioni con stati di carica diversi, le cui matrici sono rappresentate in Figura~\ref{fig:deltaE_Ecsi_stati_carica}.
 %Anche le matrici degli ioni non completamente ionizzati restano chiaramente distinte, come si può osservare dalla Figura~\ref{fig:deltaE_Ecsi_stati_carica}.  
 In Figura~\ref{fig:deltaE_Ecsi} sono riportate le matrici degli ioni simulati: come si può notare, anche in questo caso esse sono ben separate sia in numero atomico sia in numero di massa.
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Ecsi_quadrata_taglio_menoeventi.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi}
-\end{figure}
 Il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE, è mostrato in Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}: confrontando quest'ultima con la Tabella~\ref{tab:contaminazioni_riscalate} si può osservare che i valori sono, per tutti gli ioni considerati, molto simili.
-L'efficienza di rivelazione del segnale è, in questo caso, del $(90.4 \pm 0.02)$~\%, mentre il rapporto S/B risulta essere pari a $10939 \pm 38 $, ossia migliore di quello trovato con la correlazione $\Delta E_{SiC} - E_{meas}$.
-Sulla base di questo risultato è possibile sostenere che non è necessario effettuare una calibrazione energetica dei telescopi, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori.
+L'efficienza di rivelazione del segnale resta del $(90.4 \pm 0.2)$~\%, mentre il rapporto S/B risulta essere pari a $10939 \pm 38 $, inferiore a quello trovato con la correlazione $\Delta E_{SiC} - E_{meas}$.
+La sensibilità di misura corrispondente a questo valore è di circa 460~pb a 5$\sigma$, pertanto anche con questo tipo di correlazione è possibile misurare le reazioni di DCE all'energia di eccitazione di interesse.
+Sulla base di queste considerazioni è possibile sostenere che non è necessario effettuare una calibrazione energetica dei telescopi, in quanto ai fini della PID non vi è l'esigenza di sommare i valori di energia misurati dai due rivelatori. 
 Dal momento che il muro di telescopi sarà composto da oltre 1200 dispositivi, la possibilità di evitarne la calibrazione consentirebbe un notevole risparmio di tempo necessario per la riduzione dei dati.
-Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ ha dimostrato offrire un rapporto S/B superiore a quello di $\Delta E_{SiC} - E_{meas}$, da questo momento in poi verranno presentate soltanto le matrici relative alla prima correlazione.
+Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ ha dimostrato offrire una sensibilità di misurare adatta agli scopi del progetto, da questo momento in poi verranno presentate soltanto le matrici relative a questa correlazione.
 %Poiché il rapporto S/B ottenuto dalla correlazione $\Delta E_{SiC} - E_{CsI}$ si è dimostrato superiore a quello della correlazione $\Delta E_{SiC} - E_{meas}$, da questo momento in poi verranno presentate soltanto le matrici relative a
 
 %\begin{table} [t!]
@@ -1015,9 +1019,9 @@ Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ ha dimostrato offrire un rapp
 			%\hline
 			\ce{^{20}O}    &  $8^+$   & &  $0.904 \pm 0.002$      \\
 			\hline
-			\ce{^{21}O}    &  $8^+$   & &  $\sim 10^{-6}$      \\
+			\ce{^{21}O}    &  $8^+$   & &  $\sim 3 \cdot 10^{-6}$      \\
 			\hline
-			\ce{^{20}F}    &  $8^+$   & &  $< 10^{-4}$ al 90\% CL       \\
+			\ce{^{20}F}    &  $8^+$   & &  $< 8 \cdot 10^{-5}$ al 90\% CL       \\
 			\hline
 			\ce{^{21}F}    &  $8^+$   & &  $< 10^{-7} $ al 90\% CL     \\
 			\hline
@@ -1041,66 +1045,44 @@ Poiché la correlazione $\Delta E_{SiC} - E_{CsI}$ ha dimostrato offrire un rapp
 \subsection{\iflanguage{italian}{Studio delle capacità di PID ad alta energia di eccitazione}{Study of PID performance}} \label{sez:studio_PID_altaE}
 
 %Uno degli obiettivi fondamentali di questo lavoro di tesi consiste nel valutare la risposta del telescopio SiC-CsI agli eventi  
-Si propone adesso lo studio della capacità di PID nel caso in cui si voglia analizzare una reazione di DCE ad alta energia di eccitazione.
+Si propone adesso lo studio della capacità di PID del telescopio nel caso in cui si voglia analizzare una reazione di DCE ad alta energia di eccitazione.
 %A differenza dei casi precedenti, sono stati simulati nove milioni di eventi ugualmente distribuiti su nove tipi di ioni, tutti completamente ionizzati, 
-In questo caso, altre specie ioniche possono giungere nella regione del FPD in cui si è focalizzato lo ione di interesse; fra queste, si è scelto di simulare le seguenti: \ce{^{18}O^{8+}}, \ce{^{19}O^{8+}}, \ce{^{20}O^{8+}}, \ce{^{18}F^{9+}}, \ce{^{19}F^{9+}}, \ce{^{20}F^{9+}}, \ce{^{18}Ne^{10+}}, \ce{^{19}Ne^{10+}} e \ce{^{20}Ne^{10+}}.
+In questo caso, altre specie ioniche possono giungere nella regione del FPD in cui è stato focalizzato lo ione di interesse; fra queste, si è scelto di simulare le seguenti: \ce{^{18}O^{8+}}, \ce{^{19}O^{8+}}, \ce{^{20}O^{8+}}, \ce{^{18}F^{9+}}, \ce{^{19}F^{9+}}, \ce{^{20}F^{9+}}, \ce{^{18}Ne^{10+}}, \ce{^{19}Ne^{10+}} e \ce{^{20}Ne^{10+}}.
 Le condizioni geometriche e le dimensioni del telescopio restano quelle descritte nel paragrafo precedente.
 
 Per fissare la rigidità magnetica di riferimento si è scelto il \ce{^{18}Ne^{10+}}, che fra gli ioni considerati è quello con il rapporto massa su carica più piccolo.
 In questo modo, dovendo mantenere costante il prodotto $\sqrt{m}/q \cdot \sqrt{E}$, gli altri ioni hanno energia cinetica inferiore.
-Questa considerazione è confermata dalla Figura~\ref{fig:KinEa}.a, in cui viene illustrato lo spettro delle energie cinetiche dei diversi ioni.
+Questa considerazione è confermata dalla Figura~\ref{fig:KinEa}, in cui viene illustrato lo spettro delle energie cinetiche dei diversi ioni.
 \begin{figure} [!p]
 	\centering
-	\subfigure[]
-	{\includegraphics[scale=0.479]{Grafici_Tesi2/PID/KinE2.png}}
+	%\subfigure[]
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/KinE2.png}
 	%\vspace{7mm}
-	\subfigure[]
-	{\includegraphics[scale=0.479]{Grafici_Tesi2/PID/KinE_zoom.png}}
+	%\subfigure[]
+	%{\includegraphics[scale=0.479]{Grafici_Tesi2/PID/KinE_zoom.png}}
 	
-	\caption{Lo spettro delle energie cinetiche~$E$ degli ioni simulati: in (a) per tutte le specie, in (b) per i soli ioni di ossigeno.} \label{fig:KinEa}
+	\caption{Lo spettro delle energie cinetiche~$E$ degli ioni simulati.} \label{fig:KinEa}
 \end{figure}
 Da tale figura si evince che le energie cinetiche accettate dal telescopio sono molto differenti per i diversi ioni, con una differenza fra lo ione più energetico e quello meno energetico di oltre 350~MeV.
-La Figura~\ref{fig:KinE}.b mostra un ingrandimento della precedente nella zona degli ioni di ossigeno: come si può notare, per ogni ione il range energetico che arriva sul telescopio è di circa 8~MeV, in buon accordo con la~\ref{eq:finestra_Brho}.
+%La Figura~\ref{fig:KinE}.b mostra un ingrandimento della precedente nella zona degli ioni di ossigeno: come si può notare, per ogni ione il range energetico che arriva sul telescopio è di circa 8~MeV, in buon accordo con la~\ref{eq:finestra_Brho}.
 %Gli ioni hanno la stessa finestra di rigidità magnetica, per cui tutti vanno a finire sul telescopio simulato. 
 
 
-%\begin{figure} [!p]
-%	\centering
-%	\includegraphics[scale=0.4]{Grafici_Tesi2/PID/KinE2.png}
-%	\caption{Lo spettro delle energie cinetiche~$E$ dei diversi ioni simulati.} \label{fig:KinE}
-%\end{figure}
-
-%\begin{figure} [!p]
-%	\centering
-%	\includegraphics[scale=0.4]{Grafici_Tesi2/PID/KinE_zoom.png}
-%	\caption{Ingrandimento della spettro in Figura~\ref{fig:KinE} nella zone degli ioni di ossigeno.} \label{fig:KinE_zoom}
-%\end{figure}
 
 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata3.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando per tutti gli ioni sia la cinematica di reazione sia il trasporto ottico.} \label{fig:deltaE_Emeas_PIDa}
-\end{figure}
 
 
-Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono riportate in Figura~\ref{fig:deltaE_Emeas_PID}: come si può notare, i luoghi degli ioni simulati appaiono ben separati sia in numero atomico~($Z$) sia in numero di massa~($A$).
+Le corrispondenti matrici $\Delta E_{SiC} - E_{CsI}$ sono riportate in Figura~\ref{fig:deltaE_Ecsi_altaE}: come si può notare, i luoghi degli ioni simulati appaiono, anche in questo caso, ben separati sia in numero atomico sia in numero di massa.
 Si può, inoltre, osservare che l'energia rilasciata nel rivelatore al~SiC è molto simile per le tre specie atomiche: 
 %ciò dipende dalla notevole differenza in energia cinetica degli ioni che compensa la variazione legata al cambiamento di $Z$.
 ciò dipende dal fatto che, a causa del filtro in $B \rho$, gli ioni con carica $q$ più piccola hanno energia cinetica minore, mentre quelli con $q$ più grande hanno energia cinetica maggiore; ricordando che nella formula di Bethe-Bloch la perdita di energia è proporzionale a $Z^2$ e inversamente proporzionale ad $E$, si può dedurre che la notevole differenza in energia cinetica degli ioni compensa la variazione legata al cambiamento di $Z$.
 %Di conseguenza, assumendo di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, la principale componente di contaminazione nell'identificazione proviene dagli ioni che non si fermano nel rivelatore al~CsI.
-Di conseguenza, nel caso in esame la principale componente di contaminazione nell'identificazione degli eventi di interesse proviene dagli ioni che non si fermano nel rivelatore al~CsI.
-%Di conseguenza, nel caso in esame la principale componente di contaminazione nella PID proviene dagli ioni che non si fermano nel rivelatore al~CsI.
-Per dare una stima quantitativa della percentuale di eventi degradati che potrebbero costituire un fondo nella regione di interesse (Region Of Interest, ROI), si è proceduto nel modo seguente: supponendo di voler analizzare una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, si è effettuato nel plot $\Delta E_{SiC} - E_{meas}$ un taglio grafico attorno al luogo pertinente a tale ione, come mostrato in Figura~\ref{fig:deltaE_Emeas_taglioa}.
+Di conseguenza, nel caso in esame la principale componente di contaminazione nell'identificazione degli eventi di interesse proviene dagli ioni che non si fermano nel cristallo di~CsI.
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Emeas_quadrata_taglio_label.png}
-	\caption{Taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Emeas_taglioa}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Ecsi_quadrata_taglio_label.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi_altaE}
 \end{figure}
-All'interno del taglio sono presenti, oltre allo ione di interesse, anche altre specie ioniche, che potrebbero essere erroneamente identificate come~\ce{^{20}O^{8+}}.
-La percentuale di contaminazione nella ROI dovuta ad un particolare ione può essere calcolata dividendo il numero di eventi di quello ione presenti nella ROI per il numero totale di eventi dello stesso.
-%Supponiamo, adesso, di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}: il primo passo nell'analisi dei dati consiste nell'identificazione degli ioni di interesse attraverso l'utilizzo di tagli grafici.
-Il risultato di tale operazione, nel caso del taglio grafico considerato in Figura~\ref{fig:deltaE_Emeas_taglio}, è riportato in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5a}: come si può notare, le percentuali sono molto basse, a dimostrazione delle grandi capacità di PID del telescopio~SiC-CsI.
 \begin{table} [t!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -1109,31 +1091,39 @@ Il risultato di tale operazione, nel caso del taglio grafico considerato in Figu
 			\toprule[0.1em]
 			%\hline
 			\ce{^{18}O^{8+}}   & & &   0.002 $\pm$ 0.001 \\
+			\hline
 			\ce{^{19}O^{8+}}   & & &   0.0006 $\pm$ 0.0006 \\
+			\hline
 			\ce{^{18}F^{9+}}   & & &   0.017 $\pm$ 0.003 \\
+			\hline
 			\ce{^{19}F^{9+}}   & & &   0.100 $\pm$ 0.007 \\
+			\hline
 			\ce{^{20}F^{9+}}   & & &   0.057 $\pm$ 0.005 \\
+			\hline
 			\ce{^{18}Ne^{10+}} & & &   0.031 $\pm$ 0.004 \\
+			\hline
 			\ce{^{19}Ne^{10+}} & & &   0.089 $\pm$ 0.006 \\
+			\hline
 			\ce{^{20}Ne^{10+}} & & &   0.002 $\pm$ 0.001 \\
+			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
 	\caption{La contaminazione dei diversi ioni nella ROI dell'\ce{^{20}O^{8+}} individuata dal taglio grafico in Figura~\ref{fig:deltaE_Emeas_taglio}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5a}
 \end{table}
 La contaminazione più rilevante deriva dal \ce{^{19}F^{9+}} e dal \ce{^{19}Ne^{10+}}, come era lecito aspettarsi considerando che si tratta delle specie ioniche che hanno un valore di $\Delta E_{SiC}$ molto simile a quello dell'\ce{^{20}O^{8+}}.
 %La percentuale di eventi di~\ce{^{20}O^{8+}} persi nell'identificazione può essere determinata dividendo il numero di eventi di~\ce{^{20}O^{8+}} al di fuori della ROI per il numero totale di eventi dello stesso: dal calcolo risulta che tale percentuale è del~$(9.14 \pm 0.08)$~\%.
-L'efficienza di rivelazione del segnale può essere determinata dividendo il numero di eventi di~\ce{^{20}O^{8+}} nella ROI per il numero totale di eventi dello stesso; dal calcolo risulta che essa è pari al $(90.9 \pm 0.2)$~\%.
-La restante parte del segnale viene persa a causa dell'incompleta raccolta di carica nel rivelatore al~SiC o del parziale rilascio dell'energia residua nel cristallo allo~CsI.
-
-
-A questo punto è bene sottolineare che finora le contaminazioni sono state calcolate senza tenere in considerazione che nella situazione reale la produzione degli ioni avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto; questa rappresenta, infatti, la probabilità con cui può verificarsi una determinata reazione.
-I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urtoa}, insieme alla probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio.
-Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
+L'efficienza di rivelazione del segnale è, in questo caso, pari al $(90.9 \pm 0.2)$~\%, in accordo con quelli precedentemente stimati.
+%I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urtoa}, insieme alla probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio.
+Nella Tabella~\ref{tab:sez_d'urtoa} sono riportati i valori tipici delle sezioni d'urto dei processi coinvolti, espressi relativamente alla sezione d'urto del DCE, e le probabilità dei diversi stati di carica.
+%Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
 %%Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
-questo è il fattore con cui bisogna riscalare le percentuali precedentemente mostrate per stimare le contaminazioni reali.
+%questo è il fattore con cui bisogna riscalare le percentuali precedentemente mostrate per stimare le contaminazioni reali.
+Analogamente a quanto visto in precedenza, sono stati ricavati i fattori di scala, i quali sono stati moltiplicati ai valori della Tabella~\ref{tab:sez_d'urtoa} per ottenere le contaminazioni reali.
 Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazioni_riscalatea}: come si può osservare, il contributo maggiore deriva dai processi di 1-neutron e 1-proton stripping e dal SCE.
-Dividendo il numero di segnali per la somma degli eventi di fondo, si ottiene una quantità nota come \emph{rapporto segnale-background}~(S/B), che in questo caso risulta essere di $0.0172 \pm 0.0008$.
-
+Il rapporto S/B risulta essere di $0.0172 \pm 0.0008$, notevolmente inferiore ai valori precedentemente osservati.
+La sensibilità di misura corrispondente è di circa 300~$\mu$b a 5$\sigma$, estremamente più grande di quella necessaria per osservare il DCE.
+Sebbene questo valore escluda la possibilità di riuscire a distinguere con il telescopio SiC-CsI le reazioni di DCE dal fondo, l'utilizzo di altre correlazioni potrebbe portare ad un miglioramento del rapporto S/B e, conseguentemente, ad un abbassamento della sensibilità di misura.
+Due importanti correlazioni sono descritte nel paragrafo successivo.
 
 
 %\begin{table} [t!]
@@ -1211,7 +1201,7 @@ Dividendo il numero di segnali per la somma degli eventi di fondo, si ottiene un
 			&  $8^+$   & &  $ \sim 10^{-6}$        \\
 			\hline
 			\ce{^{19}F}    &  $9^+$   & &  $20 \pm 1$             \\
-			&  $8^+$   & &  $ 0.0010 \pm 0.0001$    \\
+			&  $8^+$   & &  $ < 0.0010 \pm 0.0001$    \\
 			\hline
 			\ce{^{20}F}    &  $9^+$   & &  $5.7 \pm 0.5$          \\
 			\hline
@@ -1246,7 +1236,7 @@ Dividendo il numero di segnali per la somma degli eventi di fondo, si ottiene un
 
 %Come anticipato nel Paragrafo~\ref{sez:telescopi_sic_csi}, il progetto NUMEN intende svolgere l'identificazione in numero atomico, numero di massa e carica dei prodotti di reazione utilizzando congiuntamente la tecnica $\Delta E - E$, la correlazione posizione-energia cinetica originata dalla forza di Lorentz e la misura del tempo di volo.
 %; allo scopo di studiare i processi di DCE è, infatti, fondamentale avere grandi capacità di PID per rigettare gli eventi di fondo.
-Nei paragrafi precedenti si è evidenziato come i telescopi SiC-CsI riescano a produrre nei plot $\Delta E - E$ un'efficace separazione degli ioni sia in $Z$ sia in $A$; tuttavia, utilizzando anche altre tipologie di correlazioni è possibile migliorare ulteriormente le capacità di PID e la reiezione degli eventi di fondo. 
+Nei paragrafi precedenti si è evidenziato come i telescopi SiC-CsI riescano a produrre nei plot $\Delta E - E$ un'efficace separazione degli ioni sia in $Z$ sia in $A$; tuttavia, utilizzando anche altre tipologie di correlazioni è possibile migliorare le capacità complessive di PID e la reiezione degli eventi di fondo. 
 Il progetto NUMEN intende, infatti, svolgere l'identificazione in numero atomico, numero di massa e carica dei prodotti di reazione utilizzando congiuntamente la tecnica $\Delta E - E$, la correlazione posizione-energia cinetica originata dalla forza di Lorentz e la misura del \emph{tempo di volo} (time of flight, tof).
 %In questo paragrafo verranno esposti i risultati ottenuti dallo 
 Per poter studiare le ultime due tecniche di identificazione è stata di fondamentale importanza l'integrazione fra i software dedicati al trasporto ottico degli eiettili e la simulazione del telescopio, in quanto ha permesso di ricavare tutte le osservabili necessarie per questo tipo di analisi. 
@@ -1271,19 +1261,19 @@ Pertanto, nota la base di volo della particella, misurando in correlazione l'ene
 
 %Sebbene sia la~\ref{eq:legge_spettrometri_approx} sia la~\ref{eq:tof_ekin} richiedano la misura dell'energia cinetica~$E$, se la perdita di energia $\Delta E$ della particella attraversando il primo stadio di un telescopio è piccola, allora 
 Si fa notare che sia la~\ref{eq:legge_spettrometri_approx} sia la~\ref{eq:tof_ekin} richiedono la misura dell'energia cinetica~$E$; d'altro canto,  si è già visto che nel sistema di rivelazione considerato non abbiamo accesso a tale quantità a causa della presenza del substrato passivato del rivelatore al~SiC.
-Inoltre, nel paragrafo precedente si è mostrato che, se nelle correlazioni $\Delta E - E$ si utilizza l'energia $E_{CsI}$ misurata dal cristallo allo~CsI invece di $E_{meas}$, le capacità di PID migliorano.
+Inoltre, nel paragrafo precedente si è mostrato che, se nelle correlazioni $\Delta E - E$ si utilizza l'energia $E_{CsI}$ misurata dal cristallo di~CsI invece di $E_{meas}$, le capacità di PID restano elevate.
 Per questo motivo, nel prosieguo verranno trattate soltanto le correlazioni che coinvolgono $E_{CsI}$ piuttosto che l'energia cinetica~$E$.
 Ovviamente, se la perdita di energia $\Delta E$ è piccola rispetto ad~$E$, $E_{CsI}$ ed $E$ sono molto simili.
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/xf_csi_label.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/xf_csi_label_menoeventi.png}
 	\caption{Le tipiche matrici $x_{foc} - E_{CsI}$.} \label{fig:xf_Ecsi}
 \end{figure}
 
-Le tipiche matrici $x_{foc} - E_{CsI}$ sono riportate in Figura~\ref{fig:xf_Ecsi}: come si può notare, gli ioni si dispongono su luoghi diversi a secondo del loro rapporto~$\sqrt{m}/q$. 
-Nella maggior parte dei casi i luoghi sono ben separati, eccetto per quanto riguarda le coppie \ce{^{20}F^{9+}}--\ce{^{18}O^{8+}} e \ce{^{18}F^{9+}}--\ce{^{20}Ne^{10+}}, per le quali si osserva una parziale sovrapposizione.
-Ciò poteva essere già dedotto guardando la Figura~\ref{fig:deltaE_Ecsi}, in cui si può notare che le matrici delle coppie in questione hanno intervalli di energia $E_{CsI}$ in parte sovrapposti.
+Le matrici $x_{foc} - E_{CsI}$ corrispondenti alla simulazione della Sezione~\ref{sez:studio_PID} sono riportate in Figura~\ref{fig:xf_Ecsi}: come si può notare, gli ioni si dispongono su luoghi diversi a secondo del loro rapporto~$\sqrt{m}/q$. 
+I luoghi sono ben separati, ad eccezione ovviamente di quelli con lo stesso rapporto $\sqrt{m}/q$.
+%Ciò poteva essere già dedotto guardando la Figura~\ref{fig:deltaE_Ecsi}, in cui si può notare che le matrici delle coppie in questione hanno intervalli di energia $E_{CsI}$ in parte sovrapposti.
 %Con lo stesso tipo di ragionamento, osservando la Figura~\ref{fig:deltaE_Ecsi_stati_carica}, si può desumere che se, oltre agli ioni considerati, si fossero simulati anche il \ce{^{18}F^{8+}} e il \ce{^{19}F^{8+}}, allora le matrici di questi due ioni si sarebbero in parte sovrapposta al luogo dell'\ce{^{20}O^{8+}}.
 È interessante sottolineare che, nonostante il telescopio abbia una lunghezza di 1.5~cm, esso vede un intervallo di $x_{foc}$ di circa 2.8~cm; ciò deriva dal fatto che gli ioni possono incidere sul telescopio con un certo angolo orizzontale non nullo, aumentando il numero di traiettorie accettate dal dispositivo.
 Inoltre, in Figura~\ref{fig:xf_Ecsi} è evidente la presenza di eventi degradati, che anche in questo caso possono andare a posizionarsi sui luoghi di altri ioni; dunque, anche in questa rappresentazione la specie ionica di interesse sarebbe affetta da contaminazioni.
