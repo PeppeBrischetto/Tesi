@@ -819,7 +819,7 @@ Come si può notare, per ogni ione il range energetico che arriva sul telescopio
 Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono riportate in Figura~\ref{fig:deltaE_Emeas_PID}: come si può notare, i luoghi degli ioni simulati appaiono ben separati sia in numero atomico~($Z$) sia in numero di massa~($A$).
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Emeas_quadrata_menoeventi.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Emeas_quadrata_menoeventi2.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{meas}$ considerando per tutti gli ioni sia la cinematica di reazione sia il trasporto ottico.} \label{fig:deltaE_Emeas_PID}
 \end{figure}
 %Si può, inoltre, osservare che l'energia rilasciata nel rivelatore al~SiC è molto simile per le tre specie atomiche: 
@@ -833,7 +833,7 @@ Alla significativa separazione in $E_{meas}$ delle matrici contribuisce il subst
 Per dare una stima quantitativa della percentuale degli eventi degradati, che potrebbero costituire un fondo nella regione di interesse (Region Of Interest, ROI), si è proceduto nel modo seguente: supponendo di voler analizzare una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O^{8+}} nello stato fondamentale, si è effettuato nel plot $\Delta E_{SiC} - E_{meas}$ un taglio grafico attorno al luogo pertinente a tale ione, come mostrato in Figura~\ref{fig:deltaE_Emeas_taglio}.
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Emeas_quadrata_taglio_menoeventi.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Emeas_quadrata_taglio_menoeventi2.png}
 	\caption{Taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Emeas_taglio}
 \end{figure}
 All'interno del taglio sono presenti, oltre allo ione di interesse, anche altre specie ioniche, che potrebbero essere erroneamente identificate come~\ce{^{20}O^{8+}}.
@@ -964,7 +964,7 @@ Pertanto, con la sensibilità di misura stimata, l'apparato sperimentale sarebbe
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Ecsi_quadrata_taglio_menoeventi.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Ecsi_quadrata_taglio_menoeventi2.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi}
 \end{figure}
 
@@ -1267,12 +1267,12 @@ Ovviamente, se la perdita di energia $\Delta E$ è piccola rispetto ad~$E$, $E_{
 
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/xf_csi_label_menoeventi.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/xf_csi_label_quadrata_menoeventi2.png}
 	\caption{Le tipiche matrici $x_{foc} - E_{CsI}$.} \label{fig:xf_Ecsi}
 \end{figure}
 
 Le matrici $x_{foc} - E_{CsI}$ corrispondenti alla simulazione della Sezione~\ref{sez:studio_PID} sono riportate in Figura~\ref{fig:xf_Ecsi}: come si può notare, gli ioni si dispongono su luoghi diversi a secondo del loro rapporto~$\sqrt{m}/q$. 
-I luoghi sono ben separati, ad eccezione ovviamente di quelli con lo stesso rapporto $\sqrt{m}/q$.
+I luoghi sono ben separati, ad eccezione ovviamente di quelli con lo stesso rapporto massa su carica.
 %Ciò poteva essere già dedotto guardando la Figura~\ref{fig:deltaE_Ecsi}, in cui si può notare che le matrici delle coppie in questione hanno intervalli di energia $E_{CsI}$ in parte sovrapposti.
 %Con lo stesso tipo di ragionamento, osservando la Figura~\ref{fig:deltaE_Ecsi_stati_carica}, si può desumere che se, oltre agli ioni considerati, si fossero simulati anche il \ce{^{18}F^{8+}} e il \ce{^{19}F^{8+}}, allora le matrici di questi due ioni si sarebbero in parte sovrapposta al luogo dell'\ce{^{20}O^{8+}}.
 È interessante sottolineare che, nonostante il telescopio abbia una lunghezza di 1.5~cm, esso vede un intervallo di $x_{foc}$ di circa 2.8~cm; ciò deriva dal fatto che gli ioni possono incidere sul telescopio con un certo angolo orizzontale non nullo, aumentando il numero di traiettorie accettate dal dispositivo.
@@ -1284,20 +1284,19 @@ Nell'attuale procedura di riduzione dei dati, l'identificazione dei prodotti di 
 %Tuttavia, nel caso esposto in Figura~\ref{fig:deltaE_Ecsi} si vede come il telescopio SiC-CsI possa essere in grado, da solo, di identificare lo ione di interesse sia in $Z$ sia in $A$; di conseguenza, la rappresentazione de
 Tuttavia, nel caso esposto in Figura~\ref{fig:deltaE_Ecsi} si vede come il taglio grafico sia stato, da solo, sufficiente ad identificare lo ione di interesse sia in $Z$ sia in $A$; dunque, riportando gli eventi selezionati in un grafico $x_{foc} - E_{CsI}$ non si dovrebbero osservare altri luoghi se non quello dell'\ce{^{20}O^{8+}}.
 Questa affermazione viene confermata dalla Figura~\ref{fig:xf_Ecsi_O20}, dove è possibile vedere soltanto la matrice dello ione di interesse.
-Sovrapposti a tale matrice, si possono notare gli eventi degradati di altre specie ioniche che contaminano il segnale: purtroppo la rappresentazione $x_{foc} - E_{CsI}$ non risulta utile, in questo caso, a separare lo ione di interesse dai contaminanti, in quanto questi hanno un'energia $E_{CsI}$ uguale a quella del segnale.
-
-
+Sovrapposti a tale matrice, si possono notare gli eventi degradati dell\ce{^{20}O^{8+}} che contaminano il segnale: purtroppo la rappresentazione $x_{foc} - E_{CsI}$ non risulta utile, in questo caso, a separare lo ione di interesse dai contaminanti, in quanto questi hanno un'energia $E_{CsI}$ uguale a quella del segnale.
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/xf_csi_taglio2.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/xf_csi_taglio_quadrato2.png}
 	\caption{La matrice $x_{foc} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}.} \label{fig:xf_Ecsi_O20}
 \end{figure} 
+
+
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/tof_csi_taglio.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/tof_csi_taglio_quadrato.png}
 	\caption{La matrice $\mbox{tof} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}.} \label{fig:tof_Ecsi_O20}
-\end{figure} 
-
+\end{figure}
 
 Per cercare di separare lo ione di interesse dalle specie contaminanti si può, allora, pensare di utilizzare la correlazione $\mbox{tof} - E_{CsI}$: in Figura~\ref{fig:tof_Ecsi_O20}, dove sono riportati gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}, è possibile notare come questa rappresentazione permetta di distinguere chiaramente il segnale dagli ioni F e Ne.
 %Ricordando che, a causa delle diverse sezioni d'urto dei processi, queste due specie 
@@ -1310,7 +1309,16 @@ Alla luce di questo risultato, si deduce che la misura del tempo di volo è fond
 
 
 
-
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/xf_csi_taglio2.png}
+	\caption{La matrice $x_{foc} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsia}.} \label{fig:xf_Ecsi_O20a}
+\end{figure} 
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/tof_csi_taglio.png}
+	\caption{La matrice $\mbox{tof} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi}.} \label{fig:tof_Ecsi_O20a}
+\end{figure} 
 
 
 %\clearpage
@@ -1324,7 +1332,7 @@ Uno degli obiettivi fondamentali di questo lavoro di tesi consiste nell'ottimizz
 %È importante sottolineare che, nonostante la rigidità magnetica di riferimento resti la stessa, in accordo con la~\ref{eq:finestra_Brho}, variando la larghezza del telescopio cambia la finestra in $B \rho$ accettata. 
 %Poiché il corrispondente intervallo di energia cinetica dipende dallo ione, tale cambiamento si manifesta in misura diversa su specie ioniche differenti.
 È importante sottolineare che, nonostante la rigidità magnetica di riferimento resti la stessa, in accordo con la~\ref{eq:finestra_Brho}, variando la larghezza del telescopio, cambia la finestra in $B \rho$ accettata e, di conseguenza, cambia per ogni ione l'intervallo di energia cinetica accettato.
-Poiché lo spettro in energia cinetica non è uniforme ma ha una forma complessa che dipende dal tipo di ione (si veda la Figura~\ref{fig:KinE}), tale cambiamento si manifesta in misura diversa su specie ioniche differenti.
+Poiché lo spettro in energia cinetica non è uniforme ma ha una forma complessa che dipende dal tipo di ione (si veda la Figura~\ref{fig:KinEa}), tale cambiamento si manifesta in misura diversa su specie ioniche differenti.
 Pertanto, non è banale prevedere il comportamento del rapporto S/B al variare delle diverse configurazioni.
 
 Tenendo presenti gli attuali limiti imposti dal processo di produzione dei rivelatori al~SiC, sono stati esaminati tre casi: $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}. 
@@ -1349,11 +1357,11 @@ Riducendo la dimensione orizzontale del telescopio dovrebbe diminuire il range d
 %\end{figure} 
 
 
-%\begin{figure} [!p]
-%	\centering
-%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/1per1/xf_ecsi_quadrata.png}
-%	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm.} \label{fig:xf_ecsi_1per1}
-%\end{figure} 
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/1per1new/xf_ecsi_quadrata_menoeventi.png}
+	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm.} \label{fig:xf_ecsi_1per1}
+\end{figure} 
 
 
 %In Figura~\ref{fig:deltaE_Ecsi_1per1} vengono illustrate le matrici $\Delta E_{SiC} - E_{CsI}$ ottenute con questa configurazione: rispetto alla Figura~\ref{fig:deltaE_Ecsi} non si osservano differenze sostanziali.
@@ -1363,7 +1371,7 @@ Riducendo la dimensione orizzontale del telescopio dovrebbe diminuire il range d
 %	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione} \label{fig:deltaE_Ecsi_1per1}
 %\end{figure}
 Dal momento che le matrici $\Delta E_{SiC} - E_{CsI}$ continuano ad essere ben separate e non presentano variazioni percettibili rispetto a quelle in Figura~\ref{fig:deltaE_Ecsi}, si è scelto di non mostrarle.
-Nella Tabella~\ref{tab:contaminazioni_riscalate_1per1} si riporta il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE: confrontando questa con la Tabella~\ref{tab:contaminazioni_riscalate} si può notare che tutti i valori sono più bassi, compresa l'efficienza di rivelazione del segnale, che risulta essere dell'$(88.6 \pm 0.3)$~\%.
+Nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1} si riporta il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE: confrontando questa con la Tabella~\ref{tab:contaminazioni_riscalate} si può notare che tutti i valori sono più bassi, compresa l'efficienza di rivelazione del segnale, che risulta essere dell'$(88.6 \pm 0.3)$~\%.
 Calcolando il rapporto S/B si trova un valore di $0.025 \pm 0.002$, maggiore di quello trovato nel caso precedente.
 Dunque, sebbene l'efficienza di rivelazione del segnale sia diminuita, il fondo è diminuito in misura maggiore, così che il rapporto~S/B migliora.
 
@@ -1377,29 +1385,23 @@ Dunque, sebbene l'efficienza di rivelazione del segnale sia diminuita, il fondo 
 			&                  & &   norm. ad 1 evento di DCE  \\
 			\toprule[0.1em]
 			%\hline
-			%\ce{^{18}O}    &  $8^+$   & &  $0.017 \pm 0.010$      \\
-			%\hline
-			\ce{^{19}O}    &  $8^+$   & &  $\sim 10^{-4}$  \\
+			\ce{^{20}O}    &  $8^+$   & &  $0.884 \pm 0.003$      \\
 			\hline
-			\ce{^{20}O}    &  $8^+$   & &  $0.886 \pm 0.003$      \\
+			\ce{^{21}O}    &  $8^+$   & &  $\sim 8 \cdot 10^{-6}$      \\
 			\hline
-			\ce{^{18}F}    &  $9^+$   & &  $0.07 \pm 0.03$        \\
-			%&  $8^+$   & &  $ \sim 10^{-6}$        \\
+			\ce{^{20}F}    &  $8^+$   & &  $< 2 \cdot 10^{-4}$ al 90\% CL       \\
 			\hline
-			\ce{^{19}F}    &  $9^+$   & &  $11 \pm 2$             \\
-			%&  $8^+$   & &  $ 0.0010 \pm 0.0001$    \\
+			\ce{^{21}F}    &  $8^+$   & &  $< 10^{-7} $ al 90\% CL     \\
 			\hline
-			\ce{^{20}F}    &  $9^+$   & &  $1.6 \pm 0.4$          \\
+			\ce{^{20}Ne}    &  $8^+$   & &  $< 10^{-8}$ al 90\% CL        \\
 			\hline
-			\ce{^{18}Ne}   &  $10^+$  & &  $0.010 \pm 0.004$      \\
+			\ce{^{21}Ne}   &  $8^+$  & &  $< 10^{-7} $  al 90\% CL    \\
 			\hline
-			\ce{^{19}Ne}   &  $10^+$  & &  $23 \pm 3$             \\
-			%\hline
-			%\ce{^{20}Ne}   &  $10^+$  & &  $0.14 \pm 0.08$        \\
+			\ce{^{22}Ne}   &  $8^+$  & &  $< 10^{-9}$    al 90\% CL    \\
 			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{Dimensioni trasversali del telescopio 1~cm $\times$ 1~cm: per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_riscalate_1per1}
+	\caption{Utilizzando la correlazione $\Delta E_{SiC} - E_{CsI}$, per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1}
 \end{table}
 
 
@@ -1413,7 +1415,7 @@ In questo caso, l'intervallo di energia cinetica accettato dal telescopio è mag
 %	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 2~cm~$\times$~2~cm.} \label{fig:xf_ecsi_2per2}
 %\end{figure} 
 Per i motivi precedentemente esposti, anche in questo caso si è preferito non riportare le matrici $\Delta E_{SiC} - E_{CsI}$.
-Il numero di eventi nella ROI, riscalato per la sezione e per la probabilità di ottenere un determinato stato di carica e normalizzato ad un evento di DCE, viene mostrato, per ogni ione, nella Tabella~\ref{tab:contaminazioni_riscalate_2per2}: come si può notare, i valori sono più alti di quelli visti nelle altre due condizioni.
+Il numero di eventi nella ROI, riscalato per la sezione e per la probabilità di ottenere un determinato stato di carica e normalizzato ad un evento di DCE, viene mostrato, per ogni ione, nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_2per2}: come si può notare, i valori sono più alti di quelli visti nelle altre due condizioni.
 %L'efficienza di rivelazione del segnale è maggiore rispetto ai casi precedenti, raggiungendo il $(91.9 \pm 0.002)$~\%.
 %Il rapporto S/B risulta essere pari a $0.0020 \pm 0.001$, diminuend 
 Rispetto ai due casi precedenti, l'efficienza di rivelazione del segnale è maggiore, raggiungendo il $(91.9 \pm 0.002)$~\%, mentre il rapporto S/B è inferiore, con un valore di $0.0020 \pm 0.001$.
@@ -1440,29 +1442,23 @@ Ciò significa che, aumentando le dimensioni trasversali del telescopio, aumenta
 			&                  & &   norm. ad 1 evento di DCE  \\
 			\toprule[0.1em]
 			%\hline
-			\ce{^{18}O}    &  $8^+$   & &  $0.010 \pm 0.006$      \\
+			\ce{^{20}O}    &  $8^+$   & &  $0.917 \pm 0.002$      \\
 			\hline
-			\ce{^{19}O}    &  $8^+$   & &  $\sim 10^{-4}$  \\
+			\ce{^{21}O}    &  $8^+$   & &  $\sim 8 \cdot 10^{-6}$      \\
 			\hline
-			\ce{^{20}O}    &  $8^+$   & &  $0.919 \pm 0.002$      \\
+			\ce{^{20}F}    &  $8^+$   & &  $< 5 \cdot 10^{-5}$ al 90\% CL       \\
 			\hline
-			\ce{^{18}F}    &  $9^+$   & &  $0.13 \pm 0.02$        \\
-			%&  $8^+$   & &  $ \sim 10^{-6}$        \\
+			\ce{^{21}F}    &  $8^+$   & &  $< 10^{-7} $ al 90\% CL     \\
 			\hline
-			\ce{^{19}F}    &  $9^+$   & &  $19 \pm 1$             \\
-			%&  $8^+$   & &  $ 0.0010 \pm 0.0001$    \\
+			\ce{^{20}Ne}    &  $8^+$   & &  $< 10^{-8}$ al 90\% CL        \\
 			\hline
-			\ce{^{20}F}    &  $9^+$   & &  $4.5 \pm 0.4$          \\
+			\ce{^{21}Ne}   &  $8^+$  & &  $< 10^{-7} $  al 90\% CL    \\
 			\hline
-			\ce{^{18}Ne}   &  $10^+$  & &  $0.025 \pm 0.003$      \\
-			\hline
-			\ce{^{19}Ne}   &  $10^+$  & &  $23 \pm 1$             \\
-			\hline
-			\ce{^{20}Ne}   &  $10^+$  & &  $0.14 \pm 0.06$        \\
+			\ce{^{22}Ne}   &  $8^+$  & &  $< 10^{-9}$    al 90\% CL    \\
 			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{Dimensioni trasversali del telescopio 2~cm $\times$ 2~cm: per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_riscalate_2per2}
+	\caption{Utilizzando la correlazione $\Delta E_{SiC} - E_{CsI}$, per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate_2per2}
 \end{table}
 
 
