@@ -777,6 +777,7 @@ Ciò è dovuto a reazioni nucleari esotermiche, nelle quali viene rilasciata una
 Dopo aver esposto tre casi ideali, utili per comprendere alcuni fenomeni rilevanti incontrati in questo studio, si esamina adesso una situazione realistica, in cui alla simulazione \geant{} viene dato in input il file prodotto dai software per il trasporto degli eiettili attraverso MAGNEX.
 In questo caso, dunque, gli ioni presentano sia le correlazioni cinematiche sia quelle legate alle proprietà ottiche dello spettrometro.
 A differenza dei casi precedenti, sono stati simulati sette milioni di eventi ugualmente distribuiti su sette tipi di ioni, ossia \ce{^{20}O^{8+}}, \ce{^{21}O^{8+}}, \ce{^{20}F^{8+}}, \ce{^{21}F^{8+}}, \ce{^{20}Ne^{8+}}, \ce{^{21}Ne^{8+}} e \ce{^{22}Ne^{8+}}.
+Mentre il primo rappresenta lo ione di interesse, gli altri sono le principali sorgenti di contaminazione quando si studia una reazione di DCE in cui l'\ce{^{20}O^{8+}} è nel suo stato fondamentale.
 Altri ioni, come ad esempio il \ce{^{19}F^{8+}} e l'\ce{^{19}O^{8+}}, e altri stati di carica, per esempio i $9^+$ e i $10^+$, non sono stati presi in considerazione perché, per ragioni cinematiche e per le proprietà ottiche dello spettrometro, vengono rivelati in regioni del FPD lontane da quella in cui arriva lo ione di interesse.
 Il telescopio ha dimensioni trasversali di 1.5~cm $\times$ 1.5~cm ed è posto a 14~cm di distanza dal piano in cui vengono prodotte le particelle primarie, che coincide con il piano di ingresso nel FDP.
 
@@ -840,7 +841,7 @@ All'interno del taglio sono presenti, oltre allo ione di interesse, anche altre 
 La percentuale di contaminazione nella ROI dovuta ad un particolare ione può essere calcolata dividendo il numero di eventi di quello ione presenti nella ROI per il numero totale di eventi dello stesso.
 %Supponiamo, adesso, di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}: il primo passo nell'analisi dei dati consiste nell'identificazione degli ioni di interesse attraverso l'utilizzo di tagli grafici.
 Il risultato di tale operazione, nel caso del taglio grafico considerato in Figura~\ref{fig:deltaE_Emeas_taglio}, è riportato in Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5}: come si può notare, le percentuali sono molto basse, a dimostrazione delle grandi capacità di PID del telescopio~SiC-CsI.
-Per gli ioni per i quali non è stata riscontrata contaminazione nella ROI, si è assunto che il numero di eventi in tale regione fosse minore di 2.3 al 90\% di livello di confidenza (Confidence Level, CL).
+Per gli ioni per i quali non è stata riscontrata contaminazione nella ROI si è assunto che il numero di eventi in tale regione fosse minore di 2.3 al 90\% di livello di confidenza (Confidence Level, CL).
 \begin{table} [t!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -878,7 +879,7 @@ La restante parte del segnale viene persa a causa dell'incompleta raccolta di ca
 %Tuttavia, nella situazione reale la produzione degli ioni considerati avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto; questa rappresenta, infatti, la probabilità con cui può verificarsi una determinata reazione.  
 A questo punto è bene sottolineare che finora le contaminazioni sono state calcolate senza tenere in considerazione che nella situazione reale la produzione degli ioni avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto; questa rappresenta, infatti, la probabilità con cui può verificarsi una determinata reazione.
 I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urto}, insieme alla probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio.
-È bene precisare che, per l'\ce{^{19}O}, il valore indicato non deriva da misure sperimentali ma considerazioni sull'ordine del processo stesso.
+È bene precisare che, per l'\ce{^{19}O}, il valore indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso.
 \begin{table} [p!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -904,10 +905,10 @@ I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in ques
 			& &              & &                 & & & $9^+ \sim 10^{-5}$ \\
 			& &              & &                 & & & $8^+ \sim 10^{-7}$ \\
 			\hline
-			$3^{\mbox{rd}}$ order multi & & \ce{^{21}F}  & &     $10^3 $     & & & $9^+ \sim 0.99934$ \\
+			$3^{\mbox{rd}}$ order multi- & & \ce{^{21}F}  & &     $10^3 $     & & & $9^+ \sim 0.99934$ \\
 			nucleon transfer      & &              & &                 & & & $8^+ \sim 6.6 \cdot 10^{-4}$ \\
 			\hline
-			$5^{\mbox{th}}$ order multi   & & \ce{^{19}O}  & &        0.1       & & & $8^+ \sim 0.99963$ \\
+			$5^{\mbox{th}}$ order multi-   & & \ce{^{19}O}  & &        0.1       & & & $8^+ \sim 0.99963$ \\
 			nucleon transfer              & &              & &                 & & &  \\
 			
 			\bottomrule[0.1em]
@@ -950,7 +951,7 @@ Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazion
 
 Dividendo il numero di segnali per la somma degli eventi di fondo, si ottiene una quantità nota come \emph{rapporto segnale-background}~(S/B), che in questo caso risulta essere di $24174 \pm 62$.
 A partire da questo valore è possibile risalire alla sensibilità di misura nel modo seguente: sapendo che la sezione d'urto tipica del DCE nel range di energia di eccitazione studiato è di circa 1000~nb, dal rapporto S/B si deduce che il fondo corrisponde a circa 40~pb ad 1$\sigma$ di errore; dunque, considerando 5$\sigma$, si trova una sensibilità di circa 200~pb.
-Mentre il fondo ha una sezione d'urto circa costante, quella del DCE ha una forte dipendenza dall'energia; in particolare, nella regione di interesse, che corrisponde ad 1~MeV di energia di eccitazione, la sezione d'urto del DCE è di circa 10~nb.
+Mentre il fondo ha una sezione d'urto circa costante, quella del DCE ha una forte dipendenza dall'energia; in particolare, nella regione di interesse, che arriva fino ad 1~MeV di energia di eccitazione, la sezione d'urto del DCE è di circa 10~nb.
 Pertanto, con la sensibilità di misura stimata, l'apparato sperimentale sarebbe in grado di misurare la reazione di interesse.
 
 
@@ -962,11 +963,7 @@ Pertanto, con la sensibilità di misura stimata, l'apparato sperimentale sarebbe
 \subsection*{\iflanguage{italian}{Studio della correlazione $\Delta E_{SiC} - E_{CsI}$}{Study of $\Delta E_{SiC} - E_{CsI}$ correlation}}
 
 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Ecsi_quadrata_taglio_menoeventi2.png}
-	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi}
-\end{figure}
+
 
 Un aspetto importante di questo studio consiste nel valutare se la correlazione $\Delta E_{SiC} - E_{CsI}$ possa dare risultati analoghi a quelli ottenuti con la correlazione $\Delta E_{SiC} - E_{meas}$. 
 %In Figura~\ref{fig:deltaE_Ecsi} si riportano le matrici degli ioni completamente ionizzati, le quali continuano ad essere ben separate.
@@ -974,6 +971,11 @@ Un aspetto importante di questo studio consiste nel valutare se la correlazione 
 %Lo stesso risultato si ottiene considerando gli ioni con stati di carica diversi, le cui matrici sono rappresentate in Figura~\ref{fig:deltaE_Ecsi_stati_carica}.
 %Anche le matrici degli ioni non completamente ionizzati restano chiaramente distinte, come si può osservare dalla Figura~\ref{fig:deltaE_Ecsi_stati_carica}.  
 In Figura~\ref{fig:deltaE_Ecsi} sono riportate le matrici degli ioni simulati: come si può notare, anche in questo caso esse sono ben separate sia in numero atomico sia in numero di massa.
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Ecsi_quadrata_taglio_menoeventi2.png}
+	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi}
+\end{figure}
 Il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE, è mostrato in Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}: confrontando quest'ultima con la Tabella~\ref{tab:contaminazioni_riscalate} si può osservare che i valori sono, per tutti gli ioni considerati, molto simili.
 L'efficienza di rivelazione del segnale resta del $(90.4 \pm 0.2)$~\%, mentre il rapporto S/B risulta essere pari a $10939 \pm 38 $, inferiore a quello trovato con la correlazione $\Delta E_{SiC} - E_{meas}$.
 La sensibilità di misura corrispondente a questo valore è di circa 460~pb a 5$\sigma$, pertanto anche con questo tipo di correlazione è possibile misurare le reazioni di DCE all'energia di eccitazione di interesse.
@@ -1076,13 +1078,14 @@ Le corrispondenti matrici $\Delta E_{SiC} - E_{CsI}$ sono riportate in Figura~\r
 Si può, inoltre, osservare che l'energia rilasciata nel rivelatore al~SiC è molto simile per le tre specie atomiche: 
 %ciò dipende dalla notevole differenza in energia cinetica degli ioni che compensa la variazione legata al cambiamento di $Z$.
 ciò dipende dal fatto che, a causa del filtro in $B \rho$, gli ioni con carica $q$ più piccola hanno energia cinetica minore, mentre quelli con $q$ più grande hanno energia cinetica maggiore; ricordando che nella formula di Bethe-Bloch la perdita di energia è proporzionale a $Z^2$ e inversamente proporzionale ad $E$, si può dedurre che la notevole differenza in energia cinetica degli ioni compensa la variazione legata al cambiamento di $Z$.
-%Di conseguenza, assumendo di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, la principale componente di contaminazione nell'identificazione proviene dagli ioni che non si fermano nel rivelatore al~CsI.
-Di conseguenza, nel caso in esame la principale componente di contaminazione nell'identificazione degli eventi di interesse proviene dagli ioni che non si fermano nel cristallo di~CsI.
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/deltaE_Ecsi_quadrata_taglio_label.png}
 	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione.} \label{fig:deltaE_Ecsi_altaE}
 \end{figure}
+%Di conseguenza, assumendo di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, la principale componente di contaminazione nell'identificazione proviene dagli ioni che non si fermano nel rivelatore al~CsI.
+Di conseguenza, nel caso in esame la principale componente di contaminazione nell'identificazione degli eventi di interesse proviene dagli ioni che non si fermano nel cristallo di~CsI.
+
 \begin{table} [t!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -1118,29 +1121,9 @@ Nella Tabella~\ref{tab:sez_d'urtoa} sono riportati i valori tipici delle sezioni
 %Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
 %%Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
 %questo è il fattore con cui bisogna riscalare le percentuali precedentemente mostrate per stimare le contaminazioni reali.
-Analogamente a quanto visto in precedenza, sono stati ricavati i fattori di scala, i quali sono stati moltiplicati ai valori della Tabella~\ref{tab:sez_d'urtoa} per ottenere le contaminazioni reali.
+Analogamente a quanto visto in precedenza, sono stati ricavati i fattori di scala, i quali sono stati moltiplicati con i valori della Tabella~\ref{tab:sez_d'urtoa} per ottenere le contaminazioni reali.
 Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazioni_riscalatea}: come si può osservare, il contributo maggiore deriva dai processi di 1-neutron e 1-proton stripping e dal SCE.
 Il rapporto S/B risulta essere di $0.0172 \pm 0.0008$, notevolmente inferiore ai valori precedentemente osservati.
-La sensibilità di misura corrispondente è di circa 300~$\mu$b a 5$\sigma$, estremamente più grande di quella necessaria per osservare il DCE.
-Sebbene questo valore escluda la possibilità di riuscire a distinguere con il telescopio SiC-CsI le reazioni di DCE dal fondo, l'utilizzo di altre correlazioni potrebbe portare ad un miglioramento del rapporto S/B e, conseguentemente, ad un abbassamento della sensibilità di misura.
-Due importanti correlazioni sono descritte nel paragrafo successivo.
-
-
-%\begin{table} [t!]
-%	\begin{center}
-%		\renewcommand{\arraystretch}{1.2}
-%		\begin{tabular} {ccccccc}
-%			Reazione & & Ione & & \multirow{2}{35 mm}{Sez. d'urto sperim. norm. al DCE}  & & Fraz. di stato di carica \\
-%			         & &      & &        & &                          \\
-%			\toprule
-%			%\hline
-%			DCE  & & \ce{^{20}O} & &  1  & & $8+ \rightarrow 0.9987$ \\
-%			\hline
-%			DCE  & & \ce{^{20}O} & &  1  & & $8+ \rightarrow 0.9987$ \\
-%		\end{tabular}
-%	\end{center}
-%\end{table}
-%\clearpage
 \begin{table} [p!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -1180,9 +1163,6 @@ Due importanti correlazioni sono descritte nel paragrafo successivo.
 	\end{center}
 	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio.} \label{tab:sez_d'urtoa}
 \end{table}
-
-
-
 \begin{table} [p!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -1215,6 +1195,27 @@ Due importanti correlazioni sono descritte nel paragrafo successivo.
 	\end{center}
 	\caption{Per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_riscalatea}
 \end{table}
+La sensibilità di misura corrispondente è di circa 300~$\mu$b a 5$\sigma$, estremamente più grande di quella necessaria per osservare il DCE.
+Sebbene questo valore escluda la possibilità di riuscire a distinguere con il telescopio SiC-CsI le reazioni di DCE dal fondo, l'utilizzo di altre correlazioni potrebbe portare ad un miglioramento del rapporto S/B e, conseguentemente, ad un abbassamento della sensibilità di misura.
+Due importanti correlazioni sono descritte nel paragrafo successivo.
+
+
+%\begin{table} [t!]
+%	\begin{center}
+%		\renewcommand{\arraystretch}{1.2}
+%		\begin{tabular} {ccccccc}
+%			Reazione & & Ione & & \multirow{2}{35 mm}{Sez. d'urto sperim. norm. al DCE}  & & Fraz. di stato di carica \\
+%			         & &      & &        & &                          \\
+%			\toprule
+%			%\hline
+%			DCE  & & \ce{^{20}O} & &  1  & & $8+ \rightarrow 0.9987$ \\
+%			\hline
+%			DCE  & & \ce{^{20}O} & &  1  & & $8+ \rightarrow 0.9987$ \\
+%		\end{tabular}
+%	\end{center}
+%\end{table}
+%\clearpage
+
 
 
 
@@ -1336,8 +1337,9 @@ Poiché lo spettro in energia cinetica non è uniforme ma ha una forma complessa
 Pertanto, non è banale prevedere il comportamento del rapporto S/B al variare delle diverse configurazioni.
 
 Tenendo presenti gli attuali limiti imposti dal processo di produzione dei rivelatori al~SiC, sono stati esaminati tre casi: $1 \times 1$, $1.5 \times 1.5$ e $2 \times 2$~cm\ap{2}. 
-In ciascuna delle tre possibilità le particelle primarie sono state generate mantenendo i parametri elencati nel Paragrafo~\ref{sez:studio_PID}.
-Per quanto riguarda il secondo caso, i plot e le tabelle di riferimento sono quelli mostrati nella sezione precedente, mentre per gli altri due vengono adesso esposti.
+Dal momento che per l'analisi delle reazioni di DCE la regione di interesse è quella a bassa energia di eccitazione, in ciascuna delle tre possibilità le particelle primarie sono state generate mantenendo i parametri elencati nel Paragrafo~\ref{sez:studio_PID}.
+Per quanto riguarda i telescopi da 1.5~cm $\times$ 1.5~cm, i plot e le tabelle di riferimento sono quelli mostrati nella sezione precedente, mentre per gli altri due vengono adesso esposti.
+
 
 \subsection*{Dimensioni trasversali: 1~cm $\times$ 1~cm}
 %\paragraph*{Dimensioni trasversali: 1.5~cm $\times$ 1.5~cm.}
@@ -1371,10 +1373,9 @@ Riducendo la dimensione orizzontale del telescopio dovrebbe diminuire il range d
 %	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione} \label{fig:deltaE_Ecsi_1per1}
 %\end{figure}
 Dal momento che le matrici $\Delta E_{SiC} - E_{CsI}$ continuano ad essere ben separate e non presentano variazioni percettibili rispetto a quelle in Figura~\ref{fig:deltaE_Ecsi}, si è scelto di non mostrarle.
-Nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1} si riporta il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE: confrontando questa con la Tabella~\ref{tab:contaminazioni_riscalate} si può notare che tutti i valori sono più bassi, compresa l'efficienza di rivelazione del segnale, che risulta essere dell'$(88.6 \pm 0.3)$~\%.
-Calcolando il rapporto S/B si trova un valore di $0.025 \pm 0.002$, maggiore di quello trovato nel caso precedente.
-Dunque, sebbene l'efficienza di rivelazione del segnale sia diminuita, il fondo è diminuito in misura maggiore, così che il rapporto~S/B migliora.
-
+Nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1} si riporta il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE: confrontando questa con la Tabella~\ref{tab:contaminazioni_riscalate} si può notare che le contaminazioni sono leggermente più alte, mentre l'efficienza di rivelazione del segnale è più bassa, risultando essere dell'$(88.4 \pm 0.3)$~\%.
+Calcolando il rapporto S/B si trova un valore di $4875 \pm 19$, minore di quello trovato nel caso precedente.
+La sensibilità di misura risulta essere di 1~nb a 5$\sigma$, dunque anche in questo caso sufficiente per rivelare la reazione di interesse.
 
 
 \begin{table} [t!]
@@ -1401,7 +1402,7 @@ Dunque, sebbene l'efficienza di rivelazione del segnale sia diminuita, il fondo 
 			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{Utilizzando la correlazione $\Delta E_{SiC} - E_{CsI}$, per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1}
+	\caption{Dimensioni del telescopio 1~cm $\times$ 1~cm: utilizzando la correlazione $\Delta E_{SiC} - E_{CsI}$, per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1}
 \end{table}
 
 
@@ -1409,18 +1410,19 @@ Dunque, sebbene l'efficienza di rivelazione del segnale sia diminuita, il fondo 
 %\paragraph*{Dimensioni trasversali: 2~cm $\times$ 2~cm.}
 
 In questo caso, l'intervallo di energia cinetica accettato dal telescopio è maggiore, come viene confermato dalla Figura~\ref{fig:xf_ecsi_2per2}, in cui si può notare che l'intervallo di $x_{foc}$ visto dal telescopio è di circa 3.4~cm.
-%\begin{figure} [!p]
-%	\centering
-%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/2per2/xf_ecsi_quadrata.png}
-%	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 2~cm~$\times$~2~cm.} \label{fig:xf_ecsi_2per2}
-%\end{figure} 
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/2per2new/xf_ecsi_quadrata_menoeventi.png}
+	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 2~cm~$\times$~2~cm.} \label{fig:xf_ecsi_2per2}
+\end{figure} 
 Per i motivi precedentemente esposti, anche in questo caso si è preferito non riportare le matrici $\Delta E_{SiC} - E_{CsI}$.
 Il numero di eventi nella ROI, riscalato per la sezione e per la probabilità di ottenere un determinato stato di carica e normalizzato ad un evento di DCE, viene mostrato, per ogni ione, nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_2per2}: come si può notare, i valori sono più alti di quelli visti nelle altre due condizioni.
 %L'efficienza di rivelazione del segnale è maggiore rispetto ai casi precedenti, raggiungendo il $(91.9 \pm 0.002)$~\%.
 %Il rapporto S/B risulta essere pari a $0.0020 \pm 0.001$, diminuend 
-Rispetto ai due casi precedenti, l'efficienza di rivelazione del segnale è maggiore, raggiungendo il $(91.9 \pm 0.002)$~\%, mentre il rapporto S/B è inferiore, con un valore di $0.0020 \pm 0.001$.
-Ciò significa che, aumentando le dimensioni trasversali del telescopio, aumenta il numero di segnali presenti nella ROI, ma aumenta maggiormente il numero degli eventi di fondo.
-
+Rispetto ai due casi precedenti, l'efficienza di rivelazione del segnale è maggiore, raggiungendo il $(91.7 \pm 0.2)$~\%.
+Anche il rapporto S/B risulta maggiore, con un valore di $16530 \pm 32$.
+Ciò significa che, aumentando le dimensioni trasversali del telescopio, aumenta il numero di segnali presenti nella ROI, mentre il fondo, in proporzione, diminuisce.
+Calcolando la sensibilità di misura, si trova un valore di 300~pb a 5$\sigma$, più basso rispetto ai due precedenti. 
 
 
 
@@ -1429,7 +1431,7 @@ Ciò significa che, aumentando le dimensioni trasversali del telescopio, aumenta
 
 %\begin{figure} [!p]
 %	\centering
-%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/2per2/deltaE_Ecsi_taglio.png}
+%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/2per2new/deltaE_Ecsi_taglio.png}
 %	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione} \label{fig:deltaE_Ecsi_2per2}
 %\end{figure} 
 
@@ -1458,7 +1460,7 @@ Ciò significa che, aumentando le dimensioni trasversali del telescopio, aumenta
 			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{Utilizzando la correlazione $\Delta E_{SiC} - E_{CsI}$, per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate_2per2}
+	\caption{Dimensioni del telescopio 2~cm $\times$ 2~cm: utilizzando la correlazione $\Delta E_{SiC} - E_{CsI}$, per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate_2per2}
 \end{table}
 
 
@@ -1470,9 +1472,8 @@ Ciò significa che, aumentando le dimensioni trasversali del telescopio, aumenta
 %Ciò si può evincere dalla Figura~\ref{fig:misident_vs_surface}, dove è mostrato, per un caso rappresentativo, l'andamento della probabilità di errore nell'identificazione dei nuclei al variare della superficie e dell'energia.
 %Ciò si spiega considerando che, a parità di lunghezza della cornice, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
 %Tale andamento può essere spiegato considerando che, a parità di lunghezza della cornice non attiva, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
-Lo studio effettuato ha dimostrato che, aumentando le dimensioni trasversali del telescopio, cresce l'efficienza di raccolta del segnale; tuttavia, la frazione di eventi di fondo cresce più velocemente, in modo tale che il rapporto S/B diminuisce.
-L'andamento di quest'ultimo in funzione della superficie del telescopio è riportato in Figura~\ref{fig:rapporto_segnale_fondo}, dove si può notare che la diminuzione è fortemente non lineare.
-Alla luce di questo risultato, per massimizzare la sensibilità di misura alla reazione di interesse bisognerebbe utilizzare i telescopi da 1~cm $\times$ 1~cm.
+Lo studio effettuato ha dimostrato che, aumentando le dimensioni trasversali del telescopio, cresce il rapporto S/B; l'andamento di quest'ultimo in funzione della superficie del telescopio è riportato in Figura~\ref{fig:rapporto_segnale_fondo}, dove si può notare che l'aumento è fortemente non lineare.
+Alla luce di questo risultato, per massimizzare la sensibilità di misura alla reazione di interesse bisognerebbe utilizzare i telescopi da 2~cm $\times$ 2~cm.
 
 \begin{figure} [!t]
 	\centering
@@ -1516,13 +1517,18 @@ Poiché per gli obiettivi del progetto è necessario lavorare con fasci di eleva
 %Due aspetti diversi spingono in direzioni opposte: è necessario cercare una situazione di compromesso fra le due esigenze.
 %Alla luce delle considerazione svolte, la migliore condizione di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto riesce ad unire un'alta percentuale di riconoscimento del segnale con una bassa probabilità di pile-up.
 
-Sebbene entrambi gli aspetti suggeriscano di utilizzare i telescopi da 1~cm $\times$ 1~cm, nella scelta finale entrano in gioco anche altri fattori, legati ad esempio al numero di canali necessari per leggere tutti i dispositivi e alla dissipazione del calore prodotto dai circuiti elettronici.
+Oltre a quelli già citati, nella scelta finale delle condizioni di granularità da adottare entrano in gioco anche altri fattori, legati ad esempio al numero di canali necessari per leggere tutti i dispositivi e alla dissipazione del calore prodotto dai circuiti elettronici.
 È chiaro che, se le dimensioni sono più piccole, il numero di rivelatori da utilizzare per riempire la stessa superficie è più grande; di conseguenza, al diminuire della superficie dei telescopi, crescono sia il numero di canali sia il numero di circuiti elettronici.
 Ogni circuito, quando è in funzione, produce calore, che deve essere dissipato per evitare il surriscaldamento delle apparecchiature.
 Se il numero di circuiti è grande, può essere necessario realizzare un sistema di raffreddamento ad hoc, che richiederebbe ulteriori sforzi di progettazione e costi di produzione.
 
 Dal momento che aspetti diversi spingono in direzioni opposte, è necessario cercare una situazione di compromesso.
-Alla luce delle considerazioni svolte, la condizione ottimale di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto offrono un buon rapporto S/B, che può essere migliorato utilizzando la correlazione $\mbox{tof} - E_{CsI}$, mantengono sufficientemente bassa la probabilità di pile-up e richiedono meno della metà dei dispositivi che occorrerebbero se si utilizzassero i telescopi 1.5~cm $\times$ 1.5~cm.
+Alla luce delle considerazioni svolte, la condizione ottimale di granularità sembra essere rappresentata dai telescopi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm, in quanto in primo luogo offre un ottimo rapporto S/B e una sensibilità di misura adeguata per lo studio delle reazioni di DCE a bassa energia di eccitazione.
+Inoltre, presenta una probabilità di pile-up sufficientemente piccola anche al flusso massimo atteso per NUMEN.
+Infine, consente di mantenere su livelli ragionevoli il numero totale di dispositivi e di canali.
+
+
+%offrono un buon rapporto S/B, che può essere migliorato utilizzando la correlazione $\mbox{tof} - E_{CsI}$, mantengono sufficientemente bassa la probabilità di pile-up e richiedono meno della metà dei dispositivi che occorrerebbero se si utilizzassero i telescopi 1.5~cm $\times$ 1.5~cm.
 
 
 
