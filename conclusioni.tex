@@ -1,7 +1,14 @@
 
 %Le simulazioni computerizzate costituiscono oggi un potente strumento per studiare la risposta di un sistema di rivelazione e per analizzarne il comportamento al variare delle sue caratteristiche.
-Le simulazioni computerizzate costituiscono oggi un potente strumento per studiare la risposta di un sistema di rivelazione e per dedurre utili informazioni sulle specifiche tecniche ottimali.
-Nell'ambito del progetto NUMEN è stata realizzata una simulazione basata sulla piattaforma \geant{}, allo scopo di valutare le prestazioni di un sistema per la rivelazione e l'identificazione di ioni pesanti ad alto rate, costituito da un muro di telescopi $\Delta E - E_{resid}$ a stato solido.
+Le simulazioni numeriche costituiscono oggi un potente strumento per studiare la risposta di un sistema di rivelazione e per dedurre utili informazioni sulle caratteristiche tecniche ottimali.
+%Nell'ambito del progetto NUMEN è stata realizzata una simulazione basata sulla piattaforma \geant{}, allo scopo di valutare le prestazioni di un sistema per la rivelazione e l'identificazione di ioni pesanti ad alto rate, costituito da un muro di telescopi $\Delta E - E_{resid}$ a stato solido.
+Nell'ambito del progetto NUMEN è stato sviluppato e implementato, per la prima volta, un tool di simulazioni capace di descrivere in modo completo la cinematica di reazione, il moto degli eiettili attraverso gli elementi magnetici dello spettrometro MAGNEX e la loro interazione con un muro di telescopi $\Delta E - E$ a stato solido.
+Tale tool si compone essenzialmente di due parti: la prima calcola la cinematica e risolve le equazioni del moto degli eiettili fino al decimo ordine, la seconda si occupa di 
+%Per poter riflettere il comportamento reale degli ioni nello spettrometro, il tool deve incorporare le correlazioni dovute sia alla cinematica sia alle proprietà ottiche dello spettrometro.
+%Poiché tali correlazioni sono caratterizzate da effetti non-lineari e richiedono la risoluzione di complesse equazioni, si è scelto  
+%Tale tool integra i software per il calcolo della cinematica e della matrice del trasporto degli eiettili attraverso MAGNEX con un'applicazione specifica basata sulla piattaforma \geant.
+%Dal momento che la cinematica e le proprietà ottiche dello spettrometro introducono delle correlazioni non-lineari che difficil
+%Dal momento che tale sistema verrà utilizzato per rivelare i prodotti di reazione deg
 Tale simulazione ha permesso di verificare che una soluzione basata sulla tecnologia SiC-CsI può soddisfare le performance necessarie per gli obiettivi del progetto, garantendo una buona separazione degli ioni di interesse per NUMEN lungo tutto il range energetico preso in considerazione.
 Dal momento che il progetto intende studiare le reazioni di doppio scambio di carica (Double Charge Exchange, DCE), le quali sono caratterizzate da sezioni d'urto estremamente basse, un importante aspetto di questo lavoro è consistito nello stimare la percentuale di eventi identificati in modo erroneo: in tutti i casi esaminati, tale quantità è risultata inferiore ai limiti imposti sulla perdita di segnali corretti e sulla contaminazione originata dal fondo.
 
@@ -14,13 +21,13 @@ Tuttavia, in condizioni di alti flussi di particelle incidenti, come quelli prev
 Di conseguenza, dal compromesso tra le due esigenze, si è dedotto che la configurazione ottimale per gli scopi del progetto prevede l'utilizzo di telescopi da $1.5 \times 1.5$~cm\ap{2}.
 
 
-L'analisi dell'influenza degli effetti di bordo del rivelatore al SiC sulle capacità di PID ha consentito di sostenere che la percentuale di eventi degradati cresce all'aumentare della lunghezza della regione di transizione, ma resta comunque entro i limiti fissati.
-Dunque, anche nel caso in cui tali rivelatori dovessero avere una regione parzialmente attiva con una lunghezza maggiore dei 50~$\mu$m assunti come valore di riferimento, le prestazioni di identificazione non dovrebbero subire sostanziali peggioramenti.
+%L'analisi dell'influenza degli effetti di bordo del rivelatore al SiC sulle capacità di PID ha consentito di sostenere che la percentuale di eventi degradati cresce all'aumentare della lunghezza della regione di transizione, ma resta comunque entro i limiti fissati.
+%Dunque, anche nel caso in cui tali rivelatori dovessero avere una regione parzialmente attiva con una lunghezza maggiore dei 50~$\mu$m assunti come valore di riferimento, le prestazioni di identificazione non dovrebbero subire sostanziali peggioramenti.
 
 
 
-Lo studio sul substrato epitassiale del rivelatore al SiC ha fatto emergere che la riduzione dello spessore dai 350 ai 10~$\mu$m provoca un aumento della percentuale di eventi degradati, risultando in un peggioramento delle performance di PID.
-Dunque, dal punto di vista dell'identificazione, l'ablazione LASER del substrato si configura come un'operazione ingiustificata, nonché potenzialmente dannosa in termini di resa di produzione dei dispositivi.
+%Lo studio sul substrato epitassiale del rivelatore al SiC ha fatto emergere che la riduzione dello spessore dai 350 ai 10~$\mu$m provoca un aumento della percentuale di eventi degradati, risultando in un peggioramento delle performance di PID.
+%Dunque, dal punto di vista dell'identificazione, l'ablazione LASER del substrato si configura come un'operazione ingiustificata, nonché potenzialmente dannosa in termini di resa di produzione dei dispositivi.
 
 
 %Un aspetto fondamentale di questo lavoro è consistito nella validazione della simulazione Monte Carlo attraverso il confronto con i dati sperimentali raccolti in occasione del test beam svolto ad Aprile 2019.
