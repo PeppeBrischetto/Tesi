@@ -1,0 +1,62 @@
+
+%Le simulazioni computerizzate costituiscono oggi un potente strumento per studiare la risposta di un sistema di rivelazione e per analizzarne il comportamento al variare delle sue caratteristiche.
+Le simulazioni computerizzate costituiscono oggi un potente strumento per studiare la risposta di un sistema di rivelazione e per dedurre utili informazioni sulle specifiche tecniche ottimali.
+Nell'ambito del progetto NUMEN è stata realizzata una simulazione basata sulla piattaforma \geant{}, allo scopo di valutare le prestazioni di un sistema per la rivelazione e l'identificazione di ioni pesanti ad alto rate, costituito da un muro di telescopi $\Delta E - E_{resid}$ a stato solido.
+Tale simulazione ha permesso di verificare che una soluzione basata sulla tecnologia SiC-CsI può soddisfare le performance necessarie per gli obiettivi del progetto, garantendo una buona separazione degli ioni di interesse per NUMEN lungo tutto il range energetico preso in considerazione.
+Dal momento che il progetto intende studiare le reazioni di doppio scambio di carica (Double Charge Exchange, DCE), le quali sono caratterizzate da sezioni d'urto estremamente basse, un importante aspetto di questo lavoro è consistito nello stimare la percentuale di eventi identificati in modo erroneo: in tutti i casi esaminati, tale quantità è risultata inferiore ai limiti imposti sulla perdita di segnali corretti e sulla contaminazione originata dal fondo.
+
+
+È stato, inoltre, osservato che, ai fini della Particle IDentification (PID), la correlazione $\Delta E - E_{resid}$ produce prestazioni analoghe a quelle della correlazione $\Delta E - E_{tot}$, rendendo, dunque, non necessaria la calibrazione dei due stadi del telescopio.
+
+Diversi studi sono stati condotti variando le dimensioni trasversali dei rivelatori, dai quali è emerso che la percentuale di eventi affetti da raccolta di carica incompleta, principale fonte di errore nell'identificazione, diminuisce all'aumentare della superficie sensibile. 
+Tuttavia, in condizioni di alti flussi di particelle incidenti, come quelli previsti per NUMEN, un fenomeno da tenere in considerazione per la scelta delle dimensioni dei rivelatori è il pile-up.
+È stato, dunque, effettuato un calcolo analitico allo scopo di studiare l'andamento della probabilità di pile-up al variare della superficie del rivelatore, dal quale è risultato che tale quantità aumenta velocemente al crescere delle dimensioni trasversali.
+Di conseguenza, dal compromesso tra le due esigenze, si è dedotto che la configurazione ottimale per gli scopi del progetto prevede l'utilizzo di telescopi da $1.5 \times 1.5$~cm\ap{2}.
+
+
+L'analisi dell'influenza degli effetti di bordo del rivelatore al SiC sulle capacità di PID ha consentito di sostenere che la percentuale di eventi degradati cresce all'aumentare della lunghezza della regione di transizione, ma resta comunque entro i limiti fissati.
+Dunque, anche nel caso in cui tali rivelatori dovessero avere una regione parzialmente attiva con una lunghezza maggiore dei 50~$\mu$m assunti come valore di riferimento, le prestazioni di identificazione non dovrebbero subire sostanziali peggioramenti.
+
+
+
+Lo studio sul substrato epitassiale del rivelatore al SiC ha fatto emergere che la riduzione dello spessore dai 350 ai 10~$\mu$m provoca un aumento della percentuale di eventi degradati, risultando in un peggioramento delle performance di PID.
+Dunque, dal punto di vista dell'identificazione, l'ablazione LASER del substrato si configura come un'operazione ingiustificata, nonché potenzialmente dannosa in termini di resa di produzione dei dispositivi.
+
+
+%Un aspetto fondamentale di questo lavoro è consistito nella validazione della simulazione Monte Carlo attraverso il confronto con i dati sperimentali raccolti in occasione del test beam svolto ad Aprile 2019.
+Un aspetto fondamentale di questo lavoro è consistito nella partecipazione al test beam svolto ad Aprile 2019, in occasione del quale si è contribuito all'assemblaggio dell'apparato sperimentale e alla fase di acquisizione dei dati.
+%I dati sperimentali raccolti durante tale test sono stati messi a confronto 
+Tale test aveva lo scopo di studiare le prestazioni del primo prototipo di telescopio SiC-CsI per NUMEN, utilizzando sia l'elettronica tradizionale di MAGNEX sia il primo esemplare di elettronica di front-end VMM3a realizzato per il progetto.
+I dati sperimentali sono stati analizzati allo scopo di ricostruire i parametri essenziali da introdurre nella simulazione, come ad esempio il numero atomico e il numero di massa della particella primaria e il range energetico.
+È stata, dunque, svolta un'identificazione utilizzando le correlazioni $\Delta E_{SiC} -E_{CsI}$ e $x_{foc} -E_{CsI}$, allo scopo di selezionare lo ione più abbondante nel campione, risultato essere l'\ce{^{16}O}.
+Grazie alla tecnica basata sulla deflessione causata dalla forza di Lorentz, è stato possibile ricavare la distribuzione in energia cinetica di tale ione, la quale è stata riprodotta all'interno della simulazione.
+Gli spettri energetici registrati dal rivelatore al SiC e dallo scintillatore allo CsI sono stati messi a confronti con i rispettivi spettri simulati: in entrambi i casi la compatibilità è significativa, in particolar modo per quanto riguarda il rivelatore al SiC.
+Alla luce di questo accordo è possibile affermare che la simulazione riesce a riprodurre bene la realtà sperimentale, convalidando i risultati ottenuti nel corso di questo lavoro.
+
+
+
+
+
+%Dal momento che, per raggiungere i propri obiettivi, il progetto deve spingersi al limite delle attuali possibilità nel campo degli esperimenti con fasci di ioni pesanti ad elevata intensità, è essenziale la ricerca e sviluppo di tecnologie di frontiera.
+%In tale prospettiva si inquadra 
+%Le stringenti esigenze di resistenza alle radiazioni hanno guidato verso la scelta di un primo stadio 
+%%L'introduzione di tale sistema rientra in un più grande scenario che prevede una profonda opera di ristrutturazione del Ciclotrone Superconduttore K800 e dello spettrometro magnetico MAGNEX.
+%Lo scopo di tale upgrade consiste nell'aum
+%alla fine della quale sarà possibile ottenere fasci di ioni pesanti ad elevata intensità.
+%%Tale upgrade ha l'obiettivo di aumentare l'intensità dei fasci di ioni pesanti attualmente disponibili di almeno due ordini di grandezza, al fine di poter avviare una campagna di studi sistematica di tutti gli isotopi coinvolti nel doppio decadimento beta senza neutrini (\doppiobeta).
+%Tale condizione richiede un'intensa attività di ricerca e sviluppo in diversi campi della tecnologia coinvolta negli esperimenti 
+%%Il raggiungimento di intensità così elevate rende necessaria un'intensa attività di ricerca e sviluppo in diversi campi della tecnologia coinvolta negli esperimenti di collisione di ioni pesanti; in particolare, innumerevoli studi sono stati dedicati all'analisi delle proprietà di resistenza alle radiazioni dei materiali e dei sistemi da utilizzare.
+%in particolare, dal momento che la resistenza alle radiazioni è un requisito imprescindibile per la scelta dei materiali e dei sistemi da utilizzare, innumerevoli studi sono stati condotti 
+%%Dal momento che i rivelatori al silicio non sono in grado di tollerare le intensità previste, il primo stadio del telescopio sarà basato su un rivelatore sottile (100~$\mu$m) al carburo di silicio (SiC), materiale che, grazie alle sue caratteristiche, ha attirato notevole interesse da parte della comunità scientifica.
+%%Il rivelatore di stop del telescopio sarà, invece, costituito da un cristallo allo ioduro di cesio (CsI) dello spessore di 1~cm.
+%Un'importante linea di ricerca è stata, dunque, avviata sulla realizzazione e caratterizzazione di rivelatori sottili basati su tale materiale.
+%%Tuttavia, la resistenza alle radiazioni non è l'unico requisito che il sistema di identificazione deve possedere; infatti, esso deve in primo luogo consentire di discriminare in modo efficace gli ioni nella regione di interesse per NUMEN, costituita principalmente da Ossigeno, Fluoro e Neon.
+%%Inoltre, esso deve possedere una risoluzione energetica tale da preservare le prestazioni dell'attuale apparato riguardo all'identificazione in numero atomico e numero di massa dei prodotti di reazione.
+
+
+
+
+
+
+
+

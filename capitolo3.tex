@@ -229,8 +229,8 @@ Poiché uno degli obiettivi principali di questo lavoro consisteva nella ricerca
 %Lo standard tecnologico attuale prevede che un rivelatore al SiC di tale spessore abbia un substrato morto spesso 350~$\mu$m.
 Per quanto riguarda lo spessore dei due stadi del telescopio, in accordo con la soluzione individuata dalla collaborazione, sono stati simulati rivelatori al~SiC da 100~$\mu$m e cristalli allo CsI da 1~cm, mentre per il substrato morto si è considerato un valore di 350~$\mu$m.
 %Gli spessori tenuti in considerazione erano di 100~$\mu$m per il rivelatore al SiC, di 350~$\mu$m per il substrato morto e di 1~cm per il cristallo allo CsI.
-Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rimozione quasi totale degli strati morti, si è esaminato anche il caso in cui lo spessore del substrato fosse ridotto a 10~$\mu$m. 
-È stato, dunque, effettuato un confronto tra le diverse condizioni, al fine di valutarne le conseguenze sulle capacità di~PID.
+%Tuttavia, dal momento che nuovi sviluppi tecnologici hanno reso possibile la rimozione quasi totale degli strati morti, si è esaminato anche il caso in cui lo spessore del substrato fosse ridotto a 10~$\mu$m. 
+%È stato, dunque, effettuato un confronto tra le diverse condizioni, al fine di valutarne le conseguenze sulle capacità di~PID.
 
 
 
@@ -585,11 +585,7 @@ Le corrispondenti matrici $\Delta E_{SiC} - E_{meas}$ sono rappresentate in Figu
 Rispetto al caso precedente, fanno la loro comparsa degli eventi in cui la perdita di energia $\Delta E_{SiC}$ viene misurata correttamente, mentre l'energia $E_{meas}$ ha un valore inferiore rispetto a quello corretto. 
 Ciò dipende da quegli eventi in cui le particelle escono fuori dal cristallo di~CsI, non rilasciando totalmente la loro energia residua.
 A causa del motivo precedentemente citato, anche questi eventi introducono una componente di fondo nella PID e una perdita di segnali corretti.
-Per meglio comprendere l'entità degli eventi degradati, sono riportate in Figura~\ref{fig:fetta} le proiezioni sull'asse verticale e su quello orizzontale della matrice: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono leggermente asimmetriche le distribuzioni. 
-In Figura~\ref{fig:fetta}.b si può, inoltre, osservare un secondo picco situato ad un valore di $E_{meas}$ di poco inferiore a quello assunto nel picco principale; esso è dovuto agli ioni che attraversano la cornice completamente inattiva attorno al rivelatore al~SiC, rilasciando una quantità di energia che non viene misurata.
-%Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
-
-
+Per meglio comprendere l'entità degli eventi degradati, sono riportate in Figura~\ref{fig:fetta} le proiezioni sull'asse verticale e su quello orizzontale della matrice: come si può notare, tali eventi costituiscono un continuo che si estende fino a zero e rendono leggermente asimmetriche le distribuzioni.
 \begin{figure} [!p]
 	\centering
 	\subfigure[]
@@ -599,7 +595,12 @@ In Figura~\ref{fig:fetta}.b si può, inoltre, osservare un secondo picco situato
 	{\includegraphics[scale=0.479]{Grafici_Tesi2/Particelle_non_ortogonali/ETot.png}}
 	
 	\caption{Le proiezioni delle matrici $\Delta E_{SiC} - E_{meas}$ di Figura~\ref{fig:deltaE_ETot_full_energy}: in (a) sull'asse $\Delta E_{SiC}$, in (b) sull'asse $E_{meas}$.} \label{fig:fetta}
-\end{figure}
+\end{figure} 
+In Figura~\ref{fig:fetta}.b si può, inoltre, osservare un secondo picco situato ad un valore di $E_{meas}$ di poco inferiore a quello assunto nel picco principale; esso è dovuto agli ioni che attraversano la cornice completamente inattiva attorno al rivelatore al~SiC, rilasciando una quantità di energia che non viene misurata.
+%Allo scopo di dare una stima quantitativa della frazione di nuclei potenzialmente male identificati, il taglio per separare le differenti specie atomiche è stato scelto come il punto mediano fra due bande
+
+
+
 
 %\begin{figure} [!p]
 %	\centering
@@ -787,7 +788,7 @@ Il telescopio ha dimensioni trasversali di 1.5~cm $\times$ 1.5~cm ed è posto a 
 La rigidità magnetica di riferimento è stata scelta in modo che l'\ce{^{20}O^{8+}} nel suo stato fondamentale fosse focalizzato al centro del FPD, ovvero in corrispondenza del telescopio.
 %Gli altri ioni, dal momento che hanno un rapporto massa su carica uguale o molto vicino a quello dell'\ce{^{20}O^{8+}}, 
 %Si fa notare che, dovendo mantenere costante il prodotto $\sqrt{m}/q \cdot \sqrt{E}$, gli altri ioni hanno energia cinetica inferiore.
-Si fa notare che, dovendo tutti gli ioni simulati avere la stessa finestra di rigidità magnetica, all'aumentare del rapporto $\sqrt{m}/q$, l'energia cinetica $E$ deve diminuire.
+Dovendo tutti gli ioni simulati avere la stessa finestra di rigidità magnetica, all'aumentare del rapporto $\sqrt{m}/q$, l'energia cinetica $E$ deve diminuire.
 Questa considerazione è confermata dalla Figura~\ref{fig:KinE}, in cui viene illustrato lo spettro delle energie cinetiche di \ce{^{20}Ne^{8+}}, \ce{^{21}Ne^{8+}} e \ce{^{22}Ne^{8+}}.
 \begin{figure} [!p]
 	\centering
@@ -853,13 +854,13 @@ Per gli ioni per i quali non è stata riscontrata contaminazione nella ROI si è
 			\hline
 			\ce{^{20}F^{8+}}   & & &   0.0005 $\pm$ 0.0005 \\
 			\hline
-			\ce{^{21}F^{8+}}   & & &  < 0.0011 $\pm$ 0.0007 al 90\% CL \\
+			\ce{^{21}F^{8+}}   & & &  < 0.0011 al 90\% CL \\
 			\hline
-			\ce{^{20}Ne^{8+}}   & & &  < 0.0011 $\pm$ 0.0007 al 90\% CL \\
+			\ce{^{20}Ne^{8+}}   & & &  < 0.0011 al 90\% CL \\
 			\hline
-			\ce{^{21}Ne^{8+}}   & & &  < 0.0011 $\pm$ 0.007 al 90\% CL \\
+			\ce{^{21}Ne^{8+}}   & & &  < 0.0011 al 90\% CL \\
 			\hline
-			\ce{^{22}Ne^{8+}} & & &   < 0.0011 $\pm$ 0.007  al 90\% CL\\
+			\ce{^{22}Ne^{8+}} & & &   < 0.0011 al 90\% CL\\
 			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
@@ -920,7 +921,7 @@ I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in ques
 Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
 %%Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
 questo è il fattore con cui bisogna riscalare le percentuali precedentemente mostrate per stimare le contaminazioni reali.
-Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazioni_riscalate}: come si può osservare, il contributo maggiore deriva dal SCE.
+Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazioni_riscalate}: come si può osservare, il contributo maggiore deriva dal SCE (\ce{^{20}F}).
 
 \begin{table} [t!]
 	\begin{center}
@@ -1093,27 +1094,27 @@ Di conseguenza, nel caso in esame la principale componente di contaminazione nel
 			Ione               & & &   Contaminazione nella ROI (\%) \\
 			\toprule[0.1em]
 			%\hline
-			\ce{^{18}O^{8+}}   & & &   0.002 $\pm$ 0.001 \\
+			\ce{^{18}O^{8+}}   & & &   0.0011 $\pm$ 0.0008 \\
 			\hline
 			\ce{^{19}O^{8+}}   & & &   0.0006 $\pm$ 0.0006 \\
 			\hline
-			\ce{^{18}F^{9+}}   & & &   0.017 $\pm$ 0.003 \\
+			\ce{^{18}F^{9+}}   & & &   0.013 $\pm$ 0.003 \\
 			\hline
-			\ce{^{19}F^{9+}}   & & &   0.100 $\pm$ 0.007 \\
+			\ce{^{19}F^{9+}}   & & &   0.082 $\pm$ 0.006 \\
 			\hline
-			\ce{^{20}F^{9+}}   & & &   0.057 $\pm$ 0.005 \\
+			\ce{^{20}F^{9+}}   & & &   0.042 $\pm$ 0.005 \\
 			\hline
-			\ce{^{18}Ne^{10+}} & & &   0.031 $\pm$ 0.004 \\
+			\ce{^{18}Ne^{10+}} & & &   0.025 $\pm$ 0.004 \\
 			\hline
-			\ce{^{19}Ne^{10+}} & & &   0.089 $\pm$ 0.006 \\
+			\ce{^{19}Ne^{10+}} & & &   0.078 $\pm$ 0.006 \\
 			\hline
-			\ce{^{20}Ne^{10+}} & & &   0.002 $\pm$ 0.001 \\
+			\ce{^{20}Ne^{10+}} & & &   0.0009 $\pm$ 0.0006 \\
 			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{La contaminazione dei diversi ioni nella ROI dell'\ce{^{20}O^{8+}} individuata dal taglio grafico in Figura~\ref{fig:deltaE_Emeas_taglio}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5a}
+	\caption{La contaminazione dei diversi ioni nella ROI dell'\ce{^{20}O^{8+}} individuata dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi_altaE}.} \label{tab:contaminazione_deltaE_Emeas_1.5per1.5a}
 \end{table}
-La contaminazione più rilevante deriva dal \ce{^{19}F^{9+}} e dal \ce{^{19}Ne^{10+}}, come era lecito aspettarsi considerando che si tratta delle specie ioniche che hanno un valore di $\Delta E_{SiC}$ molto simile a quello dell'\ce{^{20}O^{8+}}.
+Le percentuali di contaminazione nella ROI individuata dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi_altaE} sono riportate nella Tabella~\ref{tab:contaminazione_deltaE_Emeas_1.5per1.5a}: i contributi più rilevanti derivano dal \ce{^{19}F^{9+}} e dal \ce{^{19}Ne^{10+}}, come era lecito aspettarsi considerando che si tratta delle specie ioniche che hanno un valore di $\Delta E_{SiC}$ molto simile a quello dell'\ce{^{20}O^{8+}}.
 %La percentuale di eventi di~\ce{^{20}O^{8+}} persi nell'identificazione può essere determinata dividendo il numero di eventi di~\ce{^{20}O^{8+}} al di fuori della ROI per il numero totale di eventi dello stesso: dal calcolo risulta che tale percentuale è del~$(9.14 \pm 0.08)$~\%.
 L'efficienza di rivelazione del segnale è, in questo caso, pari al $(90.9 \pm 0.2)$~\%, in accordo con quelli precedentemente stimati.
 %I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urtoa}, insieme alla probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio.
@@ -1291,7 +1292,7 @@ L'identificazione dei prodotti di reazione rivelati con l'attuale apparato speri
 \end{figure}
 \begin{figure} [!p]
 	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PID/tof_csi_taglio.png}
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/tof_csi_taglio2.png}
 	\caption{La matrice $\mbox{tof} - E_{CsI}$ per gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi_altaE}.} \label{fig:tof_Ecsi_O20a}
 \end{figure} 
 %La simulazione svolta per questo lavoro ha dimostrato che il telescopio SiC-CsI è in grado, da solo, di identificare lo ione di interesse sia in $Z$ sia in $A$, rendendo, dunque, in linea di principio non necessaria la rappresentazione degli eventi nel plot $x_{foc} - E_{CsI}$.
@@ -1348,6 +1349,13 @@ Per quanto riguarda i telescopi da 1.5~cm $\times$ 1.5~cm, i plot e le tabelle d
 
 %%%Riducendo la dimensione orizzontale del telescopio dovrebbe diminuire il range di energie cinetiche accettato: in effetti, confrontando la Figura~\ref{fig:ekin_1per1} con la~\ref{fig:KinE} si può notare che i picchi dei diversi ioni sono più stretti. Ciò viene corroborato anche dal confronto tra la Figura~\ref{fig:xf_ecsi_1per1} e la~\ref{fig:xf_Ecsi}; infatti, nella prima si osserva che l'intervallo di valori di $x_{foc}$ visto dal telescopio è di circa 2.3~cm, mentre nella seconda tale intervallo è di 2.8~cm. Poiché negli spettrometri magnetici vi è una relazione di proporzionalità tra la posizione degli eiettili al piano focale e la loro energia cinetica, se ne deduce che nel primo caso l'intervallo di energia cinetica visto dal telescopio è più piccolo.
 
+
+\begin{figure} [!p]
+	\centering
+	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/1per1new/xf_ecsi_quadrata_menoeventi.png}
+	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm.} \label{fig:xf_ecsi_1per1}
+\end{figure} 
+
 Riducendo la dimensione orizzontale del telescopio dovrebbe diminuire il range di energie cinetiche accettato: in effetti, confrontando la Figura~\ref{fig:xf_ecsi_1per1} e la Figura~\ref{fig:xf_Ecsi} si può notare che mentre nella prima l'intervallo di~$x_{foc}$ visto dal telescopio è di circa 2.3~cm, nella seconda tale intervallo è di 2.8~cm. Poiché negli spettrometri magnetici vi è una relazione di proporzionalità tra la posizione degli eiettili al piano focale e la loro energia cinetica, se ne deduce che nel primo caso l'intervallo di energia cinetica visto dal telescopio è più piccolo.
  
 %\begin{figure} [!p]
@@ -1357,11 +1365,7 @@ Riducendo la dimensione orizzontale del telescopio dovrebbe diminuire il range d
 %\end{figure} 
 
 
-\begin{figure} [!p]
-	\centering
-	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/1per1new/xf_ecsi_quadrata_menoeventi.png}
-	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm.} \label{fig:xf_ecsi_1per1}
-\end{figure} 
+
 
 
 \begin{table} [t!]
@@ -1398,7 +1402,7 @@ Riducendo la dimensione orizzontale del telescopio dovrebbe diminuire il range d
 %	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione} \label{fig:deltaE_Ecsi_1per1}
 %\end{figure}
 Dal momento che le matrici $\Delta E_{SiC} - E_{CsI}$ continuano ad essere ben separate e non presentano variazioni percettibili rispetto a quelle in Figura~\ref{fig:deltaE_Ecsi}, si è scelto di non mostrarle.
-Nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1} si riporta il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE: confrontando questa con la Tabella~\ref{tab:contaminazioni_riscalate} si può notare che le contaminazioni sono leggermente più alte, mentre l'efficienza di rivelazione del segnale è più bassa, risultando essere dell'$(88.4 \pm 0.3)$~\%.
+Nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1} si riporta il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE: confrontando questa con la Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate} si può notare che le contaminazioni sono leggermente più alte, mentre l'efficienza di rivelazione del segnale è più bassa, risultando essere dell'$(88.4 \pm 0.3)$~\%.
 Calcolando il rapporto S/B si trova un valore di $4875 \pm 19$, minore di quello trovato nel caso precedente.
 La sensibilità di misura risulta essere di 1~nb a 5$\sigma$, dunque anche in questo caso sufficiente per rivelare la reazione di interesse.
 
@@ -1473,12 +1477,12 @@ Calcolando la sensibilità di misura, si trova un valore di 300~pb a 5$\sigma$, 
 %Ciò si può evincere dalla Figura~\ref{fig:misident_vs_surface}, dove è mostrato, per un caso rappresentativo, l'andamento della probabilità di errore nell'identificazione dei nuclei al variare della superficie e dell'energia.
 %Ciò si spiega considerando che, a parità di lunghezza della cornice, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
 %Tale andamento può essere spiegato considerando che, a parità di lunghezza della cornice non attiva, aumentando l'area del rivelatore cresce la frazione di superficie sensibile rispetto a quella totale.
-Lo studio effettuato ha dimostrato che, aumentando le dimensioni trasversali del telescopio, cresce il rapporto S/B; l'andamento di quest'ultimo in funzione della superficie del telescopio è riportato in Figura~\ref{fig:rapporto_segnale_fondo}, dove si può notare che l'aumento è fortemente non lineare.
+Lo studio effettuato ha dimostrato che, aumentando le dimensioni trasversali del telescopio, cresce il rapporto S/B e, di conseguenza, diminuisce il valore della sezione d'urto minima rivelabile; l'andamento di quest'ultima in funzione della superficie del telescopio è riportato in Figura~\ref{fig:rapporto_segnale_fondo}, dove si può notare che la diminuzione è fortemente non lineare.
 Alla luce di questo risultato, per massimizzare la sensibilità di misura alla reazione di interesse bisognerebbe utilizzare i telescopi da 2~cm $\times$ 2~cm.
 
 \begin{figure} [!t]
 	\centering
-	\includegraphics[scale=0.5]{Grafici_Tesi2/Granularitanew/sig_back_ratio.png}
+	\includegraphics[scale=0.5]{Grafici_Tesi2/Granularitanew/sigma_min.png}
 	\caption{L'andamento del rapporto segnale-fondo al variare della superficie del telescopio. Le barra di errore sono più piccole della dimensione del marker.} \label{fig:rapporto_segnale_fondo}
 \end{figure}
 
