@@ -1298,17 +1298,22 @@ L'identificazione dei prodotti di reazione rivelati con l'attuale apparato speri
 %Tuttavia, nel caso esposto in Figura~\ref{fig:deltaE_Ecsi} si vede come il telescopio SiC-CsI possa essere in grado, da solo, di identificare lo ione di interesse sia in $Z$ sia in $A$; di conseguenza, la rappresentazione de
 Tuttavia, nel caso esposto in Figura~\ref{fig:deltaE_Ecsi_altaE} si vede come il taglio grafico sia stato, da solo, sufficiente ad identificare lo ione di interesse sia in $Z$ sia in $A$; dunque, riportando gli eventi selezionati in un grafico $x_{foc} - E_{CsI}$ non si dovrebbero osservare altri luoghi se non quello dell'\ce{^{20}O^{8+}}.
 Questa affermazione viene confermata dalla Figura~\ref{fig:xf_Ecsi_O20a}, dove è possibile vedere soltanto la matrice dello ione di interesse.
-Sovrapposti a tale matrice, si possono notare gli eventi degradati dell\ce{^{20}O^{8+}} che contaminano il segnale: purtroppo la rappresentazione $x_{foc} - E_{CsI}$ non risulta utile, in questo caso, a separare lo ione di interesse dai contaminanti, in quanto questi hanno un'energia $E_{CsI}$ uguale a quella del segnale.
+Sovrapposti a tale matrice, si possono notare gli eventi degradati dell\ce{^{20}O^{8+}} che contaminano il segnale: purtroppo la rappresentazione $x_{foc} - E_{CsI}$ non risulta utile, in questo caso, a separare lo ione di interesse dai contaminanti.
+%, in quanto questi hanno un'energia $E_{CsI}$ uguale a quella del segnale.
 
-Per cercare di separare lo ione di interesse dalle specie contaminanti si può, allora, pensare di utilizzare la correlazione $\mbox{tof} - E_{CsI}$: in Figura~\ref{fig:tof_Ecsi_O20a}, dove sono riportati gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi_altaE}, è possibile notare come questa rappresentazione permetta di distinguere chiaramente il segnale dagli ioni F e Ne.
+Per cercare di separare il segnale dal fondo si può, allora, pensare di utilizzare la correlazione $\mbox{tof} - E_{CsI}$: in Figura~\ref{fig:tof_Ecsi_O20a}, dove sono riportati gli eventi selezionati dal taglio grafico in Figura~\ref{fig:deltaE_Ecsi_altaE}, è possibile notare come questa rappresentazione permetta di distinguere chiaramente il segnale dagli ioni F e Ne.
 %Ricordando che, a causa delle diverse sezioni d'urto dei processi, queste due specie 
 %Ricordando la Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}, queste due specie danno il maggiore contributo di contaminazione nella ROI, avendo delle sezioni d'urto estremamente più grandi 
 Si ricorda che queste due specie, a causa della loro elevata sezione d'urto, danno il maggiore contributo di contaminazione nella ROI (si veda la Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}); di conseguenza, riuscire a isolarle dal segnale consentirebbe di aumentare il rapporto S/B e di diminuire la sensibilità di misura complessiva dell'apparato.
+%È bene sottolineare che al momento sulla variabile tof non vengono considerate né le fluttuazioni statistiche né gli eventi spuri originati da coincidenze casuali, che contribuirebbero ad allargare le matrici e ad introdurre una ulteriore componente di fondo.
+È bene sottolineare che al momento la variabile tof viene determinata con calcoli analitici dai software per il trasporto ottico e non incorpora le fluttuazioni statistiche tipiche del processo di misura, le quali contribuirebbero ad allargare le matrici.
+Tuttavia, la Figura~\ref{fig:tof_Ecsi_O20a} può fornire un'indicazione della precisione minima necessaria per riuscire a separare lo ione di interesse dal fondo: osservando la figura, si può dedurre che essa deve essere inferiore a 10~ns, altrimenti gli eventi originati dal F potrebbero sovrapporsi a quelli dell'\ce{^{20}O^{8+}}.
+
 %Dal momento che queste due specie, a causa della loro elevata sezione d'urto di produzione, danno il maggiore contributo di contaminazione nella ROI (si veda la Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate}), riuscire a 
 %È bene sottolineare che nel grafico mostrato, 
-Alla luce di questo risultato, si deduce che la misura del tempo di volo è fondamentale per migliorare le capacità di PID complessive dell'apparato.
+%Alla luce di questo risultato, si deduce che la misura del tempo di volo è fondamentale per migliorare le capacità di PID complessive dell'apparato.
 %Alla luce di questo risultato, si deduce che la misura del tempo di volo è fondamentale per migliorare le capacità di PID complessive dell'apparato e per aumentare la sensibilità di misura della reazione di interesse. 
-
+Alla luce delle considerazioni effettuate, risulta che la misura del tempo di volo è fondamentale per poter analizzare le reazioni di DCE ad elevata energia di eccitazione.
 
 
 
@@ -1359,18 +1364,6 @@ Riducendo la dimensione orizzontale del telescopio dovrebbe diminuire il range d
 \end{figure} 
 
 
-%In Figura~\ref{fig:deltaE_Ecsi_1per1} vengono illustrate le matrici $\Delta E_{SiC} - E_{CsI}$ ottenute con questa configurazione: rispetto alla Figura~\ref{fig:deltaE_Ecsi} non si osservano differenze sostanziali.
-%\begin{figure} [!p]
-%	\centering
-%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/1per1/deltaE_Ecsi_taglio.png}
-%	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione} \label{fig:deltaE_Ecsi_1per1}
-%\end{figure}
-Dal momento che le matrici $\Delta E_{SiC} - E_{CsI}$ continuano ad essere ben separate e non presentano variazioni percettibili rispetto a quelle in Figura~\ref{fig:deltaE_Ecsi}, si è scelto di non mostrarle.
-Nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1} si riporta il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE: confrontando questa con la Tabella~\ref{tab:contaminazioni_riscalate} si può notare che le contaminazioni sono leggermente più alte, mentre l'efficienza di rivelazione del segnale è più bassa, risultando essere dell'$(88.4 \pm 0.3)$~\%.
-Calcolando il rapporto S/B si trova un valore di $4875 \pm 19$, minore di quello trovato nel caso precedente.
-La sensibilità di misura risulta essere di 1~nb a 5$\sigma$, dunque anche in questo caso sufficiente per rivelare la reazione di interesse.
-
-
 \begin{table} [t!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -1398,6 +1391,20 @@ La sensibilità di misura risulta essere di 1~nb a 5$\sigma$, dunque anche in qu
 	\caption{Dimensioni del telescopio 1~cm $\times$ 1~cm: utilizzando la correlazione $\Delta E_{SiC} - E_{CsI}$, per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1}
 \end{table}
 
+%In Figura~\ref{fig:deltaE_Ecsi_1per1} vengono illustrate le matrici $\Delta E_{SiC} - E_{CsI}$ ottenute con questa configurazione: rispetto alla Figura~\ref{fig:deltaE_Ecsi} non si osservano differenze sostanziali.
+%\begin{figure} [!p]
+%	\centering
+%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/1per1/deltaE_Ecsi_taglio.png}
+%	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione} \label{fig:deltaE_Ecsi_1per1}
+%\end{figure}
+Dal momento che le matrici $\Delta E_{SiC} - E_{CsI}$ continuano ad essere ben separate e non presentano variazioni percettibili rispetto a quelle in Figura~\ref{fig:deltaE_Ecsi}, si è scelto di non mostrarle.
+Nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_1per1} si riporta il numero di eventi nella ROI, riscalato per la sezione d'urto e per la probabilità di ottenere un certo stato di carica e normalizzato ad un evento di DCE: confrontando questa con la Tabella~\ref{tab:contaminazioni_riscalate} si può notare che le contaminazioni sono leggermente più alte, mentre l'efficienza di rivelazione del segnale è più bassa, risultando essere dell'$(88.4 \pm 0.3)$~\%.
+Calcolando il rapporto S/B si trova un valore di $4875 \pm 19$, minore di quello trovato nel caso precedente.
+La sensibilità di misura risulta essere di 1~nb a 5$\sigma$, dunque anche in questo caso sufficiente per rivelare la reazione di interesse.
+
+
+
+
 
 \subsection*{Dimensioni trasversali: 2~cm $\times$ 2~cm}
 %\paragraph*{Dimensioni trasversali: 2~cm $\times$ 2~cm.}
@@ -1410,25 +1417,6 @@ In questo caso, l'intervallo di energia cinetica accettato dal telescopio è mag
 \end{figure} 
 Per i motivi precedentemente esposti, anche in questo caso si è preferito non riportare le matrici $\Delta E_{SiC} - E_{CsI}$.
 Il numero di eventi nella ROI, riscalato per la sezione e per la probabilità di ottenere un determinato stato di carica e normalizzato ad un evento di DCE, viene mostrato, per ogni ione, nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_2per2}: come si può notare, i valori sono più alti di quelli visti nelle altre due condizioni.
-%L'efficienza di rivelazione del segnale è maggiore rispetto ai casi precedenti, raggiungendo il $(91.9 \pm 0.002)$~\%.
-%Il rapporto S/B risulta essere pari a $0.0020 \pm 0.001$, diminuend 
-Rispetto ai due casi precedenti, l'efficienza di rivelazione del segnale è maggiore, raggiungendo il $(91.7 \pm 0.2)$~\%.
-Anche il rapporto S/B risulta maggiore, con un valore di $16530 \pm 32$.
-Ciò significa che, aumentando le dimensioni trasversali del telescopio, aumenta il numero di segnali presenti nella ROI, mentre il fondo, in proporzione, diminuisce.
-Calcolando la sensibilità di misura, si trova un valore di 300~pb a 5$\sigma$, più basso rispetto ai due precedenti. 
-
-
-
-
-
-
-%\begin{figure} [!p]
-%	\centering
-%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/2per2new/deltaE_Ecsi_taglio.png}
-%	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione} \label{fig:deltaE_Ecsi_2per2}
-%\end{figure} 
-
-
 \begin{table} [t!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -1455,6 +1443,26 @@ Calcolando la sensibilità di misura, si trova un valore di 300~pb a 5$\sigma$, 
 	\end{center}
 	\caption{Dimensioni del telescopio 2~cm $\times$ 2~cm: utilizzando la correlazione $\Delta E_{SiC} - E_{CsI}$, per ogni ione si riporta il numero di eventi nella ROI normalizzato ad un evento di segnale.} \label{tab:contaminazioni_deltaE_Ecsi_riscalate_2per2}
 \end{table}
+%L'efficienza di rivelazione del segnale è maggiore rispetto ai casi precedenti, raggiungendo il $(91.9 \pm 0.002)$~\%.
+%Il rapporto S/B risulta essere pari a $0.0020 \pm 0.001$, diminuend 
+Rispetto ai due casi precedenti, l'efficienza di rivelazione del segnale è maggiore, raggiungendo il $(91.7 \pm 0.2)$~\%.
+Anche il rapporto S/B risulta maggiore, con un valore di $16530 \pm 32$.
+Ciò significa che, aumentando le dimensioni trasversali del telescopio, aumenta il numero di segnali presenti nella ROI, mentre il fondo, in proporzione, diminuisce.
+Calcolando la sensibilità di misura, si trova un valore di 300~pb a 5$\sigma$, più basso rispetto ai due precedenti. 
+
+
+
+
+
+
+%\begin{figure} [!p]
+%	\centering
+%	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/2per2new/deltaE_Ecsi_taglio.png}
+%	\caption{Le matrici $\Delta E_{SiC} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 1~cm~$\times$~1~cm. Viene, inoltre, mostrato il taglio grafico per l'identificazione dell'\ce{^{20}O^{8+}} e per il calcolo delle percentuali di contaminazione} \label{fig:deltaE_Ecsi_2per2}
+%\end{figure} 
+
+
+
 
 
 
