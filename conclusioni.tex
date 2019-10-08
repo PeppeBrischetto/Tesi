@@ -12,16 +12,16 @@ In occasione di questo lavoro di tesi, è stato sviluppato e implementato, per l
 %A causa della grande accettanza in angolo solido e in impulso di MAGNEX, la ricostruzione della traiettoria degli ioni richiede il calcolo della matrice del trasporto fino al decimo ordine.
 %Questa complessa operazione viene svolta all'interno del tool da software sviluppati all'uopo e ottimizzati dalla collaborazione NUMEN.
 %Essi sono basati sugli algoritmi di COSY INFINITY 
-Tale tool si compone essenzialmente di due parti: la prima, dedicata alla ricostruzione della traiettoria degli ioni nello spettrometro, è costituita da software sviluppati all'uopo e ottimizzati dalla collaborazione NUMEN, la seconda, che simula l'interazione ione-rivelatore, è basata su un'applicazione \geant.
+Tale tool si compone essenzialmente di due parti: la prima, dedicata alla ricostruzione della traiettoria degli ioni nello spettrometro, è costituita da software sviluppati all'uopo e ottimizzati dalla collaborazione NUMEN; la seconda, che simula l'interazione ione-rivelatore, è basata su un'applicazione \geant.
 %Il motivo alla base di questa strutturazione del tool deriva dal fatto che, a causa della grande accettanza in angolo solido e in impulso di MAGNEX, la ricostruzione della traiettoria degli eiettili richiede la risoluzione delle equazioni del moto fino al decimo ordine e, pertanto, necessita di software specifici.
 L'integrazione tra le due parti e la realizzazione di tale applicazione sono state gli obiettivi principali di questo lavoro di tesi.
 All'interno del progetto NUMEN, il tool assume una notevole importanza, perché, in primo luogo, aiuta a progettare l'apparato sperimentale, suggerendo le condizioni ottimali in merito alla geometria e alle specifiche dei rivelatori. 
-Inoltre, esso ottimizza la spesa economica e di man-power, riducendo i costi di produzione e gestione del progetto.
+Inoltre, esso ottimizza la richiesta economica e di man-power, riducendo i costi di produzione e gestione del progetto.
 
-In questo lavoro, il tool è stato utilizzato per valutare le capacità di Particle IDentification (PID) di un sistema di telescopi basato sulla tecnologia SiC-CsI; in particolare, il primo sistema preso in considerazione era costituito da dispositivi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm.
+In questo lavoro, il tool è stato utilizzato per valutare le capacità di Particle IDentification (PID) di un sistema di telescopi basato sulla tecnologia SiC-CsI; in particolare, il primo sistema preso in considerazione è costituito da dispositivi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm.
 Tale sistema si è dimostrato in grado di separare efficacemente gli ioni sia in numero atomico sia in numero di massa.
 Si è, tuttavia, osservato che la presenza, attorno alla parte sensibile del rivelatore al~SiC, di una cornice in cui la carica prodotta dal passaggio degli ioni viene parzialmente raccolta genera degli eventi degradati, i quali costituiscono un fondo nella PID, poiché possono disporsi sul luogo caratteristico di uno ione diverso.
-Inoltre, una seconda sorgente di fondo è rappresentata dagli ioni che, a causa dell'inclinazione della loro traiettoria, non si fermano nel cristallo di~CsI e rilasciano, dunque, solo una parte della loro energia residua.
+Inoltre, una seconda sorgente di fondo è rappresentata dagli ioni che, a causa dell'inclinazione della loro traiettoria, non si fermano nel cristallo di~CsI e rilasciano dunque solo una parte della loro energia residua.
 %Tale tool è strutturato in modo che 
 %Per poter riprodurre il comportamento reale degli ioni nello spettrometro, il tool è stato realizzato incorporando le correlazioni dovute sia alla cinematica sia alle proprietà ottiche dello spettrometro.
 %Poiché tali correlazioni sono caratterizzate da effetti non-lineari e richiedono la risoluzione di complesse equazioni, si è scelto  
@@ -30,22 +30,22 @@ Inoltre, una seconda sorgente di fondo è rappresentata dagli ioni che, a causa 
 %Dal momento che tale sistema verrà utilizzato per rivelare i prodotti di reazione deg
 %Tale simulazione ha permesso di verificare che una soluzione basata sulla tecnologia SiC-CsI può soddisfare le performance necessarie per gli obiettivi del progetto, garantendo una buona separazione degli ioni di interesse per NUMEN lungo tutto il range energetico preso in considerazione.
 %Dal momento che il progetto intende studiare le reazioni di doppio scambio di carica (Double Charge Exchange, DCE), le quali sono caratterizzate da sezioni d'urto estremamente basse, un importante aspetto di questo lavoro è consistito nello stimare la percentuale di contaminazioni nella regione di interesse (Region Of Interest): in tutti i casi esaminati, tale quantità è risultata inferiore ai limiti imposti sulla perdita di segnali corretti e sulla contaminazione originata dal fondo.
-Dal momento che il progetto intende studiare le reazioni di doppio scambio di carica (Double Charge Exchange, DCE), le quali sono caratterizzate da sezioni d'urto estremamente basse (tipicamente di poche decine di~nb), la percentuale di eventi di fondo nella regione di interesse (Region Of Interest, ROI) deve essere piccola rispetto al segnale.
-Un importante aspetto di questo lavoro è, dunque, consistito nella valutazione della percentuale di contaminazione e nel calcolo del rapporto segnale-background (S/B) nella ROI. 
-I valori delle contaminazioni determinati con le simulazioni sono stati opportunamente riscalati per le sezioni d'urto di produzione dei diversi ioni, in modo da ottenere delle stime realistiche.
-Dal calcolo è emerso che, nello studio di una reazione di DCE a bassa energia di eccitazione, il principale contaminante allo ione di interesse (\ce{^{20}O}) è il \ce{^{20}F^{8+}}, il quale è originato da un processo di singolo scambio di carica (Single Charge Exchange, SCE). 
-Tuttavia, alle energie di fascio considerate, la probabilità di ottenere lo stato di carica $8+$ per uno ione di \ce{^{20}F} è molto piccola; infatti, calcolando il rapporto S/B, è stato possibile dimostrare che la sensibilità di misura dell'apparato simulato nella ROI è di 200~pb a 5$\sigma$, quindi ben sufficiente a misurare la reazione di interesse.
+Dal momento che il progetto intende studiare le reazioni di doppio scambio di carica (Double Charge Exchange, DCE), le quali sono caratterizzate da sezioni d'urto estremamente basse (tipicamente di poche decine di~nb), la frazione di eventi di fondo nella regione di interesse (Region Of Interest, ROI) deve essere piccola rispetto al segnale.
+Un importante aspetto di questo lavoro è dunque consistito nella valutazione della frazione di contaminazione e nel calcolo del rapporto segnale-background (S/B) nella ROI. 
+I valori determinati con le simulazioni sono stati opportunamente riscalati per le sezioni d'urto di produzione dei diversi ioni, in modo da ottenere delle stime di contaminazione realistiche.
+Dal calcolo è emerso che, nello studio di una reazione di DCE a bassa energia di eccitazione, il principale contaminante allo ione di interesse (\ce{^{20}O}) è il \ce{^{20}F^{8+}}, il quale è originato da un processo di singolo scambio di carica. 
+Alle energie di fascio considerate, la probabilità di ottenere lo stato di carica $8+$ per uno ione di \ce{^{20}F} è molto piccola; infatti, calcolando il rapporto S/B, è stato possibile dimostrare che la sensibilità di misura dell'apparato simulato nella ROI è di 200~pb a 5$\sigma$, quindi adatta a misurare la reazione di~interesse.
 
 
 È stato, inoltre, osservato che, ai fini della PID, la correlazione $\Delta E_{SiC} - E_{CsI}$ produce prestazioni non lontane da quelle della correlazione $\Delta E_{SiC} - E_{meas}$, laddove $\Delta E_{SiC}$ indica la perdita di energia nel rivelatore al~SiC, $E_{CsI}$ l'energia residua rilasciata nel cristallo allo~CsI ed $E_{meas}$ la somma delle due precedenti.
 In particolare, nel caso di telescopi da 1.5~cm $\times$ 1.5~cm, è stata stimata una sensibilità di misura di 460~pb a 5$\sigma$.
-Questo risultato ha permesso di concludere che per l'identificazione degli ioni non è necessario sommare le energie misurate dai due stadi del telescopio, rendendo, dunque, non necessaria la calibrazione dei rivelatori.
+Questo risultato ha permesso di concludere che per l'identificazione degli ioni non è necessario sommare le energie misurate dai due stadi del telescopio, rendendo, dunque, non necessaria la laboriosa calibrazione individuale dei rivelatori.
 %rendendo, dunque, non necessaria la calibrazione dei due stadi del telescopio.
 
 Le capacità di PID del telescopio sono state valutate anche nello studio di una reazione di DCE ad elevata energia di eccitazione.
 In questo caso, i maggiori contaminanti sono originati dai processi di 1-neutron e 1-proton stripping (rispettivamente \ce{^{19}Ne^{10+}} e \ce{^{19}F^{9+}}) e dal SCE (\ce{^{20}F^{9+}}).
 A causa della grande probabilità di ottenere questi ioni in questi stati di carica, le percentuali di contaminazione riscontrate sono elevate; infatti, la sensibilità di misura è risultata essere di 300~$\mu$b a 5$\sigma$, estremamente più grande di quella necessaria per osservare il DCE.
-Tuttavia, è stato dimostrato che la misura del tempo di volo degli ioni potrebbe permettere di separare lo ione di interesse da tali contaminanti, purché la risoluzione su tale quantità sia inferiore ai 10~ns.
+Tuttavia, è stato dimostrato che la misura del tempo di volo degli ioni potrebbe permettere di separare lo ione di interesse da tali contaminanti, purché la risoluzione temporale sia inferiore ai 10~ns.
 Pertanto, la sensibilità di misura complessiva dell'apparato potrebbe essere, anche in questo caso, sufficiente per osservare il DCE.
 
 
@@ -54,7 +54,7 @@ Un aspetto rilevante di questo lavoro è consistito nell'ottimizzazione della gr
 In questo studio si è verificato che, all'aumentare della superficie di rivelazione, la sensibilità di misura diminuisce; essa resta, però, anche in questi due casi sufficiente per misurare il DCE.
 In condizioni di alti flussi di particelle incidenti, come quelli previsti per NUMEN, un fenomeno da tenere in considerazione per la scelta delle dimensioni dei rivelatori è il pile-up.
 È stato, dunque, effettuato un calcolo analitico allo scopo di studiare l'andamento della probabilità di pile-up al variare della superficie del rivelatore, dal quale è risultato che tale quantità aumenta velocemente al crescere delle dimensioni trasversali.
-Inoltre, sulla scelta della granularità da adottare entrano in gioco anche altri fattori, legati, ad esempio, al numero totale di dispositivi e al numero di canali necessari per leggere tali dispositivi.
+Inoltre, nella scelta della condizione di granularità da adottare entrano in gioco anche altri fattori, legati, ad esempio, al numero totale di dispositivi e al numero di canali necessari per leggere tali dispositivi.
 %Di conseguenza, dal compromesso tra le due esigenze, si è dedotto che la configurazione ottimale per gli scopi del progetto prevede l'utilizzo di telescopi da $1.5 \times 1.5$~cm\ap{2}.
 Di conseguenza, bisogna cercare una soluzione di compromesso tra tutte le esigenze; da questo lavoro si può dedurre che tale soluzione è rappresentata dai telescopi da 1.5~cm $\times$ 1.5~cm.
 
@@ -73,10 +73,10 @@ Un aspetto fondamentale di questo lavoro è consistito nella partecipazione al t
 Tale test aveva lo scopo di studiare le prestazioni del primo prototipo di telescopio SiC-CsI per NUMEN, utilizzando sia l'elettronica tradizionale di MAGNEX sia il primo esemplare di elettronica di front-end VMM3a realizzato per il progetto.
 %I dati sperimentali sono stati analizzati allo scopo di ricostruire i parametri essenziali da introdurre nella simulazione, come ad esempio il numero atomico e il numero di massa della particella primaria e il range energetico.
 I dati sperimentali raccolti in tale occasione sono stati utilizzati in questo lavoro per effettuare un confronto con i dati ottenuti dalla simulazione; per questo motivo, è stata svolta un'analisi su tali dati.
-È stata, pertanto, eseguita un'identificazione degli eiettili utilizzando le correlazioni $\Delta E_{SiC} -E_{CsI}$ e $x_{foc} -E_{CsI}$, allo scopo di selezionare lo ione più abbondante nel campione, risultato essere l'\ce{^{16}O}.
+È stata eseguita un'identificazione degli eiettili utilizzando le correlazioni $\Delta E_{SiC} -E_{CsI}$ e $x_{foc} -E_{CsI}$, allo scopo di selezionare lo ione più abbondante nel campione, risultato essere l'\ce{^{16}O}.
 %Grazie alla tecnica basata sulla deflessione causata dalla forza di Lorentz, è stato possibile ricavare la distribuzione in energia cinetica di tale ione, la quale è stata riprodotta all'interno della simulazione.
 Noti l'eiettile da simulare, la tipologia e l'energia del fascio, è stato utilizzato il tool per verificare se i dati sperimentali fossero riprodotti correttamente.
-Gli spettri energetici registrati dal rivelatore al SiC e dallo scintillatore allo CsI sono stati messi a confronti con i rispettivi spettri simulati: in entrambi i casi la compatibilità è significativa, in particolar modo per quanto riguarda il rivelatore al SiC.
+Gli spettri energetici registrati dal rivelatore al SiC e dallo scintillatore allo CsI sono stati messi a confronto con i rispettivi spettri simulati: in entrambi i casi la compatibilità è significativa, in particolar modo per quanto riguarda il rivelatore al SiC.
 Alla luce di questo accordo è possibile affermare che la simulazione riesce a riprodurre bene la realtà sperimentale, convalidando i risultati ottenuti nel corso di questo lavoro.
 
 
