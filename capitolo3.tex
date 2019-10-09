@@ -883,10 +883,10 @@ La restante parte del segnale viene persa a causa dell'incompleta raccolta di ca
 A questo punto è bene sottolineare che finora le contaminazioni sono state calcolate senza tenere in considerazione che nella situazione reale la produzione degli ioni avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto; questa rappresenta, infatti, la probabilità con cui può verificarsi una determinata reazione.
 %I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urto}, insieme alla probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio.
 Nella Tabella~\ref{tab:sez_d'urto} sono riportati i valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE.
-Tali valori, arrotondati verso l'alto per ottenere delle stime prudenti, sono stati ricavati da misure sperimentali svolte dalla collaborazione NUMEN (si vedano, ad esempio, \textcolor{red}{inserire ref}).
+Tali valori, arrotondati verso l'alto per ottenere delle stime prudenti per le contaminazioni reali, sono stati ricavati da misure sperimentali svolte dalla collaborazione NUMEN (si vedano, ad esempio, \cite{calabrese:phd19_2} e~\cite{spatafora:prc19}).
 %Essi sono stati prudenzialmente arrotondati verso l'alto per
 Nella stessa tabella viene, inoltre, riportata la probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio~\cite{shima:adndt92}. 
-È bene precisare che, per l'\ce{^{19}O}, il valore indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso in relazione ad altri processi di trasferimento di nucleoni di cui è nota la sezione d'urto.
+È bene precisare che, per l'\ce{^{21}O}, il valore indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso in relazione ad altri processi di trasferimento di nucleoni di cui è nota la sezione d'urto.
 \begin{table} [p!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -915,14 +915,14 @@ Nella stessa tabella viene, inoltre, riportata la probabilità di avere uno ione
 			$3^{\mbox{rd}}$ order multi- & & \ce{^{21}F}  & &     $10^3 $     & & & $9^+ \sim 0.99934$ \\
 			nucleon transfer      & &              & &                 & & & $8^+ \sim 6.6 \cdot 10^{-4}$ \\
 			\hline
-			$5^{\mbox{th}}$ order multi-   & & \ce{^{19}O}  & &        0.1       & & & $8^+ \sim 0.99963$ \\
+			$5^{\mbox{th}}$ order multi-   & & \ce{^{21}O}  & &        0.1       & & & $8^+ \sim 0.99963$ \\
 			nucleon transfer              & &              & &                 & & &  \\
 			
 			\bottomrule[0.1em]
 		\end{tabular}
 		
 	\end{center}
-	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Tali valori sono stati ricavati dalla collaborazione NUMEN (si vedano, ad esempio, \textcolor{red}{inserire ref}). Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio~\cite{shima:adndt92}. Si sottolinea che, nel caso dell'\ce{^{19}O}, il valore della sezione d'urto indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso in relazione ad altri processi di trasferimento di nucleoni di cui è nota la sezione d'urto.} \label{tab:sez_d'urto}
+	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzati alla sezione d'urto del DCE. Tali valori sono stati ricavati dalla collaborazione NUMEN (si vedano, ad esempio, \cite{calabrese:phd19_2} e~\cite{spatafora:prc19}). I valori sono stati arrotondati verso l'alto per ottenere delle stime prudenti per le contaminazioni reali. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio~\cite{shima:adndt92}. Si sottolinea che, nel caso dell'\ce{^{21}O}, il valore della sezione d'urto indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso in relazione ad altri processi di trasferimento di nucleoni di cui è nota la sezione d'urto.} \label{tab:sez_d'urto}
 \end{table}
 Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
 %%Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
@@ -957,7 +957,7 @@ Il risultato di questa operazione è riportato in Tabella~\ref{tab:contaminazion
 \end{table}
 
 Dividendo il numero di segnali per la somma degli eventi di fondo, si ottiene una quantità nota come \emph{rapporto segnale-background}~(S/B), che in questo caso risulta essere di $24200 \pm 60$.
-A partire da questo valore è possibile risalire alla sensibilità di misura nel modo seguente: sapendo che la sezione d'urto tipica del DCE nel range di energia di eccitazione studiato è di circa 1000~nb (si veda, ad esempio, \textcolor{red}{inserire ref}), dal rapporto S/B si deduce che il fondo corrisponde a circa 40~pb ad 1$\sigma$ di errore; dunque, considerando 5$\sigma$, si trova una sensibilità di circa 200~pb.
+A partire da questo valore è possibile risalire alla sensibilità di misura nel modo seguente: sapendo che la sezione d'urto tipica del DCE nel range di energia di eccitazione studiato è di circa 1000~nb (si veda \cite{calabrese:phd19_2}), dal rapporto S/B si deduce che il fondo corrisponde a circa 40~pb ad 1$\sigma$ di errore; dunque, considerando 5$\sigma$, si trova una sensibilità di circa 200~pb.
 Mentre il fondo ha una sezione d'urto circa costante, quella del DCE ha una forte dipendenza dall'energia; in particolare, nella regione di interesse, che arriva fino ad 1~MeV di energia di eccitazione, la sezione d'urto del DCE è di circa 10~nb.
 Pertanto, con la sensibilità di misura stimata, l'apparato sperimentale sarebbe in grado di misurare la reazione di DCE nella regione di interesse.
 
@@ -967,7 +967,7 @@ Pertanto, con la sensibilità di misura stimata, l'apparato sperimentale sarebbe
 
 
 
-\subsection*{\iflanguage{italian}{Studio della correlazione $\Delta E_{SiC} - E_{CsI}$}{Study of $\Delta E_{SiC} - E_{CsI}$ correlation}}
+\subsection{\iflanguage{italian}{Studio della correlazione $\Delta E_{SiC} - E_{CsI}$}{Study of $\Delta E_{SiC} - E_{CsI}$ correlation}}
 
 
 
@@ -1091,7 +1091,6 @@ Le corrispondenti matrici $\Delta E_{SiC} - E_{CsI}$ sono riportate in Figura~\r
 Si può, inoltre, osservare che l'energia rilasciata nel rivelatore al~SiC è molto simile per le tre specie atomiche: 
 %ciò dipende dalla notevole differenza in energia cinetica degli ioni che compensa la variazione legata al cambiamento di $Z$.
 ciò dipende dal fatto che, a causa del filtro in $B \rho$, gli ioni con carica $q$ più piccola hanno energia cinetica minore, mentre quelli con $q$ più grande hanno energia cinetica maggiore; ricordando che nella formula di Bethe-Bloch la perdita di energia è proporzionale a $Z^2$ e inversamente proporzionale ad $E$, si può dedurre che la notevole differenza in energia cinetica degli ioni compensa la variazione legata al cambiamento di $Z$.
-
 %Di conseguenza, assumendo di essere interessati ad una reazione di DCE in cui si vuole rivelare l'\ce{^{20}O}, la principale componente di contaminazione nell'identificazione proviene dagli ioni che non si fermano nel rivelatore al~CsI.
 Di conseguenza, nel caso in esame la principale componente di contaminazione nell'identificazione degli eventi di interesse proviene dagli ioni che non si fermano nel cristallo di~CsI.
 
@@ -1126,7 +1125,7 @@ Le percentuali di contaminazione nella ROI individuata dal taglio grafico in Fig
 %La percentuale di eventi di~\ce{^{20}O^{8+}} persi nell'identificazione può essere determinata dividendo il numero di eventi di~\ce{^{20}O^{8+}} al di fuori della ROI per il numero totale di eventi dello stesso: dal calcolo risulta che tale percentuale è del~$(9.14 \pm 0.08)$~\%.
 L'efficienza di rivelazione del segnale è, in questo caso, pari al $(90.9 \pm 0.2)$~\%, in accordo con quelli precedentemente stimati.
 %I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urtoa}, insieme alla probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio.
-Nella Tabella~\ref{tab:sez_d'urtoa} sono riportati i valori tipici delle sezioni d'urto dei processi coinvolti, espressi relativamente alla sezione d'urto del DCE, e le probabilità dei diversi stati di carica.
+Nella Tabella~\ref{tab:sez_d'urtoa} sono riportati i valori tipici delle sezioni d'urto dei processi coinvolti (si vedano \cite{calabrese:phd19_2} e \cite{spatafora:prc19}), espressi relativamente alla sezione d'urto del DCE, e le probabilità dei diversi stati di carica~\cite{shima:adndt92}.
 \begin{table} [p!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -1164,7 +1163,7 @@ Nella Tabella~\ref{tab:sez_d'urtoa} sono riportati i valori tipici delle sezioni
 			\bottomrule[0.1em]
 		\end{tabular}
 	\end{center}
-	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzate alla sezione d'urto del DCE. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio.} \label{tab:sez_d'urtoa}
+	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzati alla sezione d'urto del DCE. Tali valori sono stati ricavati dalla collaborazione NUMEN (si vedano, ad esempio, \cite{calabrese:phd19_2} e~\cite{spatafora:prc19}). I valori sono stati arrotondati verso l'alto per ottenere delle stime prudenti per le contaminazioni reali. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio~\cite{shima:adndt92}. Si sottolinea che, nel caso dell'\ce{^{19}O}, il valore della sezione d'urto indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso in relazione ad altri processi di trasferimento di nucleoni di cui è nota la sezione d'urto.} \label{tab:sez_d'urtoa}
 \end{table}
 %Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
 %%Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
@@ -1236,7 +1235,7 @@ Due importanti correlazioni sono descritte nel paragrafo successivo.
 
 
 %\subsection*{Studio delle correlazioni $x_{foc} - E_{CsI}$ e $\mbox{tof} - E_{CsI}$} 
-\subsection*{\iflanguage{italian}{Studio delle correlazioni $x_{foc} - E_{CsI}$ e $\mbox{tof} - E_{CsI}$}{Study of $x_{foc} - E_{CsI}$ and $\mbox{tof} - E_{CsI}$ correlations}}
+\subsection{\iflanguage{italian}{Studio delle correlazioni $x_{foc} - E_{CsI}$ e $\mbox{tof} - E_{CsI}$}{Study of $x_{foc} - E_{CsI}$ and $\mbox{tof} - E_{CsI}$ correlations}}
 %A questo punto è interessante mostrare le correlazioni $x_{foc} - E$
 %L'integrazione fra i software dedicati al trasporto ottico degli eiettili e la simulazione del telescopio permette di ricavare altre importanti correlazioni, utili per la PID.
 %In Figura~ sono mostrate le matrici $x_{foc} - E_{meas}$ relative al caso in esame:
@@ -1278,13 +1277,14 @@ Inoltre, nel paragrafo precedente si è mostrato che, se nelle correlazioni $\De
 Per questo motivo, nel prosieguo verranno trattate soltanto le correlazioni che coinvolgono $E_{CsI}$ piuttosto che l'energia cinetica~$E$.
 Ovviamente, se la perdita di energia $\Delta E$ è piccola rispetto ad~$E$, $E_{CsI}$ ed $E$ sono molto simili.
 
+
+
+Le matrici $x_{foc} - E_{CsI}$ corrispondenti alla simulazione della Sezione~\ref{sez:studio_PID} sono riportate in Figura~\ref{fig:xf_Ecsi}: come si può notare, gli ioni si dispongono su luoghi diversi a secondo del loro rapporto~$\sqrt{m}/q$.
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/xf_csi_label_quadrata_menoeventi2.png}
 	\caption{Le tipiche matrici $x_{foc} - E_{CsI}$.} \label{fig:xf_Ecsi}
-\end{figure}
-
-Le matrici $x_{foc} - E_{CsI}$ corrispondenti alla simulazione della Sezione~\ref{sez:studio_PID} sono riportate in Figura~\ref{fig:xf_Ecsi}: come si può notare, gli ioni si dispongono su luoghi diversi a secondo del loro rapporto~$\sqrt{m}/q$. 
+\end{figure} 
 I luoghi sono ben separati, ad eccezione, ovviamente, di quelli con lo stesso rapporto massa su carica.
 %Ciò poteva essere già dedotto guardando la Figura~\ref{fig:deltaE_Ecsi}, in cui si può notare che le matrici delle coppie in questione hanno intervalli di energia $E_{CsI}$ in parte sovrapposti.
 %Con lo stesso tipo di ragionamento, osservando la Figura~\ref{fig:deltaE_Ecsi_stati_carica}, si può desumere che se, oltre agli ioni considerati, si fossero simulati anche il \ce{^{18}F^{8+}} e il \ce{^{19}F^{8+}}, allora le matrici di questi due ioni si sarebbero in parte sovrapposta al luogo dell'\ce{^{20}O^{8+}}.
@@ -1422,12 +1422,14 @@ La sensibilità di misura risulta essere di 1~nb a 5$\sigma$, dunque anche in qu
 \subsection*{Dimensioni trasversali: 2~cm $\times$ 2~cm}
 %\paragraph*{Dimensioni trasversali: 2~cm $\times$ 2~cm.}
 
-In questo caso, l'intervallo di energia cinetica accettato dal telescopio è maggiore, come viene confermato dalla Figura~\ref{fig:xf_ecsi_2per2}, in cui si può notare che l'intervallo di $x_{foc}$ visto dal telescopio è di circa 3.4~cm.
+
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/2per2new/xf_ecsi_quadrata_menoeventi.png}
 	\caption{Le matrici $x_{foc} - E_{CsI}$ nel caso in cui le dimensioni trasversali del telescopio siano di 2~cm~$\times$~2~cm.} \label{fig:xf_ecsi_2per2}
 \end{figure} 
+
+In questo caso, l'intervallo di energia cinetica accettato dal telescopio è maggiore, come viene confermato dalla Figura~\ref{fig:xf_ecsi_2per2}, in cui si può notare che l'intervallo di $x_{foc}$ visto dal telescopio è di circa 3.4~cm.
 Per i motivi precedentemente esposti, anche in questo caso si è preferito non riportare le matrici $\Delta E_{SiC} - E_{CsI}$.
 Il numero di eventi nella ROI, riscalato per la sezione e per la probabilità di ottenere un determinato stato di carica e normalizzato ad un evento di DCE, viene mostrato, per ogni ione, nella Tabella~\ref{tab:contaminazioni_deltaE_Ecsi_riscalate_2per2}: come si può notare, i valori sono più alti di quelli visti nelle altre due condizioni.
 \begin{table} [t!]
