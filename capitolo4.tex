@@ -3,8 +3,10 @@ All'interno dell'intensa campagna di studi condotta per verificare se le soluzio
 Tale test si è tenuto ai Laboratori Nazionali del Sud (LNS) utilizzando un fascio di particelle di \ce{^{20}Ne} a 20~AMeV, prodotto dal Ciclotrone Superconduttore K800.
 Al fine di favorire la generazione degli ioni di interesse per NUMEN, ovvero Ossigeno, Fluoro e Neon, si è scelto di utilizzare un bersaglio di \ce{^{12}C} da 400~$\mu$g/cm\ap{2}.
 
-Il test aveva lo scopo di valutare la risposta dei telescopi e di confrontare l'elettronica tradizionale di MAGNEX con la nuova elettronica VMM3a~\cite{degeronimo:ieee13} per il progetto.
-In questo capitolo vengono presentati i risultati ottenuti durante tale test e viene mostrato il confronto tra questi e i dati prodotti attraverso le simulazioni implementate per questo lavoro di tesi. 
+Il test aveva l'obiettivo di valutare la risposta dei telescopi e di confrontare l'elettronica tradizionale di MAGNEX con la nuova elettronica VMM3a~\cite{degeronimo:ieee13} per il progetto.
+%In questo capitolo vengono presentati i dati sperimentali ottenuti durante tale test e viene mostrato il confronto tra questi e i risultati del tool di simulazioni implementato per questo lavoro di tesi.
+%Tale confronto ha lo scopo di validare il tool
+In questo capitolo vengono presentati i dati sperimentali ottenuti durante tale test e, attraverso il confronto tra questi e i dati simulati, viene validato il tool di simulazioni sviluppato e implementato per questo lavoro di tesi.
 Dal momento che i prototipi utilizzati nel test presentano alcune differenze rispetto ai telescopi che verranno impiegati per NUMEN, è stato necessario modificare alcuni parametri della simulazione: in primo luogo, ricordando che, in uno dei due dispositivi (Tel~A), il primo stadio era montato in configurazione reverse, il substrato epitassiale del rivelatore al SiC è stato posto davanti al volume sensibile.
 Inoltre, le dimensioni trasversali e gli spessori delle diverse componenti sono state cambiate in modo da riprodurre le caratteristiche descritte nel Paragrafo~\ref{par:telescopi}.
 
@@ -20,9 +22,10 @@ Di conseguenza, dal momento che questo lavoro aveva lo scopo di studiare le perf
 
 
 %\subsection{\iflanguage{italian}{Le matrici $\Delta E_{SiC} - E_{CsI}$}{$\Delta E_{SiC} - E_{CsI}$ matrices}}
+%Indicando con $\Delta E_{SiC}$ la perdita di energia misurata dal rivelatore al~SiC e con $E_{CsI}$ l'energia misurata dallo scintillatore allo~CsI
 
-In Figura~\ref{fig:sic_csi_standard} è riportata la matrice $\Delta E_{SiC} - E_{CsI}$ registrata dal Tel~A utilizzando l'elettronica standard (si veda il Paragrafo~\ref{par:elettr_standard}): come si può notare i luoghi dei diversi ioni appaiono ben separati in una regione che va dal Boro (B) al Neon (Ne).
-Si può, inoltre, osservare che, poiché ai fini della PID non è necessario utilizzare la correlazione $\Delta E_{SiC} - E_{tot}$, i rivelatori non sono stati calibrati e, conseguentemente, le variabili $\Delta E_{SiC}$ e $E_{CsI}$ sono misurate in canali.
+Indicando con $\Delta E_{SiC}$ ed $E_{CsI}$ la perdita di energia e l'energia residua, misurate, rispettivamente, dal rivelatore al~SiC e dallo scintillatore allo~CsI, in Figura~\ref{fig:sic_csi_standard} è riportata la matrice $\Delta E_{SiC} - E_{CsI}$ registrata dal Tel~A utilizzando l'elettronica standard (si veda il Paragrafo~\ref{par:elettr_standard}): come si può notare i luoghi dei diversi ioni appaiono ben separati in una regione che va dal Boro (B) al Neon (Ne).
+Si può, inoltre, osservare che, poiché ai fini della PID non è necessario utilizzare la correlazione $\Delta E_{SiC} - E_{meas}$, laddove $E_{meas} = \Delta E_{SiC} + E_{CsI}$, i rivelatori non sono stati calibrati e, conseguentemente, le variabili $\Delta E_{SiC}$ e $E_{CsI}$ sono misurate in canali.
 
 
 \begin{figure} [!p]
@@ -50,7 +53,7 @@ Si può, inoltre, osservare che, poiché ai fini della PID non è necessario uti
 %laddove $\theta_{tilt}$ rappresenta l'angolo di rotazione del FPD, pari a 59.2\textdegree.
 In Figura~\ref{fig:sic_csi_vmm3a} si riporta la  matrice $\Delta E_{SiC} - E_{CsI}$ ottenuta con lo stesso telescopio utilizzando l'elettronica VMM3a (si veda il Paragrafo~\ref{par:elettr_vmm3a}): in questo caso si può notare che, sebbene si possano ancora riconoscere i luoghi corrispondenti ai diversi ioni, essi risultano parzialmente sovrapposti.
 Ciò deriva da un maggiore contributo del rumore elettronico e da un peggiore accoppiamento fra i rivelatori e l'elettronica di front-end.
-Ai fini della validazione delle simulazioni, si è scelto di analizzare soltanto quelli ottenuti utilizzando l'elettronica standard.
+Ai fini della validazione delle simulazioni, si è scelto di analizzare soltanto i dati ottenuti utilizzando l'elettronica standard.
 
 \begin{figure} [!p]
 	\centering
@@ -60,12 +63,15 @@ Ai fini della validazione delle simulazioni, si è scelto di analizzare soltanto
 
 \section{\iflanguage{italian}{Analisi dei dati del test beam}{Analysis of test beam data}}
 
-Per poter confrontare i dati sperimentali con i risultati delle simulazioni è necessario che queste riproducano nel modo più fedele possibile le condizioni sperimentali.
-Dunque, è stata svolta un'analisi dei dati raccolti durante il test per estrarre delle informazioni da inserire opportunamente nella simulazione.
-In primo luogo, è necessario stabilire quali ioni debbano costituire le particelle primarie simulate, per cui è stata svolta un'identificazione dei prodotti di reazione.
+Per poter confrontare i dati sperimentali con i risultati delle simulazioni è necessario che queste riproducano nel modo più fedele possibile le condizioni sperimentali; i parametri da inserire nel tool di simulazioni devono, dunque, corrispondere a quelli reali.
+Alcuni fra questi parametri sono noti a priori, come ad esempio il proiettile, il bersaglio, l'energia del fascio e i campi magnetici di dipolo e quadrupolo; altri, invece, sono stati determinati attraverso un'analisi dei dati sperimentali.
+Le due informazioni significative estratte da tale analisi sono il tipo di eiettile e l'energia di eccitazione del sistema eiettile-nucleo residuo.
+Nei due paragrafi successivi viene descritta la procedura seguita per ricavare tali informazioni.
+%Dunque, è stata svolta un'analisi dei dati raccolti durante il test per estrarre delle informazioni da inserire opportunamente nel tool di simulazioni.
+%In primo luogo, è necessario stabilire quali ioni debbano costituire le particelle primarie simulate, per cui è stata svolta un'identificazione dei prodotti di reazione.
 %Inoltre, poiché l'energia delle particelle primarie è un parametro di fondamentale importanza, è stata determinare l'energia con cui gli ioni incidevano sul telescopio.
 %%Inoltre, dal momento che un altro parametro di fondamentale importanza riguarda l'energia di tali particelle, è stata condotta un'analisi per determinare l'energia di incidenza degli ioni sul telescopio.
-
+%Successivamente, è stato determinato l'intervallo di energia di eccitazione del sistema eiettile-nucleo residuo.
 
 %Ciò è stato possibile grazie alla correlazione tra posizione ed energia indotta dalla forza di Lorentz: 
 
@@ -79,14 +85,15 @@ Dopo avere selezionato gli ioni O è necessario distinguerne gli isotopi in nume
 Nel caso del telescopio, la quantità~$E$ corrisponde con buona approssimazione a $E_{CsI}$.
 La matrice $x_{foc} - E_{CsI}$ è mostrata in Figura~\ref{fig:xfoc2_csi_standard}, dove è possibile osservare che gli isotopi dell'O originati dall'interazione proiettile-bersaglio sono prevalentemente \ce{^{16}O}, \ce{^{17}O} e \ce{^{18}O}.
 Si sottolinea che nella correlazione $x_{foc} - E_{CsI}$ il numero di massa cresce spostandosi verso sinistra poiché, per mantenere lo stesso valore di $x_{foc}$, se la massa aumenta $E_{CsI}$ deve diminuire.
-Come si può notare dalla Figura~\ref{fig:xfoc2_csi_standard}, l'isotopo più abbondante dell'O presente nel campione è \ce{^{16}O}, la cui produzione è favorita poiché deriva da un processo di trasferimento di una particella $\alpha$ dal proiettile al bersaglio. 
-La reazione scelta per la validazione della simulazione è, dunque, $^{12}\mbox{C}  ( ^{20}\mbox{Ne}, ^{16}\mbox{O} )  ^{16}\mbox{O} $.
-
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Confronto/xfoc_ecsi.png}
 	\caption{Le correlazioni $x_{foc} - E_{CsI}$ ottenute, durante il test, dalla misura in correlazione del tracciatore e del rivelatore allo CsI . La linea nera indica il taglio grafico effettuato per la selezione in numero di massa dell'\ce{^{16}O}.} \label{fig:xfoc2_csi_standard}
 \end{figure}
+Come si può notare dalla Figura~\ref{fig:xfoc2_csi_standard}, l'isotopo più abbondante dell'O presente nel campione è \ce{^{16}O}, la cui produzione è favorita poiché deriva da un processo di trasferimento di una particella $\alpha$ dal proiettile al bersaglio. 
+La reazione scelta per la validazione della simulazione è, dunque, $^{12}\mbox{C}  ( ^{20}\mbox{Ne}, ^{16}\mbox{O} )  ^{16}\mbox{O} $.
+
+
 
 
 
@@ -101,10 +108,11 @@ La reazione scelta per la validazione della simulazione è, dunque, $^{12}\mbox{
 %Una volta identificato lo ione, è necessario verificare se tale ione giunge sul telescopio in uno stato eccitato.
 
 Uno dei parametri da inserire nel tool di simulazioni è il range di energia di eccitazione del sistema eiettile-nucleo residuo.
-Nel caso in esame, tale range è stato determinato attraverso il confronto tra i dati sperimentali e i risultati delle simulazioni, a diverse energie di eccitazione, prodotte dallo stesso tool.
+Nel caso in esame, tale range è stato determinato attraverso il confronto tra i dati sperimentali e i risultati di simulazioni ad hoc, a diverse energie di eccitazione, prodotte dallo stesso tool.
 Tale confronto è stato realizzato nella rappresentazione che correla l'angolo orizzontale $\theta_{foc}$ della traccia al piano focale e la coordinata orizzontale $x_{foc}$ del punto di arrivo dello ione sullo stesso piano.
 In Figura~\ref{fig:tefoc_xfoc} è riportata la matrice $\theta_{foc} - x_{foc}$ relativa all'\ce{^{16}O}, laddove in rosso sono rappresentati i dati raccolti con il Tel~A, in blu quelli registrati con i rivelatori al silicio del FPD e in nero i dati simulati.
-
+Come si può notare, gli ioni di \ce{^{16}O} si trovano in uno stato altamente eccitato, che comprende un range di energia di eccitazione che va dai 32 ai 73~MeV.
+Si fa, inoltre, osservare che la larghezza della striscia rossa è molto inferiore a quella delle strisce blu: ciò dipende dalla grande differenza fra la superficie del telescopio, pari a  1~cm $\times$ 1~cm, e quella dei rivelatori al silicio, ciascuna uguale a 5~cm $\times$ 7~cm.
 
 %Tale confronto è illustrato in Figura~\ref{fig:tefoc_xfoc}, dove si pu 
 
@@ -140,14 +148,16 @@ In Figura~\ref{fig:tefoc_xfoc} è riportata la matrice $\theta_{foc} - x_{foc}$ 
 
 
 
-I dati simulati sono stati elaborati dalla macro di post-processing, allo scopo di ricostruire gli spettri da comparare con i dati sperimentali.
-È bene precisare che prima di effettuare il confronto è necessario uniformare le unità di misura; infatti, mentre le distribuzioni energetiche ricavate dalla simulazione sono già espresse nell'opportuna grandezza, gli spettri sperimentali devono essere calibrati.
+%I dati simulati sono stati elaborati dalla macro di post-processing, allo scopo di ricostruire gli spettri da comparare con i dati sperimentali.
+%È bene precisare che 
+Prima di effettuare il confronto tra i dati sperimentali e quelli simulati è necessario uniformare le unità di misura; infatti, mentre le distribuzioni energetiche ricavate dalla simulazione sono già espresse nell'opportuna grandezza, gli spettri sperimentali devono essere calibrati.
 A tal fine, sono stati utilizzati i dati relativi allo scattering elastico del \ce{^{20}Ne} su bersaglio di \ce{^{197}Au}, per il quale i campi magnetici del dipolo e del quadrupolo sono stati opportunamente fissati facendo in modo che una parte degli ioni scatterati arrivasse sul telescopio.
-È stata, dunque, svolta un'analisi per determinare l'energia cinetica incidente, nota la quale è stato possibile stimare il deposito energetico del \ce{^{20}Ne} nel rivelatore al~SiC e nel cristallo di~CsI.
-Tale stima è stata effettuata utilizzando LISE++~\cite{tarasov:nimb08}, software nato per simulare la produzione di fasci di ioni attraverso meccanismi di reazioni nucleari.
-La procedura di calibrazione ha permesso di calcolare la pendenza della retta di calibrazione senza fissarne l'offset; di conseguenza, quest'ultimo parametro è stato determinato sovrapponendo i centroidi delle distribuzioni sperimentale e simulata.
+È stata, dunque, svolta un'analisi per determinare l'energia cinetica con cui il \ce{^{20}Ne} incideva sul telescopio, nota la quale è stato possibile stimare il deposito energetico dello ione nel rivelatore al~SiC e nel cristallo di~CsI.
+Tale stima è stata effettuata grazie a LISE++~\cite{tarasov:nimb08}, software nato per simulare la produzione di fasci di ioni attraverso meccanismi di reazioni nucleari.
+In questo modo, per ciascun rivelatore era a disposizione un solo punto di corrispondenza tra la scala in canali e quella in MeV.
+Di conseguenza, questa procedura ha permesso di calcolare soltanto la pendenza della retta di calibrazione, senza fissarne l'offset; quest'ultimo parametro è stato, invece, determinato sovrapponendo i centroidi delle distribuzioni sperimentale e simulata.
 
-In Figura~ è riportato lo spettro simulato in $\Delta E_{SiC}$, messo a confronto con quello sperimentale: come si può notare, la compatibilità delle due distribuzioni è ragguardevole; in particolare, la simulazione riproduce correttamente la larghezza dello spettro sperimentale.
+In Figura~\ref{fig:spettro_sic_confronto} è riportato lo spettro simulato in $\Delta E_{SiC}$, messo a confronto con quello sperimentale: come si può notare, la compatibilità delle due distribuzioni è ragguardevole; in particolare, la simulazione riproduce correttamente la larghezza dello spettro sperimentale.
 La risoluzione energetica dedotta dalla simulazione sembra, quindi, rispecchiare in modo fedele quella riscontrata nel test.
 %Dal momento che tale quantità gioca un ruolo cruciale nella capacità di PID del telescopio
 \begin{figure} [!p]
@@ -156,7 +166,8 @@ La risoluzione energetica dedotta dalla simulazione sembra, quindi, rispecchiare
 	\caption{Spettro in $\Delta E_{SiC}$: in blu sono rappresentati i dati sperimentali, in rosso quelli simulati. Gli istogrammi sono normalizzati in area.} \label{fig:spettro_sic_confronto}
 \end{figure}
 
-In Figura~ è illustrato il confronto tra lo spettro in $E_{CsI}$ simulato e quello sperimentale: anche in questo caso la compatibilità è significativa.
+In Figura~\ref{fig:spettro_csi_confronto} è illustrato il confronto tra lo spettro in $E_{CsI}$ simulato e quello sperimentale: anche in questo caso la compatibilità è significativa, sebbene, allo scopo di rappresentare meglio i dati sperimentali, la risoluzione energetica è stata aumentata al 5\%.
+Una peggiore risoluzione energetica rispetto alle assunzioni del Paragrafo~\ref{par:post-processing} può essere dovuta a diversi fatti sperimentali, come ad esempio rumore elettromagnetico o disuniformità nella raccolta di luce dello scintillatore, la quale può essere causata da un accoppiamento non ottimale con il riflettore o il fotodiodo.
 
 
 \begin{figure} [!p]
@@ -165,7 +176,7 @@ In Figura~ è illustrato il confronto tra lo spettro in $E_{CsI}$ simulato e que
 	\caption{Spettro in $E_{CsI}$: in blu sono rappresentati i dati sperimentali, in rosso quelli simulati. Gli istogrammi sono normalizzati in area.} \label{fig:spettro_csi_confronto}
 \end{figure}
 
-L'accordo tra dati sperimentali e simulati è avvalorato dalla complessità della situazione considerata: in primo luogo, la reazione~\ce{^{12}C}(\ce{^{20}Ne},\ce{^{16}O})\ce{^{16}O} avviene in cinematica inversa, così che l'energia cinetica dell'eiettile risulta estremamente sensibile alla variazione dell'angolo di emissione. 
+L'accordo tra i dati sperimentali e quelli simulati è avvalorato dalla complessità della situazione trattata: in primo luogo, la reazione~\ce{^{12}C}(\ce{^{20}Ne},\ce{^{16}O})\ce{^{16}O} avviene in cinematica inversa, così che l'energia cinetica dell'eiettile risulta estremamente sensibile alla variazione dell'angolo di emissione. 
 Inoltre, la presenza del substrato epitassiale davanti al volume sensibile del rivelatore al SiC genera fenomeni non-lineari nell'energia.
-Infine, la bassa statistica registrata durante il test ha reso importanti le fluttuazioni 
+Infine, la bassa statistica registrata durante il test ha aumentato l'importanza delle fluttuazioni statistiche.
 
