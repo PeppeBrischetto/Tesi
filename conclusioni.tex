@@ -3,7 +3,7 @@
 %Le simulazioni numeriche costituiscono un potente strumento per studiare la risposta di un sistema di rivelazione e per ottimizzarne le caratteristiche tecniche.
 
 Le simulazioni numeriche costituiscono nella fase di progettazione di un sistema di rivelazione un potente strumento per studiarne la risposta e per ottimizzarne le caratteristiche tecniche.
-Per questo motivo, il progetto NUMEN, che ha avviato una radicale ristrutturazione dello spettrometro magnetico MAGNEX, ha deciso di dotarsi di una simulazione dell'apparato sperimentale previsto.
+Per questo motivo, il progetto NUMEN, che ha avviato una radicale ristrutturazione dello spettrometro magnetico MAGNEX, ha deciso di dotarsi di una simulazione realistica dell'apparato sperimentale previsto.
 %Dal momento che il progetto NUMEN ha avviato una radicale ristrutturazione del proprio apparato sperimentale, 
 %Nell'ambito del progetto NUMEN è stata realizzata una simulazione basata sulla piattaforma \geant{}, allo scopo di valutare le prestazioni di un sistema per la rivelazione e l'identificazione di ioni pesanti ad alto rate, costituito da un muro di telescopi $\Delta E - E_{resid}$ a stato solido.
 In occasione di questo lavoro di tesi, è stato sviluppato e implementato, per la prima volta, un tool di simulazioni capace di descrivere in modo completo la cinematica di reazione, il moto degli eiettili attraverso lo spettrometro e l'interazione di questi con un muro di telescopi $\Delta E - E$ a stato solido.
@@ -15,7 +15,7 @@ In occasione di questo lavoro di tesi, è stato sviluppato e implementato, per l
 Tale tool si compone essenzialmente di due parti: la prima, dedicata alla ricostruzione della traiettoria degli ioni nello spettrometro, è costituita da software sviluppati all'uopo e ottimizzati dalla collaborazione NUMEN; la seconda, che simula l'interazione ione-rivelatore, è basata su un'applicazione \geant.
 %Il motivo alla base di questa strutturazione del tool deriva dal fatto che, a causa della grande accettanza in angolo solido e in impulso di MAGNEX, la ricostruzione della traiettoria degli eiettili richiede la risoluzione delle equazioni del moto fino al decimo ordine e, pertanto, necessita di software specifici.
 L'integrazione tra le due parti e la realizzazione di tale applicazione sono state gli obiettivi principali di questo lavoro di tesi.
-All'interno del progetto NUMEN, il tool assume una notevole importanza, perché, in primo luogo, aiuta a progettare l'apparato sperimentale, suggerendo le condizioni ottimali in merito alla geometria e alle specifiche dei rivelatori. 
+All'interno del progetto NUMEN, il tool assume una notevole importanza, perché, in primo luogo, aiuta a progettare l'apparato sperimentale, suggerendo le condizioni ottimali in merito alla geometria, ai materiali e alle specifiche tecniche dei rivelatori. 
 Inoltre, esso ottimizza la richiesta economica e di man-power, riducendo i costi di produzione e gestione del progetto.
 
 In questo lavoro, il tool è stato utilizzato per valutare le capacità di Particle IDentification (PID) di un sistema di telescopi basato sulla tecnologia SiC-CsI; in particolare, il primo sistema preso in considerazione è costituito da dispositivi con dimensioni trasversali di 1.5~cm $\times$ 1.5~cm.
@@ -72,7 +72,7 @@ Un aspetto fondamentale di questo lavoro è consistito nella partecipazione al t
 %I dati sperimentali raccolti durante tale test sono stati messi a confronto 
 Tale test aveva lo scopo di studiare le prestazioni del primo prototipo di telescopio SiC-CsI per NUMEN, utilizzando sia l'elettronica tradizionale di MAGNEX sia il primo esemplare di elettronica di front-end VMM3a realizzato per il progetto.
 %I dati sperimentali sono stati analizzati allo scopo di ricostruire i parametri essenziali da introdurre nella simulazione, come ad esempio il numero atomico e il numero di massa della particella primaria e il range energetico.
-I dati sperimentali raccolti in tale occasione sono stati utilizzati in questo lavoro per effettuare un confronto con i dati ottenuti dalla simulazione; per questo motivo, è stata svolta un'analisi su tali dati.
+I dati sperimentali raccolti in tale occasione sono stati utilizzati in questo lavoro per effettuare un confronto con i dati ottenuti dalla simulazione; per questo motivo, è stata svolta un'analisi di tali dati.
 È stata eseguita un'identificazione degli eiettili utilizzando le correlazioni $\Delta E_{SiC} -E_{CsI}$ e $x_{foc} -E_{CsI}$, allo scopo di selezionare lo ione più abbondante nel campione, risultato essere l'\ce{^{16}O}.
 %Grazie alla tecnica basata sulla deflessione causata dalla forza di Lorentz, è stato possibile ricavare la distribuzione in energia cinetica di tale ione, la quale è stata riprodotta all'interno della simulazione.
 Noti l'eiettile da simulare, la tipologia e l'energia del fascio, è stato utilizzato il tool per verificare se i dati sperimentali fossero riprodotti correttamente.
