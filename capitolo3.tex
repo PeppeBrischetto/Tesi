@@ -783,7 +783,7 @@ Gli eiettili simulati sono \ce{^{20}O^{8+}}, \ce{^{21}O^{8+}}, \ce{^{20}F^{8+}},
 Altri ioni, come ad esempio il \ce{^{19}F^{8+}} e l'\ce{^{19}O^{8+}}, e altri stati di carica, per esempio i $9^+$ e i $10^+$, non sono stati presi in considerazione perché, per ragioni cinematiche e per le proprietà ottiche dello spettrometro, vengono rivelati in regioni del FPD lontane da quella in cui arriva lo ione di interesse o sono addirittura fuori dall'accettanza del FPD.
 Per ciascuno ione simulato è stato generato un milione di eventi.
 Il telescopio ha dimensioni trasversali di 1.5~cm $\times$ 1.5~cm ed è posto a 15~cm di distanza dal piano in cui vengono prodotte le particelle primarie, che coincide con il piano di ingresso nel FDP.
-
+Nella simulazione si è assunto che l'asse ottico dello spettrometro fosse posto a 3\textdegree{} nel sistema di riferimento del laboratorio.
 
 
 %Per fissare la rigidità magnetica di riferimento si è scelto il \ce{^{18}Ne^{10+}}, che fra gli ioni considerati è quello con il rapporto massa su carica più piccolo.
@@ -883,10 +883,6 @@ La restante parte del segnale viene persa a causa dell'incompleta raccolta di ca
 A questo punto è bene sottolineare che finora le contaminazioni sono state calcolate senza tenere in considerazione che nella situazione reale la produzione degli ioni avviene attraverso meccanismi di reazioni nucleari, ciascuno caratterizzato da una certa sezione d'urto; questa rappresenta, infatti, la probabilità con cui può verificarsi una determinata reazione.
 %I valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE, sono riportati nella Tabella~\ref{tab:sez_d'urto}, insieme alla probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio.
 Nella Tabella~\ref{tab:sez_d'urto} sono riportati i valori tipici delle sezioni d'urto sperimentali dei processi coinvolti in questa simulazione, normalizzati alla sezione d'urto sperimentale peculiare del DCE.
-Tali valori, arrotondati verso l'alto per ottenere delle stime prudenti per le contaminazioni reali, sono stati ricavati da misure sperimentali svolte dalla collaborazione NUMEN (si vedano, ad esempio, \cite{calabrese:phd19_2} e~\cite{spatafora:prc19}).
-%Essi sono stati prudenzialmente arrotondati verso l'alto per
-Nella stessa tabella viene, inoltre, riportata la probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio~\cite{shima:adndt92}. 
-È bene precisare che, per l'\ce{^{21}O}, il valore indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso in relazione ad altri processi di trasferimento di nucleoni di cui è nota la sezione d'urto.
 \begin{table} [p!]
 	\begin{center}
 		\renewcommand{\arraystretch}{1.2}
@@ -924,6 +920,10 @@ Nella stessa tabella viene, inoltre, riportata la probabilità di avere uno ione
 	\end{center}
 	\caption{I valori tipici delle sezioni d'urto sperimentali di diversi processi di reazioni nucleari normalizzati alla sezione d'urto del DCE. Tali valori sono stati ricavati dalla collaborazione NUMEN (si vedano, ad esempio, \cite{calabrese:phd19_2} e~\cite{spatafora:prc19}). I valori sono stati arrotondati verso l'alto per ottenere delle stime prudenti per le contaminazioni reali. Si riporta, inoltre, la probabilità di avere uno ione in un determinato stato di carica dopo aver attraversato un foglio di carbonio~\cite{shima:adndt92}. Si sottolinea che, nel caso dell'\ce{^{21}O}, il valore della sezione d'urto indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso in relazione ad altri processi di trasferimento di nucleoni di cui è nota la sezione d'urto.} \label{tab:sez_d'urto}
 \end{table}
+Tali valori, arrotondati verso l'alto per ottenere delle stime prudenti per le contaminazioni reali, sono stati ricavati da misure sperimentali svolte dalla collaborazione NUMEN (si vedano, ad esempio, \cite{calabrese:phd19_2} e~\cite{spatafora:prc19}).
+%Essi sono stati prudenzialmente arrotondati verso l'alto per
+Nella stessa tabella viene, inoltre, riportata la probabilità di avere uno ione in un certo stato di carica dopo il passaggio attraverso un foglio di carbonio~\cite{shima:adndt92}. 
+È bene precisare che, per l'\ce{^{21}O}, il valore indicato non deriva da misure sperimentali ma da considerazioni sull'ordine del processo stesso in relazione ad altri processi di trasferimento di nucleoni di cui è nota la sezione d'urto.
 Moltiplicando il valore della sezione d'urto sperimentale tipica di un processo per la probabilità di ottenere uno stato di carica, si può determinare la probabilità di produrre, a seguito di una reazione nucleare, uno ione in un determinato stato di carica;
 %%Moltiplicando i numeri della terza colonna con quelli della quarta, si può determinare la probabilità di ottenere, a seguito di una reazione nucleare, uno ione in un determinato stato di carica.
 questo è il fattore con cui bisogna riscalare le percentuali precedentemente mostrate per stimare le contaminazioni reali.

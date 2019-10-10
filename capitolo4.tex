@@ -6,7 +6,7 @@ Al fine di favorire la generazione degli ioni di interesse per NUMEN, ovvero Oss
 Il test aveva l'obiettivo di valutare la risposta dei telescopi e di confrontare l'elettronica tradizionale di MAGNEX con la nuova elettronica VMM3a~\cite{degeronimo:ieee13} per il progetto.
 %In questo capitolo vengono presentati i dati sperimentali ottenuti durante tale test e viene mostrato il confronto tra questi e i risultati del tool di simulazioni implementato per questo lavoro di tesi.
 %Tale confronto ha lo scopo di validare il tool
-In questo capitolo vengono presentati i dati sperimentali ottenuti durante tale test e, attraverso il confronto tra questi e i dati simulati, viene validato il tool di simulazioni sviluppato e implementato per questo lavoro di tesi.
+In questo capitolo vengono presentati i dati sperimentali ottenuti durante tale test e, attraverso il confronto tra questi e i dati simulati, viene validato il tool di simulazioni sviluppato per questo lavoro di tesi.
 Dal momento che i prototipi utilizzati nel test presentano alcune differenze rispetto ai telescopi che verranno impiegati per NUMEN, è stato necessario modificare alcuni parametri della simulazione: in primo luogo, ricordando che, in uno dei due dispositivi (Tel~A), il primo stadio era montato in configurazione reverse, il substrato epitassiale del rivelatore al SiC è stato posto davanti al volume sensibile.
 Inoltre, le dimensioni trasversali e gli spessori delle diverse componenti sono state cambiate in modo da riprodurre le caratteristiche descritte nel Paragrafo~\ref{par:telescopi}.
 
@@ -131,7 +131,7 @@ Si fa, inoltre, osservare che la larghezza della striscia rossa è molto inferio
 \begin{figure} [!p]
 	\centering
 	\includegraphics[width=\textwidth, keepaspectratio]{Grafici_Tesi2/Confronto/tefoc_xfoc_energie.png}
-	\caption{La matrice $\theta_{foc} - x_{foc}$ relativa all'\ce{^{16}O} ottenuta durante il test: in blu sono riportati i dati registrati con i rivelatori al silicio di MAGNEX, in rosso quelli raccolti con il Tel~A.} \label{fig:tefoc_xfoc}
+	\caption{Matrice $\theta_{foc} - x_{foc}$ relativa all'\ce{^{16}O}, ottenuta applicando l'AND logico dei tagli in Figura~\ref{fig:sic_csi_standard} e in Figura~\ref{fig:xfoc2_csi_standard}: in blu sono riportati i dati registrati con i rivelatori al silicio di MAGNEX, in rosso quelli raccolti con il Tel~A, in nero i risultati delle simulazioni a diverse energie di eccitazione del sistema eiettile-nucleo residuo.} \label{fig:tefoc_xfoc}
 \end{figure}
 
 
@@ -166,7 +166,7 @@ La risoluzione energetica dedotta dalla simulazione sembra, quindi, rispecchiare
 	\caption{Spettro in $\Delta E_{SiC}$: in blu sono rappresentati i dati sperimentali, in rosso quelli simulati. Gli istogrammi sono normalizzati in area.} \label{fig:spettro_sic_confronto}
 \end{figure}
 
-In Figura~\ref{fig:spettro_csi_confronto} è illustrato il confronto tra lo spettro in $E_{CsI}$ simulato e quello sperimentale: anche in questo caso la compatibilità è significativa, sebbene, allo scopo di rappresentare meglio i dati sperimentali, la risoluzione energetica è stata aumentata al 5\%.
+In Figura~\ref{fig:spettro_csi_confronto} è illustrato il confronto tra lo spettro in $E_{CsI}$ simulato e quello sperimentale: anche in questo caso la compatibilità è significativa, sebbene, allo scopo di rappresentare meglio i dati sperimentali, la risoluzione energetica è stata aumentata dal 3 al 5\%.
 Una peggiore risoluzione energetica rispetto alle assunzioni del Paragrafo~\ref{par:post-processing} può essere dovuta a diversi fatti sperimentali, come ad esempio rumore elettromagnetico o disuniformità nella raccolta di luce dello scintillatore, la quale può essere causata da un accoppiamento non ottimale con il riflettore o il fotodiodo.
 
 
