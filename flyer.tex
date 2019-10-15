@@ -37,8 +37,9 @@
 %}
 %\date{\bf April 13 -- April 15, 2012 }
 
-\CutLine*{1}% Dotted line without scissors
-\CutLine*{6}% Dotted line without scissors
+%\CutLine*{1}% Dotted line without scissors
+%\CutLine*{6}% Dotted line without scissors
+
 %\CutLine{6}%  Dotted line with scissors
 
 %\AddToBackground{1}{%  Background of a small page
@@ -138,9 +139,19 @@ Il progetto NUMEN ha avviato ai Laboratori Nazionali del Sud un'importante opera
 In particolare, l'upgrade di MAGNEX prevede l'introduzione di un muro di telescopi $\Delta E - E$ a stato solido, basato sulla tecnologia SiC-CsI, per l'identificazione di ioni pesanti ad alto rate.
 Questo lavoro di tesi verte sulla realizzazione di un tool di simulazioni Monte Carlo per lo studio e l'ottimizzazione di tale sistema di rivelazione.
 %Il tool è stato sviluppato e implementato integrando i software per la ricostruzione del moto dei prodotti di reazione attraverso lo spettrometro con un'applicazione specifica basata sulla piattaforma \geant.
-Il principale obiettivo di questo lavoro consiste nella valutazione delle prestazioni del sistema simulato in termini di capacità di identificazione degli ioni di interesse, rapporto segnale-rumore e sensibilità di misura.
+Uno degli obiettivi di questo lavoro consiste nella valutazione delle prestazioni del sistema simulato in termini di capacità di identificazione degli ioni di interesse, rapporto segnale-rumore e sensibilità di misura.
+%In particolare, tale tool è stato utilizzato per valutare le prestazioni del sistema simulato in termini di capacità di identificazione degli ioni di interesse, rapporto segnale-rumore e sensibilità di misura, nonché per ottimizzare le condizioni di granularità dei telescopi.
 In aggiunta, il tool è stato utilizzato per ottimizzare le condizioni di granularità dei telescopi.
 
+
+
+\begin{figure} [!h]
+	\centering
+	\includegraphics[width=0.9\columnwidth, keepaspectratio]{Grafici/magnex_etichette.png}
+\end{figure}
+%\begin{center}
+\hspace{0.8 cm}\textit{ Lo spettrometro magnetico MAGNEX ai LNS.}
+%\end{center}
 
 
 %\section{Background}
@@ -154,23 +165,27 @@ In aggiunta, il tool è stato utilizzato per ottimizzare le condizioni di granul
 %Allo scopo di risolvere queste ambiguità è nato il progetto NUMEN (NUclear Matrix Elements for Neutrinoless double beta decay), il quale propone ai Laboratori Nazionali del Sud (LNS) dell'Istituto Nazionale di Fisica Nucleare (INFN) un nuovo metodo per accedere sperimentalmente ad informazioni utili per la determinazione degli NMEs.
 %Il fulcro di tale metodo è la misura di sezioni d'urto di reazioni di doppio scambio di carica (Double Charge Exchange, DCE) indotte da ioni pesanti, le quali presentano diversi aspetti in comune con il \doppiobeta.
 
-Il progetto NUMEN (NUclear Matrix Elements for Neutrinoless double beta decay) propone ai Laboratori Nazionali del Sud (LNS) dell'Istituto Nazionale di Fisica Nucleare (INFN) un nuovo metodo per accedere sperimentalmente ad informazioni utili per la determinazione degli elementi di matrice nucleare (Nuclear Matrix Elements, NMEs) che entrano in gioco nell'espressione del tasso di dimezzamento del doppio decadimento beta senza neutrini (\doppiobeta).
+Il progetto NUMEN (NUclear Matrix Elements for Neutrinoless double beta decay) propone ai Laboratori Nazionali del Sud (LNS) dell'Istituto Nazionale di Fisica Nucleare (INFN) un nuovo metodo per accedere sperimentalmente ad informazioni utili per la determinazione degli elementi di matrice nucleare (Nuclear Matrix Elements, NMEs) che entrano in gioco nel tasso di dimezzamento del doppio decadimento beta senza neutrini (\doppiobeta).
 Il fulcro di tale metodo è la misura di sezioni d'urto di reazioni di doppio scambio di carica (Double Charge Exchange, DCE) indotte da ioni pesanti, le quali presentano diversi aspetti in comune con il \doppiobeta.
-Essendo i processi di DCE caratterizzati da sezioni d'urto estremamente basse (tipicamente di pochi~nb), è stato finora possibile analizzare soltanto alcuni dei casi rilevanti, contraddistinti da particolari condizioni favorevoli.
-Tuttavia, al fine di raggiungere il suo più ambizioso obiettivo, il progetto intende studiare in modo sistematico tutti gli isotopi candidati al \doppiobeta{}.
-Ciò rende necessario l'utilizzo di fasci di ioni pesanti con intensità molto più elevate di quelle attualmente disponibili ai LNS.
-A tale scopo è stata già avviata una grande opera di ristrutturazione del Ciclotrone Superconduttore~K800 e dello spettrometro magnetico~MAGNEX.
-Alla fine dell'upgrade i fasci di ioni pesanti disponibili ai LNS avranno un'intensità dell'ordine di $10^{12}$~pps, circa due ordini di grandezza superiore a quella attuale: in quest'ottica, per il progetto è fondamentale lo sviluppo di tecnologie di frontiera, in grado di tollerare le correnti previste.
+%Essendo i processi di DCE caratterizzati da sezioni d'urto estremamente basse (tipicamente di pochi~nb), è stato finora possibile analizzare soltanto alcuni dei casi rilevanti, contraddistinti da particolari condizioni favorevoli. Tuttavia, al fine di raggiungere il suo più ambizioso obiettivo, il progetto intende studiare in modo sistematico tutti gli isotopi candidati al \doppiobeta{}. Ciò rende necessario l'utilizzo di fasci di ioni pesanti con intensità molto più elevate di quelle attualmente disponibili ai LNS. A tale scopo è stata già avviata una grande opera di ristrutturazione del Ciclotrone Superconduttore~K800 e dello spettrometro magnetico~MAGNEX.
+%
+%
+%Poiché i processi di DCE hanno sezioni d'urto estremamente basse (tipicamente di pochi~nb), è necessario utilizzare fasci di ioni pesanti molto più intensi di quelli attualmente disponibili ai LNS.
+%Per questo motivo è stata avviata una grande ristrutturazione del Ciclotrone Superconduttore~K800 e dello spettrometro magnetico~MAGNEX, alla fine della quale l'intensità disponibile sarà dell'ordine di $10^{12}$~pps: in quest'ottica, per il progetto è fondamentale lo sviluppo di tecnologie di frontiera, in grado di tollerare le correnti previste.
+%
+%
+Dal momento che i processi di DCE hanno sezioni d'urto estremamente basse (tipicamente di pochi~nb), è stata avviata una grande opera di ristrutturazione del Ciclotrone Superconduttore~K800 e dello spettrometro magnetico~MAGNEX, per aumentare di circa due ordini di grandezza l'intensità dei fasci di ioni pesanti: in quest'ottica, per il progetto è fondamentale lo sviluppo di tecnologie di frontiera, in grado di tollerare le correnti previste.
+%Alla fine dell'upgrade i fasci di ioni pesanti disponibili ai LNS avranno un'intensità dell'ordine di $10^{12}$~pps, circa due ordini di grandezza superiore a quella attuale: in quest'ottica, per il progetto è fondamentale lo sviluppo di tecnologie di frontiera, in grado di tollerare le correnti previste.
 %Parte integrante di NUMEN è, dunque, un'intensa attività di ricerca e sviluppo, pertinente non soltanto al campo sperimentale ma anche a quello teorico.
-L'upgrade di MAGNEX prevede innanzitutto importanti cambiamenti del rivelatore di piano focale, che coinvolgeranno sia il sistema di tracciamento a gas sia il muro di rivelatori al silicio; in particolare, il progetto prevede la sostituzione del muro di rivelatori al silicio con uno di telescopi $\Delta E - E$ a stato solido, dedicato alla Particle IDentification (PID). 
+L'upgrade di MAGNEX prevede importanti cambiamenti del rivelatore di piano focale; in particolare, il progetto prevede la sostituzione del muro di rivelatori al silicio con uno di telescopi $\Delta E - E$ a stato solido, dedicato alla Particle IDentification (PID). 
 Le esigenze di alta resistenza alle radiazioni hanno guidato verso la scelta di un primo stadio costituito da un rivelatore sottile (100~$\mu$m) al carburo di silicio~(SiC), seguito da un rivelatore di stop (1~cm) allo ioduro di cesio~(CsI).
 
 \begin{figure} [!h]
 	\centering
-	\includegraphics[width=0.9\columnwidth, keepaspectratio]{Grafici/magnex_etichette.png}
+	\includegraphics[width=0.9\columnwidth, keepaspectratio]{Grafici/muro_telescopi.png}
 \end{figure}
 %\begin{center}
-\hspace{0.8 cm}\textit{ Lo spettrometro magnetico MAGNEX ai LNS.}
+\hspace{0.2 cm}\textit{Il muro di telescopi previsto dopo l'upgrade di MAGNEX.}
 %\end{center}
 
 
@@ -218,11 +233,11 @@ Da tale stima è stato dedotto il rapporto segnale-fondo (S/B), grazie al quale 
 Il sistema di rivelazione simulato si è dimostrato in grado di separare efficacemente gli ioni sia in numero atomico sia in numero di massa.
 Si è, tuttavia, osservato che la presenza, attorno alla parte sensibile del rivelatore al~SiC, di una cornice in cui la carica prodotta dal passaggio degli ioni viene parzialmente raccolta genera degli eventi degradati, i quali costituiscono un fondo nella PID.
 Inoltre, una seconda sorgente di fondo è rappresentata dagli ioni che, a causa dell'inclinazione della loro traiettoria, non si fermano nel cristallo di~CsI e rilasciano dunque solo una parte della loro energia residua.
-Dalla simulazione è emerso che, nello studio di una reazione di DCE a bassa energia di eccitazione, il principale contaminante allo ione di interesse (\ce{^{20}O}) è il \ce{^{20}F^{8+}}, il quale è originato da un processo di singolo scambio di carica.
+Dalla simulazione è emerso che il principale contaminante allo ione di interesse (\ce{^{20}O}) è il \ce{^{20}F^{8+}}, il quale è originato da un processo di singolo scambio di carica.
 Alle energie di fascio considerate, la probabilità di ottenere lo stato di carica $8+$ per uno ione di \ce{^{20}F} è molto piccola; infatti, calcolando il rapporto S/B, è stato possibile dimostrare che la sensibilità di misura dell'apparato simulato nella regione di interesse (Region Of Interest, ROI) è di 460~pb a 5$\sigma$, quindi adatta a misurare la reazione di~interesse.
 \begin{figure} [!h]
 	\centering
-	\includegraphics[width=0.8\columnwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Ecsi_quadrata_taglio_menoeventi2.png}
+	\includegraphics[width=0.75\columnwidth, keepaspectratio]{Grafici_Tesi2/PIDnew/deltaE_Ecsi_quadrata_taglio_menoeventi2.png}
 \end{figure}\\
 %\begin{center}
 \textit{ Matrici $\Delta E_{SiC} - E_{CsI}$ con il taglio grafico per l'identificazione dello ione di interesse~(\ce{^{20}O}).}\\
@@ -232,27 +247,29 @@ Alle energie di fascio considerate, la probabilità di ottenere lo stato di cari
 L'analisi di tre diverse condizioni di granularità (1$\times$1, 1.5$\times$1.5 e 2$\times$2~$\mbox{cm}^2$) ha dimostrato che, all'aumentare della superficie di rivelazione, la sensibilità di misura diminuisce, pur restando in tutti e tre i casi esaminati sufficiente per misurare il DCE.\\
 \begin{figure} [!h]
 	\centering
-	\includegraphics[width=0.8\columnwidth, keepaspectratio]{Grafici_Tesi2/Granularitanew/sigma_min.png}
+	\includegraphics[width=0.75\columnwidth, keepaspectratio]{Grafici_Tesi2/Granularitanew/sigma_min.png}
 \end{figure}\\
 %\begin{center}
 \textit{Andamento della sensibilità di misura $(\sigma_{min})$ al variare della superficie dei telescopi.}
 
 Un aspetto fondamentale di questo lavoro è consistito nella validazione dei risultati delle simulazioni attraverso il confronto con i dati sperimentali raccolti in occasione del test beam svolto ad Aprile~2019.
 Gli spettri energetici misurati dal rivelatore al SiC e dallo scintillatore allo CsI sono stati messi a confronto con i rispettivi spettri simulati: in entrambi i casi la compatibilità è significativa.\\
-\begin{figure}[h]
-	\begin{subfigure}
-		\centering
-		\includegraphics[width=0.48\columnwidth, keepaspectratio]{Grafici_Tesi2/Confronto/sic.png}
-	\end{subfigure}
-	\begin{subfigure}
-		\centering
-		\includegraphics[width=0.48\columnwidth, keepaspectratio]{Grafici_Tesi2/Confronto/csi.png}
-	\end{subfigure}
+%\begin{figure}[h]
+%	\begin{subfigure}
+%		\centering
+%		\includegraphics[width=0.48\columnwidth, keepaspectratio]{Grafici_Tesi2/Confronto/sic.png}
+%	\end{subfigure}
+%	\begin{subfigure}
+%		\centering
+%		\includegraphics[width=0.48\columnwidth, keepaspectratio]{Grafici_Tesi2/Confronto/csi.png}
+%	\end{subfigure}
+%\end{figure}\\
+%\textit{Confronto tra gli spettri sperimentali~(blu) e quelli simulati~(rosso).}
+\begin{figure} [!h]
+	\centering
+	\includegraphics[width=0.75\columnwidth, keepaspectratio]{Grafici_Tesi2/Confronto/sic.png}
 \end{figure}\\
-\textit{Confronto tra gli spettri sperimentali~(rosso) e quelli simulati~(blu).}
-
-
-
+\textit{Spettro in $\Delta E_{SiC}$: in blu quello sperimentale, in rosso quello simulato.}
 
 
 %\section{Conclusions}
