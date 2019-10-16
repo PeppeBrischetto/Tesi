@@ -135,13 +135,13 @@ Chiar.mo \> Prof. F. Cappuzzello \\
 %\lipsum[1]
 %Questo lavoro di tesi verte sulla realizzazione di un tool di simulazioni Monte Carlo per lo studio di un sistema di rivelazione basato sulla tecnologia SiC-CsI per l'identificazione di ioni pesanti nell'ambito del progetto NUMEN.
 %Tale progetto propone ai Laboratori Nazionali del Sud un nuovo metodo per estrarre dai dati sperimentali informazioni sugli elementi di matrici nucleare che entrano in gioco nel tempo di dimezzamento del doppio decadimento beta senza neutrini.
-Il progetto NUMEN ha avviato ai Laboratori Nazionali del Sud un'importante ristrutturazione verso alte correnti di fascio delle due principali infrastrutture sperimentali: il Ciclotrone Superconduttore K800 e lo spettrometro magnetico MAGNEX.
+Il progetto NUMEN ha recentemente promosso ai Laboratori Nazionali del Sud un'importante ristrutturazione verso alte correnti di fascio del Ciclotrone Superconduttore K800 e dello spettrometro magnetico MAGNEX.
 L'upgrade di MAGNEX prevede l'introduzione di un muro di telescopi $\Delta E - E$ a stato solido, basato sulla tecnologia SiC-CsI, per l'identificazione di ioni pesanti ad alto rate.
 Questo lavoro di tesi verte sulla realizzazione di un tool di simulazioni Monte Carlo per lo studio e l'ottimizzazione di tale sistema di rivelazione.
 %Il tool è stato sviluppato e implementato integrando i software per la ricostruzione del moto dei prodotti di reazione attraverso lo spettrometro con un'applicazione specifica basata sulla piattaforma \geant.
 Uno degli obiettivi di questo lavoro consiste nella valutazione delle prestazioni del sistema simulato in termini di capacità di identificazione degli ioni di interesse, rapporto segnale-rumore e sensibilità di misura.
 %In particolare, tale tool è stato utilizzato per valutare le prestazioni del sistema simulato in termini di capacità di identificazione degli ioni di interesse, rapporto segnale-rumore e sensibilità di misura, nonché per ottimizzare le condizioni di granularità dei telescopi.
-In aggiunta, il tool è stato utilizzato per ottimizzare la granularità dei telescopi.
+In aggiunta, il tool è stato utilizzato per ottimizzare la granularità dei~telescopi.
 
 
 
@@ -183,21 +183,19 @@ Le esigenze di alta resistenza alle radiazioni hanno guidato verso la scelta di 
 
 \begin{figure} [!h]
 	\centering
-	\includegraphics[width=0.9\columnwidth, keepaspectratio]{Grafici/muro_telescopi.png}
+	\includegraphics[width=0.88\columnwidth, keepaspectratio]{Grafici/muro_telescopi.png}
 \end{figure}
 %\begin{center}
 \hspace{0.2 cm}\textit{Il muro di telescopi previsto dopo l'upgrade di MAGNEX.}
 %\end{center}
-
-
 %\section{Objectives}
 \section{Obiettivi}
 %\lipsum[5]
-
-Lo scopo principale di questo lavoro di tesi consiste nello sviluppo e nell'implementazione di un tool di simulazioni per il progetto NUMEN che, per la prima volta, consenta di descrivere in modo completo la cinematica di reazione, il moto degli eiettili attraverso gli elementi magnetici di MAGNEX e la loro interazione con il muro di telescopi SiC-CsI.
+Lo scopo principale di questo lavoro di tesi consiste nello sviluppo e nell'implementazione di un tool di simulazioni per il progetto NUMEN che, per la prima volta, consenta di descrivere la cinematica di reazione, il moto degli eiettili attraverso gli elementi magnetici di MAGNEX e la loro interazione con il muro di telescopi SiC-CsI.
 %All'interno di tale tool, i software dedicati al calcolo della cinematica e al trasporto ottico dei prodotti di reazione sono già esistenti e ottimizzati, mentre l'applicazione che riproduce il sistema di rivelazione è stata sviluppata nel corso di questo lavoro.
 %Tale applicazione è stata realizzata utilizzando la nota piattaforma \geant{}.
-Lo sviluppo di tale tool è estremamente importante per il progetto, in quanto coinvolge aspetti legati sia alla fase di progettazione sia alla fase operativa del sistema di rivelazione.
+Tale tool integra i software dedicati al trasporto ottico degli eiettili con una specifica applicazione \geant.
+Lo sviluppo del tool è molto importante per il progetto, in quanto coinvolge aspetti legati sia alla fase di progettazione sia alla fase operativa del sistema di rivelazione.
 In questo lavoro, il tool è stato utilizzato per analizzare le capacità di PID dei telescopi, calcolando il rapporto segnale-fondo e la sensibilità di misura del dispositivo.
 %Esso è stato, inoltre, impiegato per ottimizzare la granularità dei telescopi.
 Esso è stato, inoltre, impiegato per condurre uno studio accurato sull'ottimizzazione della granularità dei telescopi.
@@ -254,7 +252,7 @@ Dalla simulazione è emerso che il principale contaminante allo ione di interess
 %\end{center}
 %\vspace{0.2cm}
 
-Calcolando il rapporto S/B, la simulazione ha dimostrato che la sensibilità di misura dell'apparato simulato nella regione di interesse è di 460~pb a 5$\sigma$, quindi adatta a misurare la reazione di~interesse.
+Calcolando il rapporto S/B, la simulazione ha indicato che la sensibilità di misura dell'apparato simulato nella regione di interesse è di 460~pb a 5$\sigma$, quindi adatta a misurare la reazione di~interesse.
 L'analisi di tre diverse condizioni di granularità (1$\times$1, 1.5$\times$1.5 e 2$\times$2~$\mbox{cm}^2$) ha dimostrato che, all'aumentare della superficie di rivelazione, la sensibilità di misura diminuisce, pur restando in tutti e tre i casi esaminati sufficiente per misurare il DCE.
 
 Un aspetto fondamentale di questo lavoro è consistito nella validazione dei risultati delle simulazioni attraverso il confronto con i dati sperimentali raccolti in occasione del test beam svolto ad Aprile~2019.
