@@ -1,4 +1,4 @@
-\documentclass[10pt,foldmark,notumble]{leaflet}
+\documentclass[10pt,foldmark]{leaflet}
 \renewcommand*\foldmarkrule{.3mm}
 \renewcommand*\foldmarklength{5mm}
 \usepackage[italian]{babel}
@@ -147,7 +147,7 @@ In aggiunta, il tool è stato utilizzato per ottimizzare la granularità dei~tel
 
 \begin{figure} [!h]
 	\centering
-	\includegraphics[width=0.9\columnwidth, keepaspectratio]{Grafici/magnex_etichette.png}
+	\includegraphics[width=0.8\columnwidth, keepaspectratio]{Grafici/magnex_etichette.png}
 \end{figure}
 %\begin{center}
 \hspace{0.8 cm}\textit{ Lo spettrometro magnetico MAGNEX ai LNS.}
@@ -179,7 +179,7 @@ Dal momento che i processi di DCE hanno sezioni d'urto estremamente basse (tipic
 %Parte integrante di NUMEN è, dunque, un'intensa attività di ricerca e sviluppo, pertinente non soltanto al campo sperimentale ma anche a quello teorico.
 %L'upgrade di MAGNEX prevede importanti cambiamenti del rivelatore di piano focale; in particolare, il progetto prevede la sostituzione del muro di rivelatori al silicio con uno di telescopi $\Delta E - E$ a stato solido, dedicato alla Particle IDentification (PID).
 L'upgrade di MAGNEX prevede importanti cambiamenti del rivelatore di piano focale; in particolare, il muro di rivelatori al silicio sarà sostituito da uno di telescopi $\Delta E - E$ a stato solido, dedicato alla Particle IDentification (PID). 
-Le esigenze di alta resistenza alle radiazioni hanno guidato verso la scelta di un primo stadio costituito da un rivelatore sottile (100~$\mu$m) al carburo di silicio~(SiC), seguito da un rivelatore di stop (1~cm) allo ioduro di cesio~(CsI).
+Le esigenze di alta resistenza alle radiazioni hanno guidato verso la scelta di un primo stadio costituito da un rivelatore sottile (spessore 100~$\mu$m) al carburo di silicio~(SiC), seguito da un rivelatore di stop (spessore 1~cm) allo ioduro di cesio~(CsI).
 
 \begin{figure} [!h]
 	\centering
@@ -217,16 +217,16 @@ Il lavoro svolto per questa tesi costituisce il primo passo verso lo sviluppo di
 
 Le capacità di PID del telescopio SiC-CsI sono state analizzate ricostruendo, per ogni specie ionica simulata, la corrispondente matrice $\Delta E_{SiC} - E_{CsI}$, laddove $\Delta E_{SiC}$ indica la perdita di energia nel rivelatore al~SiC, mentre $E_{CsI}$ rappresenta l'energia residua rilasciata nel cristallo di~CsI.
 %Le capacità di PID del telescopio SiC-CsI sono state analizzate ricostruendo, per ogni specie ionica simulata, la corrispondente matrice $\Delta E_{SiC} - E_{CsI}$.
-Selezionando con un taglio grafico la matrice dello ione di interesse, è stata calcolata la frazione di altri ioni inclusi in tale taglio.
-I valori così ottenuti sono stati opportunamente moltiplicati per rispettive le sezioni d'urto di produzione, allo scopo di ottenere una stima delle contaminazioni reali.
+Selezionando con un taglio grafico il luogo relativo allo ione di interesse, è stata calcolata la frazione di altri ioni inclusi in tale taglio.
+I valori così ottenuti sono stati opportunamente moltiplicati per le rispettive sezioni d'urto di produzione, allo scopo di ottenere una stima delle contaminazioni reali.
 Da tale stima è stato dedotto il rapporto segnale-fondo (S/B), grazie al quale è stato possibile determinare la sensibilità di misura del sistema di rivelazione.
 
 \begin{figure} [!h]
 	\centering
-	\includegraphics[width=0.55\columnwidth, keepaspectratio]{Grafici/modulo2_ritagliato.png}
+	\includegraphics[width=0.5\columnwidth, keepaspectratio]{Grafici/modulo2_ritagliato.png}
 \end{figure}
 %\begin{center}
-\textit{Simulazione \geant{} di una matrice di 2$\times$5 telescopi: in rosso il rivelatore al~SiC, in blu il cristallo di~CsI.}
+\textit{Geometria della simulazione \geant{} di una matrice di 2$\times$5 telescopi: in rosso il rivelatore al~SiC, in blu il cristallo di~CsI.}
 %\end{center}
 
 
@@ -255,7 +255,7 @@ Dalla simulazione è emerso che il principale contaminante allo ione di interess
 Calcolando il rapporto S/B, la simulazione ha indicato che la sensibilità di misura dell'apparato simulato nella regione di interesse è di 460~pb a 5$\sigma$, quindi adatta a misurare la reazione di~interesse.
 L'analisi di tre diverse condizioni di granularità (1$\times$1, 1.5$\times$1.5 e 2$\times$2~$\mbox{cm}^2$) ha dimostrato che, all'aumentare della superficie di rivelazione, la sensibilità di misura diminuisce, pur restando in tutti e tre i casi esaminati sufficiente per misurare il DCE.
 
-Un aspetto fondamentale di questo lavoro è consistito nella validazione dei risultati delle simulazioni attraverso il confronto con i dati sperimentali raccolti in occasione del test beam svolto ad Aprile~2019.
+Un aspetto fondamentale di questo lavoro è consistito nella validazione dei risultati delle simulazioni attraverso il confronto con i dati sperimentali raccolti in occasione del test con fascio accelerato svolto ad Aprile~2019.
 Gli spettri energetici misurati dal rivelatore al SiC e dallo scintillatore allo CsI sono stati messi a confronto con i rispettivi spettri simulati: in entrambi i casi la compatibilità è significativa.
 %\begin{figure}[h]
 %	\begin{subfigure}
