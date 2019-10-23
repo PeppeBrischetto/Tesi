@@ -1,0 +1,201 @@
+\documentclass[pt12]{beamer}
+%\documentclass[pt12,externalviewer]{beamer}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{graphicx} %Allows including images
+
+\usepackage{verbatim}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{setspace}
+\usepackage{siunitx}
+\usepackage[version=4]{mhchem}
+\usepackage{mathrsfs}
+\usepackage{braket}
+\usepackage{ragged2e}
+%\usepackage{rotating}
+%\usepackage{amsmath}
+%\usepackage{tikz}
+%\usepackage{beamergraphics}
+%\usepackage[italian]{babel}
+%\usepackage[latin1]{inputenc}
+%\usepackage[T1]{fontenc}
+
+%\usepackage[absolute,overlay]{textpos}
+%\usepackage{pdfcolparallel}
+
+%\usepackage{tcolorbox}
+%\tcbuselibrary{fitting}
+
+\definecolor{CTgreen}{HTML}{28794e} % Catania green (primary)
+\definecolor{CTblue}{HTML}{28794e} % Catania green (primary)
+
+\mode<presentation>
+{
+  \usetheme{Warsaw} 
+%  \usetheme{Madrid}
+%  \usetheme{Montpellier}
+%  \usetheme{Marburg} 
+  \usecolortheme[named=CTgreen]{structure}
+  \setbeamercolor{alerted text}{fg=CTgreen}
+  \setbeamercovered{transparent}
+  \setbeamertemplate{section in toc}[ball unnumbered]
+}
+
+%\setbeamertemplate{footline}{\hfill\insertframenumber/\inserttotalframenumber} 
+
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+  \insertshorttitle\hfill%
+  \insertframenumber\,/\,\inserttotalframenumber}
+
+\newcommand{\backupbegin}{
+   \newcounter{framenumberappendix}
+   \setcounter{framenumberappendix}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \addtocounter{framenumberappendix}{-\value{framenumber}}
+   \addtocounter{framenumber}{\value{framenumberappendix}} 
+}
+
+\newcommand{\refer}[1]{%
+   \begin{flushright}
+      {\alert{\tiny #1}}
+   \end{flushright}}
+  
+\newcommand{\lrefer}[1]{%
+   \begin{flushleft}
+      {\alert{\tiny #1}}
+   \end{flushleft}}
+  
+\newcommand{\param}[1]{%
+   \begin{flushright}
+      {\small #1}
+   \end{flushright}
+   \vspace{-1.5\baselineskip}
+}
+
+\newcommand{\sech}{\mathop{\rm sech}\nolimits}
+\newcommand{\sgn}{\mathop{\rm sgn}\nolimits}
+\newcommand{\etal}{{\em et al.}}
+
+
+\title[Simulazioni Monte Carlo per il progetto NUMEN]{Simulazioni Monte Carlo di un sistema di rivelazione per ioni pesanti basato sulla tecnologia SiC-CsI per il progetto NUMEN}
+
+\author[Giuseppe Antonio Brischetto]{\large{Giuseppe Antonio Brischetto}}
+
+\institute[DFA.UniCT]{
+\begin{minipage}[c]{1.5truecm}
+\includegraphics[width=\textwidth]{logo_ellipse}
+\end{minipage}
+\begin{minipage}[c]{4.7truecm}
+\begin{flushleft}
+\begin{sl}
+Dipartimento di Fisica e Astronomia\\ 
+``Ettore Majorana''
+\end{sl}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[c]{2truecm}
+\includegraphics[width=\textwidth]{logo_unict_orizzontale}
+\end{minipage}
+
+\vspace*{20pt}
+\begin{columns}
+	\begin{column}{0.6\textwidth} \hspace*{30pt}
+		%\centering
+		{\normalsize Relatore:\\ \hspace*{30pt}
+		Chiar.mo~Prof.~F.~Cappuzzello} 
+	\end{column}
+
+	\begin{column}{0.6\textwidth} \hspace*{60pt}
+		%\centering
+%		\hspace{0.2truecm}
+		{\normalsize Correlatore:\\ \hspace*{60pt}
+		Dott.~L.~Pandola}
+	\end{column}
+\end{columns}}
+
+
+
+
+\date{22 Ottobre 2019}
+
+\begin{document}
+
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+
+
+
+\begin{frame}[label=outline]
+\frametitle{Outline}
+\tableofcontents[pausesections]
+\end{frame}
+
+%\include{sslide}
+
+%\clearpage
+%\phantomsection
+%\addcontentsline{toc}{chapter}{Introduzione}
+\section{Il contesto scientifico}
+%\subsection*{Il doppio decadimento beta senza neutrini}
+%\begin{frame}
+%	\frametitle{Problemi aperti sul neutrino}
+%	Oscillazioni di sapore del neutrino $\rightarrow$ il neutrino è massivo
+%\end{frame}
+
+
+\subsection*{Il doppio decadimento beta senza neutrini}
+\begin{frame}
+	\frametitle{Il doppio decadimento beta senza neutrini}
+	%\centering
+	 Il neutrino oscilla $\longrightarrow $ ha una \textcolor{red}{massa}
+	
+	\begin{block}
+	 Il neutrino oscilla $\longrightarrow $ ha una \textcolor{red}{massa}
+	\end{block}
+
+	 $$\ce{^A_ZA_{N}}\rightarrow\ce{^A_{Z\mp2}B_{N\pm2}}$$
+	 \begin{columns}
+	 	\begin{column}{0.5\textwidth}
+%			$[T^{0 \nu}_{1/2}]^{-1}  =  G^{0 \nu}  | M^{0 \nu} |^2 | f(m_i, U_{ei}) |^2$
+			
+			\begin{equation*}
+			[T^{0\nu}_{1/2}]^{-1} \: = \: G_{0\nu} \, \left|M_{0\nu}\right|^2 \, \left|f(m_i, U_{ei})\right|^2
+			\end{equation*}
+			%$$\ce{^A_ZA_{N}}\rightarrow\ce{^A_{Z\mp2}B_{N\pm2}}$$
+			%$$[T^{0\nu}_{1/2}]^{-1}=G_{0\nu}\left|M_{0\nu}\right|^2\left|f(m_i, U_{ei}, \xi_i)\right|^2$$
+	 	\end{column}
+	 \end{columns}
+\end{frame}
+
+
+\subsection*{Le reazioni di doppio scambio di carica}
+\begin{frame}
+	\frametitle{Le reazioni di doppio scambio di carica}
+    \begin{itemize}[<+->]
+    	\item ciao
+    	\item a tutti
+    \end{itemize}
+\end{frame}
+
+
+\subsection*{Il progetto NUMEN}
+\begin{frame}
+	\frametitle{Il progetto NUMEN}
+	\begin{itemize}[<+->]
+		\item ciao
+		\item a tutti
+	\end{itemize}
+\end{frame}
+
+
+%\include{sslide}
+
+\end{document}
+
