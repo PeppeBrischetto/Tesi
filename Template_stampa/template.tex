@@ -1,0 +1,157 @@
+\documentclass[MSc,italian]{dfaunictthesis}
+\usepackage[inner=3.5cm, outer=4.35cm]{geometry}
+%\usepackage[inner=2.0cm, outer=3.0cm, bindingoffset=2.0cm]{geometry} %Margini di Ale
+\setlength\topmargin{20pt}
+\setlength\textwidth{390.0pt}
+\setlength\textheight{548.5pt}
+%\usepackage[a4paper]{geometry}
+%\usepackage[bindingoffset=2cm]{geometry}
+\usepackage{lipsum}
+\usepackage[compat=1.0.0]{tikz-feynman}
+\usepackage{braket}
+\usepackage{mhchem}
+\usepackage{textcomp}
+\usepackage{psfrag}
+\usepackage{subfigure}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{ctable}
+\usepackage{footnote}
+\usepackage{layout}
+\usepackage{layouts}
+%\usepackage{mathtools}
+%\usepackage{mathrsfs}
+%\usepackage{amsfonts}
+%\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{siunitx}
+%\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[hypcap=true]{caption}
+\usepackage[Lenny]{fncychap}
+\hypersetup{
+%	pdfpagemode={UseOutlines},
+%	bookmarksopen,
+%	colorlinks,
+%	linkcolor=red,
+%	anchorcolor=red,
+%	citecolor=red,
+%	urlcolor=red,
+%	%linktocpage=true
+%	pdftitle={La condensazione di Bose-Einstein},
+%	pdfauthor={Giuseppe Antonio Brischetto}
+}
+
+\usepackage{url}
+\usepackage{booktabs}
+
+\newcommand{\doppiobeta}{$ 0\nu\beta\beta$}
+
+%\newcommand{\geant}{\begin{scshape}geant4\end{scshape}}
+\newcommand{\geant}{Geant4}
+
+
+\begin{document}
+
+\author{Giuseppe Antonio Brischetto}
+\title{Simulazioni Monte Carlo di un sistema di rivelazione per ioni pesanti basato sulla tecnologia SiC-CsI per il progetto NUMEN}
+\aayear{2018/2019}
+
+\begin{supervisors}
+   \supervisor{Chiar.mo}{Prof.}{F. Cappuzzello}
+   %\supervisor{}{Dr.}{L. Pandola}
+\end{supervisors}
+
+%\phdname{physics} % default
+%\phdname{science of materials}
+%\phdname{complex systems}
+
+\maketitlepage
+
+%\tableofcontents
+\thispagestyle{empty}
+\cleardoublepage
+
+\pagevalues
+\cleardoublepage
+\layout
+\begin{flushright}
+	\null \vspace{\stretch{1}}
+	\textit{Ai miei genitori, Michelangelo e Concetta\\}
+	\textit{A mio fratello, Alberto\\}
+    \textit{Al mio amore, Carla}
+    \vspace{\stretch{2}} \null
+\end{flushright}
+
+\thispagestyle{empty}
+\newpage
+
+\thispagestyle{empty}
+% Le prossime righe servono per aggiungere l'indice alla barra dei segnalibri nel pdf.
+\cleardoublepage
+%\thispagestyle{empty}
+\pdfbookmark[1]{Indice}{Indice}
+\tableofcontents
+%\thispagestyle{empty}
+%\clearpage
+%\thispagestyle{empty}
+
+% Le prossime due righe servono per sistemare il collegamento ipertestuale nell'indice. Si è usato \cleardoublepage perché la classe è book, mentre per article si usa \clearpage. Comunque vedere ArteLateX.pdf per ogni evenienza
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\iflanguage{italian}{Introduzione}{Introduction}}
+\chapter*{\iflanguage{italian}{Introduzione}{Introduction}}
+\markboth{Introduzione}{Introduzione}
+\input{introduzione.tex}
+
+
+% Queste due righe non mi sembra che servano
+%\chapter*{\iflanguage{italian}{Introduzione}{Introduction}}
+%\setcounter{page}{1}
+
+
+%\lipsum[20]
+
+\chapter{\iflanguage{italian}{Il contesto scientifico}{State of the art}}
+\input{capitolo1.tex}
+
+\chapter{\iflanguage{italian}{L'apparato sperimentale}{Experimental set-up}} \label{cap:apparato_sperimentale}
+\input{capitolo2.tex} 
+
+
+\chapter{\iflanguage{italian}{La simulazione}{The simulation}} \label{cap:simulazione}
+\input{capitolo3.tex}
+
+\chapter{\iflanguage{italian}{Validazione della simulazione}{Validation of simulation}}
+\input{capitolo4.tex}
+
+\cleardoublepage
+\phantomsection
+\chapter*{\iflanguage{italian}{Conclusioni}{Conclusions}}
+\addcontentsline{toc}{chapter}{\iflanguage{italian}{Conclusioni}{Conclusions}}
+\markboth{Conclusioni}{Conclusioni}
+\input{conclusioni.tex}
+
+%\lipsum[20]
+
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\iflanguage{italian}{Bibliografia}{Bibliography}}
+\bibliographystyle{mprsty}
+\bibliography{biblio}
+
+
+\cleardoublepage
+\phantomsection
+\chapter*{\iflanguage{italian}{Ringraziamenti}{Acknowledgements}}
+\addcontentsline{toc}{chapter}{\iflanguage{italian}{Ringraziamenti}{Acknowledgements}}
+\markboth{Ringraziamenti}{Ringraziamenti}
+\input{ringraziamenti.tex}
+
+%\lipsum[20]
+
+\end{document}
+
+
+
+
